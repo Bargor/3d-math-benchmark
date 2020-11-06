@@ -25,18 +25,17 @@ matrix:
         apt:
           sources:
             - sourceline: "ppa:ubuntu-toolchain-r/test"
-            - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
-              key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
+            - llvm-toolchain-bionic-10
           packages:
-            - clang-11
-            - libc++-11-dev
-            - libc++abi-11-dev
-            - lld-11
-            - llvm-11
-            - llvm-11-dev
-            - llvm-11-runtime
+            - clang-10
+            - libc++-10-dev
+            - libc++abi-10-dev
+            - lld-10
+            - llvm-10
+            - llvm-10-dev
+            - llvm-10-runtime
       env:
-        - MATRIX_EVAL="CC=clang-11 && CXX=clang++-11" BUILD_TYPE=Release
+        - MATRIX_EVAL="CC=clang-10 && CXX=clang++-10" BUILD_TYPE=Release
         - EXTRA_FLAGS="-stdlib=libc++"
     
 before_install:
