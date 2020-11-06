@@ -31,8 +31,8 @@ static void vec4_add(benchmark::State& state) {
         for (const auto& vec : testData) {
             res += vec;
         }
-        benchmark::DoNotOptimize(res);
     }
+    benchmark::DoNotOptimize(res);
 }
 
 static void vec4_add_accumulate(benchmark::State& state) {
@@ -55,8 +55,8 @@ static void vec4_mult(benchmark::State& state) {
         for (const auto& vec : testData) {
             res *= vec;
         }
-        benchmark::DoNotOptimize(res);
     }
+    benchmark::DoNotOptimize(res);
 }
 
 static void vec4_mult_accumulate(benchmark::State& state) {
@@ -70,6 +70,20 @@ static void vec4_mult_accumulate(benchmark::State& state) {
     }
     benchmark::DoNotOptimize(res);
 }
+
+static void vec4_add_aligned(benchmark::State& state) {
+    const auto testData = prepare_test_data(state.range(0));
+
+    glm::vec4 res(0.0f);
+
+    for (auto _ : state) {
+        for (const auto& vec : testData) {
+            res += vec;
+        }
+    }
+    benchmark::DoNotOptimize(res);
+}
+
 // Register the function as a benchmark
 BENCHMARK(vec4_add)->Arg(2)->Arg(8)->Arg(64)->Arg(512)->Arg(1 << 10)->Arg(1 << 12)->Arg(1 << 16)->Arg(1 << 20);
 BENCHMARK(vec4_add_accumulate)->Arg(2)->Arg(8)->Arg(64)->Arg(512)->Arg(1 << 10)->Arg(1 << 12)->Arg(1 << 16)->Arg(1 << 20);
