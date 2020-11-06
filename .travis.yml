@@ -1,0 +1,58 @@
+language: cpp
+dist: bionic
+
+notifications:
+  email:
+    on_success: never # default: change
+    on_failure: always # default: always
+
+matrix:
+  include:
+
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - sourceline: "ppa:ubuntu-toolchain-r/test"
+          packages:
+            - gcc-10
+            - g++-10
+      env:
+        - MATRIX_EVAL="CC=gcc-10 && CXX=g++-10" BUILD_TYPE=Release
+    
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - sourceline: "ppa:ubuntu-toolchain-r/test"
+            - llvm-toolchain-bionic-11
+          packages:
+            - clang-11
+            - libc++-11-dev
+            - libc++abi-11-dev
+            - lld-11
+            - llvm-11
+            - llvm-11-dev
+            - llvm-11-runtime
+      env:
+        - MATRIX_EVAL="CC=clang-11 && CXX=clang++-11" BUILD_TYPE=Release
+        - EXTRA_FLAGS="-stdlib=libc++"
+    
+        
+before_install:
+    - eval "${MATRIX_EVAL}"
+    - wget http://www.cmake.org/files/v3.13/cmake-3.13.0-Linux-x86_64.sh
+    - sudo sh cmake-3.13.0-Linux-x86_64.sh --skip-license --prefix=/usr
+    - export PATH=/usr/bin:$PATH
+
+# Build steps
+
+script:
+- gcc -v && g++ -v && cmake --version
+- clang --version
+- mkdir build
+- cd build
+- cmake .. -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DCMAKE_CXX_FLAGS="${EXTRA_FLAGS}"
+- make -j2
+- ./glm_vec4
+- ./glm_vec4_simd

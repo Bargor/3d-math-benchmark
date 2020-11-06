@@ -1,0 +1,29 @@
+ 
+environment:
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      GENERATOR: "Visual Studio 16 2019"
+      ARCH: "-Ax64"
+
+platform:
+  - x64
+ 
+configuration:
+  - Release
+
+install:
+    - git submodule update --init --recursive
+    
+
+before_build:
+    - cmd: echo %GENERATOR%
+    - cmd: cmake -G"%GENERATOR%" "%ARCH%" . 
+    - sh: cmake . 
+
+build:
+  project: $(APPVEYOR_BUILD_FOLDER)\$(APPVEYOR_PROJECT_NAME).sln
+  
+test_script:
+  - %APPVEYOR_BUILD_FOLDER%\exe\%CONFIGURATION%\glm_vec4.exe
+  - %APPVEYOR_BUILD_FOLDER%\exe\%CONFIGURATION%\glm_vec4_simd.exe
+  
