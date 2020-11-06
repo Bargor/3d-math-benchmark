@@ -25,8 +25,9 @@ std::vector<glm::vec4> prepare_test_data(std::size_t size) {
 static void vec4_add(benchmark::State& state) {
     const auto testData = prepare_test_data(state.range(0));
 
+    glm::vec4 res(0.0f);
+
     for (auto _ : state) {
-        glm::vec4 res(0.0f);
         for (const auto& vec : testData) {
             res += vec;
         }
@@ -37,16 +38,20 @@ static void vec4_add(benchmark::State& state) {
 static void vec4_add_accumulate(benchmark::State& state) {
     const auto testData = prepare_test_data(state.range(0));
 
+    glm::vec4 res;
+
     for (auto _ : state) {
-        const auto res = std::accumulate(testData.begin(), testData.end(), glm::vec4(0.0f));
+        res = std::accumulate(testData.begin(), testData.end(), glm::vec4(0.0f));
     }
+    benchmark::DoNotOptimize(res);
 }
 
 static void vec4_mult(benchmark::State& state) {
     const auto testData = prepare_test_data(state.range(0));
 
+    glm::vec4 res(1.0f);
+
     for (auto _ : state) {
-        glm::vec4 res(1.0f);
         for (const auto& vec : testData) {
             res *= vec;
         }
@@ -57,10 +62,13 @@ static void vec4_mult(benchmark::State& state) {
 static void vec4_mult_accumulate(benchmark::State& state) {
     const auto testData = prepare_test_data(state.range(0));
 
+    glm::vec4 res(1.0f);
+
     for (auto _ : state) {
         const auto res = std::accumulate(
             testData.begin(), testData.end(), glm::vec4(1.0f), [](glm::vec4 lhs, glm::vec4 rhs) { return lhs * rhs; });
     }
+    benchmark::DoNotOptimize(res);
 }
 // Register the function as a benchmark
 BENCHMARK(vec4_add)->Arg(2)->Arg(8)->Arg(64)->Arg(512)->Arg(1 << 10)->Arg(1 << 12)->Arg(1 << 16)->Arg(1 << 20);
