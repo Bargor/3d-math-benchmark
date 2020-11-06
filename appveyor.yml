@@ -24,6 +24,6 @@ build:
   project: $(APPVEYOR_BUILD_FOLDER)\$(APPVEYOR_PROJECT_NAME).sln
   
 test_script:
-  - '%APPVEYOR_BUILD_FOLDER%\exe\%CONFIGURATION%\glm_vec4.exe'
-  - '%APPVEYOR_BUILD_FOLDER%\exe\%CONFIGURATION%\glm_vec4_simd.exe'
+  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\glm_vec4.exe'
+  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\glm_vec4_simd.exe'
   
