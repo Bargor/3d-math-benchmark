@@ -38,7 +38,7 @@ static void vec4_add(benchmark::State& state) {
 static void vec4_add_accumulate(benchmark::State& state) {
     const auto testData = prepare_test_data(state.range(0));
 
-    glm::vec4 res;
+    glm::vec4 res(0.0f);
 
     for (auto _ : state) {
         res = std::accumulate(testData.begin(), testData.end(), glm::vec4(0.0f));
@@ -65,7 +65,7 @@ static void vec4_mult_accumulate(benchmark::State& state) {
     glm::vec4 res(1.0f);
 
     for (auto _ : state) {
-        const auto res = std::accumulate(
+        res = std::accumulate(
             testData.begin(), testData.end(), glm::vec4(1.0f), [](glm::vec4 lhs, glm::vec4 rhs) { return lhs * rhs; });
     }
     benchmark::DoNotOptimize(res);
