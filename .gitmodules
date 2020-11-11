@@ -4,3 +4,15 @@
 [submodule "glm"]
 	path = glm
 	url = https://github.com/Bargor/glm.git
+[submodule "mango"]
+	path = mango
+	url = https://github.com/t0rakka/mango.git
+[submodule "blaze"]
+	path = blaze
+	url = https://bitbucket.org/blaze-lib/blaze.git
+[submodule "mathfu"]
+	path = mathfu
+	url = https://github.com/google/mathfu.git
+[submodule "eigen"]
+	path = eigen
+	url = https://gitlab.com/libeigen/eigen.git
