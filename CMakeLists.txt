@@ -8,10 +8,18 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Google benchmark tests")
-set(GLM_TEST_ENABLE OFF CACHE BOOL "Build unit tests")
+set(GLM_TEST_ENABLE OFF CACHE BOOL "Build glm unit tests")
+set(BUILD_TESTING OFF CACHE BOOL "Build Eigen tests")
+set(mathfu_build_benchmarks OFF CACHE BOOL "Build mathfu benchmark")
+set(mathfu_build_tests OFF CACHE BOOL "Build mathfu tests")
+set(USE_LAPACK OFF CACHE BOOL "use blaze lapack")
+
 
 add_subdirectory(benchmark)
 add_subdirectory(glm)
+add_subdirectory(eigen)
+add_subdirectory(mathfu)
+add_subdirectory(blaze)
 
 set(TEST_CODE 
     src/glm_vec4.cpp
@@ -23,7 +31,7 @@ foreach(SOURCE_FILE ${TEST_CODE})
 	get_filename_component(TEST_NAME ${SOURCE_FILE} NAME_WE)
 
 	#Compile files and link with objects
-	add_executable(${TEST_NAME} "" "${SOURCE_FILE}")
+	add_executable(${TEST_NAME} src/prepare_test_data.h "${SOURCE_FILE}")
     
     source_group(${TEST_NAME} FILES ${SOURCE_FILE})
     

@@ -3,39 +3,11 @@
 #include <benchmark/benchmark.h>
 #include <glm/glm.hpp>
 #include <glm/gtx/type_aligned.hpp>
-#include <numeric>
-#include <random>
 
-std::vector<glm::vec4> prepare_test_data(std::size_t size) {
-    std::vector<glm::vec4> testData(size);
-
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> distribution(0.0f, 10.0f);
-
-    for (auto& vec : testData) {
-        vec = glm::vec4(distribution(gen), distribution(gen), distribution(gen), distribution(gen));
-    }
-
-    return testData;
-}
-
-std::vector<glm::aligned_f32vec4> prepare_test_aligned_data(std::size_t size) {
-    std::vector<glm::aligned_f32vec4> testData(size);
-
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> distribution(0.0f, 10.0f);
-
-    for (auto& vec : testData) {
-        vec = glm::aligned_f32vec4(distribution(gen), distribution(gen), distribution(gen), distribution(gen));
-    }
-
-    return testData;
-}
+#include "prepare_test_data.h"
 
 static void vec4_add(benchmark::State& state) {
-    const auto testData = prepare_test_data(state.range(0));
+    const auto testData = prepare_test_data<glm::vec4>(state.range(0));
 
     glm::vec4 res(0.0f);
 
@@ -48,7 +20,7 @@ static void vec4_add(benchmark::State& state) {
 }
 
 static void vec4_add_accumulate(benchmark::State& state) {
-    const auto testData = prepare_test_data(state.range(0));
+    const auto testData = prepare_test_data<glm::vec4>(state.range(0));
 
     glm::vec4 res(0.0f);
 
@@ -59,7 +31,7 @@ static void vec4_add_accumulate(benchmark::State& state) {
 }
 
 static void vec4_mult(benchmark::State& state) {
-    const auto testData = prepare_test_data(state.range(0));
+    const auto testData = prepare_test_data<glm::vec4>(state.range(0));
 
     glm::vec4 res(1.0f);
 
@@ -72,7 +44,7 @@ static void vec4_mult(benchmark::State& state) {
 }
 
 static void vec4_mult_accumulate(benchmark::State& state) {
-    const auto testData = prepare_test_data(state.range(0));
+    const auto testData = prepare_test_data<glm::vec4>(state.range(0));
 
     glm::vec4 res(1.0f);
 
@@ -84,7 +56,7 @@ static void vec4_mult_accumulate(benchmark::State& state) {
 }
 
 static void vec4_add_aligned(benchmark::State& state) {
-    const auto testData = prepare_test_aligned_data(state.range(0));
+    const auto testData = prepare_test_data<glm::aligned_f32vec4>(state.range(0));
 
     glm::aligned_f32vec4 res(0.0f);
 
@@ -97,7 +69,7 @@ static void vec4_add_aligned(benchmark::State& state) {
 }
 
 static void vec4_add_accumulate_aligned(benchmark::State& state) {
-    const auto testData = prepare_test_aligned_data(state.range(0));
+    const auto testData = prepare_test_data<glm::aligned_f32vec4>(state.range(0));
 
     glm::aligned_f32vec4 res(0.0f);
 
