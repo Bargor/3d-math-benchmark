@@ -1,0 +1,150 @@
+GLM:
+
+Run on (4 X 3000 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x4)
+  L1 Instruction 32 KiB (x4)
+  L2 Unified 6144 KiB (x2)
+------------------------------------------------------------------------------
+Benchmark                                    Time             CPU   Iterations
+------------------------------------------------------------------------------
+vec4_add/2                                5.89 ns         5.08 ns    144516129
+vec4_add_loop/2                           16.9 ns         15.0 ns     44800000
+vec4_add_loop/8                           51.6 ns         51.6 ns     10000000
+vec4_add_loop/64                           421 ns          417 ns      1723077
+vec4_add_loop/512                         3441 ns         3376 ns       203636
+vec4_add_loop/1024                        6914 ns         6975 ns       112000
+vec4_add_loop/4096                       26647 ns        26367 ns        24889
+vec4_add_loop/65536                     425746 ns       410156 ns         1600
+vec4_add_loop/1048576                  7213379 ns      7291667 ns           90
+vec4_add_accumulate/2                     12.2 ns         12.0 ns     56000000
+vec4_add_accumulate/8                     17.9 ns         18.0 ns     40727273
+vec4_add_accumulate/64                     125 ns          120 ns      5600000
+vec4_add_accumulate/512                    963 ns          963 ns       746667
+vec4_add_accumulate/1024                  1940 ns         1925 ns       373333
+vec4_add_accumulate/4096                  7789 ns         7847 ns        89600
+vec4_add_accumulate/65536               129177 ns       128348 ns         5600
+vec4_add_accumulate/1048576            3966550 ns      3760027 ns          187
+vec4_mult/2                               5.06 ns         5.16 ns    100000000
+vec4_mult_loop/2                           126 ns          126 ns     49777778
+vec4_mult_loop/8                          51.8 ns         51.6 ns     10000000
+vec4_mult_loop/64                          415 ns          414 ns      1659259
+vec4_mult_loop/512                        3339 ns         3299 ns       203636
+vec4_mult_loop/1024                       6857 ns         6836 ns       112000
+vec4_mult_loop/4096                      27243 ns        27274 ns        26353
+vec4_mult_loop/65536                    440537 ns       433243 ns         1659
+vec4_mult_loop/1048576                 7570443 ns      7638889 ns           90
+vec4_mult_accumulate/2                    11.0 ns         11.0 ns     64000000
+vec4_mult_accumulate/8                    30.8 ns         30.7 ns     22400000
+vec4_mult_accumulate/64                    225 ns          225 ns      2986667
+vec4_mult_accumulate/512                  1770 ns         1803 ns       407273
+vec4_mult_accumulate/1024                 3617 ns         3610 ns       194783
+vec4_mult_accumulate/4096                14618 ns        14753 ns        49778
+vec4_mult_accumulate/65536              236456 ns       235395 ns         2987
+vec4_mult_accumulate/1048576           4616060 ns      4464286 ns          154
+vec4_add_aligned/2                        14.1 ns         13.8 ns     49777778
+vec4_add_aligned/8                        51.5 ns         51.6 ns     10000000
+vec4_add_aligned/64                        421 ns          424 ns      1659259
+vec4_add_aligned/512                      3380 ns         3296 ns       213333
+vec4_add_aligned/1024                     6758 ns         6836 ns       112000
+vec4_add_aligned/4096                    26763 ns        26681 ns        26353
+vec4_add_aligned/65536                  424666 ns       423825 ns         1659
+vec4_add_aligned/1048576               7264049 ns      7291667 ns           90
+vec4_add_accumulate_aligned/2             11.6 ns         11.4 ns     56000000
+vec4_add_accumulate_aligned/8             18.0 ns         18.0 ns     40727273
+vec4_add_accumulate_aligned/64             123 ns          123 ns      5600000
+vec4_add_accumulate_aligned/512            961 ns          963 ns       746667
+vec4_add_accumulate_aligned/1024          1909 ns         1883 ns       373333
+vec4_add_accumulate_aligned/4096          7734 ns         7533 ns        74667
+vec4_add_accumulate_aligned/65536       125927 ns       125558 ns         5600
+vec4_add_accumulate_aligned/1048576    3708744 ns      3676471 ns          187
+
+GLM SIMD:
+
+Run on (4 X 3000 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x4)
+  L1 Instruction 32 KiB (x4)
+  L2 Unified 6144 KiB (x2)
+----------------------------------------------------------------------------
+Benchmark                                  Time             CPU   Iterations
+----------------------------------------------------------------------------
+vec4_add_simd/2                         1.24 ns         1.07 ns    640000000
+vec4_add_loop_simd/2                    9.11 ns         8.16 ns     74666667
+vec4_add_loop_simd/8                    8.90 ns         8.58 ns     74666667
+vec4_add_loop_simd/64                   69.7 ns         65.6 ns     11200000
+vec4_add_loop_simd/512                   556 ns          562 ns      1000000
+vec4_add_loop_simd/1024                 1144 ns         1074 ns       640000
+vec4_add_loop_simd/4096                 4521 ns         4520 ns       165926
+vec4_add_loop_simd/65536               72854 ns        72545 ns        11200
+vec4_add_loop_simd/1048576           3312383 ns      3216912 ns          204
+vec4_add_accumulate_simd/2              8.07 ns         7.95 ns     74666667
+vec4_add_accumulate_simd/8              7.93 ns         8.02 ns     89600000
+vec4_add_accumulate_simd/64             48.9 ns         48.7 ns     14451613
+vec4_add_accumulate_simd/512             528 ns          531 ns      1000000
+vec4_add_accumulate_simd/1024           1057 ns         1050 ns       640000
+vec4_add_accumulate_simd/4096           4224 ns         4238 ns       165926
+vec4_add_accumulate_simd/65536         66820 ns        66964 ns        11200
+vec4_add_accumulate_simd/1048576     3022064 ns      3012048 ns          249
+vec4_mult_simd/2                        1.04 ns         1.05 ns    640000000
+vec4_mult_loop_simd/2                   3.22 ns         3.21 ns    224000000
+vec4_mult_loop_simd/8                   10.7 ns         10.7 ns     64000000
+vec4_mult_loop_simd/64                  86.3 ns         87.2 ns      8960000
+vec4_mult_loop_simd/512                  702 ns          698 ns       896000
+vec4_mult_loop_simd/1024                1417 ns         1444 ns       497778
+vec4_mult_loop_simd/4096                5724 ns         5720 ns       112000
+vec4_mult_loop_simd/65536              91458 ns        92072 ns         7467
+vec4_mult_loop_simd/1048576          2903959 ns      2913136 ns          236
+vec4_mult_accumulate_simd/2             7.73 ns         7.67 ns     89600000
+vec4_mult_accumulate_simd/8             10.1 ns         10.0 ns     64000000
+vec4_mult_accumulate_simd/64            62.5 ns         62.8 ns     11200000
+vec4_mult_accumulate_simd/512            696 ns          698 ns       896000
+vec4_mult_accumulate_simd/1024          1387 ns         1350 ns       497778
+vec4_mult_accumulate_simd/4096          5600 ns         5625 ns       100000
+vec4_mult_accumulate_simd/65536        88936 ns        89979 ns         7467
+vec4_mult_accumulate_simd/1048576    2982885 ns      2979343 ns          236
+
+Blaze:
+
+Run on (4 X 3000 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x4)
+  L1 Instruction 32 KiB (x4)
+  L2 Unified 6144 KiB (x2)
+-----------------------------------------------------------------------
+Benchmark                             Time             CPU   Iterations
+-----------------------------------------------------------------------
+vec4_add/2                         1.15 ns         1.09 ns    560000000
+vec4_add_loop/2                    4.32 ns         3.57 ns    179200000
+vec4_add_loop/8                    14.0 ns         14.1 ns     49777778
+vec4_add_loop/64                    108 ns          110 ns      6400000
+vec4_add_loop/512                   534 ns          530 ns      1120000
+vec4_add_loop/1024                 1067 ns         1050 ns       640000
+vec4_add_loop/4096                 4256 ns         4143 ns       165926
+vec4_add_loop/65536               68396 ns        68011 ns         8960
+vec4_add_loop/1048576           3047832 ns      2979343 ns          236
+vec4_add_accumulate/2              6.10 ns         6.00 ns    112000000
+vec4_add_accumulate/8              7.49 ns         7.50 ns     89600000
+vec4_add_accumulate/64             57.1 ns         57.8 ns     10000000
+vec4_add_accumulate/512             535 ns          530 ns      1120000
+vec4_add_accumulate/1024           1060 ns         1050 ns       640000
+vec4_add_accumulate/4096           4248 ns         4143 ns       165926
+vec4_add_accumulate/65536         68064 ns        68359 ns        11200
+vec4_add_accumulate/1048576     2901806 ns      2913136 ns          236
+vec4_mult/2                        6.41 ns         6.38 ns    746666667
+vec4_mult_loop/2                   3.39 ns         3.38 ns    203636364
+vec4_mult_loop/8                   11.3 ns         11.2 ns     64000000
+vec4_mult_loop/64                  87.8 ns         87.9 ns      7466667
+vec4_mult_loop/512                  717 ns          711 ns      1120000
+vec4_mult_loop/1024                1408 ns         1381 ns       497778
+vec4_mult_loop/4096                5669 ns         5580 ns       112000
+vec4_mult_loop/65536              90609 ns        90681 ns         8960
+vec4_mult_loop/1048576          2929854 ns      2913136 ns          236
+vec4_mult_accumulate/2             3.65 ns         3.61 ns    194782609
+vec4_mult_accumulate/8             7.75 ns         7.67 ns     89600000
+vec4_mult_accumulate/64            78.2 ns         78.5 ns      8960000
+vec4_mult_accumulate/512            697 ns          680 ns       896000
+vec4_mult_accumulate/1024          1391 ns         1381 ns       497778
+vec4_mult_accumulate/4096          5556 ns         5301 ns       112000
+vec4_mult_accumulate/65536        89224 ns        89979 ns         7467
+vec4_mult_accumulate/1048576    3094120 ns      3080986 ns          213

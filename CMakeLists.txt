@@ -21,9 +21,15 @@ add_subdirectory(eigen)
 add_subdirectory(mathfu)
 add_subdirectory(blaze)
 
+mathfu_configure_flags(mathfu)
+
 set(TEST_CODE 
     src/glm_vec4.cpp
     src/glm_vec4_simd.cpp
+    src/eigen_vec4.cpp
+    src/blaze_vec4.cpp
+    src/mathfu_vec4.cpp
+    src/mango_vec4.cpp
 )
 
 
@@ -45,7 +51,7 @@ foreach(SOURCE_FILE ${TEST_CODE})
     target_compile_definitions(${TEST_NAME} PUBLIC "$<$<CONFIG:RELEASE>:${RELEASE_COMPILE_DEFINITIONS}>")
     target_compile_definitions(${TEST_NAME} PUBLIC "$<$<CONFIG:RELWITHDEBINFO>:${RELWITHDEBINFO_COMPILE_DEFINITIONS}>")
 
-	target_link_libraries(${TEST_NAME} PRIVATE benchmark glm)
+	target_link_libraries(${TEST_NAME} PRIVATE benchmark glm Eigen3::Eigen blaze mathfu)
 	if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 		target_link_libraries(${TEST_NAME} PRIVATE -lpthread)
 	endif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
