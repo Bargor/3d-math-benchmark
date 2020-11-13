@@ -17,7 +17,10 @@ install:
 
 before_build:
     - cmd: echo %GENERATOR%
-    - cmd: cmake -G"%GENERATOR%" "%ARCH%" . 
+    - cmd: ..
+    - cmd: mkdir build
+    - cmd: cd build
+    - cmd: cmake ..\glm-benchmark -G"%GENERATOR%" "%ARCH%" . 
     - sh: cmake . 
 
 build:
