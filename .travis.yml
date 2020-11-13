@@ -56,3 +56,6 @@ script:
 - make -j2
 - ./glm_vec4
 - ./glm_vec4_simd
+- ./eigen_vec4_simd
+- ./blaze_vec4_simd
+- ./mathfu_vec4_simd

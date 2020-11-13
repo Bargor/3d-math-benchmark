@@ -1,7 +1,7 @@
 #include "prepare_test_data.h"
 
 #include <benchmark/benchmark.h>
-#include <Eigen/core>
+#include <Eigen/Dense>
 
 static void vec4_add(benchmark::State& state) {
     const auto testData = prepare_test_data<Eigen::Vector4f>(state.range(0));
@@ -44,7 +44,7 @@ static void vec4_mult(benchmark::State& state) {
     Eigen::Vector4f res(0.0f, 0.0f, 0.0f, 0.0f);
 
     for (auto _ : state) {
-        res = testData[0] * testData[1];
+        res = testData[0].cwiseProduct(testData[1]);
     }
     benchmark::DoNotOptimize(res);
 }
@@ -56,7 +56,7 @@ static void vec4_mult_loop(benchmark::State& state) {
 
     for (auto _ : state) {
         for (const auto& vec : testData) {
-            res *= vec;
+            res = res.cwiseProduct(vec);
         }
     }
     benchmark::DoNotOptimize(res);
@@ -71,8 +71,7 @@ static void vec4_mult_accumulate(benchmark::State& state) {
         res = std::accumulate(testData.begin(),
                               testData.end(),
                               Eigen::Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
-                              [](Eigen::Vector4f lhs, Eigen::Vector4f rhs) {
-            return lhs * rhs;
+                              [](Eigen::Vector4f lhs, Eigen::Vector4f rhs) { return lhs.cwiseProduct(rhs);
         });
     }
     benchmark::DoNotOptimize(res);

@@ -4,6 +4,7 @@
 
 #include <benchmark/benchmark.h>
 #include <math.h>
+#include <mathfu/vector.h>
 
 using mathfu::Vector;
 
@@ -43,7 +44,7 @@ static void vec4_add_accumulate(benchmark::State& state) {
 }
 
 static void vec4_mult(benchmark::State& state) {
-    const auto testData = prepare_test_data<glm::vec4>(state.range(0));
+    const auto testData = prepare_test_data<Vector<float, 4>>(state.range(0));
 
     Vector<float, 4> res(0.0f, 0.0f, 0.0f, 0.0f);
 
@@ -54,7 +55,7 @@ static void vec4_mult(benchmark::State& state) {
 }
 
 static void vec4_mult_loop(benchmark::State& state) {
-    const auto testData = prepare_test_data<glm::vec4>(state.range(0));
+    const auto testData = prepare_test_data<Vector<float, 4>>(state.range(0));
 
     Vector<float, 4> res(1.0f);
 
@@ -75,9 +76,7 @@ static void vec4_mult_accumulate(benchmark::State& state) {
         res = std::accumulate(testData.begin(),
                               testData.end(),
                               Vector<float, 4>(1.0f),
-                              [](Vector<float, 4> lhs, Vector<float, 4> rhs) {
-            return lhs * rhs;
-        });
+                              [](Vector<float, 4> lhs, Vector<float, 4> rhs) { return lhs * rhs; });
     }
     benchmark::DoNotOptimize(res);
 }
