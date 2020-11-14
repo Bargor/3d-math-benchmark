@@ -29,7 +29,8 @@ build:
 test_script:
   - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\glm_vec4.exe'
   - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\glm_vec4_simd.exe'
-  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\eigen_vec4_simd.exe'
-  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\blaze_vec4_simd.exe'
-  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\mathfu_vec4_simd.exe'
+  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\eigen_vec4.exe'
+  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\blaze_vec4.exe'
+  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\mathfu_vec4.exe'
+  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\mango_vec4.exe'
   

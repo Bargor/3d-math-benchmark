@@ -17,7 +17,7 @@ matrix:
           packages:
             - gcc-10
             - g++-10
-            - libgl1-mesa-dev
+            - mesa-common-dev 
       env:
         - MATRIX_EVAL="CC=gcc-10 && CXX=g++-10" BUILD_TYPE=Release
     
@@ -36,7 +36,7 @@ matrix:
             - llvm-11
             - llvm-11-dev
             - llvm-11-runtime
-            - libgl1-mesa-dev
+            - mesa-common-dev 
       env:
         - MATRIX_EVAL="CC=clang-11 && CXX=clang++-11" BUILD_TYPE=Release
         - EXTRA_FLAGS="-stdlib=libc++"
@@ -58,6 +58,7 @@ script:
 - make -j2
 - ./glm_vec4
 - ./glm_vec4_simd
-- ./eigen_vec4_simd
-- ./blaze_vec4_simd
-- ./mathfu_vec4_simd
+- ./eigen_vec4
+- ./blaze_vec4
+- ./mathfu_vec4
+- ./mango_vec4
