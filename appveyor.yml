@@ -24,7 +24,7 @@ before_build:
     - sh: cmake . 
 
 build:
-  project: C:/projects/build/$(APPVEYOR_PROJECT_NAME).sln
+  project: C:/projects/build/3d-math-benchmark.sln
   
 test_script:
   - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\glm_vec4.exe'
