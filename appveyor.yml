@@ -27,10 +27,10 @@ build:
   project: C:/projects/build/3d-math-benchmark.sln
   
 test_script:
-  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\glm_vec4.exe'
-  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\glm_vec4_simd.exe'
-  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\eigen_vec4.exe'
-  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\blaze_vec4.exe'
-  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\mathfu_vec4.exe'
-  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\mango_vec4.exe'
+  - 'C:\projects\build\%CONFIGURATION%\glm_vec4.exe'
+  - 'C:\projects\build\%CONFIGURATION%\glm_vec4_simd.exe'
+  - 'C:\projects\build\%CONFIGURATION%\eigen_vec4.exe'
+  - 'C:\projects\build\%CONFIGURATION%\blaze_vec4.exe'
+  - 'C:\projects\build\%CONFIGURATION%\mathfu_vec4.exe'
+  - 'C:\projects\build\%CONFIGURATION%\mango_vec4.exe'
   
