@@ -20,6 +20,7 @@ add_subdirectory(glm)
 add_subdirectory(eigen)
 add_subdirectory(mathfu)
 add_subdirectory(blaze)
+add_subdirectory(mango/build)
 
 set(TEST_CODE 
     src/glm_vec4.cpp
@@ -50,7 +51,7 @@ foreach(SOURCE_FILE ${TEST_CODE})
     target_compile_definitions(${TEST_NAME} PUBLIC "$<$<CONFIG:RELEASE>:${RELEASE_COMPILE_DEFINITIONS}>")
     target_compile_definitions(${TEST_NAME} PUBLIC "$<$<CONFIG:RELWITHDEBINFO>:${RELWITHDEBINFO_COMPILE_DEFINITIONS}>")
 
-	target_link_libraries(${TEST_NAME} PRIVATE benchmark glm Eigen3::Eigen blaze)
+	target_link_libraries(${TEST_NAME} PRIVATE benchmark glm Eigen3::Eigen blaze mango)
 	if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 		target_link_libraries(${TEST_NAME} PRIVATE -lpthread)
 	endif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
