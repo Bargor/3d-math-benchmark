@@ -19,6 +19,17 @@ static void vec4_add(benchmark::State& state) {
     benchmark::DoNotOptimize(res);
 }
 
+static void vec4_add_scalar(benchmark::State& state) {
+    const auto testData = prepare_test_data<Vector<float, 4>>(state.range(0));
+
+    Vector<float, 4> res(0.0f, 0.0f, 0.0f, 0.0f);
+
+    for (auto _ : state) {
+        res = testData[0] + testData[1].x;
+    }
+    benchmark::DoNotOptimize(res);
+}
+
 static void vec4_add_loop(benchmark::State& state) {
     const auto testData = prepare_test_data<Vector<float, 4>>(state.range(0));
 
@@ -27,6 +38,19 @@ static void vec4_add_loop(benchmark::State& state) {
     for (auto _ : state) {
         for (const auto& vec : testData) {
             res += vec;
+        }
+    }
+    benchmark::DoNotOptimize(res);
+}
+
+static void vec4_add_loop_scalar(benchmark::State& state) {
+    const auto testData = prepare_test_data<Vector<float, 4>>(state.range(0));
+
+    Vector<float, 4> res(0.0f);
+
+    for (auto _ : state) {
+        for (const auto& vec : testData) {
+            res += vec.x;
         }
     }
     benchmark::DoNotOptimize(res);
@@ -54,6 +78,17 @@ static void vec4_mult(benchmark::State& state) {
     benchmark::DoNotOptimize(res);
 }
 
+static void vec4_mult_scalar(benchmark::State& state) {
+    const auto testData = prepare_test_data<Vector<float, 4>>(state.range(0));
+
+    Vector<float, 4> res(0.0f, 0.0f, 0.0f, 0.0f);
+
+    for (auto _ : state) {
+        res = testData[0] * testData[1].x;
+    }
+    benchmark::DoNotOptimize(res);
+}
+
 static void vec4_mult_loop(benchmark::State& state) {
     const auto testData = prepare_test_data<Vector<float, 4>>(state.range(0));
 
@@ -62,6 +97,19 @@ static void vec4_mult_loop(benchmark::State& state) {
     for (auto _ : state) {
         for (const auto& vec : testData) {
             res *= vec;
+        }
+    }
+    benchmark::DoNotOptimize(res);
+}
+
+static void vec4_mult_loop_scalar(benchmark::State& state) {
+    const auto testData = prepare_test_data<Vector<float, 4>>(state.range(0));
+
+    Vector<float, 4> res(1.0f);
+
+    for (auto _ : state) {
+        for (const auto& vec : testData) {
+            res *= vec.x;
         }
     }
     benchmark::DoNotOptimize(res);
@@ -83,10 +131,14 @@ static void vec4_mult_accumulate(benchmark::State& state) {
 
 // Register the function as a benchmark
 BENCHMARK(vec4_add)->Arg(2);
+BENCHMARK(vec4_mult_scalar)->Arg(2);
 BENCHMARK(vec4_add_loop)->Arg(2)->Arg(8)->Arg(64)->Arg(512)->Arg(1 << 10)->Arg(1 << 12)->Arg(1 << 16)->Arg(1 << 20);
+BENCHMARK(vec4_add_loop_scalar)->Arg(2)->Arg(8)->Arg(64)->Arg(512)->Arg(1 << 10)->Arg(1 << 12)->Arg(1 << 16)->Arg(1 << 20);
 BENCHMARK(vec4_add_accumulate)->Arg(2)->Arg(8)->Arg(64)->Arg(512)->Arg(1 << 10)->Arg(1 << 12)->Arg(1 << 16)->Arg(1 << 20);
 BENCHMARK(vec4_mult)->Arg(2);
+BENCHMARK(vec4_mult_scalar)->Arg(2);
 BENCHMARK(vec4_mult_loop)->Arg(2)->Arg(8)->Arg(64)->Arg(512)->Arg(1 << 10)->Arg(1 << 12)->Arg(1 << 16)->Arg(1 << 20);
+BENCHMARK(vec4_mult_loop_scalar)->Arg(2)->Arg(8)->Arg(64)->Arg(512)->Arg(1 << 10)->Arg(1 << 12)->Arg(1 << 16)->Arg(1 << 20);
 BENCHMARK(vec4_mult_accumulate)->Arg(2)->Arg(8)->Arg(64)->Arg(512)->Arg(1 << 10)->Arg(1 << 12)->Arg(1 << 16)->Arg(1 << 20);
 
 // Run the benchmark
