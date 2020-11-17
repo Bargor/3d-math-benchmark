@@ -76,7 +76,7 @@ static void vec4_mult_loop(benchmark::State& state) {
 static void vec4_mult_loop_scalar(benchmark::State& state) {
     const auto testData = prepare_test_data_init_list<Eigen::Vector4f>(state.range(0));
 
-    Eigen::Vector4f res(1.0f);
+    Eigen::Vector4f res(1.0f, 1.0f, 1.0f, 1.0f);
 
     for (auto _ : state) {
         for (const auto& vec : testData) {
