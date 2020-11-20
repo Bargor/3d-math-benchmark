@@ -14,7 +14,9 @@ static void vec4_add(benchmark::State& state) {
     VectorType res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = testData[0] + testData[1];
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -25,7 +27,9 @@ static void vec4_add_scalar(benchmark::State& state) {
     VectorType res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = testData[0] + testData[1][1];
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -96,7 +100,9 @@ static void vec4_mult_loop(benchmark::State& state) {
 
     for (auto _ : state) {
         for (const auto& vec : testData) {
+            benchmark::ClobberMemory();
             res *= vec;
+            benchmark::ClobberMemory();
         }
     }
     benchmark::DoNotOptimize(res);
@@ -109,7 +115,9 @@ static void vec4_mult_loop_scalar(benchmark::State& state) {
 
     for (auto _ : state) {
         for (const auto& vec : testData) {
+            benchmark::ClobberMemory();
             res *= vec[1];
+            benchmark::ClobberMemory();
         }
     }
     benchmark::DoNotOptimize(res);
