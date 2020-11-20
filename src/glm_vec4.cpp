@@ -11,11 +11,11 @@ static void vec4_add(benchmark::State& state) {
 
     glm::vec4 res(0.0f, 0.0f, 0.0f, 0.0f);
 
-    benchmark::ClobberMemory();
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = testData[0] + testData[1];
+        benchmark::ClobberMemory();
     }
-    benchmark::ClobberMemory();
     benchmark::DoNotOptimize(res);
 }
 
@@ -24,11 +24,11 @@ static void vec4_add_scalar(benchmark::State& state) {
 
     glm::vec4 res(0.0f, 0.0f, 0.0f, 0.0f);
 
-    benchmark::ClobberMemory();
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = testData[0] + testData[1].x;
+        benchmark::ClobberMemory();
     }
-    benchmark::ClobberMemory();
     benchmark::DoNotOptimize(res);
 }
 
@@ -96,13 +96,13 @@ static void vec4_mult_loop(benchmark::State& state) {
 
     glm::vec4 res(1.0f);
 
-    benchmark::ClobberMemory();
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         for (const auto& vec : testData) {
             res *= vec;
         }
+        benchmark::ClobberMemory();
     }
-    benchmark::ClobberMemory();
     benchmark::DoNotOptimize(res);
 }
 
@@ -111,13 +111,13 @@ static void vec4_mult_loop_scalar(benchmark::State& state) {
 
     glm::vec4 res(1.0f);
 
-    benchmark::ClobberMemory();
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         for (const auto& vec : testData) {
             res *= vec.x;
         }
+        benchmark::ClobberMemory();
     }
-    benchmark::ClobberMemory();
     benchmark::DoNotOptimize(res);
 }
 

@@ -10,11 +10,11 @@ static void vec4_add(benchmark::State& state) {
 
     mango::float32x4 res(0.0f, 0.0f, 0.0f, 0.0f);
 
-    benchmark::ClobberMemory();
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = testData[0] + testData[1];
+        benchmark::ClobberMemory();
     }
-    benchmark::ClobberMemory();
     benchmark::DoNotOptimize(res);
 }
 
@@ -23,11 +23,11 @@ static void vec4_add_scalar(benchmark::State& state) {
 
     mango::float32x4 res(0.0f, 0.0f, 0.0f, 0.0f);
 
-    benchmark::ClobberMemory();
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = testData[0] + testData[1].x;
+        benchmark::ClobberMemory();
     }
-    benchmark::ClobberMemory();
     benchmark::DoNotOptimize(res);
 }
 
@@ -73,11 +73,11 @@ static void vec4_mult(benchmark::State& state) {
 
     mango::float32x4 res(0.0f, 0.0f, 0.0f, 0.0f);
 
-    benchmark::ClobberMemory();
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = testData[0] * testData[1];
+        benchmark::ClobberMemory();
     }
-    benchmark::ClobberMemory();
     benchmark::DoNotOptimize(res);
 }
 
@@ -86,11 +86,11 @@ static void vec4_mult_scalar(benchmark::State& state) {
 
     mango::float32x4 res(0.0f, 0.0f, 0.0f, 0.0f);
 
-    benchmark::ClobberMemory();
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = testData[0] * testData[1].x;
+        benchmark::ClobberMemory();
     }
-    benchmark::ClobberMemory();
     benchmark::DoNotOptimize(res);
 }
 
