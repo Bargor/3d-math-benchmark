@@ -77,7 +77,9 @@ static void vec4_mult(benchmark::State& state) {
     VectorType res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = testData[0] * testData[1];
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -88,7 +90,9 @@ static void vec4_mult_scalar(benchmark::State& state) {
     VectorType res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = testData[0] * testData[1][1];
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }

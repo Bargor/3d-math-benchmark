@@ -75,7 +75,9 @@ static void vec4_mult(benchmark::State& state) {
     glm::vec4 res(0.0f, 0.0f, 0.0f, 0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = testData[0] * testData[1];
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -86,7 +88,9 @@ static void vec4_mult_scalar(benchmark::State& state) {
     glm::vec4 res(0.0f, 0.0f, 0.0f, 0.0f);
 
     for (auto _ : state) {
-        res = testData[0] * testData[1].x;
+        benchmark::ClobberMemory();
+        res = testData[0] * testData[1].y;
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
