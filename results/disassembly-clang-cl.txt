@@ -1,0 +1,91 @@
+glm:
+
+res = testData[0] * testData[1];
+00007FF78B631B20  mov         rax,qword ptr [testData]  
+00007FF78B631B24  movups      xmm0,xmmword ptr [rax]  
+00007FF78B631B27  movups      xmm1,xmmword ptr [rax+10h]  
+00007FF78B631B2B  mulps       xmm1,xmm0  
+00007FF78B631B2E  movaps      xmmword ptr [res],xmm1
+
+res = testData[0] * testData[1].y;
+00007FF78B631C60  mov         rax,qword ptr [testData]  
+00007FF78B631C64  movups      xmm0,xmmword ptr [rax]  
+00007FF78B631C67  movss       xmm1,dword ptr [rax+14h]  
+00007FF78B631C6C  shufps      xmm1,xmm1,0  
+00007FF78B631C70  mulps       xmm1,xmm0  
+00007FF78B631C73  movaps      xmmword ptr [res],xmm1
+
+glm_simd:
+
+res = testData[0] * testData[1];
+00007FF6A7B21B00  mov         rax,qword ptr [testData]  
+00007FF6A7B21B04  movaps      xmm0,xmmword ptr [rax+10h]  
+00007FF6A7B21B08  mulps       xmm0,xmmword ptr [rax]  
+00007FF6A7B21B0B  movaps      xmmword ptr [res],xmm0
+
+res = testData[0] * testData[1].x;
+00007FF6A7B21C40  mov         rax,qword ptr [testData]  
+00007FF6A7B21C44  movss       xmm0,dword ptr [rax+10h]  
+00007FF6A7B21C49  shufps      xmm0,xmm0,0  
+00007FF6A7B21C4D  mulps       xmm0,xmmword ptr [rax]  
+00007FF6A7B21C50  movaps      xmmword ptr [res],xmm0 
+
+eigen
+
+res = testData[0].cwiseProduct(testData[1]);
+00007FF65E3214C0  mov         rax,qword ptr [testData]  
+00007FF65E3214C4  movaps      xmm0,xmmword ptr [rax]  
+00007FF65E3214C7  mulps       xmm0,xmmword ptr [rax+10h]  
+00007FF65E3214CB  movaps      xmmword ptr [res],xmm0  
+
+res = testData[0] * testData[1].y();
+00007FF65E3215C0  mov         rax,qword ptr [testData]  
+00007FF65E3215C4  movss       xmm0,dword ptr [rax+14h]  
+00007FF65E3215C9  shufps      xmm0,xmm0,0  
+00007FF65E3215CD  mulps       xmm0,xmmword ptr [rax]  
+00007FF65E3215D0  movaps      xmmword ptr [res],xmm0 
+
+blaze
+
+res = testData[0] * testData[1];
+00007FF7118017B0  mov         rax,qword ptr [testData]  
+00007FF7118017B4  movaps      xmm0,xmmword ptr [rax]  
+00007FF7118017B7  mulps       xmm0,xmmword ptr [rax+10h]  
+00007FF7118017BB  movaps      xmmword ptr [res],xmm0
+
+res = testData[0] * testData[1][1];
+00007FF7118018B0  mov         rax,qword ptr [testData]  
+00007FF7118018B4  movss       xmm0,dword ptr [rax+14h]  
+00007FF7118018B9  shufps      xmm0,xmm0,0  
+00007FF7118018BD  mulps       xmm0,xmmword ptr [rax]  
+00007FF7118018C0  movaps      xmmword ptr [res],xmm0
+
+mathfu
+
+res = testData[0] * testData[1];
+00007FF6D66D17A0  mov         rax,qword ptr [testData]  
+00007FF6D66D17A4  movaps      xmm0,xmmword ptr [rax]  
+00007FF6D66D17A7  mulps       xmm0,xmmword ptr [rax+10h]  
+00007FF6D66D17AB  movaps      xmmword ptr [res],xmm0
+
+res = testData[0] * testData[1].x;
+00007FF6D66D18A0  mov         rax,qword ptr [testData]  
+00007FF6D66D18A4  movss       xmm0,dword ptr [rax+10h]  
+00007FF6D66D18A9  shufps      xmm0,xmm0,0  
+00007FF6D66D18AD  mulps       xmm0,xmmword ptr [rax]  
+00007FF6D66D18B0  movaps      xmmword ptr [res],xmm0
+
+mango
+
+res = testData[0] * testData[1];
+00007FF7FFAB17A0  mov         rax,qword ptr [testData]  
+00007FF7FFAB17A4  movaps      xmm0,xmmword ptr [rax]  
+00007FF7FFAB17A7  mulps       xmm0,xmmword ptr [rax+10h]  
+00007FF7FFAB17AB  movaps      xmmword ptr [res],xmm0 
+
+res = testData[0] * testData[1].x;
+00007FF7FFAB18A0  mov         rax,qword ptr [testData]  
+00007FF7FFAB18A4  movaps      xmm0,xmmword ptr [rax+10h]  
+00007FF7FFAB18A8  shufps      xmm0,xmm0,0  
+00007FF7FFAB18AC  mulps       xmm0,xmmword ptr [rax]  
+00007FF7FFAB18AF  movaps      xmmword ptr [res],xmm0

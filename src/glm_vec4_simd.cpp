@@ -1,6 +1,6 @@
 #define GLM_FORCE_SWIZZLE
 #define GLM_FORCE_DEFAULT_ALIGNED_GENTYPES
-#define GLM_FORCE_AVX
+#define GLM_ARCH_SSE41_BIT
 
 #include <benchmark/benchmark.h>
 #include <glm/glm.hpp>
