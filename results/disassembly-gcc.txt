@@ -1,0 +1,142 @@
+glm:
+
+79 [1]	        res = testData[0] * testData[1];
+0x55555555ed68  <+  200>        48 8b 44 24 20              mov    0x20(%rsp),%rax
+
+0x55555555ed6d  <+  205>        f3 0f 10 08                 movss  (%rax),%xmm1
+0x55555555ed71  <+  209>        f3 0f 10 58 04              movss  0x4(%rax),%xmm3
+0x55555555ed76  <+  214>        f3 0f 10 68 08              movss  0x8(%rax),%xmm5
+0x55555555ed7b  <+  219>        f3 0f 10 78 0c              movss  0xc(%rax),%xmm7
+
+0x55555555ed80  <+  224>        f3 0f 10 40 10              movss  0x10(%rax),%xmm0
+0x55555555ed85  <+  229>        f3 0f 10 50 14              movss  0x14(%rax),%xmm2
+0x55555555ed8a  <+  234>        f3 0f 10 60 18              movss  0x18(%rax),%xmm4
+0x55555555ed8f  <+  239>        f3 0f 10 70 1c              movss  0x1c(%rax),%xmm6
+
+0x55555555ed94  <+  244>        48 83 eb 01                 sub    $0x1,%rbx
+0x55555555ed98  <+  248>        75 ce                       jne    0x55555555ed68 <vec4_mult(benchmark::State&)+200>
+
+0x55555555ed9a  <+  250>        f3 0f 59 fe                 mulss  %xmm6,%xmm7
+0x55555555ed9e  <+  254>        f3 0f 59 ec                 mulss  %xmm4,%xmm5
+0x55555555eda2  <+  258>        f3 0f 59 da                 mulss  %xmm2,%xmm3
+0x55555555eda6  <+  262>        f3 0f 59 c8                 mulss  %xmm0,%xmm1
+0x55555555edaa  <+  266>        f3 0f 11 3c 24              movss  %xmm7,(%rsp)
+0x55555555edaf  <+  271>        f3 0f 11 6c 24 14           movss  %xmm5,0x14(%rsp)
+0x55555555edb5  <+  277>        f3 0f 11 5c 24 18           movss  %xmm3,0x18(%rsp)
+0x55555555edbb  <+  283>        f3 0f 11 4c 24 1c           movss  %xmm1,0x1c(%rsp)
+
+92 [1]	        res = testData[0] * testData[1].y;
+0x55555555ec38  <+  200>        48 8b 44 24 20              mov    0x20(%rsp),%rax
+0x55555555ec3d  <+  205>        f3 0f 10 40 14              movss  0x14(%rax),%xmm0
+
+0x55555555ec42  <+  210>        f3 0f 10 08                 movss  (%rax),%xmm1
+0x55555555ec46  <+  214>        f3 0f 10 50 04              movss  0x4(%rax),%xmm2
+0x55555555ec4b  <+  219>        f3 0f 10 58 08              movss  0x8(%rax),%xmm3
+0x55555555ec50  <+  224>        f3 0f 10 60 0c              movss  0xc(%rax),%xmm4
+
+0x55555555ec55  <+  229>        48 83 eb 01                 sub    $0x1,%rbx
+0x55555555ec59  <+  233>        75 dd                       jne    0x55555555ec38 <vec4_mult_scalar(benchmark::State&)+200>
+
+0x55555555ec5b  <+  235>        f3 0f 59 e0                 mulss  %xmm0,%xmm4
+0x55555555ec5f  <+  239>        f3 0f 59 d8                 mulss  %xmm0,%xmm3
+0x55555555ec63  <+  243>        f3 0f 59 d0                 mulss  %xmm0,%xmm2
+0x55555555ec67  <+  247>        f3 0f 59 c1                 mulss  %xmm1,%xmm0
+0x55555555ec6b  <+  251>        f3 0f 11 24 24              movss  %xmm4,(%rsp)
+0x55555555ec70  <+  256>        f3 0f 11 5c 24 14           movss  %xmm3,0x14(%rsp)
+0x55555555ec76  <+  262>        f3 0f 11 54 24 18           movss  %xmm2,0x18(%rsp)
+0x55555555ec7c  <+  268>        f3 0f 11 44 24 1c           movss  %xmm0,0x1c(%rsp)
+
+glm_simd:
+
+81 [1]	        res = testData[0] * testData[1];
+0x55555555e6c0  <+  144>        48 8b 44 24 10              mov    0x10(%rsp),%rax
+0x55555555e6c5  <+  149>        0f 28 08                    movaps (%rax),%xmm1
+0x55555555e6c8  <+  152>        0f 28 40 10                 movaps 0x10(%rax),%xmm0
+
+0x55555555e6cc  <+  156>        48 83 eb 01                 sub    $0x1,%rbx
+0x55555555e6d0  <+  160>        75 ee                       jne    0x55555555e6c0 <vec4_mult_simd(benchmark::State&)+144>
+
+0x55555555e6d2  <+  162>        0f 59 c8                    mulps  %xmm0,%xmm1
+0x55555555e6d5  <+  165>        0f 29 0c 24                 movaps %xmm1,(%rsp)
+
+res = testData[0] * testData[1].x;
+0x55555555e5f0  <+  144>        48 8b 44 24 10              mov    0x10(%rsp),%rax
+0x55555555e5f5  <+  149>        f3 0f 10 40 10              movss  0x10(%rax),%xmm0
+0x55555555e5fa  <+  154>        0f 28 08                    movaps (%rax),%xmm1
+
+0x55555555e5fd  <+  157>        48 83 eb 01                 sub    $0x1,%rbx
+0x55555555e601  <+  161>        75 ed                       jne    0x55555555e5f0 <vec4_mult_scalar_simd(benchmark::State&)+144>
+
+0x55555555e603  <+  163>        0f c6 c0 00                 shufps $0x0,%xmm0,%xmm0
+0x55555555e607  <+  167>        0f 59 c1                    mulps  %xmm1,%xmm0
+0x55555555e60a  <+  170>        0f 29 04 24                 movaps %xmm0,(%rsp)
+
+eigen:
+
+50 [1]	        res = testData[0].cwiseProduct(testData[1]);
+0x55555555e638  <+  136>        48 8b 04 24                 mov    (%rsp),%rax
+0x55555555e63c  <+  140>        0f 28 40 10                 movaps 0x10(%rax),%xmm0
+0x55555555e640  <+  144>        0f 59 00                    mulps  (%rax),%xmm0
+0x55555555e643  <+  147>        0f 29 44 24 20              movaps %xmm0,0x20(%rsp)
+
+        64 [1]	        res = testData[0] * testData[1].y();
+0x55555555e7f8  <+  136>        48 8b 04 24                 mov    (%rsp),%rax
+0x55555555e7fc  <+  140>        f3 0f 10 40 14              movss  0x14(%rax),%xmm0
+0x55555555e801  <+  145>        0f c6 c0 00                 shufps $0x0,%xmm0,%xmm0
+0x55555555e805  <+  149>        0f 59 00                    mulps  (%rax),%xmm0
+0x55555555e808  <+  152>        0f 29 44 24 20              movaps %xmm0,0x20(%rsp)
+
+blaze:
+
+       81 [1]	        res = testData[0] * testData[1];
+0x55555555e6c8  <+  136>        48 8b 04 24                 mov    (%rsp),%rax
+0x55555555e6cc  <+  140>        0f 28 40 10                 movaps 0x10(%rax),%xmm0
+0x55555555e6d0  <+  144>        0f 59 00                    mulps  (%rax),%xmm0
+0x55555555e6d3  <+  147>        0f 29 44 24 20              movaps %xmm0,0x20(%rsp)
+
+       94 [1]	        res = testData[0] * testData[1][1];
+0x55555555e608  <+  136>        48 8b 04 24                 mov    (%rsp),%rax
+0x55555555e60c  <+  140>        f3 0f 10 40 14              movss  0x14(%rax),%xmm0
+0x55555555e611  <+  145>        0f c6 c0 00                 shufps $0x0,%xmm0,%xmm0
+0x55555555e615  <+  149>        0f 59 00                    mulps  (%rax),%xmm0
+0x55555555e618  <+  152>        0f 29 44 24 20              movaps %xmm0,0x20(%rsp)
+
+mathfu:
+
+        81 [1]	        res = testData[0] * testData[1];
+0x55555555e698  <+  136>        48 8b 04 24                 mov    (%rsp),%rax
+0x55555555e69c  <+  140>        0f 28 40 10                 movaps 0x10(%rax),%xmm0
+0x55555555e6a0  <+  144>        0f 59 00                    mulps  (%rax),%xmm0
+0x55555555e6a3  <+  147>        0f 29 44 24 20              movaps %xmm0,0x20(%rsp)
+
+        94 [1]	        res = testData[0] * testData[1].x;
+0x55555555e5d8  <+  136>        48 8b 04 24                 mov    (%rsp),%rax
+0x55555555e5dc  <+  140>        f3 0f 10 40 10              movss  0x10(%rax),%xmm0
+0x55555555e5e1  <+  145>        0f c6 c0 00                 shufps $0x0,%xmm0,%xmm0
+0x55555555e5e5  <+  149>        0f 59 00                    mulps  (%rax),%xmm0
+0x55555555e5e8  <+  152>        0f 29 44 24 20              movaps %xmm0,0x20(%rsp)
+
+mango:
+
+        78 [1]	        res = testData[0] * testData[1];
+0x55555555e6b0  <+  144>        48 8b 44 24 10              mov    0x10(%rsp),%rax
+0x55555555e6b5  <+  149>        0f 28 00                    movaps (%rax),%xmm0
+0x55555555e6b8  <+  152>        0f 28 48 10                 movaps 0x10(%rax),%xmm1
+
+0x55555555e6bc  <+  156>        48 83 eb 01                 sub    $0x1,%rbx
+0x55555555e6c0  <+  160>        75 ee                       jne    0x55555555e6b0 <vec4_mult(benchmark::State&)+144>
+
+0x55555555e6c2  <+  162>        0f 59 c8                    mulps  %xmm0,%xmm1
+0x55555555e6c5  <+  165>        0f 29 0c 24                 movaps %xmm1,(%rsp)
+
+91 [1]	        res = testData[0] * testData[1].x;
+0x55555555e5f0  <+  144>        48 8b 44 24 10              mov    0x10(%rsp),%rax
+0x55555555e5f5  <+  149>        0f 28 40 10                 movaps 0x10(%rax),%xmm0
+0x55555555e5f9  <+  153>        0f 28 08                    movaps (%rax),%xmm1
+
+0x55555555e5fc  <+  156>        48 83 eb 01                 sub    $0x1,%rbx
+0x55555555e600  <+  160>        75 ee                       jne    0x55555555e5f0 <vec4_mult_scalar(benchmark::State&)+144>
+
+0x55555555e602  <+  162>        0f c6 c0 00                 shufps $0x0,%xmm0,%xmm0
+0x55555555e606  <+  166>        0f 59 c1                    mulps  %xmm1,%xmm0
+0x55555555e609  <+  169>        0f 29 04 24                 movaps %xmm0,(%rsp)
