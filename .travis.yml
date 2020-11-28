@@ -62,3 +62,5 @@ script:
 - ./blaze_vec4
 - ./mathfu_vec4
 - ./mango_vec4
+- ./glm_swizzle
+- ./mango_swizzle
