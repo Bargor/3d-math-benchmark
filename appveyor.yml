@@ -33,4 +33,6 @@ test_script:
   - 'C:\projects\build\%CONFIGURATION%\blaze_vec4.exe'
   - 'C:\projects\build\%CONFIGURATION%\mathfu_vec4.exe'
   - 'C:\projects\build\%CONFIGURATION%\mango_vec4.exe'
+  - 'C:\projects\build\%CONFIGURATION%\glm_swizzle.exe'
+  - 'C:\projects\build\%CONFIGURATION%\mango_swizzle.exe'
   

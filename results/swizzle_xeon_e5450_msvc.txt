@@ -1,0 +1,25 @@
+GLM:
+
+Run on (4 X 3000 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x4)
+  L1 Instruction 32 KiB (x4)
+  L2 Unified 6144 KiB (x2)
+----------------------------------------------------------------
+Benchmark                      Time             CPU   Iterations
+----------------------------------------------------------------
+vec4_test_swizzle/3         6.04 ns         5.72 ns    112000000
+vec4_test_swizzle_2/2       7.38 ns         6.84 ns    112000000
+
+MANGO:
+
+Run on (4 X 3000 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x4)
+  L1 Instruction 32 KiB (x4)
+  L2 Unified 6144 KiB (x2)
+----------------------------------------------------------------
+Benchmark                      Time             CPU   Iterations
+----------------------------------------------------------------
+vec4_test_swizzle/3         4.33 ns         4.10 ns    160000000
+vec4_test_swizzle_2/2       3.69 ns         3.38 ns    235789474

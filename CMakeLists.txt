@@ -29,9 +29,13 @@ set(TEST_CODE
     src/blaze_vec4.cpp
     src/mathfu_vec4.cpp
     src/mango_vec4.cpp
+    src/glm_swizzle.cpp
+    src/mango_swizzle.cpp
 )
 
 foreach(SOURCE_FILE ${TEST_CODE})
+    message(${SOURCE_FILE})
+
 	get_filename_component(TEST_NAME ${SOURCE_FILE} NAME_WE)
 
 	#Compile files and link with objects
