@@ -86,6 +86,32 @@ eigen:
 0x55555555e805  <+  149>        0f 59 00                    mulps  (%rax),%xmm0
 0x55555555e808  <+  152>        0f 29 44 24 20              movaps %xmm0,0x20(%rsp)
 
+
+
+0x55555555e1fc  <+  140>        48 8b 0c 24                 mov    (%rsp),%rcx
+0x55555555e200  <+  144>        48 8b 54 24 08              mov    0x8(%rsp),%rdx
+0x55555555e205  <+  149>        66 0f ef c0                 pxor   %xmm0,%xmm0
+0x55555555e209  <+  153>        0f 1f 80 00 00 00 00        nopl   0x0(%rax)
+        25 [1]	        for (const auto& vec : testData) {
+0x55555555e210  <+  160>        48 89 c8                    mov    %rcx,%rax
+0x55555555e213  <+  163>        48 39 ca                    cmp    %rcx,%rdx
+0x55555555e216  <+  166>        74 19                       je     0x55555555e231 <vec4_add_loop(benchmark::State&)+193>
+0x55555555e218  <+  168>        0f 1f 84 00 00 00 00 00     nopl   0x0(%rax,%rax,1)
+        186 [1]	  return (__m128) ((__v4sf)__A + (__v4sf)__B);
+0x55555555e220  <+  176>        0f 58 00                    addps  (%rax),%xmm0
+        25 [1]	        for (const auto& vec : testData) {
+0x55555555e223  <+  179>        48 83 c0 10                 add    $0x10,%rax
+0x55555555e227  <+  183>        48 39 c2                    cmp    %rax,%rdx
+0x55555555e22a  <+  186>        75 f4                       jne    0x55555555e220 <vec4_add_loop(benchmark::State&)+176>
+0x55555555e22c  <+  188>        bd 01 00 00 00              mov    $0x1,%ebp
+        758 [1]	    if (BENCHMARK_BUILTIN_EXPECT(cached_ != 0, true)) return true;
+0x55555555e231  <+  193>        48 83 eb 01                 sub    $0x1,%rbx
+0x55555555e235  <+  197>        75 d9                       jne    0x55555555e210 <vec4_add_loop(benchmark::State&)+160>
+0x55555555e237  <+  199>        40 84 ed                    test   %bpl,%bpl
+
+
+
+
 blaze:
 
        81 [1]	        res = testData[0] * testData[1];
@@ -140,3 +166,26 @@ mango:
 0x55555555e602  <+  162>        0f c6 c0 00                 shufps $0x0,%xmm0,%xmm0
 0x55555555e606  <+  166>        0f 59 c1                    mulps  %xmm1,%xmm0
 0x55555555e609  <+  169>        0f 29 04 24                 movaps %xmm0,(%rsp)
+
+
+0x55555555e917  <+  135>        48 8b 4c 24 10              mov    0x10(%rsp),%rcx
+0x55555555e91c  <+  140>        48 8b 54 24 18              mov    0x18(%rsp),%rdx
+0x55555555e921  <+  145>        0f 29 14 24                 movaps %xmm2,(%rsp)
+0x55555555e925  <+  149>        0f 1f 00                    nopl   (%rax)
+        40 [1]	        for (const auto& vec : testData) {
+0x55555555e928  <+  152>        48 89 c8                    mov    %rcx,%rax
+0x55555555e92b  <+  155>        48 39 ca                    cmp    %rcx,%rdx
+0x55555555e92e  <+  158>        74 14                       je     0x55555555e944 <vec4_add_loop(benchmark::State&)+180>
+        186 [1]	  return (__m128) ((__v4sf)__A + (__v4sf)__B);
+0x55555555e930  <+  160>        0f 28 04 24                 movaps (%rsp),%xmm0
+0x55555555e934  <+  164>        0f 58 00                    addps  (%rax),%xmm0
+0x55555555e937  <+  167>        48 83 c0 10                 add    $0x10,%rax
+0x55555555e93b  <+  171>        0f 29 04 24                 movaps %xmm0,(%rsp)
+        40 [1]	        for (const auto& vec : testData) {
+0x55555555e93f  <+  175>        48 39 c2                    cmp    %rax,%rdx
+0x55555555e942  <+  178>        75 ec                       jne    0x55555555e930 <vec4_add_loop(benchmark::State&)+160>
+        758 [1]	    if (BENCHMARK_BUILTIN_EXPECT(cached_ != 0, true)) return true;
+0x55555555e944  <+  180>        48 83 eb 01                 sub    $0x1,%rbx
+0x55555555e948  <+  184>        75 de                       jne    0x55555555e928 <vec4_add_loop(benchmark::State&)+152>
+0x55555555e94a  <+  186>        eb 88                       jmp    0x55555555e8d4 <vec4_add_loop(benchmark::State&)+68>
+
