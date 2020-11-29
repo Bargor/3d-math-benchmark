@@ -22,6 +22,30 @@ add_subdirectory(mathfu)
 add_subdirectory(blaze)
 add_subdirectory(mango/build)
 
+#Compiler specific options
+if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+	#General Win compile options
+	message("Visual Studio compiler")
+	set(BENCHMARK_COMPILE_OPTIONS /W4 /WX /MP /std:c++latest)
+	set(TEMPEST_COMPILE_DEFINITIONS NOMINMAX)
+	set(DEBUG_COMPILE_OPTIONS ${BENCHMARK_COMPILE_OPTIONS} /MDd)
+	set(RELEASE_COMPILE_OPTIONS ${BENCHMARK_COMPILE_OPTIONS} /Oi /MD /GL)
+	set(RELWITHDEBINFO_COMPILE_OPTIONS ${BENCHMARK_COMPILE_OPTIONS} /Oi /MD)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+	message("GCC compiler")
+	set(BENCHMARK_COMPILE_OPTIONS -Wall)
+	set(TEMPEST_COMPILE_DEFINITIONS)
+	set(DEBUG_COMPILE_OPTIONS ${BENCHMARK_COMPILE_OPTIONS} -O0 -march=native)
+	set(RELEASE_COMPILE_OPTIONS ${BENCHMARK_COMPILE_OPTIONS} -O3 -funsafe-loop-optimizations -m64 -march=native -mfpmath=sse)
+	set(RELWITHDEBINFO_COMPILE_OPTIONS ${BENCHMARK_COMPILE_OPTIONS} -O3 -funsafe-loop-optimizations -m64 -march=native -mfpmath=sse)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+	message("Clang compiler")
+	set(BENCHMARK_COMPILE_OPTIONS -Wall)
+	set(DEBUG_COMPILE_OPTIONS ${BENCHMARK_COMPILE_OPTIONS} -O0 -mno-sse4.2)
+	set(RELEASE_COMPILE_OPTIONS ${BENCHMARK_COMPILE_OPTIONS} -O3 -m64 -mno-sse4.2 -mfpmath=sse)
+	set(RELWITHDEBINFO_COMPILE_OPTIONS ${BENCHMARK_COMPILE_OPTIONS} -O3 -m64 -mno-sse4.2 -mfpmath=sse)
+endif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+
 set(TEST_CODE 
     src/glm_vec4.cpp
     src/glm_vec4_simd.cpp
@@ -30,16 +54,15 @@ set(TEST_CODE
     src/mathfu_vec4.cpp
     src/mango_vec4.cpp
     src/glm_swizzle.cpp
+    src/glm_simd_swizzle.cpp
     src/mango_swizzle.cpp
 )
 
 foreach(SOURCE_FILE ${TEST_CODE})
-    message(${SOURCE_FILE})
+    get_filename_component(TEST_NAME ${SOURCE_FILE} NAME_WE)
 
-	get_filename_component(TEST_NAME ${SOURCE_FILE} NAME_WE)
-
-	#Compile files and link with objects
-	add_executable(${TEST_NAME} src/prepare_test_data.h "${SOURCE_FILE}")
+    #Compile files and link with objects
+    add_executable(${TEST_NAME} src/prepare_test_data.h "${SOURCE_FILE}")
     
     source_group(${TEST_NAME} FILES ${SOURCE_FILE})
     

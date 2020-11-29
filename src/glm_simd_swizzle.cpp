@@ -1,4 +1,6 @@
 #define GLM_FORCE_SWIZZLE
+#define GLM_FORCE_DEFAULT_ALIGNED_GENTYPES
+#define GLM_FORCE_SSE41
 
 #include <benchmark/benchmark.h>
 #include <glm/glm.hpp>
