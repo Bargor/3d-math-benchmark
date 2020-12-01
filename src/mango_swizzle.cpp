@@ -3,11 +3,11 @@
 
 #include "prepare_test_data.h"
 
-mango::float32x4 test_swizzle_1(mango::float32x4 a, mango::float32x4 b, mango::float32x4 c) {
+inline mango::float32x4 test_swizzle_1(mango::float32x4 a, mango::float32x4 b, mango::float32x4 c) {
     return a.wwww * b.xxyy + (c.xxzz - a).zzzz * b.w;
 }
 
-mango::float32x4 test_swizzle_2(mango::float32x4 a, mango::float32x4 b) {
+inline mango::float32x4 test_swizzle_2(mango::float32x4 a, mango::float32x4 b) {
     return a.xyyz * b.wxxw + a * b.w;
 }
 

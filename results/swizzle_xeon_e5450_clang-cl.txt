@@ -8,8 +8,8 @@ CPU Caches:
 ----------------------------------------------------------------
 Benchmark                      Time             CPU   Iterations
 ----------------------------------------------------------------
-vec4_test_swizzle/3         5.55 ns         5.31 ns    100000000
-vec4_test_swizzle_2/2       7.21 ns         6.80 ns     89600000
+vec4_test_swizzle/3         2.59 ns         2.09 ns    298666667
+vec4_test_swizzle_2/2       3.58 ns         3.32 ns    263529412
 
 GLM SIMD:
 
@@ -21,8 +21,8 @@ CPU Caches:
 ----------------------------------------------------------------
 Benchmark                      Time             CPU   Iterations
 ----------------------------------------------------------------
-vec4_test_swizzle/3         4.10 ns         3.96 ns    165925926
-vec4_test_swizzle_2/2       3.35 ns         3.00 ns    213333333
+vec4_test_swizzle/3         2.24 ns         2.13 ns    344615385
+vec4_test_swizzle_2/2       1.96 ns         1.57 ns    407272727
 
 MANGO:
 
@@ -34,5 +34,5 @@ CPU Caches:
 ----------------------------------------------------------------
 Benchmark                      Time             CPU   Iterations
 ----------------------------------------------------------------
-vec4_test_swizzle/3         4.21 ns         4.00 ns    160000000
-vec4_test_swizzle_2/2       3.31 ns         3.15 ns    213333333
+vec4_test_swizzle/3         2.10 ns         2.05 ns    373333333
+vec4_test_swizzle_2/2       1.83 ns         1.60 ns    448000000

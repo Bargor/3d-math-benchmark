@@ -5,11 +5,11 @@
 
 #include "prepare_test_data.h"
 
-glm::vec4 test_swizzle_1(glm::vec4 a, glm::vec4 b, glm::vec4 c) {
+inline glm::vec4 test_swizzle_1(glm::vec4 a, glm::vec4 b, glm::vec4 c) {
     return a.wwww() * b.xxyy() + (c.xxzz() - a).zzzz() * b.w;
 }
 
-glm::vec4 test_swizzle_2(glm::vec4 a, glm::vec4 b) {
+inline glm::vec4 test_swizzle_2(glm::vec4 a, glm::vec4 b) {
     return a.xyyz() * b.wxxw() + a * b.w;
 }
 

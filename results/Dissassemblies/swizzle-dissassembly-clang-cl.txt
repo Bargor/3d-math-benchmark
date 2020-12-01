@@ -1,0 +1,134 @@
+GLM:
+
+res = test_swizzle_1(testData[0], testData[1], testData[2]);
+return a.wwww() * b.xxyy() + (c.xxzz() - a).zzzz() * b.w;
+00007FF76AF81050  mov         rax,qword ptr [testData]  
+00007FF76AF81054  movss       xmm0,dword ptr [rax+28h]  
+00007FF76AF81059  subss       xmm0,dword ptr [rax+8]  
+00007FF76AF8105E  movsd       xmm1,mmword ptr [rax+10h]  
+00007FF76AF81063  mulss       xmm0,dword ptr [rax+1Ch]  
+00007FF76AF81068  movss       xmm2,dword ptr [rax+0Ch]  
+00007FF76AF8106D  shufps      xmm2,xmm2,0E0h  
+00007FF76AF81071  mulps       xmm2,xmm1  
+00007FF76AF81074  shufps      xmm0,xmm0,0E0h  
+00007FF76AF81078  addps       xmm0,xmm2  
+00007FF76AF8107B  unpcklps    xmm0,xmm0  
+00007FF76AF8107E  movaps      xmmword ptr [res],xmm0  
+
+    for (auto _ : state) {
+00007FF76AF81082  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF76AF81086  jne         vec4_test_swizzle+50h (07FF76AF81050h) 
+
+
+res = test_swizzle_2(testData[0], testData[1]);
+return a.xyyz() * b.wxxw() + a * b.w;
+00007FF76AF811B0  mov         rax,qword ptr [testData]  
+00007FF76AF811B4  movss       xmm1,dword ptr [rax+4]  
+00007FF76AF811B9  movss       xmm2,dword ptr [rax+10h]  
+00007FF76AF811BE  mulss       xmm2,xmm1  
+00007FF76AF811C2  movss       xmm3,dword ptr [rax+1Ch]  
+00007FF76AF811C7  movaps      xmm4,xmm0  
+00007FF76AF811CA  unpcklps    xmm4,xmm3  
+00007FF76AF811CD  unpcklps    xmm3,xmm1  
+00007FF76AF811D0  movhps      xmm3,qword ptr [rax+8]  
+00007FF76AF811D4  shufps      xmm4,xmm4,54h  
+00007FF76AF811D8  mulps       xmm4,xmm3  
+00007FF76AF811DB  movss       xmm1,dword ptr [rax]  
+00007FF76AF811DF  unpcklps    xmm1,xmm2  
+00007FF76AF811E2  movaps      xmm3,xmm4  
+00007FF76AF811E5  shufps      xmm3,xmm2,0C2h  
+00007FF76AF811E9  shufps      xmm1,xmm3,24h  
+00007FF76AF811ED  movaps      xmm2,xmm4  
+00007FF76AF811F0  mulps       xmm2,xmm1  
+00007FF76AF811F3  addps       xmm1,xmm4  
+00007FF76AF811F6  movss       xmm1,xmm2  
+00007FF76AF811FA  movaps      xmmword ptr [res],xmm1  
+
+    for (auto _ : state) {
+00007FF76AF811FE  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF76AF81202  jne         vec4_test_swizzle_2+50h (07FF76AF811B0h)  
+
+GLM SIMD:
+
+25 [1]	        res = test_swizzle_1(testData[0], testData[1], testData[2]);
+return a.wwww() * b.xxyy() + (c.xxzz() - a).zzzz() * b.w;
+00007FF6FD301050  mov         rax,qword ptr [testData]  
+00007FF6FD301054  movaps      xmm0,xmmword ptr [rax]  
+00007FF6FD301057  movaps      xmm1,xmmword ptr [rax+10h]  
+00007FF6FD30105B  movaps      xmm2,xmmword ptr [rax+20h]  
+00007FF6FD30105F  subps       xmm2,xmm0  
+00007FF6FD301062  shufps      xmm2,xmm2,0AAh  
+00007FF6FD301066  movaps      xmm3,xmm1  
+00007FF6FD301069  shufps      xmm3,xmm1,0FFh  
+00007FF6FD30106D  mulps       xmm3,xmm2  
+00007FF6FD301070  unpcklps    xmm1,xmm1  
+00007FF6FD301073  shufps      xmm0,xmm0,0FFh  
+00007FF6FD301077  mulps       xmm0,xmm1  
+00007FF6FD30107A  addps       xmm0,xmm3  
+00007FF6FD30107D  movaps      xmmword ptr [res],xmm0  
+
+    for (auto _ : state) {
+00007FF6FD301081  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF6FD301085  jne         vec4_test_swizzle+50h (07FF6FD301050h)
+
+
+
+38 [1]	        res = test_swizzle_2(testData[0], testData[1]);
+return a.xyyz() * b.wxxw() + a * b.w;
+00007FF6FD3011B0  mov         rax,qword ptr [testData]  
+00007FF6FD3011B4  movaps      xmm0,xmmword ptr [rax]  
+00007FF6FD3011B7  movaps      xmm1,xmmword ptr [rax+10h]  
+00007FF6FD3011BB  movaps      xmm2,xmm1  
+00007FF6FD3011BE  shufps      xmm2,xmm1,0FFh  
+00007FF6FD3011C2  mulps       xmm2,xmm0  
+00007FF6FD3011C5  shufps      xmm1,xmm1,0C3h  
+00007FF6FD3011C9  shufps      xmm0,xmm0,94h  
+00007FF6FD3011CD  mulps       xmm0,xmm1  
+00007FF6FD3011D0  addps       xmm0,xmm2  
+00007FF6FD3011D3  movaps      xmmword ptr [res],xmm0  
+
+    for (auto _ : state) {
+00007FF6FD3011D7  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF6FD3011DB  jne         vec4_test_swizzle_2+50h (07FF6FD3011B0h)
+
+MANGO:
+
+25 [1]	        res = test_swizzle_1(testData[0], testData[1], testData[2]);
+return a.wwww() * b.xxyy() + (c.xxzz() - a).zzzz() * b.w;
+00007FF7F9621050  mov         rax,qword ptr [testData]  
+00007FF7F9621054  movaps      xmm0,xmmword ptr [rax]  
+00007FF7F9621057  movaps      xmm1,xmmword ptr [rax+10h]  
+00007FF7F962105B  movaps      xmm2,xmmword ptr [rax+20h]  
+00007FF7F962105F  movaps      xmm3,xmm1  
+00007FF7F9621062  shufps      xmm3,xmm1,0FFh  
+00007FF7F9621066  subps       xmm2,xmm0  
+00007FF7F9621069  shufps      xmm2,xmm2,0AAh  
+00007FF7F962106D  mulps       xmm2,xmm3  
+00007FF7F9621070  unpcklps    xmm1,xmm1  
+00007FF7F9621073  shufps      xmm0,xmm0,0FFh  
+00007FF7F9621077  mulps       xmm0,xmm1  
+00007FF7F962107A  addps       xmm0,xmm2  
+00007FF7F962107D  movaps      xmmword ptr [res],xmm0  
+
+    for (auto _ : state) {
+00007FF7F9621081  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF7F9621085  jne         vec4_test_swizzle+50h (07FF7F9621050h) 
+
+
+38 [1]	        res = test_swizzle_2(testData[0], testData[1]);
+return a.xyyz() * b.wxxw() + a * b.w;
+00007FF7F96211B0  mov         rax,qword ptr [testData]  
+00007FF7F96211B4  movaps      xmm0,xmmword ptr [rax]  
+00007FF7F96211B7  movaps      xmm1,xmmword ptr [rax+10h]  
+00007FF7F96211BB  movaps      xmm2,xmm1  
+00007FF7F96211BE  shufps      xmm2,xmm1,0FFh  
+00007FF7F96211C2  mulps       xmm2,xmm0  
+00007FF7F96211C5  shufps      xmm1,xmm1,0C3h  
+00007FF7F96211C9  shufps      xmm0,xmm0,94h  
+00007FF7F96211CD  mulps       xmm0,xmm1  
+00007FF7F96211D0  addps       xmm0,xmm2  
+00007FF7F96211D3  movaps      xmmword ptr [res],xmm0  
+
+    for (auto _ : state) {
+00007FF7F96211D7  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF7F96211DB  jne         vec4_test_swizzle_2+50h (07FF7F96211B0h)  

@@ -1,0 +1,163 @@
+GLM:
+
+res = test_swizzle_1(testData[0], testData[1], testData[2]);
+return a.wwww() * b.xxyy() + (c.xxzz() - a).zzzz() * b.w;
+00007FF7106F5D15  mov         rax,qword ptr [testData]  
+00007FF7106F5D1A  movups      xmm2,xmmword ptr [rax+10h]  
+00007FF7106F5D1E  movss       xmm3,dword ptr [rax+28h]  
+00007FF7106F5D23  subss       xmm3,dword ptr [rax+8]  
+00007FF7106F5D28  movaps      xmm0,xmm2  
+00007FF7106F5D2B  shufps      xmm0,xmm2,0FFh  
+00007FF7106F5D2F  mulss       xmm3,xmm0  
+00007FF7106F5D33  movss       xmm4,dword ptr [rax+0Ch]  
+00007FF7106F5D38  movaps      xmm1,xmm4  
+00007FF7106F5D3B  mulss       xmm1,xmm2  
+00007FF7106F5D3F  addss       xmm1,xmm3  
+00007FF7106F5D43  shufps      xmm2,xmm2,55h  
+00007FF7106F5D47  mulss       xmm4,xmm2  
+00007FF7106F5D4B  addss       xmm4,xmm3  
+00007FF7106F5D4F  movaps      xmm0,xmm1  
+00007FF7106F5D52  shufps      xmm0,xmm0,0E1h  
+00007FF7106F5D56  movss       xmm0,xmm1  
+00007FF7106F5D5A  shufps      xmm0,xmm0,0C6h  
+00007FF7106F5D5E  movss       xmm0,xmm4  
+00007FF7106F5D62  shufps      xmm0,xmm0,27h  
+00007FF7106F5D66  movss       xmm0,xmm4  
+00007FF7106F5D6A  shufps      xmm0,xmm0,39h  
+00007FF7106F5D6E  movaps      xmmword ptr [res],xmm0  
+00007FF7106F5D73  movdqa      xmmword ptr [rsp+20h],xmm0  
+
+    for (auto _ : state) {
+00007FF7106F5D79  dec         rbx  
+00007FF7106F5D7C  jmp         vec4_test_swizzle+40h (07FF7106F5D10h)
+
+
+res = test_swizzle_2(testData[0], testData[1]);
+return a.xyyz() * b.wxxw() + a * b.w;
+00007FF7106F5E39  mov         rax,qword ptr [testData]  
+00007FF7106F5E3E  movups      xmm1,xmmword ptr [rax+10h]  
+00007FF7106F5E42  movups      xmm5,xmmword ptr [rax]  
+00007FF7106F5E45  movaps      xmm6,xmm5  
+00007FF7106F5E48  movaps      xmm4,xmm1  
+00007FF7106F5E4B  shufps      xmm4,xmm1,0FFh  
+00007FF7106F5E4F  mulss       xmm6,xmm4  
+00007FF7106F5E53  movaps      xmm3,xmm5  
+00007FF7106F5E56  shufps      xmm3,xmm5,0AAh  
+00007FF7106F5E5A  mulss       xmm3,xmm4  
+00007FF7106F5E5E  movaps      xmm2,xmm5  
+00007FF7106F5E61  shufps      xmm2,xmm5,55h  
+00007FF7106F5E65  movaps      xmm0,xmm2  
+00007FF7106F5E68  mulss       xmm0,xmm1  
+00007FF7106F5E6C  addss       xmm6,xmm6  
+00007FF7106F5E70  mulss       xmm2,xmm4  
+00007FF7106F5E74  addss       xmm2,xmm0  
+00007FF7106F5E78  movaps      xmm1,xmm3  
+00007FF7106F5E7B  addss       xmm1,xmm0  
+00007FF7106F5E7F  shufps      xmm5,xmm5,0FFh  
+00007FF7106F5E83  mulss       xmm5,xmm4  
+00007FF7106F5E87  addss       xmm5,xmm3  
+00007FF7106F5E8B  shufps      xmm6,xmm6,0E1h  
+00007FF7106F5E8F  movss       xmm6,xmm2  
+00007FF7106F5E93  shufps      xmm6,xmm6,0C6h  
+00007FF7106F5E97  movss       xmm6,xmm1  
+00007FF7106F5E9B  shufps      xmm6,xmm6,27h  
+00007FF7106F5E9F  movss       xmm6,xmm5  
+00007FF7106F5EA3  shufps      xmm6,xmm6,39h  
+00007FF7106F5EA7  movaps      xmmword ptr [res],xmm6  
+00007FF7106F5EAC  movdqa      xmmword ptr [rsp+20h],xmm6  
+
+    for (auto _ : state) {
+00007FF7106F5EB2  dec         rbx  
+00007FF7106F5EB5  jmp         vec4_test_swizzle_2+40h (07FF7106F5E30h)  
+
+GLM SIMD:
+
+res = test_swizzle_1(testData[0], testData[1], testData[2]);
+return a.wwww() * b.xxyy() + (c.xxzz() - a).zzzz() * b.w;
+00007FF72DC25D85  mov         rax,qword ptr [testData]  
+00007FF72DC25D8A  movups      xmm3,xmmword ptr [rax+20h]  
+00007FF72DC25D8E  movups      xmm1,xmmword ptr [rax+10h]  
+00007FF72DC25D92  movups      xmm2,xmmword ptr [rax]  
+00007FF72DC25D95  shufps      xmm3,xmm3,0A0h  
+00007FF72DC25D99  subps       xmm3,xmm2  
+00007FF72DC25D9C  shufps      xmm2,xmm2,0FFh  
+00007FF72DC25DA0  movaps      xmm0,xmm1  
+00007FF72DC25DA3  shufps      xmm0,xmm1,50h  
+00007FF72DC25DA7  mulps       xmm2,xmm0  
+00007FF72DC25DAA  shufps      xmm3,xmm3,0AAh  
+00007FF72DC25DAE  shufps      xmm1,xmm1,0FFh  
+00007FF72DC25DB2  movaps      xmm0,xmm1  
+00007FF72DC25DB5  shufps      xmm0,xmm0,0  
+00007FF72DC25DB9  mulps       xmm3,xmm0  
+00007FF72DC25DBC  addps       xmm2,xmm3  
+00007FF72DC25DBF  movaps      xmmword ptr [res],xmm2  
+
+    for (auto _ : state) {
+00007FF72DC25DC4  dec         rbx  
+00007FF72DC25DC7  jmp         vec4_test_swizzle+40h (07FF72DC25D80h)
+
+
+res = test_swizzle_2(testData[0], testData[1]);
+return a.xyyz() * b.wxxw() + a * b.w;
+00007FF72DC25F15  mov         rax,qword ptr [testData]  
+00007FF72DC25F1A  movups      xmm1,xmmword ptr [rax+10h]  
+00007FF72DC25F1E  movups      xmm0,xmmword ptr [rax]  
+00007FF72DC25F21  movaps      xmm2,xmm1  
+00007FF72DC25F24  shufps      xmm2,xmm1,0C3h  
+00007FF72DC25F28  shufps      xmm0,xmm0,94h  
+00007FF72DC25F2C  mulps       xmm2,xmm0  
+00007FF72DC25F2F  shufps      xmm1,xmm1,0FFh  
+00007FF72DC25F33  movaps      xmm0,xmm1  
+00007FF72DC25F36  shufps      xmm0,xmm0,0  
+00007FF72DC25F3A  mulps       xmm0,xmmword ptr [rax]  
+00007FF72DC25F3D  addps       xmm2,xmm0  
+00007FF72DC25F40  movaps      xmmword ptr [res],xmm2 
+
+    for (auto _ : state) {
+00007FF7045D5F8A  dec         rbx  
+00007FF7045D5F8D  jmp         vec4_test_swizzle_2+47h (07FF7045D5F17h)  
+
+Mango:
+
+38 [1]	        res = test_swizzle_2(testData[0], testData[1]);
+return a.wwww() * b.xxyy() + (c.xxzz() - a).zzzz() * b.w;
+00007FF69B879085  mov         rax,qword ptr [testData]  
+00007FF69B87908A  movups      xmm3,xmmword ptr [rax+10h]  
+00007FF69B87908E  shufps      xmm3,xmm3,0FFh  
+00007FF69B879092  movups      xmm2,xmmword ptr [rax+20h]  
+00007FF69B879096  shufps      xmm2,xmm2,0A0h  
+00007FF69B87909A  subps       xmm2,xmmword ptr [rax]  
+00007FF69B87909D  movups      xmm0,xmmword ptr [rax+10h]  
+00007FF69B8790A1  movups      xmm1,xmmword ptr [rax]  
+00007FF69B8790A4  shufps      xmm1,xmm1,0FFh  
+00007FF69B8790A8  shufps      xmm0,xmm0,50h  
+00007FF69B8790AC  mulps       xmm1,xmm0  
+00007FF69B8790AF  shufps      xmm2,xmm2,0AAh  
+00007FF69B8790B3  movaps      xmm0,xmm3  
+00007FF69B8790B6  shufps      xmm0,xmm0,0  
+00007FF69B8790BA  mulps       xmm2,xmm0  
+00007FF69B8790BD  addps       xmm1,xmm2  
+00007FF69B8790C0  movaps      xmmword ptr [res],xmm1  
+
+00007FF69B87BB86  dec         rbx  
+00007FF69B87BB89  jmp         vec4_test_swizzle_2+40h (07FF69B87BB50h)
+
+
+res = test_swizzle_2(testData[0], testData[1]);
+return a.xyyz() * b.wxxw() + a * b.w;
+00007FF69B87BB55  mov         rax,qword ptr [testData]  
+00007FF69B87BB5A  movups      xmm2,xmmword ptr [rax+10h]  
+00007FF69B87BB5E  shufps      xmm2,xmm2,0FFh  
+00007FF69B87BB62  movups      xmm0,xmmword ptr [rax+10h]  
+00007FF69B87BB66  movups      xmm1,xmmword ptr [rax]  
+00007FF69B87BB69  shufps      xmm1,xmm1,94h  
+00007FF69B87BB6D  shufps      xmm0,xmm0,0C3h  
+00007FF69B87BB71  mulps       xmm1,xmm0  
+00007FF69B87BB74  movaps      xmm0,xmm2  
+00007FF69B87BB77  shufps      xmm0,xmm0,0  
+00007FF69B87BB7B  mulps       xmm0,xmmword ptr [rax]  
+00007FF69B87BB7E  addps       xmm1,xmm0  
+00007FF69B87BB81  movaps      xmmword ptr [res],xmm1
+
+00007FF69B87BB86  dec         rbx  
+00007FF69B87BB89  jmp         vec4_test_swizzle_2+40h (07FF69B87BB50h)
