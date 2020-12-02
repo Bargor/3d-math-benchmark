@@ -15,6 +15,46 @@ res = testData[0] * testData[1].y;
 00007FF78B631C70  mulps       xmm1,xmm0  
 00007FF78B631C73  movaps      xmmword ptr [res],xmm1
 
+res = compute_1(testData[0].x, testData[1].y);
+00007FF69BD32660  mov         rax,qword ptr [testData]  
+00007FF69BD32664  movss       xmm0,dword ptr [rax]  
+00007FF69BD32668  movss       xmm1,dword ptr [rax+14h]  
+00007FF69BD3266D  movaps      xmm2,xmm0  
+00007FF69BD32670  mulss       xmm2,xmm1  
+00007FF69BD32674  unpcklps    xmm0,xmm1  
+00007FF69BD32677  movaps      xmm1,xmm0  
+00007FF69BD3267A  mulps       xmm1,xmm0  
+00007FF69BD3267D  shufps      xmm1,xmm2,4  
+00007FF69BD32681  shufps      xmm0,xmm0,14h  
+00007FF69BD32685  addps       xmm0,xmm1  
+00007FF69BD32688  movaps      xmmword ptr [res],xmm0  
+
+00007FF69BD3268C  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF69BD32690  jne         vec4_compute_1+50h (07FF69BD32660h)
+
+res = compute_2(testData[0].x, testData[1].y);
+00007FF69BD327B0  mov         rax,qword ptr [testData]  
+00007FF69BD327B4  movss       xmm0,dword ptr [rax]  
+00007FF69BD327B8  movss       xmm1,dword ptr [rax+14h]  
+00007FF69BD327BD  mulss       xmm1,xmm0  
+00007FF69BD327C1  addss       xmm1,xmm0  
+00007FF69BD327C5  shufps      xmm1,xmm1,0  
+00007FF69BD327C9  movaps      xmmword ptr [res],xmm1  
+
+00007FF69BD327CD  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF69BD327D1  jne         vec4_compute_2+50h (07FF69BD327B0h)
+
+res = compute_3(testData[0], testData[1]);
+00007FF69BD328F0  mov         rax,qword ptr [testData]  
+00007FF69BD328F4  movups      xmm0,xmmword ptr [rax]  
+00007FF69BD328F7  movups      xmm1,xmmword ptr [rax+10h]  
+00007FF69BD328FB  addps       xmm0,xmm0  
+00007FF69BD328FE  mulps       xmm0,xmm1  
+00007FF69BD32901  movaps      xmmword ptr [res],xmm0 
+
+00007FF69BD32905  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF69BD32909  jne         vec4_compute_3+50h (07FF69BD328F0h) 
+
 glm_simd:
 
 res = testData[0] * testData[1];
@@ -29,6 +69,48 @@ res = testData[0] * testData[1].x;
 00007FF6A7B21C49  shufps      xmm0,xmm0,0  
 00007FF6A7B21C4D  mulps       xmm0,xmmword ptr [rax]  
 00007FF6A7B21C50  movaps      xmmword ptr [res],xmm0 
+
+res = compute_1(testData[0].x, testData[1].y);
+00007FF679402150  mov         rax,qword ptr [testData]  
+00007FF679402154  movss       xmm0,dword ptr [rax]  
+00007FF679402158  movss       xmm1,dword ptr [rax+14h]  
+00007FF67940215D  movaps      xmm2,xmm0  
+00007FF679402160  unpcklps    xmm2,xmm1  
+00007FF679402163  movaps      xmm3,xmm2  
+00007FF679402166  shufps      xmm3,xmm1,84h  
+00007FF67940216A  shufps      xmm1,xmm0,0  
+00007FF67940216E  shufps      xmm0,xmm3,20h  
+00007FF679402172  movaps      xmm3,xmm2  
+00007FF679402175  shufps      xmm3,xmm0,24h  
+00007FF679402179  shufps      xmm2,xmm1,24h  
+00007FF67940217D  mulps       xmm2,xmm3  
+00007FF679402180  addps       xmm2,xmm3  
+00007FF679402183  movaps      xmmword ptr [res],xmm2  
+
+00007FF679402187  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF67940218B  jne         vec4_compute_1+50h (07FF679402150h)  
+
+res = compute_2(testData[0].x, testData[1].y);
+00007FF6794022B0  mov         rax,qword ptr [testData]  
+00007FF6794022B4  movss       xmm0,dword ptr [rax]  
+00007FF6794022B8  movss       xmm1,dword ptr [rax+14h]  
+00007FF6794022BD  mulss       xmm1,xmm0  
+00007FF6794022C1  addss       xmm1,xmm0  
+00007FF6794022C5  shufps      xmm1,xmm1,0  
+00007FF6794022C9  movaps      xmmword ptr [res],xmm1  
+
+00007FF6794022CD  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF6794022D1  jne         vec4_compute_2+50h (07FF6794022B0h) 
+
+res = compute_3(testData[0], testData[1]);
+00007FF6794023F0  mov         rax,qword ptr [testData]  
+00007FF6794023F4  movaps      xmm0,xmmword ptr [rax]  
+00007FF6794023F7  addps       xmm0,xmm0  
+00007FF6794023FA  mulps       xmm0,xmmword ptr [rax+10h]  
+00007FF6794023FE  movaps      xmmword ptr [res],xmm0  
+
+00007FF679402402  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF679402406  jne         vec4_compute_3+50h (07FF6794023F0h)
 
 eigen
 
@@ -45,6 +127,48 @@ res = testData[0] * testData[1].y();
 00007FF65E3215CD  mulps       xmm0,xmmword ptr [rax]  
 00007FF65E3215D0  movaps      xmmword ptr [res],xmm0 
 
+res = compute_1(testData[0].x(), testData[1].y());
+00007FF6B5BA1E10  mov         rax,qword ptr [testData]  
+00007FF6B5BA1E14  movss       xmm0,dword ptr [rax]  
+00007FF6B5BA1E18  movss       xmm1,dword ptr [rax+14h]  
+00007FF6B5BA1E1D  movaps      xmm2,xmm0  
+00007FF6B5BA1E20  unpcklps    xmm2,xmm1  
+00007FF6B5BA1E23  movaps      xmm3,xmm2  
+00007FF6B5BA1E26  shufps      xmm3,xmm1,84h  
+00007FF6B5BA1E2A  shufps      xmm1,xmm0,0  
+00007FF6B5BA1E2E  shufps      xmm0,xmm3,20h  
+00007FF6B5BA1E32  movaps      xmm3,xmm2  
+00007FF6B5BA1E35  shufps      xmm3,xmm0,24h  
+00007FF6B5BA1E39  shufps      xmm2,xmm1,24h  
+00007FF6B5BA1E3D  mulps       xmm2,xmm3  
+00007FF6B5BA1E40  addps       xmm2,xmm3  
+00007FF6B5BA1E43  movaps      xmmword ptr [res],xmm2  
+
+00007FF6B5BA1E47  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF6B5BA1E4B  jne         vec4_compute_1+50h (07FF6B5BA1E10h)  
+
+res = compute_2(testData[0].x(), testData[1].y());
+00007FF6B5BA1F70  mov         rax,qword ptr [testData]  
+00007FF6B5BA1F74  movss       xmm0,dword ptr [rax]  
+00007FF6B5BA1F78  movss       xmm1,dword ptr [rax+14h]  
+00007FF6B5BA1F7D  mulss       xmm1,xmm0  
+00007FF6B5BA1F81  addss       xmm1,xmm0  
+00007FF6B5BA1F85  shufps      xmm1,xmm1,0  
+00007FF6B5BA1F89  movaps      xmmword ptr [res],xmm1  
+
+00007FF6B5BA1F8D  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF6B5BA1F91  jne         vec4_compute_2+50h (07FF6B5BA1F70h) 
+
+res = compute_3(testData[0], testData[1]);
+00007FF6B5BA20B0  mov         rax,qword ptr [testData]  
+00007FF6B5BA20B4  movaps      xmm0,xmmword ptr [rax]  
+00007FF6B5BA20B7  addps       xmm0,xmm0  
+00007FF6B5BA20BA  mulps       xmm0,xmmword ptr [rax+10h]  
+00007FF6B5BA20BE  movaps      xmmword ptr [res],xmm0  
+
+00007FF6B5BA20C2  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF6B5BA20C6  jne         vec4_compute_3+50h (07FF6B5BA20B0h)  
+
 blaze
 
 res = testData[0] * testData[1];
@@ -59,6 +183,48 @@ res = testData[0] * testData[1][1];
 00007FF7118018B9  shufps      xmm0,xmm0,0  
 00007FF7118018BD  mulps       xmm0,xmmword ptr [rax]  
 00007FF7118018C0  movaps      xmmword ptr [res],xmm0
+
+        res = compute_1(testData[0][0], testData[1][1]);
+00007FF703B32050  mov         rax,qword ptr [testData]  
+00007FF703B32054  movss       xmm0,dword ptr [rax]  
+00007FF703B32058  movss       xmm1,dword ptr [rax+14h]  
+00007FF703B3205D  movaps      xmm2,xmm0  
+00007FF703B32060  unpcklps    xmm2,xmm1  
+00007FF703B32063  movaps      xmm3,xmm2  
+00007FF703B32066  shufps      xmm3,xmm1,84h  
+00007FF703B3206A  shufps      xmm1,xmm0,0  
+00007FF703B3206E  shufps      xmm0,xmm3,20h  
+00007FF703B32072  movaps      xmm3,xmm2  
+00007FF703B32075  shufps      xmm3,xmm0,24h  
+00007FF703B32079  shufps      xmm2,xmm1,24h  
+00007FF703B3207D  mulps       xmm2,xmm3  
+00007FF703B32080  addps       xmm2,xmm3  
+00007FF703B32083  movaps      xmmword ptr [res],xmm2  
+
+00007FF703B32087  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF703B3208B  jne         vec4_compute_1+50h (07FF703B32050h) 
+
+        res = compute_2(testData[0][0], testData[1][1]);
+00007FF703B321B0  mov         rax,qword ptr [testData]  
+00007FF703B321B4  movss       xmm0,dword ptr [rax]  
+00007FF703B321B8  movss       xmm1,dword ptr [rax+14h]  
+00007FF703B321BD  mulss       xmm1,xmm0  
+00007FF703B321C1  addss       xmm1,xmm0  
+00007FF703B321C5  shufps      xmm1,xmm1,0  
+00007FF703B321C9  movaps      xmmword ptr [res],xmm1  
+
+00007FF703B321CD  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF703B321D1  jne         vec4_compute_2+50h (07FF703B321B0h)
+
+        res = compute_3(testData[0], testData[1]);
+00007FF703B322F0  mov         rax,qword ptr [testData]  
+00007FF703B322F4  movaps      xmm0,xmmword ptr [rax]  
+00007FF703B322F7  addps       xmm0,xmm0  
+00007FF703B322FA  mulps       xmm0,xmmword ptr [rax+10h]  
+00007FF703B322FE  movaps      xmmword ptr [res],xmm0  
+
+00007FF703B32302  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF703B32306  jne         vec4_compute_3+50h (07FF703B322F0h)
 
 mathfu
 
@@ -75,6 +241,48 @@ res = testData[0] * testData[1].x;
 00007FF6D66D18AD  mulps       xmm0,xmmword ptr [rax]  
 00007FF6D66D18B0  movaps      xmmword ptr [res],xmm0
 
+        res = compute_1(testData[0].x, testData[1].y);
+00007FF6967B2150  mov         rax,qword ptr [testData]  
+00007FF6967B2154  movss       xmm0,dword ptr [rax]  
+00007FF6967B2158  movss       xmm1,dword ptr [rax+14h]  
+00007FF6967B215D  movaps      xmm2,xmm0  
+00007FF6967B2160  unpcklps    xmm2,xmm1  
+00007FF6967B2163  movaps      xmm3,xmm2  
+00007FF6967B2166  shufps      xmm3,xmm1,84h  
+00007FF6967B216A  shufps      xmm1,xmm0,0  
+00007FF6967B216E  shufps      xmm0,xmm3,20h  
+00007FF6967B2172  movaps      xmm3,xmm2  
+00007FF6967B2175  shufps      xmm3,xmm0,24h  
+00007FF6967B2179  shufps      xmm2,xmm1,24h  
+00007FF6967B217D  mulps       xmm2,xmm3  
+00007FF6967B2180  addps       xmm2,xmm3  
+00007FF6967B2183  movaps      xmmword ptr [res],xmm2  
+
+00007FF6967B2187  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF6967B218B  jne         vec4_compute_1+50h (07FF6967B2150h) 
+
+        res = compute_2(testData[0].x, testData[1].y);
+00007FF6967B22B0  mov         rax,qword ptr [testData]  
+00007FF6967B22B4  movss       xmm0,dword ptr [rax]  
+00007FF6967B22B8  movss       xmm1,dword ptr [rax+14h]  
+00007FF6967B22BD  mulss       xmm1,xmm0  
+00007FF6967B22C1  addss       xmm1,xmm0  
+00007FF6967B22C5  shufps      xmm1,xmm1,0  
+00007FF6967B22C9  movaps      xmmword ptr [res],xmm1  
+
+00007FF6967B22CD  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF6967B22D1  jne         vec4_compute_2+50h (07FF6967B22B0h) 
+
+
+        res = compute_3(testData[0], testData[1]);
+00007FF6967B23F0  mov         rax,qword ptr [testData]  
+00007FF6967B23F4  movaps      xmm0,xmmword ptr [rax]  
+00007FF6967B23F7  addps       xmm0,xmm0  
+00007FF6967B23FA  mulps       xmm0,xmmword ptr [rax+10h]  
+00007FF6967B23FE  movaps      xmmword ptr [res],xmm0  
+
+00007FF6967B2402  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF6967B2406  jne         vec4_compute_3+50h (07FF6967B23F0h)
 mango
 
 res = testData[0] * testData[1];
@@ -89,3 +297,46 @@ res = testData[0] * testData[1].x;
 00007FF7FFAB18A8  shufps      xmm0,xmm0,0  
 00007FF7FFAB18AC  mulps       xmm0,xmmword ptr [rax]  
 00007FF7FFAB18AF  movaps      xmmword ptr [res],xmm0
+
+        res = compute_1(testData[0].x, testData[1].y);
+00007FF7EBD02150  mov         rax,qword ptr [testData]  
+00007FF7EBD02154  movaps      xmm0,xmmword ptr [rax]  
+00007FF7EBD02157  movaps      xmm1,xmmword ptr [rax+10h]  
+00007FF7EBD0215B  movaps      xmm2,xmm1  
+00007FF7EBD0215E  shufps      xmm2,xmm0,1  
+00007FF7EBD02162  movaps      xmm3,xmm2  
+00007FF7EBD02165  shufps      xmm3,xmm1,0D2h  
+00007FF7EBD02169  shufps      xmm1,xmm0,0C1h  
+00007FF7EBD0216D  shufps      xmm0,xmm3,20h  
+00007FF7EBD02171  movaps      xmm3,xmm2  
+00007FF7EBD02174  shufps      xmm3,xmm0,22h  
+00007FF7EBD02178  shufps      xmm2,xmm1,22h  
+00007FF7EBD0217C  mulps       xmm2,xmm3  
+00007FF7EBD0217F  addps       xmm2,xmm3  
+00007FF7EBD02182  movaps      xmmword ptr [res],xmm2  
+
+00007FF7EBD02186  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF7EBD0218A  jne         vec4_compute_1+50h (07FF7EBD02150h)
+
+        res = compute_2(testData[0].x, testData[1].y);
+00007FF7EBD022B0  mov         rax,qword ptr [testData]  
+00007FF7EBD022B4  movaps      xmm0,xmmword ptr [rax+10h]  
+00007FF7EBD022B8  shufps      xmm0,xmm0,0E5h  
+00007FF7EBD022BC  movss       xmm1,dword ptr [rax]  
+00007FF7EBD022C0  mulss       xmm0,xmm1  
+00007FF7EBD022C4  addss       xmm0,xmm1  
+00007FF7EBD022C8  shufps      xmm0,xmm0,0  
+00007FF7EBD022CC  movaps      xmmword ptr [res],xmm0  
+
+00007FF7EBD022D0  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF7EBD022D4  jne         vec4_compute_2+50h (07FF7EBD022B0h)
+
+        res = compute_3(testData[0], testData[1]);
+00007FF7EBD02400  mov         rax,qword ptr [testData]  
+00007FF7EBD02404  movaps      xmm0,xmmword ptr [rax]  
+00007FF7EBD02407  addps       xmm0,xmm0  
+00007FF7EBD0240A  mulps       xmm0,xmmword ptr [rax+10h]  
+00007FF7EBD0240E  movaps      xmmword ptr [res],xmm0  
+
+00007FF7EBD02412  add         rdi,0FFFFFFFFFFFFFFFFh  
+00007FF7EBD02416  jne         vec4_compute_3+50h (07FF7EBD02400h)  
