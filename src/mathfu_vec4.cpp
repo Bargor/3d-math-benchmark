@@ -135,7 +135,7 @@ static void vec4_mult_accumulate(benchmark::State& state) {
     benchmark::DoNotOptimize(res);
 }
 
-Vector<float, 4> compute_1(float a, float b)
+inline Vector<float, 4> compute_1(float a, float b)
 {
 
     Vector<float, 4> const av(a, b, b, a);
@@ -147,7 +147,7 @@ Vector<float, 4> compute_1(float a, float b)
     return dv;
 }
 
-Vector<float, 4> compute_2(float a, float b)
+inline Vector<float, 4> compute_2(float a, float b)
 {
     Vector<float, 4> const c(b * a);
     Vector<float, 4> const d(a + c);
@@ -155,7 +155,7 @@ Vector<float, 4> compute_2(float a, float b)
     return d;
 }
 
-Vector<float, 4> compute_3(Vector<float, 4> a, Vector<float, 4> b)
+inline Vector<float, 4> compute_3(Vector<float, 4> a, Vector<float, 4> b)
 {
     return a * b + a * b;
 }

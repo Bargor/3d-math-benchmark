@@ -37,6 +37,7 @@ glm:
 0x55555555ec55  <+  229>        48 83 eb 01                 sub    $0x1,%rbx
 0x55555555ec59  <+  233>        75 dd                       jne    0x55555555ec38 <vec4_mult_scalar(benchmark::State&)+200>
 
+172 [1]        res = compute_1(testData[0].x, testData[1].y);
 0x55555555ec5b  <+  235>        f3 0f 59 e0                 mulss  %xmm0,%xmm4
 0x55555555ec5f  <+  239>        f3 0f 59 d8                 mulss  %xmm0,%xmm3
 0x55555555ec63  <+  243>        f3 0f 59 d0                 mulss  %xmm0,%xmm2
@@ -45,6 +46,63 @@ glm:
 0x55555555ec70  <+  256>        f3 0f 11 5c 24 14           movss  %xmm3,0x14(%rsp)
 0x55555555ec76  <+  262>        f3 0f 11 54 24 18           movss  %xmm2,0x18(%rsp)
 0x55555555ec7c  <+  268>        f3 0f 11 44 24 1c           movss  %xmm0,0x1c(%rsp)
+
+0x55555555eb98  <+  200>        48 8b 44 24 20              mov    rax,QWORD PTR [rsp+0x20]
+0x55555555eb9d  <+  205>        f3 0f 10 48 14              movss  xmm1,DWORD PTR [rax+0x14]
+0x55555555eba2  <+  210>        f3 0f 10 00                 movss  xmm0,DWORD PTR [rax]
+0x55555555eba6  <+  214>        48 83 eb 01                 sub    rbx,0x1
+0x55555555ebaa  <+  218>        75 ec                       jne    0x55555555eb98 <vec4_compute_1(benchmark::State&)+200>
+0x55555555ebac  <+  220>        0f 28 d1                    movaps xmm2,xmm1
+0x55555555ebaf  <+  223>        0f 28 e0                    movaps xmm4,xmm0
+0x55555555ebb2  <+  226>        0f 28 d9                    movaps xmm3,xmm1
+0x55555555ebb5  <+  229>        f3 0f 59 d0                 mulss  xmm2,xmm0
+0x55555555ebb9  <+  233>        f3 0f 58 e2                 addss  xmm4,xmm2
+0x55555555ebbd  <+  237>        f3 0f 58 d1                 addss  xmm2,xmm1
+0x55555555ebc1  <+  241>        f3 0f 11 24 24              movss  DWORD PTR [rsp],xmm4
+0x55555555ebc6  <+  246>        f3 0f 11 54 24 14           movss  DWORD PTR [rsp+0x14],xmm2
+0x55555555ebcc  <+  252>        f3 0f 10 15 64 b5 03 00     movss  xmm2,DWORD PTR [rip+0x3b564]        # 0x55555559a138
+0x55555555ebd4  <+  260>        f3 0f 58 da                 addss  xmm3,xmm2
+0x55555555ebd8  <+  264>        f3 0f 58 d0                 addss  xmm2,xmm0
+0x55555555ebdc  <+  268>        f3 0f 59 d9                 mulss  xmm3,xmm1
+0x55555555ebe0  <+  272>        f3 0f 59 d0                 mulss  xmm2,xmm0
+0x55555555ebe4  <+  276>        f3 0f 11 5c 24 18           movss  DWORD PTR [rsp+0x18],xmm3
+0x55555555ebea  <+  282>        f3 0f 11 54 24 1c           movss  DWORD PTR [rsp+0x1c],xmm2
+
+
+185 [1]	        res = compute_2(testData[0].x, testData[1].y);
+0x55555555ea90  <+  160>        48 8b 44 24 10              mov    rax,QWORD PTR [rsp+0x10]
+0x55555555ea95  <+  165>        f3 0f 10 40 14              movss  xmm0,DWORD PTR [rax+0x14]
+0x55555555ea9a  <+  170>        f3 0f 10 08                 movss  xmm1,DWORD PTR [rax]
+0x55555555ea9e  <+  174>        48 83 eb 01                 sub    rbx,0x1
+0x55555555eaa2  <+  178>        75 ec                       jne    0x55555555ea90 <vec4_compute_2(benchmark::State&)+160>
+0x55555555eaa4  <+  180>        f3 0f 59 c1                 mulss  xmm0,xmm1
+0x55555555eaa8  <+  184>        f3 0f 58 c1                 addss  xmm0,xmm1
+0x55555555eaac  <+  188>        f3 0f 11 04 24              movss  DWORD PTR [rsp],xmm0
+
+198 [1]	        res = compute_3(testData[0], testData[1]);
+0x55555555e968  <+  200>        48 8b 44 24 20              mov    rax,QWORD PTR [rsp+0x20]
+0x55555555e96d  <+  205>        f3 0f 10 00                 movss  xmm0,DWORD PTR [rax]
+0x55555555e971  <+  209>        f3 0f 10 48 04              movss  xmm1,DWORD PTR [rax+0x4]
+0x55555555e976  <+  214>        f3 0f 10 50 08              movss  xmm2,DWORD PTR [rax+0x8]
+0x55555555e97b  <+  219>        f3 0f 10 58 0c              movss  xmm3,DWORD PTR [rax+0xc]
+0x55555555e980  <+  224>        f3 0f 10 60 10              movss  xmm4,DWORD PTR [rax+0x10]
+0x55555555e985  <+  229>        f3 0f 10 68 14              movss  xmm5,DWORD PTR [rax+0x14]
+0x55555555e98a  <+  234>        f3 0f 10 70 18              movss  xmm6,DWORD PTR [rax+0x18]
+0x55555555e98f  <+  239>        f3 0f 10 78 1c              movss  xmm7,DWORD PTR [rax+0x1c]
+0x55555555e994  <+  244>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e998  <+  248>        75 ce                       jne    0x55555555e968 <vec4_compute_3(benchmark::State&)+200>
+0x55555555e99a  <+  250>        f3 0f 59 df                 mulss  xmm3,xmm7
+0x55555555e99e  <+  254>        f3 0f 59 d6                 mulss  xmm2,xmm6
+0x55555555e9a2  <+  258>        f3 0f 59 cd                 mulss  xmm1,xmm5
+0x55555555e9a6  <+  262>        f3 0f 59 c4                 mulss  xmm0,xmm4
+0x55555555e9aa  <+  266>        f3 0f 58 db                 addss  xmm3,xmm3
+0x55555555e9ae  <+  270>        f3 0f 58 d2                 addss  xmm2,xmm2
+0x55555555e9b2  <+  274>        f3 0f 58 c9                 addss  xmm1,xmm1
+0x55555555e9b6  <+  278>        f3 0f 58 c0                 addss  xmm0,xmm0
+0x55555555e9ba  <+  282>        f3 0f 11 1c 24              movss  DWORD PTR [rsp],xmm3
+0x55555555e9bf  <+  287>        f3 0f 11 54 24 14           movss  DWORD PTR [rsp+0x14],xmm2
+0x55555555e9c5  <+  293>        f3 0f 11 4c 24 18           movss  DWORD PTR [rsp+0x18],xmm1
+0x55555555e9cb  <+  299>        f3 0f 11 44 24 1c           movss  DWORD PTR [rsp+0x1c],xmm0
 
 glm_simd:
 
@@ -70,6 +128,44 @@ res = testData[0] * testData[1].x;
 0x55555555e603  <+  163>        0f c6 c0 00                 shufps $0x0,%xmm0,%xmm0
 0x55555555e607  <+  167>        0f 59 c1                    mulps  %xmm1,%xmm0
 0x55555555e60a  <+  170>        0f 29 04 24                 movaps %xmm0,(%rsp)
+
+170 [1]	        res = compute_1(testData[0].x, testData[1].y);
+0x55555555e6c0  <+  144>        48 8b 44 24 10              mov    rax,QWORD PTR [rsp+0x10]
+0x55555555e6c5  <+  149>        f3 0f 10 40 14              movss  xmm0,DWORD PTR [rax+0x14]
+0x55555555e6ca  <+  154>        f3 0f 10 08                 movss  xmm1,DWORD PTR [rax]
+0x55555555e6ce  <+  158>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e6d2  <+  162>        75 ec                       jne    0x55555555e6c0 <vec4_compute_1(benchmark::State&)+144>
+0x55555555e6d4  <+  164>        0f 28 d1                    movaps xmm2,xmm1
+0x55555555e6d7  <+  167>        0f 14 d0                    unpcklps xmm2,xmm0
+0x55555555e6da  <+  170>        0f 28 da                    movaps xmm3,xmm2
+0x55555555e6dd  <+  173>        0f 14 c1                    unpcklps xmm0,xmm1
+0x55555555e6e0  <+  176>        0f 16 da                    movlhps xmm3,xmm2
+0x55555555e6e3  <+  179>        0f 58 1d 56 aa 03 00        addps  xmm3,XMMWORD PTR [rip+0x3aa56]        # 0x555555599140
+0x55555555e6ea  <+  186>        0f 16 d0                    movlhps xmm2,xmm0
+0x55555555e6ed  <+  189>        0f 59 da                    mulps  xmm3,xmm2
+0x55555555e6f0  <+  192>        0f 29 1c 24                 movaps XMMWORD PTR [rsp],xmm3
+
+183 [1]	        res = compute_2(testData[0].x, testData[1].y);
+0x55555555e5f0  <+  144>        48 8b 44 24 10              mov    rax,QWORD PTR [rsp+0x10]
+0x55555555e5f5  <+  149>        f3 0f 10 40 14              movss  xmm0,DWORD PTR [rax+0x14]
+0x55555555e5fa  <+  154>        f3 0f 10 08                 movss  xmm1,DWORD PTR [rax]
+0x55555555e5fe  <+  158>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e602  <+  162>        75 ec                       jne    0x55555555e5f0 <vec4_compute_2(benchmark::State&)+144>
+0x55555555e604  <+  164>        f3 0f 59 c1                 mulss  xmm0,xmm1
+0x55555555e608  <+  168>        f3 0f 58 c1                 addss  xmm0,xmm1
+0x55555555e60c  <+  172>        0f 28 d0                    movaps xmm2,xmm0
+0x55555555e60f  <+  175>        0f c6 d2 00                 shufps xmm2,xmm2,0x0
+0x55555555e613  <+  179>        0f 29 14 24                 movaps XMMWORD PTR [rsp],xmm2
+
+196 [1]	        res = compute_3(testData[0], testData[1]);
+0x55555555e530  <+  144>        48 8b 44 24 10              mov    rax,QWORD PTR [rsp+0x10]
+0x55555555e535  <+  149>        0f 28 00                    movaps xmm0,XMMWORD PTR [rax]
+0x55555555e538  <+  152>        0f 28 48 10                 movaps xmm1,XMMWORD PTR [rax+0x10]
+0x55555555e53c  <+  156>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e540  <+  160>        75 ee                       jne    0x55555555e530 <vec4_compute_3(benchmark::State&)+144>
+0x55555555e542  <+  162>        0f 59 c1                    mulps  xmm0,xmm1
+0x55555555e545  <+  165>        0f 58 c0                    addps  xmm0,xmm0
+0x55555555e548  <+  168>        0f 29 04 24                 movaps XMMWORD PTR [rsp],xmm0
 
 eigen:
 
@@ -110,7 +206,58 @@ eigen:
 0x55555555e237  <+  199>        40 84 ed                    test   %bpl,%bpl
 
 
+143 [1]	        res = compute_1(testData[0].x(), testData[1].y());
+0x55555555e878  <+  152>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+0x55555555e87c  <+  156>        f3 0f 10 40 14              movss  xmm0,DWORD PTR [rax+0x14]
+0x55555555e881  <+  161>        f3 0f 10 08                 movss  xmm1,DWORD PTR [rax]
+0x55555555e885  <+  165>        f3 0f 11 44 24 34           movss  DWORD PTR [rsp+0x34],xmm0
+0x55555555e88b  <+  171>        f3 0f 11 44 24 38           movss  DWORD PTR [rsp+0x38],xmm0
+0x55555555e891  <+  177>        f3 0f 11 44 24 44           movss  DWORD PTR [rsp+0x44],xmm0
+0x55555555e897  <+  183>        f3 0f 11 44 24 4c           movss  DWORD PTR [rsp+0x4c],xmm0
+0x55555555e89d  <+  189>        0f 28 05 4c a8 03 00        movaps xmm0,XMMWORD PTR [rip+0x3a84c]        # 0x5555555990f0
+0x55555555e8a4  <+  196>        f3 0f 11 4c 24 30           movss  DWORD PTR [rsp+0x30],xmm1
+0x55555555e8aa  <+  202>        f3 0f 11 4c 24 3c           movss  DWORD PTR [rsp+0x3c],xmm1
+0x55555555e8b0  <+  208>        f3 0f 11 4c 24 40           movss  DWORD PTR [rsp+0x40],xmm1
+0x55555555e8b6  <+  214>        f3 0f 11 4c 24 48           movss  DWORD PTR [rsp+0x48],xmm1
+        186 [1]	  return (__m128) ((__v4sf)__A + (__v4sf)__B);
+0x55555555e8bc  <+  220>        0f 58 44 24 40              addps  xmm0,XMMWORD PTR [rsp+0x40]
+0x55555555e8c1  <+  225>        0f 59 44 24 30              mulps  xmm0,XMMWORD PTR [rsp+0x30]
+        976 [1]	  *(__m128 *)__P = __A;
+0x55555555e8c6  <+  230>        0f 29 44 24 20              movaps XMMWORD PTR [rsp+0x20],xmm0
+0x55555555e8cb  <+  235>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e8cf  <+  239>        75 a7                       jne    0x55555555e878 <vec4_compute_1(benchmark::State&)+152>
 
+
+156 [1]	        res = compute_2(testData[0].x(), testData[1].y());
+0x55555555e780  <+  144>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+0x55555555e784  <+  148>        f3 0f 10 48 14              movss  xmm1,DWORD PTR [rax+0x14]
+0x55555555e789  <+  153>        f3 0f 59 08                 mulss  xmm1,DWORD PTR [rax]
+0x55555555e78d  <+  157>        f3 0f 7e 00                 movq   xmm0,QWORD PTR [rax]
+0x55555555e791  <+  161>        0f 16 40 08                 movhps xmm0,QWORD PTR [rax+0x8]
+0x55555555e795  <+  165>        f3 0f 11 4c 24 30           movss  DWORD PTR [rsp+0x30],xmm1
+0x55555555e79b  <+  171>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e79f  <+  175>        f3 0f 11 4c 24 34           movss  DWORD PTR [rsp+0x34],xmm1
+0x55555555e7a5  <+  181>        f3 0f 11 4c 24 38           movss  DWORD PTR [rsp+0x38],xmm1
+0x55555555e7ab  <+  187>        f3 0f 11 4c 24 3c           movss  DWORD PTR [rsp+0x3c],xmm1
+        186 [1]	  return (__m128) ((__v4sf)__A + (__v4sf)__B);
+0x55555555e7b1  <+  193>        0f 58 44 24 30              addps  xmm0,XMMWORD PTR [rsp+0x30]
+        976 [1]	  *(__m128 *)__P = __A;
+0x55555555e7b6  <+  198>        0f 29 44 24 20              movaps XMMWORD PTR [rsp+0x20],xmm0
+0x55555555e7bb  <+  203>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e7bf  <+  207>        75 bf                       jne    0x55555555e780 <vec4_compute_2(benchmark::State&)+144>
+
+169 [1]	        res = compute_3(testData[0], testData[1]);
+0x55555555e6b0  <+  144>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+0x55555555e6b4  <+  148>        66 0f 6f 40 10              movdqa xmm0,XMMWORD PTR [rax+0x10]
+0x55555555e6b9  <+  153>        66 0f 6f 08                 movdqa xmm1,XMMWORD PTR [rax]
+0x55555555e6bd  <+  157>        0f 29 44 24 40              movaps XMMWORD PTR [rsp+0x40],xmm0
+0x55555555e6c2  <+  162>        0f 59 c1                    mulps  xmm0,xmm1
+0x55555555e6c5  <+  165>        0f 29 4c 24 30              movaps XMMWORD PTR [rsp+0x30],xmm1
+        976 [1]	  *(__m128 *)__P = __A;
+0x55555555e6ca  <+  170>        0f 58 c0                    addps  xmm0,xmm0
+0x55555555e6cd  <+  173>        0f 29 44 24 20              movaps XMMWORD PTR [rsp+0x20],xmm0
+0x55555555e6d2  <+  178>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e6d6  <+  182>        75 d8                       jne    0x55555555e6b0 <vec4_compute_3(benchmark::State&)+144>
 
 blaze:
 
@@ -127,6 +274,52 @@ blaze:
 0x55555555e615  <+  149>        0f 59 00                    mulps  (%rax),%xmm0
 0x55555555e618  <+  152>        0f 29 44 24 20              movaps %xmm0,0x20(%rsp)
 
+175 [1]	        res = compute_1(testData[0][0], testData[1][1]);
+0x55555555e5b8  <+  152>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+0x55555555e5bc  <+  156>        f3 0f 10 40 14              movss  xmm0,DWORD PTR [rax+0x14]
+0x55555555e5c1  <+  161>        f3 0f 10 08                 movss  xmm1,DWORD PTR [rax]
+0x55555555e5c5  <+  165>        f3 0f 11 44 24 34           movss  DWORD PTR [rsp+0x34],xmm0
+0x55555555e5cb  <+  171>        f3 0f 11 44 24 38           movss  DWORD PTR [rsp+0x38],xmm0
+0x55555555e5d1  <+  177>        f3 0f 11 44 24 44           movss  DWORD PTR [rsp+0x44],xmm0
+0x55555555e5d7  <+  183>        f3 0f 11 44 24 4c           movss  DWORD PTR [rsp+0x4c],xmm0
+0x55555555e5dd  <+  189>        0f 28 05 6c ab 03 00        movaps xmm0,XMMWORD PTR [rip+0x3ab6c]        # 0x555555599150
+0x55555555e5e4  <+  196>        f3 0f 11 4c 24 30           movss  DWORD PTR [rsp+0x30],xmm1
+0x55555555e5ea  <+  202>        f3 0f 11 4c 24 3c           movss  DWORD PTR [rsp+0x3c],xmm1
+0x55555555e5f0  <+  208>        f3 0f 11 4c 24 40           movss  DWORD PTR [rsp+0x40],xmm1
+0x55555555e5f6  <+  214>        f3 0f 11 4c 24 48           movss  DWORD PTR [rsp+0x48],xmm1
+        186 [1]	  return (__m128) ((__v4sf)__A + (__v4sf)__B);
+0x55555555e5fc  <+  220>        0f 58 44 24 40              addps  xmm0,XMMWORD PTR [rsp+0x40]
+0x55555555e601  <+  225>        0f 59 44 24 30              mulps  xmm0,XMMWORD PTR [rsp+0x30]
+0x55555555e606  <+  230>        0f 29 44 24 20              movaps XMMWORD PTR [rsp+0x20],xmm0
+0x55555555e60b  <+  235>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e60f  <+  239>        75 a7                       jne    0x55555555e5b8 <vec4_compute_1(benchmark::State&)+152>
+
+188 [1]	        res = compute_2(testData[0][0], testData[1][1]);
+0x55555555e4c0  <+  144>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+0x55555555e4c4  <+  148>        f3 0f 10 00                 movss  xmm0,DWORD PTR [rax]
+0x55555555e4c8  <+  152>        f3 0f 10 48 14              movss  xmm1,DWORD PTR [rax+0x14]
+0x55555555e4cd  <+  157>        f3 0f 59 c8                 mulss  xmm1,xmm0
+0x55555555e4d1  <+  161>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e4d5  <+  165>        f3 0f 11 4c 24 30           movss  DWORD PTR [rsp+0x30],xmm1
+0x55555555e4db  <+  171>        f3 0f 11 4c 24 34           movss  DWORD PTR [rsp+0x34],xmm1
+0x55555555e4e1  <+  177>        f3 0f 11 4c 24 38           movss  DWORD PTR [rsp+0x38],xmm1
+0x55555555e4e7  <+  183>        f3 0f 11 4c 24 3c           movss  DWORD PTR [rsp+0x3c],xmm1
+        186 [1]	  return (__m128) ((__v4sf)__A + (__v4sf)__B);
+0x55555555e4ed  <+  189>        0f 58 44 24 30              addps  xmm0,XMMWORD PTR [rsp+0x30]
+0x55555555e4f2  <+  194>        0f 29 44 24 20              movaps XMMWORD PTR [rsp+0x20],xmm0
+0x55555555e4f7  <+  199>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e4fb  <+  203>        75 c3                       jne    0x55555555e4c0 <vec4_compute_2(benchmark::State&)+144>
+
+201 [1]	        res = compute_3(testData[0], testData[1]);
+0x55555555e400  <+  144>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555e404  <+  148>        0f 28 40 10                 movaps xmm0,XMMWORD PTR [rax+0x10]
+0x55555555e408  <+  152>        0f 59 00                    mulps  xmm0,XMMWORD PTR [rax]
+0x55555555e40b  <+  155>        0f 58 c0                    addps  xmm0,xmm0
+0x55555555e40e  <+  158>        0f 29 44 24 20              movaps XMMWORD PTR [rsp+0x20],xmm0
+0x55555555e413  <+  163>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e417  <+  167>        75 e7                       jne    0x55555555e400 <vec4_compute_3(benchmark::State&)+144>
+
 mathfu:
 
         81 [1]	        res = testData[0] * testData[1];
@@ -141,6 +334,46 @@ mathfu:
 0x55555555e5e1  <+  145>        0f c6 c0 00                 shufps $0x0,%xmm0,%xmm0
 0x55555555e5e5  <+  149>        0f 59 00                    mulps  (%rax),%xmm0
 0x55555555e5e8  <+  152>        0f 29 44 24 20              movaps %xmm0,0x20(%rsp)
+
+170 [1]	        res = compute_1(testData[0].x, testData[1].y);
+0x55555555e5c0  <+  144>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+0x55555555e5c4  <+  148>        f3 0f 10 18                 movss  xmm3,DWORD PTR [rax]
+0x55555555e5c8  <+  152>        f3 0f 10 50 14              movss  xmm2,DWORD PTR [rax+0x14]
+0x55555555e5cd  <+  157>        0f 28 cb                    movaps xmm1,xmm3
+0x55555555e5d0  <+  160>        0f 14 ca                    unpcklps xmm1,xmm2
+0x55555555e5d3  <+  163>        0f 28 c1                    movaps xmm0,xmm1
+0x55555555e5d6  <+  166>        0f 14 d3                    unpcklps xmm2,xmm3
+0x55555555e5d9  <+  169>        0f 16 c1                    movlhps xmm0,xmm1
+0x55555555e5dc  <+  172>        0f 58 05 7d ab 03 00        addps  xmm0,XMMWORD PTR [rip+0x3ab7d]        # 0x555555599160
+0x55555555e5e3  <+  179>        0f 16 ca                    movlhps xmm1,xmm2
+0x55555555e5e6  <+  182>        0f 59 c1                    mulps  xmm0,xmm1
+0x55555555e5e9  <+  185>        0f 29 44 24 20              movaps XMMWORD PTR [rsp+0x20],xmm0
+0x55555555e5ee  <+  190>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e5f2  <+  194>        75 cc                       jne    0x55555555e5c0 <vec4_compute_1(benchmark::State&)+144>
+
+183 [1]	        res = compute_2(testData[0].x, testData[1].y);
+0x55555555e4d8  <+  152>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+        42 [1]	  inline Vector() {}
+0x55555555e4dc  <+  156>        f3 0f 10 40 14              movss  xmm0,DWORD PTR [rax+0x14]
+0x55555555e4e1  <+  161>        f3 0f 58 c1                 addss  xmm0,xmm1
+0x55555555e4e5  <+  165>        f3 0f 59 00                 mulss  xmm0,DWORD PTR [rax]
+0x55555555e4e9  <+  169>        f3 0f 11 44 24 30           movss  DWORD PTR [rsp+0x30],xmm0
+0x55555555e4ef  <+  175>        f3 0f 11 44 24 34           movss  DWORD PTR [rsp+0x34],xmm0
+0x55555555e4f5  <+  181>        f3 0f 11 44 24 38           movss  DWORD PTR [rsp+0x38],xmm0
+0x55555555e4fb  <+  187>        f3 0f 11 44 24 3c           movss  DWORD PTR [rsp+0x3c],xmm0
+0x55555555e501  <+  193>        0f 28 54 24 30              movaps xmm2,XMMWORD PTR [rsp+0x30]
+0x55555555e506  <+  198>        0f 29 54 24 20              movaps XMMWORD PTR [rsp+0x20],xmm2
+0x55555555e50b  <+  203>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e50f  <+  207>        75 c7                       jne    0x55555555e4d8 <vec4_compute_2(benchmark::State&)+152>
+
+196 [1]	        res = compute_3(testData[0], testData[1]);
+0x55555555e410  <+  144>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+0x55555555e414  <+  148>        0f 28 00                    movaps xmm0,XMMWORD PTR [rax]
+0x55555555e417  <+  151>        0f 59 40 10                 mulps  xmm0,XMMWORD PTR [rax+0x10]
+0x55555555e41b  <+  155>        0f 58 c0                    addps  xmm0,xmm0
+0x55555555e41e  <+  158>        0f 29 44 24 20              movaps XMMWORD PTR [rsp+0x20],xmm0
+0x55555555e423  <+  163>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e427  <+  167>        75 e7                       jne    0x55555555e410 <vec4_compute_3(benchmark::State&)+144>
 
 mango:
 
@@ -184,8 +417,46 @@ mango:
         40 [1]	        for (const auto& vec : testData) {
 0x55555555e93f  <+  175>        48 39 c2                    cmp    %rax,%rdx
 0x55555555e942  <+  178>        75 ec                       jne    0x55555555e930 <vec4_add_loop(benchmark::State&)+160>
-        758 [1]	    if (BENCHMARK_BUILTIN_EXPECT(cached_ != 0, true)) return true;
 0x55555555e944  <+  180>        48 83 eb 01                 sub    $0x1,%rbx
 0x55555555e948  <+  184>        75 de                       jne    0x55555555e928 <vec4_add_loop(benchmark::State&)+152>
 0x55555555e94a  <+  186>        eb 88                       jmp    0x55555555e8d4 <vec4_add_loop(benchmark::State&)+68>
+
+
+169 [1]	        res = compute_1(testData[0].x, testData[1].y);
+0x55555555e600  <+  144>        48 8b 44 24 10              mov    rax,QWORD PTR [rsp+0x10]
+0x55555555e605  <+  149>        0f 28 40 10                 movaps xmm0,XMMWORD PTR [rax+0x10]
+0x55555555e609  <+  153>        0f 28 08                    movaps xmm1,XMMWORD PTR [rax]
+0x55555555e60c  <+  156>        0f c6 c0 55                 shufps xmm0,xmm0,0x55
+0x55555555e610  <+  160>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e614  <+  164>        75 ea                       jne    0x55555555e600 <vec4_compute_1(benchmark::State&)+144>
+0x55555555e616  <+  166>        0f 14 c8                    unpcklps xmm1,xmm0
+0x55555555e619  <+  169>        0f 28 c1                    movaps xmm0,xmm1
+0x55555555e61c  <+  172>        0f 16 c1                    movlhps xmm0,xmm1
+0x55555555e61f  <+  175>        0f 58 05 ea aa 03 00        addps  xmm0,XMMWORD PTR [rip+0x3aaea]        # 0x555555599110
+0x55555555e626  <+  182>        0f c6 c9 14                 shufps xmm1,xmm1,0x14
+0x55555555e62a  <+  186>        0f 59 c1                    mulps  xmm0,xmm1
+0x55555555e62d  <+  189>        0f 29 04 24                 movaps XMMWORD PTR [rsp],xmm0
+
+182 [1]	        res = compute_2(testData[0].x, testData[1].y);
+0x55555555e530  <+  144>        48 8b 44 24 10              mov    rax,QWORD PTR [rsp+0x10]
+0x55555555e535  <+  149>        0f 28 40 10                 movaps xmm0,XMMWORD PTR [rax+0x10]
+0x55555555e539  <+  153>        0f 28 08                    movaps xmm1,XMMWORD PTR [rax]
+0x55555555e53c  <+  156>        0f c6 c0 55                 shufps xmm0,xmm0,0x55
+0x55555555e540  <+  160>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e544  <+  164>        75 ea                       jne    0x55555555e530 <vec4_compute_2(benchmark::State&)+144>
+0x55555555e546  <+  166>        f3 0f 59 c1                 mulss  xmm0,xmm1
+0x55555555e54a  <+  170>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e54e  <+  174>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e552  <+  178>        0f 58 c8                    addps  xmm1,xmm0
+0x55555555e555  <+  181>        0f 29 0c 24                 movaps XMMWORD PTR [rsp],xmm1
+
+195 [1]	        res = compute_3(testData[0], testData[1]);
+0x55555555e470  <+  144>        48 8b 44 24 10              mov    rax,QWORD PTR [rsp+0x10]
+0x55555555e475  <+  149>        0f 28 08                    movaps xmm1,XMMWORD PTR [rax]
+0x55555555e478  <+  152>        0f 28 40 10                 movaps xmm0,XMMWORD PTR [rax+0x10]
+0x55555555e47c  <+  156>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e480  <+  160>        75 ee                       jne    0x55555555e470 <vec4_compute_3(benchmark::State&)+144>
+0x55555555e482  <+  162>        0f 59 c1                    mulps  xmm0,xmm1
+0x55555555e485  <+  165>        0f 58 c0                    addps  xmm0,xmm0
+0x55555555e488  <+  168>        0f 29 04 24                 movaps XMMWORD PTR [rsp],xmm0
 
