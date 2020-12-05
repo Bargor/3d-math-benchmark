@@ -56,6 +56,7 @@ set(TEST_CODE
     src/glm_swizzle.cpp
     src/glm_simd_swizzle.cpp
     src/mango_swizzle.cpp
+    src/glm_mat4.cpp
 )
 
 foreach(SOURCE_FILE ${TEST_CODE})

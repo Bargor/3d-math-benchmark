@@ -239,9 +239,7 @@ eigen:
 0x55555555e79f  <+  175>        f3 0f 11 4c 24 34           movss  DWORD PTR [rsp+0x34],xmm1
 0x55555555e7a5  <+  181>        f3 0f 11 4c 24 38           movss  DWORD PTR [rsp+0x38],xmm1
 0x55555555e7ab  <+  187>        f3 0f 11 4c 24 3c           movss  DWORD PTR [rsp+0x3c],xmm1
-        186 [1]	  return (__m128) ((__v4sf)__A + (__v4sf)__B);
 0x55555555e7b1  <+  193>        0f 58 44 24 30              addps  xmm0,XMMWORD PTR [rsp+0x30]
-        976 [1]	  *(__m128 *)__P = __A;
 0x55555555e7b6  <+  198>        0f 29 44 24 20              movaps XMMWORD PTR [rsp+0x20],xmm0
 0x55555555e7bb  <+  203>        48 83 eb 01                 sub    rbx,0x1
 0x55555555e7bf  <+  207>        75 bf                       jne    0x55555555e780 <vec4_compute_2(benchmark::State&)+144>
@@ -304,7 +302,6 @@ blaze:
 0x55555555e4db  <+  171>        f3 0f 11 4c 24 34           movss  DWORD PTR [rsp+0x34],xmm1
 0x55555555e4e1  <+  177>        f3 0f 11 4c 24 38           movss  DWORD PTR [rsp+0x38],xmm1
 0x55555555e4e7  <+  183>        f3 0f 11 4c 24 3c           movss  DWORD PTR [rsp+0x3c],xmm1
-        186 [1]	  return (__m128) ((__v4sf)__A + (__v4sf)__B);
 0x55555555e4ed  <+  189>        0f 58 44 24 30              addps  xmm0,XMMWORD PTR [rsp+0x30]
 0x55555555e4f2  <+  194>        0f 29 44 24 20              movaps XMMWORD PTR [rsp+0x20],xmm0
 0x55555555e4f7  <+  199>        48 83 eb 01                 sub    rbx,0x1
@@ -353,7 +350,6 @@ mathfu:
 
 183 [1]	        res = compute_2(testData[0].x, testData[1].y);
 0x55555555e4d8  <+  152>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
-        42 [1]	  inline Vector() {}
 0x55555555e4dc  <+  156>        f3 0f 10 40 14              movss  xmm0,DWORD PTR [rax+0x14]
 0x55555555e4e1  <+  161>        f3 0f 58 c1                 addss  xmm0,xmm1
 0x55555555e4e5  <+  165>        f3 0f 59 00                 mulss  xmm0,DWORD PTR [rax]
