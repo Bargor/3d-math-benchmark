@@ -57,7 +57,7 @@ static void mat4_mult_loop_accumulate(benchmark::State& state) {
     for (auto _ : state) {
         benchmark::ClobberMemory();
         res = std::accumulate(
-            testData.begin(), testData.end(), glm::mat4(1.0f), [](glm::mat4 lhs, glm::mat4 rhs) { return lhs * rhs; });
+            testData.begin(), testData.end(), glm::mat4(1.0f), [](const glm::mat4& lhs, const glm::mat4& rhs) { return lhs * rhs; });
         benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);

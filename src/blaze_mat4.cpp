@@ -57,7 +57,7 @@ static void mat4_mult_loop_accumulate(benchmark::State& state) {
     for (auto _ : state) {
         benchmark::ClobberMemory();
         res = std::accumulate(
-            testData.begin(), testData.end(), MatrixType(1.0f), [](MatrixType lhs, MatrixType rhs) { return lhs * rhs; });
+            testData.begin(), testData.end(), MatrixType(1.0f), [](const MatrixType& lhs, const MatrixType& rhs) { return lhs * rhs; });
         benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);

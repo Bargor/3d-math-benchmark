@@ -1,0 +1,124 @@
+GLM:
+
+Run on (4 X 3000 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x4)
+  L1 Instruction 32 KiB (x4)
+  L2 Unified 6144 KiB (x2)
+-------------------------------------------------------------------------
+Benchmark                               Time             CPU   Iterations
+-------------------------------------------------------------------------
+mat4_add/2                           18.3 ns         17.6 ns     40727273
+mat4_mult/2                          68.7 ns         61.4 ns     11200000
+mat4_mult_loop/2                      122 ns          123 ns      5600000
+mat4_mult_loop/8                      477 ns          476 ns      1445161
+mat4_mult_loop/64                    3812 ns         3599 ns       186667
+mat4_mult_loop/1024                 62812 ns        62779 ns        11200
+mat4_mult_loop_accumulate/2           126 ns          128 ns      5600000
+mat4_mult_loop_accumulate/8           470 ns          471 ns      1493333
+mat4_mult_loop_accumulate/64         3745 ns         3683 ns       186667
+mat4_mult_loop_accumulate/1024      61599 ns        59291 ns         8960
+
+GLM SIMD:
+
+Run on (4 X 3000 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x4)
+  L1 Instruction 32 KiB (x4)
+  L2 Unified 6144 KiB (x2)
+-------------------------------------------------------------------------
+Benchmark                               Time             CPU   Iterations
+-------------------------------------------------------------------------
+mat4_add/2                           5.47 ns         5.30 ns    112000000
+mat4_mult/2                          14.8 ns         13.4 ns     56000000
+mat4_mult_loop/2                     32.9 ns         33.0 ns     20363636
+mat4_mult_loop/8                      119 ns          120 ns      6400000
+mat4_mult_loop/64                     938 ns          921 ns       746667
+mat4_mult_loop/1024                 16373 ns        16113 ns        40727
+mat4_mult_loop_accumulate/2          33.6 ns         33.8 ns     20363636
+mat4_mult_loop_accumulate/8           116 ns          117 ns      6400000
+mat4_mult_loop_accumulate/64          918 ns          921 ns       746667
+mat4_mult_loop_accumulate/1024      16407 ns        16392 ns        44800
+
+Eigen:
+
+Run on (4 X 3000 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x4)
+  L1 Instruction 32 KiB (x4)
+  L2 Unified 6144 KiB (x2)
+-------------------------------------------------------------------------
+Benchmark                               Time             CPU   Iterations
+-------------------------------------------------------------------------
+mat4_add/2                           5.97 ns         5.62 ns    100000000
+mat4_mult/2                          18.1 ns         16.7 ns     44800000
+mat4_mult_loop/2                     62.2 ns         55.8 ns     11200000
+mat4_mult_loop/8                      205 ns          204 ns      3446154
+mat4_mult_loop/64                    1631 ns         1611 ns       407273
+mat4_mult_loop/1024                 26273 ns        25739 ns        24889
+mat4_mult_loop_accumulate/2          65.6 ns         65.6 ns     11200000
+mat4_mult_loop_accumulate/8           186 ns          186 ns      3446154
+mat4_mult_loop_accumulate/64         1318 ns         1311 ns       560000
+mat4_mult_loop_accumulate/1024      20824 ns        20508 ns        32000
+
+Blaze:
+
+Run on (4 X 3000 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x4)
+  L1 Instruction 32 KiB (x4)
+  L2 Unified 6144 KiB (x2)
+-------------------------------------------------------------------------
+Benchmark                               Time             CPU   Iterations
+-------------------------------------------------------------------------
+mat4_add/2                           10.2 ns         9.77 ns     64000000
+mat4_mult/2                          24.5 ns         22.5 ns     32000000
+mat4_mult_loop/2                     42.8 ns         43.3 ns     16592593
+mat4_mult_loop/8                      170 ns          169 ns      4072727
+mat4_mult_loop/64                    1338 ns         1318 ns       497778
+mat4_mult_loop/1024                 22810 ns        23019 ns        29867
+mat4_mult_loop_accumulate/2          66.3 ns         66.3 ns      8960000
+mat4_mult_loop_accumulate/8           234 ns          235 ns      2986667
+mat4_mult_loop_accumulate/64         1801 ns         1800 ns       373333
+mat4_mult_loop_accumulate/1024      29302 ns        29820 ns        23579
+
+Mathfu:
+
+Run on (4 X 3000 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x4)
+  L1 Instruction 32 KiB (x4)
+  L2 Unified 6144 KiB (x2)
+-------------------------------------------------------------------------
+Benchmark                               Time             CPU   Iterations
+-------------------------------------------------------------------------
+mat4_add/2                           12.3 ns         12.0 ns     56000000
+mat4_mult/2                          32.9 ns         32.8 ns     22400000
+mat4_mult_loop/2                     77.6 ns         69.8 ns      8960000
+mat4_mult_loop/8                      284 ns          285 ns      2357895
+mat4_mult_loop/64                    2253 ns         2250 ns       298667
+mat4_mult_loop/1024                 35551 ns        36062 ns        20364
+mat4_mult_loop_accumulate/2          79.0 ns         78.5 ns      8960000
+mat4_mult_loop_accumulate/8           293 ns          295 ns      2488889
+mat4_mult_loop_accumulate/64         2275 ns         2295 ns       320000
+mat4_mult_loop_accumulate/1024      36992 ns        36830 ns        18667
+
+Mango:
+
+Run on (4 X 3000 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x4)
+  L1 Instruction 32 KiB (x4)
+  L2 Unified 6144 KiB (x2)
+-------------------------------------------------------------------------
+Benchmark                               Time             CPU   Iterations
+-------------------------------------------------------------------------
+mat4_mult/2                          15.2 ns         15.3 ns     44800000
+mat4_mult_loop/2                     27.3 ns         25.7 ns     28000000
+mat4_mult_loop/8                     84.6 ns         85.4 ns      8960000
+mat4_mult_loop/64                     677 ns          670 ns      1120000
+mat4_mult_loop/1024                 10784 ns        10742 ns        64000
+mat4_mult_loop_accumulate/2          34.8 ns         35.3 ns     20363636
+mat4_mult_loop_accumulate/8          92.8 ns         94.2 ns      7466667
+mat4_mult_loop_accumulate/64          677 ns          670 ns      1120000
+mat4_mult_loop_accumulate/1024      10776 ns        10742 ns        64000
