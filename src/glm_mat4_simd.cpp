@@ -1,4 +1,6 @@
-#define GLM_ENABLE_EXPERIMENTAL
+#define GLM_FORCE_SWIZZLE
+#define GLM_FORCE_DEFAULT_ALIGNED_GENTYPES
+#define GLM_FORCE_SSE41
 
 #include "prepare_test_data.h"
 

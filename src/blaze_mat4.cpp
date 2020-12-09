@@ -1,15 +1,17 @@
-#define GLM_ENABLE_EXPERIMENTAL
-
 #include "prepare_test_data.h"
 
 #include <benchmark/benchmark.h>
-#include <glm/glm.hpp>
-#include <glm/gtx/type_aligned.hpp>
+#include <blaze/math/StaticMatrix.h>
+
+using ::blaze::columnMajor;
+using ::blaze::columnVector;
+
+using MatrixType = ::blaze::StaticMatrix<float, 4, 4, columnVector>;
 
 static void mat4_add(benchmark::State& state) {
-    const auto testData = prepare_mat4_test_data<glm::mat4>(state.range(0));
+    const auto testData = prepare_mat4_test_data_init_list<MatrixType>(state.range(0));
 
-    glm::mat4 res(0.0f);
+    MatrixType res(0.0f);
 
     for (auto _ : state) {
         benchmark::ClobberMemory();
@@ -20,9 +22,9 @@ static void mat4_add(benchmark::State& state) {
 }
 
 static void mat4_mult(benchmark::State& state) {
-    const auto testData = prepare_mat4_test_data<glm::mat4>(state.range(0));
+    const auto testData = prepare_mat4_test_data_init_list<MatrixType>(state.range(0));
 
-    glm::mat4 res(0.0f);
+    MatrixType res(0.0f);
 
     for (auto _ : state) {
         benchmark::ClobberMemory();
@@ -33,14 +35,14 @@ static void mat4_mult(benchmark::State& state) {
 }
 
 static void mat4_mult_loop(benchmark::State& state) {
-    const auto testData = prepare_mat4_test_data<glm::mat4>(state.range(0));
+    const auto testData = prepare_mat4_test_data_init_list<MatrixType>(state.range(0));
 
-    glm::mat4 res(0.0f);
+    MatrixType res(0.0f);
 
     for (auto _ : state) {
         benchmark::ClobberMemory();
-        for (const auto& vec : testData) {
-            res *= vec;
+        for (const auto& mat : testData) {
+            res *= mat;
         }
         benchmark::ClobberMemory();
     }
@@ -48,14 +50,14 @@ static void mat4_mult_loop(benchmark::State& state) {
 }
 
 static void mat4_mult_loop_accumulate(benchmark::State& state) {
-    const auto testData = prepare_mat4_test_data<glm::mat4>(state.range(0));
+    const auto testData = prepare_mat4_test_data_init_list<MatrixType>(state.range(0));
 
-    glm::mat4 res(0.0f);
+    MatrixType res(0.0f);
 
     for (auto _ : state) {
         benchmark::ClobberMemory();
         res = std::accumulate(
-            testData.begin(), testData.end(), glm::mat4(1.0f), [](glm::mat4 lhs, glm::mat4 rhs) { return lhs * rhs; });
+            testData.begin(), testData.end(), MatrixType(1.0f), [](MatrixType lhs, MatrixType rhs) { return lhs * rhs; });
         benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);

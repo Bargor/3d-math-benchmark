@@ -57,6 +57,11 @@ set(TEST_CODE
     src/glm_simd_swizzle.cpp
     src/mango_swizzle.cpp
     src/glm_mat4.cpp
+    src/glm_mat4_simd.cpp
+    src/eigen_mat4.cpp
+    src/blaze_mat4.cpp
+    src/mathfu_mat4.cpp
+    src/mango_mat4.cpp
 )
 
 foreach(SOURCE_FILE ${TEST_CODE})

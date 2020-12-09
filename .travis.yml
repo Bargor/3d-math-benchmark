@@ -64,3 +64,9 @@ script:
 - ./mango_vec4
 - ./glm_swizzle
 - ./mango_swizzle
+- ./glm_mat4
+- ./glm_mat4_simd
+- ./eigen_mat4
+- ./blaze_mat4
+- ./mathfu_mat4
+- ./mango_mat4
