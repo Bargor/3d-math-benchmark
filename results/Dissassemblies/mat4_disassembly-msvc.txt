@@ -1,0 +1,545 @@
+GLM:
+
+res = testData[0] + testData[1];
+00007FF6C1E75C8F  mov         rax,qword ptr [testData]  
+00007FF6C1E75C94  movups      xmm4,xmmword ptr [rax+30h]  
+00007FF6C1E75C98  movups      xmm3,xmmword ptr [rax+70h]  
+00007FF6C1E75C9C  movaps      xmm8,xmm4  
+00007FF6C1E75CA0  addss       xmm8,xmm3  
+00007FF6C1E75CA5  movaps      xmm2,xmm4  
+00007FF6C1E75CA8  shufps      xmm2,xmm4,55h  
+00007FF6C1E75CAC  movaps      xmm0,xmm3  
+00007FF6C1E75CAF  shufps      xmm0,xmm3,55h  
+00007FF6C1E75CB3  addss       xmm2,xmm0  
+00007FF6C1E75CB7  movaps      xmm1,xmm4  
+00007FF6C1E75CBA  shufps      xmm1,xmm4,0AAh  
+00007FF6C1E75CBE  movaps      xmm0,xmm3  
+00007FF6C1E75CC1  shufps      xmm0,xmm3,0AAh  
+00007FF6C1E75CC5  addss       xmm1,xmm0  
+00007FF6C1E75CC9  shufps      xmm4,xmm4,0FFh  
+00007FF6C1E75CCD  shufps      xmm3,xmm3,0FFh  
+00007FF6C1E75CD1  addss       xmm4,xmm3  
+00007FF6C1E75CD5  shufps      xmm8,xmm8,0E1h  
+00007FF6C1E75CDA  movss       xmm8,xmm2  
+00007FF6C1E75CDF  shufps      xmm8,xmm8,0C6h  
+00007FF6C1E75CE4  movss       xmm8,xmm1  
+00007FF6C1E75CE9  shufps      xmm8,xmm8,27h  
+00007FF6C1E75CEE  movss       xmm8,xmm4  
+00007FF6C1E75CF3  shufps      xmm8,xmm8,39h  
+00007FF6C1E75CF8  movups      xmm4,xmmword ptr [rax+20h]  
+00007FF6C1E75CFC  movups      xmm3,xmmword ptr [rax+60h]  
+00007FF6C1E75D00  movaps      xmm7,xmm4  
+00007FF6C1E75D03  addss       xmm7,xmm3  
+00007FF6C1E75D07  movaps      xmm2,xmm4  
+00007FF6C1E75D0A  shufps      xmm2,xmm4,55h  
+00007FF6C1E75D0E  movaps      xmm0,xmm3  
+00007FF6C1E75D11  shufps      xmm0,xmm3,55h  
+00007FF6C1E75D15  addss       xmm2,xmm0  
+00007FF6C1E75D19  movaps      xmm1,xmm4  
+00007FF6C1E75D1C  shufps      xmm1,xmm4,0AAh  
+00007FF6C1E75D20  movaps      xmm0,xmm3  
+00007FF6C1E75D23  shufps      xmm0,xmm3,0AAh  
+00007FF6C1E75D27  addss       xmm1,xmm0  
+00007FF6C1E75D2B  shufps      xmm4,xmm4,0FFh  
+00007FF6C1E75D2F  shufps      xmm3,xmm3,0FFh  
+00007FF6C1E75D33  addss       xmm4,xmm3  
+00007FF6C1E75D37  shufps      xmm7,xmm7,0E1h  
+00007FF6C1E75D3B  movss       xmm7,xmm2  
+00007FF6C1E75D3F  shufps      xmm7,xmm7,0C6h  
+00007FF6C1E75D43  movss       xmm7,xmm1  
+00007FF6C1E75D47  shufps      xmm7,xmm7,27h  
+00007FF6C1E75D4B  movss       xmm7,xmm4  
+00007FF6C1E75D4F  shufps      xmm7,xmm7,39h  
+00007FF6C1E75D53  movups      xmm4,xmmword ptr [rax+10h]  
+00007FF6C1E75D57  movups      xmm3,xmmword ptr [rax+50h]  
+00007FF6C1E75D5B  movaps      xmm6,xmm4  
+00007FF6C1E75D5E  addss       xmm6,xmm3  
+00007FF6C1E75D62  movaps      xmm2,xmm4  
+00007FF6C1E75D65  shufps      xmm2,xmm4,55h  
+00007FF6C1E75D69  movaps      xmm0,xmm3  
+00007FF6C1E75D6C  shufps      xmm0,xmm3,55h  
+00007FF6C1E75D70  addss       xmm2,xmm0  
+00007FF6C1E75D74  movaps      xmm1,xmm4  
+00007FF6C1E75D77  shufps      xmm1,xmm4,0AAh  
+00007FF6C1E75D7B  movaps      xmm0,xmm3  
+00007FF6C1E75D7E  shufps      xmm0,xmm3,0AAh  
+00007FF6C1E75D82  addss       xmm1,xmm0  
+00007FF6C1E75D86  shufps      xmm4,xmm4,0FFh  
+00007FF6C1E75D8A  shufps      xmm3,xmm3,0FFh  
+00007FF6C1E75D8E  addss       xmm4,xmm3  
+00007FF6C1E75D92  shufps      xmm6,xmm6,0E1h  
+00007FF6C1E75D96  movss       xmm6,xmm2  
+00007FF6C1E75D9A  shufps      xmm6,xmm6,0C6h  
+00007FF6C1E75D9E  movss       xmm6,xmm1  
+00007FF6C1E75DA2  shufps      xmm6,xmm6,27h  
+00007FF6C1E75DA6  movss       xmm6,xmm4  
+00007FF6C1E75DAA  shufps      xmm6,xmm6,39h  
+00007FF6C1E75DAE  movups      xmm4,xmmword ptr [rax]  
+00007FF6C1E75DB1  movups      xmm3,xmmword ptr [rax+40h]  
+00007FF6C1E75DB5  movaps      xmm5,xmm4  
+00007FF6C1E75DB8  addss       xmm5,xmm3  
+00007FF6C1E75DBC  movaps      xmm2,xmm4  
+00007FF6C1E75DBF  shufps      xmm2,xmm4,55h  
+00007FF6C1E75DC3  movaps      xmm0,xmm3  
+00007FF6C1E75DC6  shufps      xmm0,xmm3,55h  
+00007FF6C1E75DCA  addss       xmm2,xmm0  
+00007FF6C1E75DCE  movaps      xmm1,xmm4  
+00007FF6C1E75DD1  shufps      xmm1,xmm4,0AAh  
+00007FF6C1E75DD5  movaps      xmm0,xmm3  
+00007FF6C1E75DD8  shufps      xmm0,xmm3,0AAh  
+00007FF6C1E75DDC  addss       xmm1,xmm0  
+00007FF6C1E75DE0  shufps      xmm4,xmm4,0FFh  
+00007FF6C1E75DE4  shufps      xmm3,xmm3,0FFh  
+00007FF6C1E75DE8  addss       xmm4,xmm3  
+00007FF6C1E75DEC  shufps      xmm5,xmm5,0E1h  
+00007FF6C1E75DF0  movss       xmm5,xmm2  
+00007FF6C1E75DF4  shufps      xmm5,xmm5,0C6h  
+00007FF6C1E75DF8  movss       xmm5,xmm1  
+00007FF6C1E75DFC  shufps      xmm5,xmm5,27h  
+00007FF6C1E75E00  movss       xmm5,xmm4  
+00007FF6C1E75E04  shufps      xmm5,xmm5,39h  
+00007FF6C1E75E08  movaps      xmmword ptr [res],xmm5  
+00007FF6C1E75E0D  movaps      xmmword ptr [rsp+60h],xmm6  
+00007FF6C1E75E12  movaps      xmmword ptr [rsp+70h],xmm7  
+00007FF6C1E75E17  movaps      xmmword ptr [rsp+80h],xmm8  
+
+00007FF6C1E75E20  dec         rbx  
+00007FF6C1E75E23  jmp         mat4_add+76h (07FF6C1E75C86h)  
+
+res = testData[0] * testData[1];
+00007FF6C1E75749  mov         rdx,qword ptr [testData]  
+00007FF6C1E7574E  lea         r8,[rdx+40h]  
+00007FF6C1E75752  lea         rcx,[rsp+80h]  
+00007FF6C1E7575A  call        glm::operator*<float,0> (07FF6C1E71FFFh)  
+00007FF6C1E7575F  movups      xmm0,xmmword ptr [rax]  
+00007FF6C1E75762  movaps      xmmword ptr [res],xmm0  
+00007FF6C1E75767  movups      xmm1,xmmword ptr [rax+10h]  
+00007FF6C1E7576B  movaps      xmmword ptr [rsp+50h],xmm1  
+00007FF6C1E75770  movups      xmm0,xmmword ptr [rax+20h]  
+00007FF6C1E75774  movaps      xmmword ptr [rsp+60h],xmm0  
+00007FF6C1E75779  movups      xmm1,xmmword ptr [rax+30h]  
+00007FF6C1E7577D  movaps      xmmword ptr [rsp+70h],xmm1  
+
+00007FF6C1E75782  dec         rbx  
+00007FF6C1E75785  jmp         mat4_mult+64h (07FF6C1E75744h)  
+
+GLM SIMD:
+
+ res = testData[0] + testData[1];
+00007FF62A6C6509  mov         rax,qword ptr [testData]  
+00007FF62A6C650E  movups      xmm3,xmmword ptr [rax+30h]  
+00007FF62A6C6512  addps       xmm3,xmmword ptr [rax+70h]  
+00007FF62A6C6516  movups      xmm2,xmmword ptr [rax+20h]  
+00007FF62A6C651A  addps       xmm2,xmmword ptr [rax+60h]  
+00007FF62A6C651E  movups      xmm1,xmmword ptr [rax+10h]  
+00007FF62A6C6522  addps       xmm1,xmmword ptr [rax+50h]  
+00007FF62A6C6526  movups      xmm0,xmmword ptr [rax]  
+00007FF62A6C6529  addps       xmm0,xmmword ptr [rax+40h]  
+00007FF62A6C652D  movaps      xmmword ptr [res],xmm0  
+00007FF62A6C6532  movaps      xmmword ptr [rsp+50h],xmm1  
+00007FF62A6C6537  movaps      xmmword ptr [rsp+60h],xmm2  
+00007FF62A6C653C  movaps      xmmword ptr [rsp+70h],xmm3  
+
+00007FF62A6C6541  dec         rbx  
+00007FF62A6C6544  jmp         mat4_add+64h (07FF62A6C6504h)  
+
+res = testData[0] * testData[1];
+00007FF62A6C6689  mov         rax,qword ptr [testData]  
+00007FF62A6C668E  movups      xmm2,xmmword ptr [rax+40h]  
+00007FF62A6C6692  movups      xmm3,xmmword ptr [rax+50h]  
+00007FF62A6C6696  movups      xmm5,xmmword ptr [rax+60h]  
+00007FF62A6C669A  movups      xmm7,xmmword ptr [rax+70h]  
+00007FF62A6C669E  movaps      xmm6,xmm2  
+00007FF62A6C66A1  shufps      xmm6,xmm6,0  
+00007FF62A6C66A5  mulps       xmm6,xmmword ptr [rax]  
+00007FF62A6C66A8  movaps      xmm1,xmm2  
+00007FF62A6C66AB  shufps      xmm1,xmm2,55h  
+00007FF62A6C66AF  shufps      xmm1,xmm1,0  
+00007FF62A6C66B3  mulps       xmm1,xmmword ptr [rax+10h]  
+00007FF62A6C66B7  addps       xmm6,xmm1  
+00007FF62A6C66BA  movaps      xmm1,xmm2  
+00007FF62A6C66BD  shufps      xmm1,xmm2,0AAh  
+00007FF62A6C66C1  shufps      xmm1,xmm1,0  
+00007FF62A6C66C5  mulps       xmm1,xmmword ptr [rax+20h]  
+00007FF62A6C66C9  addps       xmm6,xmm1  
+00007FF62A6C66CC  shufps      xmm2,xmm2,0FFh  
+00007FF62A6C66D0  movaps      xmm0,xmm2  
+00007FF62A6C66D3  shufps      xmm0,xmm0,0  
+00007FF62A6C66D7  mulps       xmm0,xmmword ptr [rax+30h]  
+00007FF62A6C66DB  addps       xmm6,xmm0  
+00007FF62A6C66DE  movaps      xmm4,xmm3  
+00007FF62A6C66E1  shufps      xmm4,xmm4,0  
+00007FF62A6C66E5  mulps       xmm4,xmmword ptr [rax]  
+00007FF62A6C66E8  movaps      xmm1,xmm3  
+00007FF62A6C66EB  shufps      xmm1,xmm3,55h  
+00007FF62A6C66EF  shufps      xmm1,xmm1,0  
+00007FF62A6C66F3  mulps       xmm1,xmmword ptr [rax+10h]  
+00007FF62A6C66F7  addps       xmm4,xmm1  
+00007FF62A6C66FA  movaps      xmm1,xmm3  
+00007FF62A6C66FD  shufps      xmm1,xmm3,0AAh  
+00007FF62A6C6701  shufps      xmm1,xmm1,0  
+00007FF62A6C6705  mulps       xmm1,xmmword ptr [rax+20h]  
+00007FF62A6C6709  addps       xmm4,xmm1  
+00007FF62A6C670C  shufps      xmm3,xmm3,0FFh  
+00007FF62A6C6710  movaps      xmm0,xmm3  
+00007FF62A6C6713  shufps      xmm0,xmm0,0  
+00007FF62A6C6717  mulps       xmm0,xmmword ptr [rax+30h]  
+00007FF62A6C671B  addps       xmm4,xmm0  
+00007FF62A6C671E  movaps      xmm3,xmm5  
+00007FF62A6C6721  shufps      xmm3,xmm3,0  
+00007FF62A6C6725  mulps       xmm3,xmmword ptr [rax]  
+00007FF62A6C6728  movaps      xmm1,xmm5  
+00007FF62A6C672B  shufps      xmm1,xmm5,55h  
+00007FF62A6C672F  shufps      xmm1,xmm1,0  
+00007FF62A6C6733  mulps       xmm1,xmmword ptr [rax+10h]  
+00007FF62A6C6737  addps       xmm3,xmm1  
+00007FF62A6C673A  movaps      xmm1,xmm5  
+00007FF62A6C673D  shufps      xmm1,xmm5,0AAh  
+00007FF62A6C6741  shufps      xmm1,xmm1,0  
+00007FF62A6C6745  mulps       xmm1,xmmword ptr [rax+20h]  
+00007FF62A6C6749  addps       xmm3,xmm1  
+00007FF62A6C674C  shufps      xmm5,xmm5,0FFh  
+00007FF62A6C6750  movaps      xmm0,xmm5  
+00007FF62A6C6753  shufps      xmm0,xmm0,0  
+00007FF62A6C6757  mulps       xmm0,xmmword ptr [rax+30h]  
+00007FF62A6C675B  addps       xmm3,xmm0  
+00007FF62A6C675E  movaps      xmm2,xmm7  
+00007FF62A6C6761  shufps      xmm2,xmm2,0  
+00007FF62A6C6765  mulps       xmm2,xmmword ptr [rax]  
+00007FF62A6C6768  movaps      xmm1,xmm7  
+00007FF62A6C676B  shufps      xmm1,xmm7,55h  
+00007FF62A6C676F  shufps      xmm1,xmm1,0  
+00007FF62A6C6773  mulps       xmm1,xmmword ptr [rax+10h]  
+00007FF62A6C6777  addps       xmm2,xmm1  
+00007FF62A6C677A  movaps      xmm1,xmm7  
+00007FF62A6C677D  shufps      xmm1,xmm7,0AAh  
+00007FF62A6C6781  shufps      xmm1,xmm1,0  
+00007FF62A6C6785  mulps       xmm1,xmmword ptr [rax+20h]  
+00007FF62A6C6789  addps       xmm2,xmm1  
+00007FF62A6C678C  shufps      xmm7,xmm7,0FFh  
+00007FF62A6C6790  movaps      xmm0,xmm7  
+00007FF62A6C6793  shufps      xmm0,xmm0,0  
+00007FF62A6C6797  mulps       xmm0,xmmword ptr [rax+30h]  
+00007FF62A6C679B  addps       xmm2,xmm0  
+00007FF62A6C679E  movaps      xmmword ptr [res],xmm6  
+00007FF62A6C67A3  movaps      xmmword ptr [rsp+50h],xmm4  
+00007FF62A6C67A8  movaps      xmmword ptr [rsp+60h],xmm3  
+00007FF62A6C67AD  movaps      xmmword ptr [rsp+70h],xmm2  
+
+00007FF62A6C67B2  dec         rbx  
+00007FF62A6C67B5  jmp         mat4_mult+70h (07FF62A6C6680h)  
+
+Eigen:
+
+        res = testData[0] + testData[1];
+00007FF78EC562A6  mov         rax,qword ptr [testData]  
+00007FF78EC562AB  movups      xmm0,xmmword ptr [rax+40h]  
+00007FF78EC562AF  addps       xmm0,xmmword ptr [rax]  
+00007FF78EC562B2  movaps      xmmword ptr [res],xmm0  
+00007FF78EC562B7  movups      xmm1,xmmword ptr [rax+50h]  
+00007FF78EC562BB  addps       xmm1,xmmword ptr [rax+10h]  
+00007FF78EC562BF  movaps      xmmword ptr [rsp+50h],xmm1  
+00007FF78EC562C4  movups      xmm0,xmmword ptr [rax+60h]  
+00007FF78EC562C8  addps       xmm0,xmmword ptr [rax+20h]  
+00007FF78EC562CC  movaps      xmmword ptr [rsp+60h],xmm0  
+00007FF78EC562D1  movups      xmm1,xmmword ptr [rax+70h]  
+00007FF78EC562D5  addps       xmm1,xmmword ptr [rax+30h]  
+00007FF78EC562D9  movaps      xmmword ptr [rsp+70h],xmm1  
+
+00007FF78EC562DE  dec         rbx  
+00007FF78EC562E1  jmp         mat4_add+61h (07FF78EC562A1h) 
+
+res = testData[0] * testData[1];
+00007FF78EC56419  mov         rax,qword ptr [testData]  
+00007FF78EC5641E  movups      xmm5,xmmword ptr [rax+10h]  
+00007FF78EC56422  movups      xmm6,xmmword ptr [rax+20h]  
+00007FF78EC56426  movups      xmm7,xmmword ptr [rax+30h]  
+00007FF78EC5642A  movss       xmm8,dword ptr [rax+44h]  
+00007FF78EC56430  shufps      xmm8,xmm8,0  
+00007FF78EC56435  mulps       xmm8,xmm5  
+00007FF78EC56439  movss       xmm0,dword ptr [rax+40h]  
+00007FF78EC5643E  shufps      xmm0,xmm0,0  
+00007FF78EC56442  mulps       xmm0,xmmword ptr [rax]  
+00007FF78EC56445  addps       xmm8,xmm0  
+00007FF78EC56449  movss       xmm1,dword ptr [rax+48h]  
+00007FF78EC5644E  shufps      xmm1,xmm1,0  
+00007FF78EC56452  mulps       xmm1,xmm6  
+00007FF78EC56455  addps       xmm8,xmm1  
+00007FF78EC56459  movss       xmm0,dword ptr [rax+4Ch]  
+00007FF78EC5645E  shufps      xmm0,xmm0,0  
+00007FF78EC56462  mulps       xmm0,xmm7  
+00007FF78EC56465  addps       xmm8,xmm0  
+00007FF78EC56469  movss       xmm4,dword ptr [rax+50h]  
+00007FF78EC5646E  shufps      xmm4,xmm4,0  
+00007FF78EC56472  mulps       xmm4,xmmword ptr [rax]  
+00007FF78EC56475  movss       xmm0,dword ptr [rax+54h]  
+00007FF78EC5647A  shufps      xmm0,xmm0,0  
+00007FF78EC5647E  mulps       xmm0,xmm5  
+00007FF78EC56481  addps       xmm4,xmm0  
+00007FF78EC56484  movss       xmm1,dword ptr [rax+58h]  
+00007FF78EC56489  shufps      xmm1,xmm1,0  
+00007FF78EC5648D  mulps       xmm1,xmm6  
+00007FF78EC56490  addps       xmm4,xmm1  
+00007FF78EC56493  movss       xmm0,dword ptr [rax+5Ch]  
+00007FF78EC56498  shufps      xmm0,xmm0,0  
+00007FF78EC5649C  mulps       xmm0,xmm7  
+00007FF78EC5649F  addps       xmm4,xmm0  
+00007FF78EC564A2  movss       xmm3,dword ptr [rax+60h]  
+00007FF78EC564A7  shufps      xmm3,xmm3,0  
+00007FF78EC564AB  mulps       xmm3,xmmword ptr [rax]  
+00007FF78EC564AE  movss       xmm0,dword ptr [rax+64h]  
+00007FF78EC564B3  shufps      xmm0,xmm0,0  
+00007FF78EC564B7  mulps       xmm0,xmm5  
+00007FF78EC564BA  addps       xmm3,xmm0  
+00007FF78EC564BD  movss       xmm1,dword ptr [rax+68h]  
+00007FF78EC564C2  shufps      xmm1,xmm1,0  
+00007FF78EC564C6  mulps       xmm1,xmm6  
+00007FF78EC564C9  addps       xmm3,xmm1  
+00007FF78EC564CC  movss       xmm0,dword ptr [rax+6Ch]  
+00007FF78EC564D1  shufps      xmm0,xmm0,0  
+00007FF78EC564D5  mulps       xmm0,xmm7  
+00007FF78EC564D8  addps       xmm3,xmm0  
+00007FF78EC564DB  movss       xmm2,dword ptr [rax+70h]  
+00007FF78EC564E0  shufps      xmm2,xmm2,0  
+00007FF78EC564E4  mulps       xmm2,xmmword ptr [rax]  
+00007FF78EC564E7  movss       xmm0,dword ptr [rax+74h]  
+00007FF78EC564EC  shufps      xmm0,xmm0,0  
+00007FF78EC564F0  mulps       xmm0,xmm5  
+00007FF78EC564F3  addps       xmm2,xmm0  
+00007FF78EC564F6  movss       xmm1,dword ptr [rax+78h]  
+00007FF78EC564FB  shufps      xmm1,xmm1,0  
+00007FF78EC564FF  mulps       xmm1,xmm6  
+00007FF78EC56502  addps       xmm2,xmm1  
+00007FF78EC56505  movss       xmm0,dword ptr [rax+7Ch]  
+00007FF78EC5650A  shufps      xmm0,xmm0,0  
+00007FF78EC5650E  mulps       xmm0,xmm7  
+00007FF78EC56511  addps       xmm2,xmm0  
+00007FF78EC56514  movaps      xmmword ptr [res],xmm8  
+00007FF78EC5651A  movaps      xmmword ptr [rsp+50h],xmm4  
+00007FF78EC5651F  movaps      xmmword ptr [rsp+60h],xmm3  
+00007FF78EC56524  movaps      xmmword ptr [rsp+70h],xmm2  
+
+00007FF78EC56529  dec         rbx  
+00007FF78EC5652C  jmp         mat4_mult+70h (07FF78EC56410h)  
+
+Blaze:
+
+res = testData[0] + testData[1];
+00007FF772A5DC98  mov         rax,qword ptr [testData]  
+00007FF772A5DC9D  lea         rdx,[rax+40h]  
+
+00007FF772A5DCA1  sub         rdx,rax  
+00007FF772A5DCA4  lea         r8,[res]  
+00007FF772A5DCA9  sub         r8,rax  
+00007FF772A5DCAC  mov         ecx,4  
+00007FF772A5DCB1  nop         dword ptr [rax]  
+00007FF772A5DCB5  nop         word ptr [rax+rax]  
+        res = testData[0] + testData[1];
+00007FF772A5DCC0  movups      xmm0,xmmword ptr [rdx+rax]  
+00007FF772A5DCC4  addps       xmm0,xmmword ptr [rax]  
+00007FF772A5DCC7  movups      xmmword ptr [r8+rax],xmm0  
+00007FF772A5DCCC  add         rax,10h  
+00007FF772A5DCD0  sub         rcx,1  
+00007FF772A5DCD4  jne         mat4_add+90h (07FF772A5DCC0h)  
+
+00007FF772A5DCD6  dec         rbx  
+00007FF772A5DCD9  jmp         mat4_add+63h (07FF772A5DC93h) 
+
+benchmark::ClobberMemory();
+        res = testData[0] * testData[1];
+00007FF772A5DE1C  mov         rdx,qword ptr [testData]  
+00007FF772A5DE21  lea         r8,[rdx+40h]  
+00007FF772A5DE25  lea         rax,[res]  
+00007FF772A5DE2A  cmp         rdx,rax  
+00007FF772A5DE2D  je          mat4_mult+9Dh (07FF772A5DE3Dh)  
+00007FF772A5DE2F  lea         rax,[res]  
+00007FF772A5DE34  cmp         r8,rax  
+00007FF772A5DE37  je          mat4_mult+9Dh (07FF772A5DE3Dh)  
+00007FF772A5DE39  xor         al,al  
+00007FF772A5DE3B  jmp         mat4_mult+9Fh (07FF772A5DE3Fh)  
+00007FF772A5DE3D  mov         al,1  
+00007FF772A5DE3F  test        al,al  
+00007FF772A5DE41  je          mat4_mult+0CFh (07FF772A5DE6Fh)  
+00007FF772A5DE43  lea         rcx,[rsp+80h]  
+00007FF772A5DE4B  call        blaze::DMatDMatMultExpr<blaze::StaticMatrix<float,4,4,0,1,1,blaze::GroupTag<0> >,blaze::StaticMatrix<float,4,4,0,1,1,blaze::GroupTag<0> >,0,0,0,0>::selectSmallAssignKernel<blaze::StaticMatrix<float,4,4,0,1,1,blaze::GroupTag<0> >,blaze::StaticMatrix<float,4,4,0,1,1,blaze::GroupTag<0> >,blaze::StaticMatrix<float,4,4,0,1,1,blaze::GroupTag<0> > > (07FF772A51F5Fh)  
+00007FF772A5DE50  mov         rax,rsi  
+00007FF772A5DE53  movups      xmm0,xmmword ptr [rsp+rax+80h]  
+00007FF772A5DE5B  movups      xmmword ptr res[rax],xmm0  
+00007FF772A5DE60  add         rax,10h  
+00007FF772A5DE64  cmp         rax,40h  
+00007FF772A5DE68  jb          mat4_mult+0B3h (07FF772A5DE53h)  
+
+    for (auto _ : state) {
+00007FF772A5DE6A  dec         rbx  
+00007FF772A5DE6D  jmp         mat4_mult+77h (07FF772A5DE17h)  
+
+res = testData[0] * testData[1];
+00007FF772A5DE6F  lea         rcx,[res]  
+00007FF772A5DE74  call        blaze::DMatDMatMultExpr<blaze::StaticMatrix<float,4,4,0,1,1,blaze::GroupTag<0> >,blaze::StaticMatrix<float,4,4,0,1,1,blaze::GroupTag<0> >,0,0,0,0>::selectSmallAssignKernel<blaze::StaticMatrix<float,4,4,0,1,1,blaze::GroupTag<0> >,blaze::StaticMatrix<float,4,4,0,1,1,blaze::GroupTag<0> >,blaze::StaticMatrix<float,4,4,0,1,1,blaze::GroupTag<0> > > (07FF772A51F5Fh)  
+
+    for (auto _ : state) {
+00007FF772A5DE79  dec         rbx  
+00007FF772A5DE7C  jmp         mat4_mult+77h (07FF772A5DE17h)   
+
+Mathfu:
+
+        res = testData[0] + testData[1];
+00007FF6976B6699  mov         rax,qword ptr [rbp-29h]  
+00007FF6976B669D  movss       xmm6,dword ptr [rax]  
+00007FF6976B66A1  addss       xmm6,dword ptr [rax+40h]  
+00007FF6976B66A6  movss       xmm0,dword ptr [rax+4]  
+00007FF6976B66AB  addss       xmm0,dword ptr [rax+44h]  
+00007FF6976B66B0  movss       xmm1,dword ptr [rax+8]  
+00007FF6976B66B5  addss       xmm1,dword ptr [rax+48h]  
+00007FF6976B66BA  movss       xmm2,dword ptr [rax+0Ch]  
+00007FF6976B66BF  addss       xmm2,dword ptr [rax+4Ch]  
+00007FF6976B66C4  shufps      xmm6,xmm6,0E1h  
+00007FF6976B66C8  movss       xmm6,xmm0  
+00007FF6976B66CC  shufps      xmm6,xmm6,0C6h  
+00007FF6976B66D0  movss       xmm6,xmm1  
+00007FF6976B66D4  shufps      xmm6,xmm6,27h  
+00007FF6976B66D8  movss       xmm6,xmm2  
+00007FF6976B66DC  shufps      xmm6,xmm6,39h  
+00007FF6976B66E0  movss       xmm5,dword ptr [rax+50h]  
+00007FF6976B66E5  addss       xmm5,dword ptr [rax+10h]  
+00007FF6976B66EA  movss       xmm0,dword ptr [rax+14h]  
+00007FF6976B66EF  addss       xmm0,dword ptr [rax+54h]  
+00007FF6976B66F4  movss       xmm1,dword ptr [rax+18h]  
+00007FF6976B66F9  addss       xmm1,dword ptr [rax+58h]  
+00007FF6976B66FE  movss       xmm2,dword ptr [rax+1Ch]  
+00007FF6976B6703  addss       xmm2,dword ptr [rax+5Ch]  
+00007FF6976B6708  shufps      xmm5,xmm5,0E1h  
+00007FF6976B670C  movss       xmm5,xmm0  
+00007FF6976B6710  shufps      xmm5,xmm5,0C6h  
+00007FF6976B6714  movss       xmm5,xmm1  
+00007FF6976B6718  shufps      xmm5,xmm5,27h  
+00007FF6976B671C  movss       xmm5,xmm2  
+00007FF6976B6720  shufps      xmm5,xmm5,39h  
+00007FF6976B6724  movss       xmm4,dword ptr [rax+60h]  
+00007FF6976B6729  addss       xmm4,dword ptr [rax+20h]  
+00007FF6976B672E  movss       xmm0,dword ptr [rax+24h]  
+00007FF6976B6733  addss       xmm0,dword ptr [rax+64h]  
+00007FF6976B6738  movss       xmm1,dword ptr [rax+28h]  
+00007FF6976B673D  addss       xmm1,dword ptr [rax+68h]  
+00007FF6976B6742  movss       xmm2,dword ptr [rax+2Ch]  
+00007FF6976B6747  addss       xmm2,dword ptr [rax+6Ch]  
+00007FF6976B674C  shufps      xmm4,xmm4,0E1h  
+00007FF6976B6750  movss       xmm4,xmm0  
+00007FF6976B6754  shufps      xmm4,xmm4,0C6h  
+00007FF6976B6758  movss       xmm4,xmm1  
+00007FF6976B675C  shufps      xmm4,xmm4,27h  
+00007FF6976B6760  movss       xmm4,xmm2  
+00007FF6976B6764  shufps      xmm4,xmm4,39h  
+00007FF6976B6768  movss       xmm3,dword ptr [rax+70h]  
+00007FF6976B676D  addss       xmm3,dword ptr [rax+30h]  
+00007FF6976B6772  movss       xmm0,dword ptr [rax+34h]  
+00007FF6976B6777  addss       xmm0,dword ptr [rax+74h]  
+00007FF6976B677C  movss       xmm1,dword ptr [rax+38h]  
+00007FF6976B6781  addss       xmm1,dword ptr [rax+78h]  
+00007FF6976B6786  movss       xmm2,dword ptr [rax+3Ch]  
+00007FF6976B678B  addss       xmm2,dword ptr [rax+7Ch]  
+00007FF6976B6790  shufps      xmm3,xmm3,0E1h  
+00007FF6976B6794  movss       xmm3,xmm0  
+00007FF6976B6798  shufps      xmm3,xmm3,0C6h  
+00007FF6976B679C  movss       xmm3,xmm1  
+00007FF6976B67A0  shufps      xmm3,xmm3,27h  
+00007FF6976B67A4  movss       xmm3,xmm2  
+00007FF6976B67A8  shufps      xmm3,xmm3,39h  
+00007FF6976B67AC  movaps      xmmword ptr [rbp-9],xmm6  
+00007FF6976B67B0  movaps      xmmword ptr [rbp+7],xmm5  
+00007FF6976B67B4  movaps      xmmword ptr [rbp+17h],xmm4  
+00007FF6976B67B8  movaps      xmmword ptr [rbp+27h],xmm3  
+
+00007FF6976B67BC  dec         rbx  
+00007FF6976B67BF  jmp         mat4_add+70h (07FF6976B6690h)  
+
+
+res = testData[0] * testData[1];
+00007FF6976B6939  mov         rcx,qword ptr [testData]  
+00007FF6976B693E  lea         rdx,[rcx+40h]  
+00007FF6976B6942  lea         r8,[rsp+80h]  
+00007FF6976B694A  call        mathfu::TimesHelper<float> (07FF6976B18E8h)  
+00007FF6976B694F  movaps      xmm0,xmmword ptr [rsp+80h]  
+00007FF6976B6957  movaps      xmmword ptr [res],xmm0  
+00007FF6976B695C  movaps      xmm1,xmmword ptr [rsp+90h]  
+00007FF6976B6964  movaps      xmmword ptr [rsp+50h],xmm1  
+00007FF6976B6969  movaps      xmm0,xmmword ptr [rsp+0A0h]  
+00007FF6976B6971  movaps      xmmword ptr [rsp+60h],xmm0  
+00007FF6976B6976  movaps      xmm1,xmmword ptr [rsp+0B0h]  
+00007FF6976B697E  movaps      xmmword ptr [rsp+70h],xmm1  
+
+    for (auto _ : state) {
+00007FF6976B6983  dec         rbx  
+00007FF6976B6986  jmp         mat4_mult+64h (07FF6976B6934h)  
+
+Mango:
+
+        res = testData[0] * testData[1];
+00007FF651036619  mov         rax,qword ptr [testData]  
+00007FF65103661E  movups      xmm1,xmmword ptr [rax]  
+00007FF651036621  movaps      xmm6,xmm1  
+00007FF651036624  movaps      xmm0,xmm1  
+00007FF651036627  movaps      xmm2,xmm1  
+00007FF65103662A  shufps      xmm6,xmm6,55h  
+00007FF65103662E  mulps       xmm6,xmmword ptr [rax+50h]  
+00007FF651036632  shufps      xmm1,xmm1,0  
+00007FF651036636  mulps       xmm1,xmmword ptr [rax+40h]  
+00007FF65103663A  addps       xmm6,xmm1  
+00007FF65103663D  shufps      xmm0,xmm0,0AAh  
+00007FF651036641  mulps       xmm0,xmmword ptr [rax+60h]  
+00007FF651036645  addps       xmm6,xmm0  
+00007FF651036648  shufps      xmm2,xmm2,0FFh  
+00007FF65103664C  mulps       xmm2,xmmword ptr [rax+70h]  
+00007FF651036650  addps       xmm6,xmm2  
+00007FF651036653  movups      xmm1,xmmword ptr [rax+10h]  
+00007FF651036657  movaps      xmm5,xmm1  
+00007FF65103665A  movaps      xmm0,xmm1  
+00007FF65103665D  movaps      xmm2,xmm1  
+00007FF651036660  shufps      xmm5,xmm5,55h  
+00007FF651036664  mulps       xmm5,xmmword ptr [rax+50h]  
+00007FF651036668  shufps      xmm1,xmm1,0  
+00007FF65103666C  mulps       xmm1,xmmword ptr [rax+40h]  
+00007FF651036670  addps       xmm5,xmm1  
+00007FF651036673  shufps      xmm0,xmm0,0AAh  
+00007FF651036677  mulps       xmm0,xmmword ptr [rax+60h]  
+00007FF65103667B  addps       xmm5,xmm0  
+00007FF65103667E  shufps      xmm2,xmm2,0FFh  
+00007FF651036682  mulps       xmm2,xmmword ptr [rax+70h]  
+00007FF651036686  addps       xmm5,xmm2  
+00007FF651036689  movups      xmm1,xmmword ptr [rax+20h]  
+00007FF65103668D  movaps      xmm4,xmm1  
+00007FF651036690  movaps      xmm0,xmm1  
+00007FF651036693  movaps      xmm2,xmm1  
+00007FF651036696  shufps      xmm4,xmm4,55h  
+00007FF65103669A  mulps       xmm4,xmmword ptr [rax+50h]  
+00007FF65103669E  shufps      xmm1,xmm1,0  
+00007FF6510366A2  mulps       xmm1,xmmword ptr [rax+40h]  
+00007FF6510366A6  addps       xmm4,xmm1  
+00007FF6510366A9  shufps      xmm0,xmm0,0AAh  
+00007FF6510366AD  mulps       xmm0,xmmword ptr [rax+60h]  
+00007FF6510366B1  addps       xmm4,xmm0  
+00007FF6510366B4  shufps      xmm2,xmm2,0FFh  
+00007FF6510366B8  mulps       xmm2,xmmword ptr [rax+70h]  
+00007FF6510366BC  addps       xmm4,xmm2  
+00007FF6510366BF  movups      xmm1,xmmword ptr [rax+30h]  
+00007FF6510366C3  movaps      xmm3,xmm1  
+00007FF6510366C6  movaps      xmm0,xmm1  
+00007FF6510366C9  movaps      xmm2,xmm1  
+00007FF6510366CC  shufps      xmm3,xmm3,55h  
+00007FF6510366D0  mulps       xmm3,xmmword ptr [rax+50h]  
+00007FF6510366D4  shufps      xmm1,xmm1,0  
+00007FF6510366D8  mulps       xmm1,xmmword ptr [rax+40h]  
+00007FF6510366DC  addps       xmm3,xmm1  
+00007FF6510366DF  shufps      xmm0,xmm0,0AAh  
+00007FF6510366E3  mulps       xmm0,xmmword ptr [rax+60h]  
+00007FF6510366E7  addps       xmm3,xmm0  
+00007FF6510366EA  shufps      xmm2,xmm2,0FFh  
+00007FF6510366EE  mulps       xmm2,xmmword ptr [rax+70h]  
+00007FF6510366F2  addps       xmm3,xmm2  
+00007FF6510366F5  movaps      xmmword ptr [res],xmm6  
+00007FF6510366FA  movaps      xmmword ptr [rsp+50h],xmm5  
+00007FF6510366FF  movaps      xmmword ptr [rsp+60h],xmm4  
+00007FF651036704  movaps      xmmword ptr [rsp+70h],xmm3  
+
+00007FF651036709  dec         rbx  
+00007FF65103670C  jmp         mat4_mult+60h (07FF651036610h)  
