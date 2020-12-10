@@ -1,0 +1,41 @@
+GLM:
+
+Run on (12 X 2592 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 9216 KiB (x1)
+----------------------------------------------------------------
+Benchmark                      Time             CPU   Iterations
+----------------------------------------------------------------
+vec4_test_swizzle/3         1.93 ns         1.93 ns    373333333
+vec4_test_swizzle_2/2       1.83 ns         1.81 ns    320000000
+
+GLM SIMD:
+
+Run on (12 X 2592 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 9216 KiB (x1)
+----------------------------------------------------------------
+Benchmark                      Time             CPU   Iterations
+----------------------------------------------------------------
+vec4_test_swizzle/3         1.63 ns         1.64 ns    448000000
+vec4_test_swizzle_2/2       1.06 ns         1.07 ns    640000000
+
+MANGO:
+
+Run on (12 X 2592 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 9216 KiB (x1)
+----------------------------------------------------------------
+Benchmark                      Time             CPU   Iterations
+----------------------------------------------------------------
+vec4_test_swizzle/3         1.08 ns         1.07 ns    640000000
+vec4_test_swizzle_2/2      0.880 ns        0.889 ns    896000000

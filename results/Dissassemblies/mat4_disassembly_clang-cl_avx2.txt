@@ -1,0 +1,210 @@
+GLM SIMD:
+
+res = testData[0] + testData[1];
+00007FF779E51070  mov         rax,qword ptr [testData]  
+00007FF779E51074  vmovaps     xmm0,xmmword ptr [rax+40h]  
+00007FF779E51079  vmovaps     xmm1,xmmword ptr [rax+50h]  
+00007FF779E5107E  vmovaps     xmm2,xmmword ptr [rax+60h]  
+00007FF779E51083  vmovaps     xmm3,xmmword ptr [rax+70h]  
+00007FF779E51088  vaddps      xmm3,xmm3,xmmword ptr [rax+30h]  
+00007FF779E5108D  vaddps      xmm2,xmm2,xmmword ptr [rax+20h]  
+00007FF779E51092  vaddps      xmm1,xmm1,xmmword ptr [rax+10h]  
+00007FF779E51097  vaddps      xmm0,xmm0,xmmword ptr [rax]  
+00007FF779E5109B  vmovaps     xmmword ptr [res],xmm0  
+00007FF779E510A0  vmovaps     xmmword ptr [rbx+50h],xmm1  
+00007FF779E510A5  vmovaps     xmmword ptr [rbx+60h],xmm2  
+00007FF779E510AA  vmovaps     xmmword ptr [rbx+70h],xmm3  
+
+00007FF779E510AF  dec         rdi  
+00007FF779E510B2  jne         mat4_add+70h (07FF779E51070h)  
+
+res = testData[0] * testData[1];
+00007FF779E51230  mov         rax,qword ptr [testData]  
+00007FF779E51234  vmovaps     xmm4,xmmword ptr [rax]  
+00007FF779E51238  vmovaps     xmm3,xmmword ptr [rax+10h]  
+00007FF779E5123D  vmovaps     xmm2,xmmword ptr [rax+20h]  
+00007FF779E51242  vmovaps     xmm0,xmmword ptr [rax+30h]  
+00007FF779E51247  vbroadcastss xmm8,dword ptr [rax+4Ch]  
+00007FF779E5124D  vbroadcastss xmm5,dword ptr [rax+48h]  
+00007FF779E51253  vbroadcastss xmm6,dword ptr [rax+44h]  
+00007FF779E51259  vbroadcastss xmm7,dword ptr [rax+40h]  
+00007FF779E5125F  vmulps      xmm7,xmm7,xmm4  
+00007FF779E51263  vfmadd213ps xmm6,xmm3,xmm7  
+00007FF779E51268  vfmadd213ps xmm5,xmm2,xmm6  
+00007FF779E5126D  vfmadd213ps xmm8,xmm0,xmm5  
+00007FF779E51272  vbroadcastss xmm9,dword ptr [rax+5Ch]  
+00007FF779E51278  vbroadcastss xmm6,dword ptr [rax+58h]  
+00007FF779E5127E  vbroadcastss xmm7,dword ptr [rax+54h]  
+00007FF779E51284  vbroadcastss xmm1,dword ptr [rax+50h]  
+00007FF779E5128A  vmulps      xmm1,xmm1,xmm4  
+00007FF779E5128E  vfmadd213ps xmm7,xmm3,xmm1  
+00007FF779E51293  vfmadd213ps xmm6,xmm2,xmm7  
+00007FF779E51298  vfmadd213ps xmm9,xmm0,xmm6  
+00007FF779E5129D  vbroadcastss xmm1,dword ptr [rax+6Ch]  
+00007FF779E512A3  vbroadcastss xmm6,dword ptr [rax+68h]  
+00007FF779E512A9  vbroadcastss xmm7,dword ptr [rax+64h]  
+00007FF779E512AF  vbroadcastss xmm5,dword ptr [rax+60h]  
+00007FF779E512B5  vmulps      xmm5,xmm5,xmm4  
+00007FF779E512B9  vfmadd213ps xmm7,xmm3,xmm5  
+00007FF779E512BE  vfmadd213ps xmm6,xmm2,xmm7  
+00007FF779E512C3  vfmadd213ps xmm1,xmm0,xmm6  
+00007FF779E512C8  vbroadcastss xmm10,dword ptr [rax+7Ch]  
+00007FF779E512CE  vbroadcastss xmm6,dword ptr [rax+78h]  
+00007FF779E512D4  vbroadcastss xmm7,dword ptr [rax+74h]  
+00007FF779E512DA  vbroadcastss xmm5,dword ptr [rax+70h]  
+00007FF779E512E0  vmulps      xmm4,xmm5,xmm4  
+00007FF779E512E4  vfmadd231ps xmm4,xmm3,xmm7  
+00007FF779E512E9  vfmadd231ps xmm4,xmm2,xmm6  
+00007FF779E512EE  vfmadd231ps xmm4,xmm0,xmm10  
+00007FF779E512F3  vmovaps     xmmword ptr [res],xmm8  
+00007FF779E512F8  vmovaps     xmmword ptr [rbx+50h],xmm9  
+00007FF779E512FD  vmovaps     xmmword ptr [rbx+60h],xmm1  
+00007FF779E51302  vmovaps     xmmword ptr [rbx+70h],xmm4  
+
+00007FF779E51307  dec         rdi  
+00007FF779E5130A  jne         mat4_mult+90h (07FF779E51230h)  
+
+Eigen:
+
+res = testData[0] + testData[1];
+00007FF78F1B1070  mov         rax,qword ptr [testData]  
+00007FF78F1B1074  vmovaps     ymm0,ymmword ptr [rax]  
+00007FF78F1B1078  vaddps      ymm0,ymm0,ymmword ptr [rax+40h]  
+00007FF78F1B107D  vmovaps     ymmword ptr [res],ymm0  
+00007FF78F1B1082  vmovaps     ymm0,ymmword ptr [rax+20h]  
+00007FF78F1B1087  vaddps      ymm0,ymm0,ymmword ptr [rax+60h]  
+00007FF78F1B108C  vmovaps     ymmword ptr [rbx+60h],ymm0  
+
+00007FF78F1B1091  dec         rdi  
+00007FF78F1B1094  jne         mat4_add+70h (07FF78F1B1070h)  
+
+res = testData[0] * testData[1];
+00007FF78F1B11C0  mov         rax,qword ptr [testData]  
+00007FF78F1B11C4  vbroadcastss xmm4,dword ptr [rax+40h]  
+00007FF78F1B11CA  vmovaps     xmm3,xmmword ptr [rax]  
+00007FF78F1B11CE  vmovaps     xmm2,xmmword ptr [rax+10h]  
+00007FF78F1B11D3  vmovaps     xmm1,xmmword ptr [rax+20h]  
+00007FF78F1B11D8  vmovaps     xmm0,xmmword ptr [rax+30h]  
+00007FF78F1B11DD  vmulps      xmm4,xmm4,xmm3  
+00007FF78F1B11E1  vbroadcastss xmm5,dword ptr [rax+44h]  
+00007FF78F1B11E7  vfmadd213ps xmm5,xmm2,xmm4  
+00007FF78F1B11EC  vbroadcastss xmm6,dword ptr [rax+48h]  
+00007FF78F1B11F2  vfmadd213ps xmm6,xmm1,xmm5  
+00007FF78F1B11F7  vbroadcastss xmm4,dword ptr [rax+4Ch]  
+00007FF78F1B11FD  vfmadd213ps xmm4,xmm0,xmm6  
+00007FF78F1B1202  vbroadcastss xmm5,dword ptr [rax+50h]  
+00007FF78F1B1208  vmulps      xmm5,xmm5,xmm3  
+00007FF78F1B120C  vbroadcastss xmm6,dword ptr [rax+54h]  
+00007FF78F1B1212  vfmadd213ps xmm6,xmm2,xmm5  
+00007FF78F1B1217  vbroadcastss xmm5,dword ptr [rax+58h]  
+00007FF78F1B121D  vfmadd213ps xmm5,xmm1,xmm6  
+00007FF78F1B1222  vbroadcastss xmm6,dword ptr [rax+5Ch]  
+00007FF78F1B1228  vfmadd213ps xmm6,xmm0,xmm5  
+00007FF78F1B122D  vbroadcastss xmm5,dword ptr [rax+60h]  
+00007FF78F1B1233  vmulps      xmm5,xmm5,xmm3  
+00007FF78F1B1237  vbroadcastss xmm7,dword ptr [rax+64h]  
+00007FF78F1B123D  vfmadd213ps xmm7,xmm2,xmm5  
+00007FF78F1B1242  vbroadcastss xmm5,dword ptr [rax+68h]  
+00007FF78F1B1248  vfmadd213ps xmm5,xmm1,xmm7  
+00007FF78F1B124D  vbroadcastss xmm7,dword ptr [rax+6Ch]  
+00007FF78F1B1253  vfmadd213ps xmm7,xmm0,xmm5  
+00007FF78F1B1258  vbroadcastss xmm5,dword ptr [rax+70h]  
+00007FF78F1B125E  vmulps      xmm3,xmm5,xmm3  
+00007FF78F1B1262  vbroadcastss xmm5,dword ptr [rax+74h]  
+00007FF78F1B1268  vfmadd213ps xmm5,xmm2,xmm3  
+00007FF78F1B126D  vbroadcastss xmm2,dword ptr [rax+78h]  
+00007FF78F1B1273  vfmadd213ps xmm2,xmm1,xmm5  
+00007FF78F1B1278  vbroadcastss xmm1,dword ptr [rax+7Ch]  
+00007FF78F1B127E  vfmadd213ps xmm1,xmm0,xmm2  
+00007FF78F1B1283  vmovaps     xmmword ptr [rbx+50h],xmm6  
+00007FF78F1B1288  vmovaps     xmmword ptr [res],xmm4  
+00007FF78F1B128D  vmovaps     xmmword ptr [rbx+70h],xmm1  
+00007FF78F1B1292  vmovaps     xmmword ptr [rbx+60h],xmm7  
+
+00007FF78F1B1297  dec         rdi  
+00007FF78F1B129A  jne         mat4_mult+80h (07FF78F1B11C0h)  
+
+Blaze:
+
+res = testData[0] + testData[1];
+00007FF70DAC1080  mov         rax,qword ptr [testData]  
+00007FF70DAC1084  vmovaps     ymm0,ymmword ptr [rax]  
+00007FF70DAC1088  vaddps      ymm0,ymm0,ymmword ptr [rax+80h]  
+00007FF70DAC1090  vmovaps     ymmword ptr [res],ymm0  
+00007FF70DAC1095  vmovaps     ymm0,ymmword ptr [rax+20h]  
+00007FF70DAC109A  vaddps      ymm0,ymm0,ymmword ptr [rax+0A0h]  
+00007FF70DAC10A2  vmovaps     ymmword ptr [rbx+60h],ymm0  
+00007FF70DAC10A7  vmovaps     ymm0,ymmword ptr [rax+40h]  
+00007FF70DAC10AC  vaddps      ymm0,ymm0,ymmword ptr [rax+0C0h]  
+00007FF70DAC10B4  vmovaps     ymmword ptr [rbx+80h],ymm0  
+00007FF70DAC10BC  vmovaps     ymm0,ymmword ptr [rax+60h]  
+00007FF70DAC10C1  vaddps      ymm0,ymm0,ymmword ptr [rax+0E0h]  
+00007FF70DAC10C9  vmovaps     ymmword ptr [rbx+0A0h],ymm0  
+
+00007FF70DAC10D1  dec         rdi  
+00007FF70DAC10D4  jne         mat4_add+80h (07FF70DAC1080h)  
+
+res = testData[0] * testData[1];
+00007FF70DAC1210  mov         rax,qword ptr [testData]  
+00007FF70DAC1214  mov         qword ptr [rbx+50h],rax  
+00007FF70DAC1218  sub         rax,0FFFFFFFFFFFFFF80h  
+00007FF70DAC121C  mov         qword ptr [rbx+58h],rax  
+00007FF70DAC1220  mov         rcx,r15  
+00007FF70DAC1223  mov         rdx,rsi  
+00007FF70DAC1226  call        blaze::StaticMatrix<float,4,4,0,blaze::aligned,blaze::padded,blaze::GroupTag<0> >::operator=<blaze::DMatDMatMultExpr<blaze::StaticMatrix<float,4,4,0,blaze::aligned,blaze::padded,blaze::GroupTag<0> >,blaze::StaticMatrix<float,4,4,0,blaze::aligned,blaze::padded,blaze::GroupTag<0> >,0,0,0,0>,0> (07FF70DAC2730h)  
+
+00007FF70DAC122B  dec         rdi  
+00007FF70DAC122E  test        rdi,rdi  
+00007FF70DAC1231  jne         mat4_mult+90h (07FF70DAC1210h)  
+
+Mango:
+
+res = testData[0] * testData[1];
+00007FF7E6581070  mov         rax,qword ptr [testData]  
+00007FF7E6581074  vmovaps     xmm3,xmmword ptr [rax]  
+00007FF7E6581078  vmovaps     xmm7,xmmword ptr [rax+10h]  
+00007FF7E658107D  vmovaps     xmm4,xmmword ptr [rax+20h]  
+00007FF7E6581082  vmovaps     xmm8,xmmword ptr [rax+30h]  
+00007FF7E6581087  vbroadcastss xmm2,xmm3  
+00007FF7E658108C  vmovaps     xmm1,xmmword ptr [rax+40h]  
+00007FF7E6581091  vmulps      xmm5,xmm1,xmm2  
+00007FF7E6581095  vpermilps   xmm6,xmm3,55h  
+00007FF7E658109B  vmovaps     xmm2,xmmword ptr [rax+50h]  
+00007FF7E65810A0  vfmadd213ps xmm6,xmm2,xmm5  
+00007FF7E65810A5  vpermilps   xmm0,xmm3,0AAh  
+00007FF7E65810AB  vmovaps     xmm5,xmmword ptr [rax+60h]  
+00007FF7E65810B0  vfmadd213ps xmm0,xmm5,xmm6  
+00007FF7E65810B5  vpermilps   xmm9,xmm3,0FFh  
+00007FF7E65810BB  vmovaps     xmm6,xmmword ptr [rax+70h]  
+00007FF7E65810C0  vfmadd213ps xmm9,xmm6,xmm0  
+00007FF7E65810C5  vbroadcastss xmm0,xmm7  
+00007FF7E65810CA  vmulps      xmm0,xmm0,xmm1  
+00007FF7E65810CE  vpermilps   xmm3,xmm7,55h  
+00007FF7E65810D4  vfmadd213ps xmm3,xmm2,xmm0  
+00007FF7E65810D9  vpermilps   xmm0,xmm7,0AAh  
+00007FF7E65810DF  vfmadd213ps xmm0,xmm5,xmm3  
+00007FF7E65810E4  vpermilps   xmm3,xmm7,0FFh  
+00007FF7E65810EA  vfmadd213ps xmm3,xmm6,xmm0  
+00007FF7E65810EF  vbroadcastss xmm0,xmm4  
+00007FF7E65810F4  vmulps      xmm0,xmm0,xmm1  
+00007FF7E65810F8  vpermilps   xmm7,xmm4,55h  
+00007FF7E65810FE  vfmadd213ps xmm7,xmm2,xmm0  
+00007FF7E6581103  vpermilps   xmm0,xmm4,0AAh  
+00007FF7E6581109  vfmadd213ps xmm0,xmm5,xmm7  
+00007FF7E658110E  vpermilps   xmm4,xmm4,0FFh  
+00007FF7E6581114  vfmadd213ps xmm4,xmm6,xmm0  
+00007FF7E6581119  vbroadcastss xmm0,xmm8  
+00007FF7E658111E  vmulps      xmm0,xmm0,xmm1  
+00007FF7E6581122  vpermilps   xmm1,xmm8,55h  
+00007FF7E6581128  vfmadd213ps xmm1,xmm2,xmm0  
+00007FF7E658112D  vpermilps   xmm0,xmm8,0AAh  
+00007FF7E6581133  vfmadd213ps xmm0,xmm5,xmm1  
+00007FF7E6581138  vpermilps   xmm1,xmm8,0FFh  
+00007FF7E658113E  vfmadd213ps xmm1,xmm6,xmm0  
+00007FF7E6581143  vmovaps     xmmword ptr [res],xmm9  
+00007FF7E6581148  vmovaps     xmmword ptr [rbp-50h],xmm3  
+00007FF7E658114D  vmovaps     xmmword ptr [rbp-40h],xmm4  
+00007FF7E6581152  vmovaps     xmmword ptr [rbp-30h],xmm1  
+
+00007FF7E6581157  dec         rdi  
+00007FF7E658115A  jne         mat4_mult+70h (07FF7E6581070h)  

@@ -1,0 +1,260 @@
+GLM:
+
+Run on (12 X 2592 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 9216 KiB (x1)
+---------------------------------------------------------------------------
+Benchmark                                 Time             CPU   Iterations
+---------------------------------------------------------------------------
+vec4_add/2                            0.459 ns        0.469 ns   1000000000
+vec4_add_scalar/2                     0.462 ns        0.469 ns   1000000000
+vec4_add_loop/2                        2.07 ns         2.09 ns    298666667
+vec4_add_loop/8                        8.10 ns         8.16 ns     74666667
+vec4_add_loop/64                       65.5 ns         65.6 ns     11200000
+vec4_add_loop/1024                     1046 ns         1046 ns       746667
+vec4_add_loop_scalar/2                 2.07 ns         2.09 ns    344615385
+vec4_add_loop_scalar/8                 8.03 ns         7.74 ns     74666667
+vec4_add_loop_scalar/64                64.7 ns         62.8 ns      8960000
+vec4_add_loop_scalar/1024              1030 ns         1025 ns       746667
+vec4_add_accumulate/2                  1.77 ns         1.76 ns    407272727
+vec4_add_accumulate/8                  8.86 ns         8.89 ns     89600000
+vec4_add_accumulate/64                 37.8 ns         37.7 ns     18666667
+vec4_add_accumulate/1024                537 ns          531 ns      1000000
+vec4_mult/2                           0.510 ns        0.516 ns   1000000000
+vec4_mult_scalar/2                    0.514 ns        0.516 ns   1000000000
+vec4_mult_loop/2                       9.34 ns         9.21 ns     74666667
+vec4_mult_loop/8                       9.24 ns         9.24 ns     89600000
+vec4_mult_loop/64                      65.4 ns         65.6 ns     11200000
+vec4_mult_loop/1024                    1029 ns         1046 ns       746667
+vec4_mult_loop_scalar/2                3.27 ns         3.30 ns    213333333
+vec4_mult_loop_scalar/8                9.20 ns         9.00 ns     74666667
+vec4_mult_loop_scalar/64               65.8 ns         65.6 ns     11200000
+vec4_mult_loop_scalar/1024             1042 ns         1025 ns       640000
+vec4_mult_accumulate/2                 1.85 ns         1.88 ns    407272727
+vec4_mult_accumulate/8                 9.02 ns         9.07 ns     89600000
+vec4_mult_accumulate/64                39.6 ns         39.3 ns     18666667
+vec4_mult_accumulate/1024               535 ns          547 ns      1000000
+vec4_compute_1/2                       1.01 ns         1.00 ns    640000000
+vec4_compute_2/2                      0.424 ns        0.422 ns   1000000000
+vec4_compute_3/2                      0.437 ns        0.438 ns   1000000000
+vec4_add_aligned/2                     2.02 ns         1.99 ns    344615385
+vec4_add_aligned/8                     8.00 ns         8.02 ns     89600000
+vec4_add_aligned/64                    64.5 ns         64.2 ns     11200000
+vec4_add_aligned/1024                  1027 ns         1025 ns       746667
+vec4_add_accumulate_aligned/2          1.79 ns         1.80 ns    407272727
+vec4_add_accumulate_aligned/8          8.64 ns         8.72 ns     89600000
+vec4_add_accumulate_aligned/64         38.2 ns         37.5 ns     17920000
+vec4_add_accumulate_aligned/1024        550 ns          547 ns      1000000
+
+GLM simd:
+
+Run on (12 X 2592 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 9216 KiB (x1)
+--------------------------------------------------------------------------
+Benchmark                                Time             CPU   Iterations
+--------------------------------------------------------------------------
+vec4_add_simd/2                      0.532 ns        0.531 ns   1000000000
+vec4_add_scalar_simd/2               0.499 ns        0.500 ns   1000000000
+vec4_add_loop_simd/2                  2.31 ns         2.30 ns    298666667
+vec4_add_loop_simd/8                  8.26 ns         8.37 ns     89600000
+vec4_add_loop_simd/64                 68.2 ns         68.4 ns     11200000
+vec4_add_loop_simd/1024               1095 ns         1099 ns       640000
+vec4_add_loop_scalar_simd/2           2.07 ns         2.10 ns    320000000
+vec4_add_loop_scalar_simd/8           8.04 ns         8.02 ns     89600000
+vec4_add_loop_scalar_simd/64          63.7 ns         64.1 ns     10000000
+vec4_add_loop_scalar_simd/1024        1024 ns         1025 ns       640000
+vec4_add_accumulate_simd/2            1.29 ns         1.29 ns    497777778
+vec4_add_accumulate_simd/8            1.86 ns         1.84 ns    373333333
+vec4_add_accumulate_simd/64           32.1 ns         32.2 ns     21333333
+vec4_add_accumulate_simd/1024          972 ns          963 ns       746667
+vec4_mult_simd/2                     0.439 ns        0.453 ns   1000000000
+vec4_mult_scalar_simd/2              0.429 ns        0.438 ns   1000000000
+vec4_mult_loop_simd/2                 72.1 ns         72.0 ns    344615385
+vec4_mult_loop_simd/8                 7.96 ns         7.85 ns     89600000
+vec4_mult_loop_simd/64                64.3 ns         64.2 ns     11200000
+vec4_mult_loop_simd/1024              1044 ns         1032 ns       560000
+vec4_mult_loop_scalar_simd/2          2.01 ns         2.03 ns    407272727
+vec4_mult_loop_scalar_simd/8          8.06 ns         8.02 ns     89600000
+vec4_mult_loop_scalar_simd/64         63.9 ns         64.2 ns     11200000
+vec4_mult_loop_scalar_simd/1024       1022 ns         1025 ns       640000
+vec4_mult_accumulate_simd/2           1.61 ns         1.63 ns    497777778
+vec4_mult_accumulate_simd/8           1.80 ns         1.76 ns    373333333
+vec4_mult_accumulate_simd/64          32.4 ns         32.1 ns     22400000
+vec4_mult_accumulate_simd/1024         973 ns          963 ns       746667
+vec4_compute_1/2                      1.25 ns         1.26 ns    560000000
+vec4_compute_2/2                     0.503 ns        0.500 ns   1000000000
+vec4_compute_3/2                     0.519 ns        0.516 ns   1000000000
+
+Eigen:
+
+Run on (12 X 2592 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 9216 KiB (x1)
+---------------------------------------------------------------------
+Benchmark                           Time             CPU   Iterations
+---------------------------------------------------------------------
+vec4_add/2                      0.528 ns        0.531 ns   1000000000
+vec4_add_loop/2                  3.90 ns         3.81 ns    160000000
+vec4_add_loop/8                  9.77 ns         9.84 ns     74666667
+vec4_add_loop/64                 68.4 ns         68.4 ns     11200000
+vec4_add_loop/1024               1097 ns         1099 ns       640000
+vec4_add_accumulate/2            1.61 ns         1.61 ns    407272727
+vec4_add_accumulate/8            1.75 ns         1.73 ns    407272727
+vec4_add_accumulate/64           32.3 ns         32.2 ns     21333333
+vec4_add_accumulate/1024          967 ns          963 ns       746667
+vec4_mult/2                     0.419 ns        0.422 ns   1000000000
+vec4_mult_scalar/2              0.428 ns        0.422 ns   1000000000
+vec4_mult_loop/2                 3.22 ns         3.28 ns    224000000
+vec4_mult_loop/8                 9.20 ns         9.21 ns     74666667
+vec4_mult_loop/64                65.3 ns         65.6 ns     11200000
+vec4_mult_loop/1024              1017 ns         1001 ns       640000
+vec4_mult_loop_scalar/2          3.24 ns         3.15 ns    213333333
+vec4_mult_loop_scalar/8          9.16 ns         9.24 ns     89600000
+vec4_mult_loop_scalar/64         65.1 ns         64.2 ns     11200000
+vec4_mult_loop_scalar/1024       1027 ns         1025 ns       640000
+vec4_mult_accumulate/2           1.56 ns         1.57 ns    448000000
+vec4_mult_accumulate/8           1.81 ns         1.80 ns    373333333
+vec4_mult_accumulate/64          31.8 ns         32.1 ns     22400000
+vec4_mult_accumulate/1024         975 ns          984 ns       746667
+vec4_compute_1/2                 1.24 ns         1.23 ns    560000000
+vec4_compute_2/2                0.422 ns        0.438 ns   1000000000
+vec4_compute_3/2                0.429 ns        0.438 ns   1000000000
+
+Blaze:
+
+Run on (12 X 2592 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 9216 KiB (x1)
+---------------------------------------------------------------------
+Benchmark                           Time             CPU   Iterations
+---------------------------------------------------------------------
+vec4_add/2                      0.476 ns        0.469 ns   1000000000
+vec4_add_scalar/2               0.460 ns        0.469 ns   1000000000
+vec4_add_loop/2                  4.00 ns         4.02 ns    186666667
+vec4_add_loop/8                  9.77 ns         9.94 ns     89600000
+vec4_add_loop/64                 71.2 ns         71.5 ns      8960000
+vec4_add_loop/1024               1038 ns         1046 ns       746667
+vec4_add_loop_scalar/2           2.79 ns         2.85 ns    263529412
+vec4_add_loop_scalar/8           7.95 ns         8.02 ns     89600000
+vec4_add_loop_scalar/64          65.1 ns         65.6 ns     10000000
+vec4_add_loop_scalar/1024        1038 ns         1025 ns       640000
+vec4_add_accumulate/2            1.34 ns         1.32 ns    497777778
+vec4_add_accumulate/8            1.56 ns         1.57 ns    448000000
+vec4_add_accumulate/64           31.9 ns         32.1 ns     22400000
+vec4_add_accumulate/1024          968 ns          963 ns       746667
+vec4_mult/2                     0.434 ns        0.422 ns   1000000000
+vec4_mult_scalar/2              0.435 ns        0.438 ns   1000000000
+vec4_mult_loop/2                 4.98 ns         4.88 ns    112000000
+vec4_mult_loop/8                 19.8 ns         19.5 ns     34461538
+vec4_mult_loop/64                 160 ns          160 ns      4480000
+vec4_mult_loop/1024              2549 ns         2567 ns       280000
+vec4_mult_loop_scalar/2          4.97 ns         5.00 ns    100000000
+vec4_mult_loop_scalar/8          19.8 ns         19.5 ns     34461538
+vec4_mult_loop_scalar/64          160 ns          157 ns      4072727
+vec4_mult_loop_scalar/1024       2586 ns         2623 ns       280000
+vec4_mult_accumulate/2           2.05 ns         2.05 ns    320000000
+vec4_mult_accumulate/8           2.93 ns         2.95 ns    248888889
+vec4_mult_accumulate/64          32.0 ns         32.8 ns     22400000
+vec4_mult_accumulate/1024         969 ns          952 ns       640000
+vec4_compute_1/2                 1.25 ns         1.26 ns    560000000
+vec4_compute_2/2                0.785 ns        0.785 ns    896000000
+vec4_compute_3/2                0.546 ns        0.547 ns   1000000000
+
+Mathfu:
+
+Run on (12 X 2592 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 9216 KiB (x1)
+---------------------------------------------------------------------
+Benchmark                           Time             CPU   Iterations
+---------------------------------------------------------------------
+vec4_add/2                      0.458 ns        0.469 ns   1000000000
+vec4_add_scalar/2               0.462 ns        0.469 ns   1000000000
+vec4_add_loop/2                  2.12 ns         2.18 ns    373333333
+vec4_add_loop/8                  7.99 ns         8.02 ns     89600000
+vec4_add_loop/64                 63.8 ns         64.2 ns     11200000
+vec4_add_loop/1024               1019 ns         1025 ns       640000
+vec4_add_loop_scalar/2           2.01 ns         1.99 ns    344615385
+vec4_add_loop_scalar/8           8.00 ns         8.02 ns     89600000
+vec4_add_loop_scalar/64          63.5 ns         62.8 ns     11200000
+vec4_add_loop_scalar/1024        1024 ns         1025 ns       640000
+vec4_add_accumulate/2            1.50 ns         1.51 ns    497777778
+vec4_add_accumulate/8            1.54 ns         1.53 ns    448000000
+vec4_add_accumulate/64           32.3 ns         31.5 ns     20363636
+vec4_add_accumulate/1024          990 ns          984 ns       746667
+vec4_mult/2                     0.425 ns        0.422 ns   1000000000
+vec4_mult_scalar/2              0.415 ns        0.422 ns   1000000000
+vec4_mult_loop/2                 1.98 ns         1.99 ns    344615385
+vec4_mult_loop/8                 7.97 ns         7.85 ns     89600000
+vec4_mult_loop/64                64.5 ns         64.2 ns     11200000
+vec4_mult_loop/1024              1030 ns         1025 ns       640000
+vec4_mult_loop_scalar/2          2.02 ns         2.05 ns    373333333
+vec4_mult_loop_scalar/8          7.97 ns         7.85 ns     89600000
+vec4_mult_loop_scalar/64         63.7 ns         64.2 ns     11200000
+vec4_mult_loop_scalar/1024       1018 ns         1025 ns       640000
+vec4_mult_accumulate/2           1.50 ns         1.51 ns    497777778
+vec4_mult_accumulate/8           1.80 ns         1.80 ns    407272727
+vec4_mult_accumulate/64          31.9 ns         31.5 ns     21333333
+vec4_mult_accumulate/1024         970 ns          963 ns       746667
+vec4_compute_1/2                 1.24 ns         1.25 ns    640000000
+vec4_compute_2/2                0.421 ns        0.422 ns   1000000000
+vec4_compute_3/2                0.416 ns        0.422 ns   1000000000
+
+Mango:
+
+Run on (12 X 2592 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 9216 KiB (x1)
+---------------------------------------------------------------------
+Benchmark                           Time             CPU   Iterations
+---------------------------------------------------------------------
+vec4_add/2                      0.452 ns        0.453 ns   1000000000
+vec4_add_scalar/2               0.485 ns        0.484 ns   1000000000
+vec4_add_loop/2                  2.32 ns         2.31 ns    344615385
+vec4_add_loop/8                  8.15 ns         7.95 ns     74666667
+vec4_add_loop/64                 65.9 ns         67.0 ns     11200000
+vec4_add_loop/1024               1082 ns         1099 ns       640000
+vec4_add_loop_scalar/2           2.10 ns         2.10 ns    320000000
+vec4_add_loop_scalar/8           7.98 ns         8.02 ns     89600000
+vec4_add_loop_scalar/64          63.8 ns         64.2 ns     11200000
+vec4_add_loop_scalar/1024        1015 ns         1025 ns       746667
+vec4_add_accumulate/2            1.26 ns         1.27 ns    640000000
+vec4_add_accumulate/8            1.82 ns         1.80 ns    373333333
+vec4_add_accumulate/64           31.7 ns         31.4 ns     22400000
+vec4_add_accumulate/1024          965 ns          952 ns       640000
+vec4_mult/2                     0.419 ns        0.422 ns   1000000000
+vec4_mult_scalar/2              0.433 ns        0.438 ns   1000000000
+vec4_mult_loop/2                 71.5 ns         71.9 ns     10000000
+vec4_mult_loop/8                 7.93 ns         8.02 ns     89600000
+vec4_mult_loop/64                63.4 ns         64.2 ns     11200000
+vec4_mult_loop/1024              1017 ns         1025 ns       746667
+vec4_mult_loop_scalar/2          1.98 ns         1.99 ns    344615385
+vec4_mult_loop_scalar/8          8.01 ns         8.09 ns    112000000
+vec4_mult_loop_scalar/64         64.7 ns         64.2 ns     11200000
+vec4_mult_loop_scalar/1024       1021 ns         1025 ns       746667
+vec4_mult_accumulate/2           1.58 ns         1.60 ns    448000000
+vec4_mult_accumulate/8           1.87 ns         1.84 ns    373333333
+vec4_mult_accumulate/64          31.9 ns         31.5 ns     21333333
+vec4_mult_accumulate/1024         968 ns          963 ns       746667
+vec4_compute_1/2                 1.02 ns         1.03 ns    746666667
+vec4_compute_2/2                0.502 ns        0.500 ns   1000000000
+vec4_compute_3/2                0.528 ns        0.531 ns   1000000000

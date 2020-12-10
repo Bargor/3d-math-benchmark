@@ -1,0 +1,198 @@
+GLM SIMD:
+
+        res = compute_1(testData[0].x, testData[1].y);
+00007FF654DA6BE8  mov         rax,qword ptr [testData]  
+00007FF654DA6BED  vmovss      xmm1,dword ptr [rax+14h]  
+00007FF654DA6BF2  vmovss      xmm0,dword ptr [rax]  
+00007FF654DA6BF6  vmovaps     xmm2,xmm0  
+00007FF654DA6BFA  vinsertps   xmm2,xmm0,xmm1,10h  
+00007FF654DA6C00  vinsertps   xmm2,xmm2,xmm1,20h  
+00007FF654DA6C06  vinsertps   xmm2,xmm2,xmm0,30h  
+00007FF654DA6C0C  vinsertps   xmm0,xmm0,xmm1,10h  
+00007FF654DA6C12  vmovlhps    xmm0,xmm0,xmm0  
+00007FF654DA6C16  vfmadd231ps xmm2,xmm0,xmm2  
+00007FF654DA6C1B  vmovups     xmmword ptr [res],xmm2  
+
+00007FF654DA6C21  dec         rbx  
+00007FF654DA6C24  jmp         vec4_compute_1+43h (07FF654DA6BE3h)
+
+        res = compute_2(testData[0].x, testData[1].y);
+00007FF654DA6D08  mov         rax,qword ptr [testData]  
+00007FF654DA6D0D  vmovss      xmm0,dword ptr [rax]  
+00007FF654DA6D11  vmovaps     xmm2,xmm0  
+00007FF654DA6D15  vfmadd231ss xmm2,xmm0,dword ptr [rax+14h]  
+00007FF654DA6D1B  vbroadcastss xmm2,xmm2  
+00007FF654DA6D20  vmovups     xmmword ptr [res],xmm2  
+
+00007FF654DA6D26  dec         rbx  
+00007FF654DA6D29  jmp         vec4_compute_2+43h (07FF654DA6D03h) 
+
+        res = compute_3(testData[0], testData[1]);
+00007FF654DA6E08  mov         rax,qword ptr [testData]  
+00007FF654DA6E0D  vmovups     xmm3,xmmword ptr [rax]  
+00007FF654DA6E11  vmulps      xmm1,xmm3,xmmword ptr [rax+10h]  
+00007FF654DA6E16  vfmadd231ps xmm1,xmm3,xmmword ptr [rax+10h]  
+00007FF654DA6E1C  vmovups     xmmword ptr [res],xmm1  
+
+00007FF654DA6E22  dec         rbx  
+00007FF654DA6E25  jmp         vec4_compute_3+43h (07FF654DA6E03h) 
+
+Eigen:
+
+        res = compute_1(testData[0].x(), testData[1].y());
+00007FF7E77B6B07  mov         rax,qword ptr [testData]  
+00007FF7E77B6B0C  vmovss      xmm1,dword ptr [rax+14h]  
+00007FF7E77B6B11  vmovss      xmm0,dword ptr [rax]  
+00007FF7E77B6B15  vmovaps     xmm2,xmm0  
+00007FF7E77B6B19  vinsertps   xmm2,xmm0,xmm1,10h  
+00007FF7E77B6B1F  vinsertps   xmm2,xmm2,xmm1,20h  
+00007FF7E77B6B25  vinsertps   xmm2,xmm2,xmm0,30h  
+00007FF7E77B6B2B  vinsertps   xmm0,xmm0,xmm1,10h  
+00007FF7E77B6B31  vmovlhps    xmm0,xmm0,xmm0  
+00007FF7E77B6B35  vmulps      xmm0,xmm0,xmm2  
+00007FF7E77B6B39  vaddps      xmm0,xmm0,xmm2  
+00007FF7E77B6B3D  vmovups     xmmword ptr [res],xmm0  
+
+00007FF7E77B6B43  dec         rbx  
+00007FF7E77B6B46  jmp         vec4_compute_1+52h (07FF7E77B6B02h)
+
+        res = compute_2(testData[0].x(), testData[1].y());
+00007FF7E77B6C57  mov         rax,qword ptr [testData]  
+00007FF7E77B6C5C  vmovss      xmm1,dword ptr [rax]  
+00007FF7E77B6C60  vmovaps     xmm0,xmm1  
+00007FF7E77B6C64  vfmadd231ss xmm0,xmm1,dword ptr [rax+14h]  
+00007FF7E77B6C6A  vmovaps     xmm1,xmm0  
+00007FF7E77B6C6E  vbroadcastss xmm1,xmm1  
+00007FF7E77B6C73  vmovups     xmmword ptr [res],xmm1  
+
+00007FF7E77B6C79  dec         rbx  
+00007FF7E77B6C7C  jmp         vec4_compute_2+52h (07FF7E77B6C52h) 
+
+        res = compute_3(testData[0], testData[1]);
+00007FF7E77B6D8D  mov         rax,qword ptr [testData]  
+00007FF7E77B6D92  vmovups     xmm3,xmmword ptr [rax+10h]  
+00007FF7E77B6D97  vmovups     xmmword ptr [rsp+40h],xmm3  
+00007FF7E77B6D9D  vmovups     xmm1,xmmword ptr [rax]  
+00007FF7E77B6DA1  vmovups     xmmword ptr [rsp+50h],xmm1  
+00007FF7E77B6DA7  vmulps      xmm0,xmm1,xmm3  
+00007FF7E77B6DAB  vfmadd231ps xmm0,xmm1,xmm3  
+00007FF7E77B6DB0  vmovups     xmmword ptr [res],xmm0  
+
+    for (auto _ : state) {
+00007FF7E77B6DB6  dec         rbx  
+00007FF7E77B6DB9  jmp         vec4_compute_3+58h (07FF7E77B6D88h) 
+
+Blaze:
+
+res = compute_1(testData[0][0], testData[1][1]);
+00007FF755946F99  mov         rax,qword ptr [rbp]  
+00007FF755946F9D  vmovss      xmm1,dword ptr [rax+24h]  
+00007FF755946FA2  vmovss      xmm2,dword ptr [rax]  
+00007FF755946FA6  vmovss      dword ptr [rbp+18h],xmm2  
+00007FF755946FAB  vmovss      dword ptr [rbp+1Ch],xmm1  
+00007FF755946FB0  vmovss      dword ptr [rbp+20h],xmm1  
+00007FF755946FB5  vmovss      dword ptr [rbp+24h],xmm2  
+00007FF755946FBA  vpxor       xmm0,xmm0,xmm0  
+00007FF755946FBE  vmovups     ymmword ptr [rbp+40h],ymm0  
+00007FF755946FC3  lea         rcx,[rbp+18h]  
+        benchmark::ClobberMemory();
+00007FF755946FC7  lea         rdx,[rbp+40h]  
+00007FF755946FCB  nop         dword ptr [rax+rax]  
+        res = compute_1(testData[0][0], testData[1][1]);
+00007FF755946FD0  mov         eax,dword ptr [rcx]  
+00007FF755946FD2  mov         dword ptr [rdx],eax  
+00007FF755946FD4  lea         rdx,[rdx+4]  
+00007FF755946FD8  add         rcx,4  
+00007FF755946FDC  lea         rax,[rbp+28h]  
+00007FF755946FE0  cmp         rcx,rax  
+00007FF755946FE3  jne         vec4_compute_1+0B0h (07FF755946FD0h)  
+00007FF755946FE5  vmovss      dword ptr [rbp+28h],xmm2  
+00007FF755946FEA  vmovss      dword ptr [rbp+2Ch],xmm1  
+00007FF755946FEF  vmovss      dword ptr [rbp+30h],xmm2  
+00007FF755946FF4  vmovss      dword ptr [rbp+34h],xmm1  
+00007FF755946FF9  vpxor       xmm0,xmm0,xmm0  
+00007FF755946FFD  vmovups     ymmword ptr [rbp+60h],ymm0  
+00007FF755947002  lea         rcx,[rbp+28h]  
+00007FF755947006  lea         rdx,[rbp+60h]  
+00007FF75594700A  nop         word ptr [rax+rax]  
+00007FF755947010  mov         eax,dword ptr [rcx]  
+00007FF755947012  mov         dword ptr [rdx],eax  
+00007FF755947014  lea         rdx,[rdx+4]  
+00007FF755947018  add         rcx,4  
+00007FF75594701C  lea         rax,[rbp+38h]  
+00007FF755947020  cmp         rcx,rax  
+00007FF755947023  jne         vec4_compute_1+0F0h (07FF755947010h)  
+00007FF755947025  vmovups     ymm1,ymmword ptr [rbp+40h]  
+00007FF75594702A  vfmadd231ps ymm1,ymm1,ymmword ptr [rbp+60h]  
+00007FF755947030  vmovups     ymmword ptr [res],ymm1  
+
+00007FF755947038  dec         rbx  
+00007FF75594703B  jmp         vec4_compute_1+70h (07FF755946F90h)  
+
+res = compute_2(testData[0][0], testData[1][1]);
+00007FF755947175  mov         rcx,qword ptr [testData]  
+00007FF755947179  vmovss      xmm1,dword ptr [rcx]  
+00007FF75594717D  vmovss      dword ptr [rbp+4],xmm1  
+00007FF755947182  mov         rax,qword ptr [rbp]  
+00007FF755947186  mov         qword ptr [rbp+30h],rax  
+00007FF75594718A  vmovaps     xmmword ptr [rbp+50h],xmm2  
+00007FF75594718F  vmovss      xmm0,dword ptr [rbp+34h]  
+00007FF755947194  vfmadd231ss xmm0,xmm1,dword ptr [rcx+24h]  
+00007FF75594719A  vshufps     xmm0,xmm0,xmm0,0  
+00007FF75594719F  vmovaps     xmmword ptr [rbp+40h],xmm0  
+00007FF7559471A4  vmovups     ymm0,ymmword ptr [rbp+40h]  
+00007FF7559471A9  vmovups     ymmword ptr [res],ymm0  
+
+00007FF7559471AE  dec         rbx  
+00007FF7559471B1  jmp         vec4_compute_2+70h (07FF755947170h)  
+
+res = compute_3(testData[0], testData[1]);
+00007FF7559472B8  mov         rax,qword ptr [rbp]  
+00007FF7559472BC  vmovups     ymm2,ymmword ptr [rax+20h]  
+00007FF7559472C1  vmovups     ymmword ptr [rbp+20h],ymm2  
+00007FF7559472C6  vmulps      ymm1,ymm2,ymmword ptr [rax]  
+00007FF7559472CA  vfmadd231ps ymm1,ymm2,ymmword ptr [rax]  
+00007FF7559472CF  vmovups     ymmword ptr [res],ymm1  
+
+00007FF7559472D4  dec         rbx  
+00007FF7559472D7  jmp         vec4_compute_3+63h (07FF7559472B3h)  
+
+Mango:
+
+res = compute_1(testData[0].x, testData[1].y);
+00007FF7F2666B78  mov         rax,qword ptr [testData]  
+00007FF7F2666B7D  vmovss      xmm2,dword ptr [rax+14h]  
+00007FF7F2666B82  vmovups     xmm1,xmmword ptr [rax]  
+00007FF7F2666B86  vmovaps     xmm3,xmm1  
+00007FF7F2666B8A  vinsertps   xmm3,xmm1,xmm2,10h  
+00007FF7F2666B90  vinsertps   xmm3,xmm3,xmm2,20h  
+00007FF7F2666B96  vinsertps   xmm3,xmm3,xmm1,30h  
+00007FF7F2666B9C  vmovaps     xmm0,xmm1  
+00007FF7F2666BA0  vinsertps   xmm0,xmm1,xmm2,10h  
+00007FF7F2666BA6  vmovlhps    xmm0,xmm0,xmm0  
+00007FF7F2666BAA  vfmadd231ps xmm3,xmm0,xmm3  
+00007FF7F2666BAF  vmovups     xmmword ptr [res],xmm3  
+
+00007FF7F2666BB5  dec         rbx  
+00007FF7F2666BB8  jmp         vec4_compute_1+43h (07FF7F2666B73h)  
+
+res = compute_2(testData[0].x, testData[1].y);
+00007FF7F2666CA8  mov         rax,qword ptr [testData]  
+00007FF7F2666CAD  vmovups     xmm2,xmmword ptr [rax]  
+00007FF7F2666CB1  vbroadcastss xmm1,dword ptr [rax+14h]  
+00007FF7F2666CB7  vfmadd213ss xmm1,xmm2,xmm2  
+00007FF7F2666CBC  vbroadcastss xmm1,xmm1  
+00007FF7F2666CC1  vmovups     xmmword ptr [res],xmm1  
+
+00007FF7F2666CC7  dec         rbx  
+00007FF7F2666CCA  jmp         vec4_compute_2+43h (07FF7F2666CA3h)  
+
+res = compute_3(testData[0], testData[1]);
+00007FF7F2666DA8  mov         rax,qword ptr [testData]  
+00007FF7F2666DAD  vmovups     xmm3,xmmword ptr [rax+10h]  
+00007FF7F2666DB2  vmulps      xmm1,xmm3,xmmword ptr [rax]  
+00007FF7F2666DB6  vfmadd231ps xmm1,xmm3,xmmword ptr [rax]  
+00007FF7F2666DBB  vmovups     xmmword ptr [res],xmm1  
+
+00007FF7F2666DC1  dec         rbx  
+00007FF7F2666DC4  jmp         vec4_compute_3+43h (07FF7F2666DA3h)  
