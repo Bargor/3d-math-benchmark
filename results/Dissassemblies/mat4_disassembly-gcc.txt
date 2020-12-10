@@ -1,0 +1,1126 @@
+GLM:
+
+16 [1]	        res = testData[0] + testData[1];
+0x55555555ee78  <+  408>        48 8b 44 24 50              mov    rax,QWORD PTR [rsp+0x50]
+        828 [1]		GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q> operator+(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
+0x55555555ee7d  <+  413>        f3 0f 10 50 20              movss  xmm2,DWORD PTR [rax+0x20]
+0x55555555ee82  <+  418>        f3 0f 10 60 24              movss  xmm4,DWORD PTR [rax+0x24]
+0x55555555ee87  <+  423>        f3 0f 10 68 28              movss  xmm5,DWORD PTR [rax+0x28]
+0x55555555ee8c  <+  428>        f3 0f 11 14 24              movss  DWORD PTR [rsp],xmm2
+0x55555555ee91  <+  433>        f3 0f 10 78 2c              movss  xmm7,DWORD PTR [rax+0x2c]
+0x55555555ee96  <+  438>        f3 0f 11 64 24 04           movss  DWORD PTR [rsp+0x4],xmm4
+0x55555555ee9c  <+  444>        f3 0f 10 50 60              movss  xmm2,DWORD PTR [rax+0x60]
+0x55555555eea1  <+  449>        f3 0f 11 6c 24 08           movss  DWORD PTR [rsp+0x8],xmm5
+0x55555555eea7  <+  455>        f3 0f 10 60 64              movss  xmm4,DWORD PTR [rax+0x64]
+0x55555555eeac  <+  460>        f3 0f 11 7c 24 0c           movss  DWORD PTR [rsp+0xc],xmm7
+0x55555555eeb2  <+  466>        f3 0f 10 68 68              movss  xmm5,DWORD PTR [rax+0x68]
+0x55555555eeb7  <+  471>        f3 0f 11 54 24 10           movss  DWORD PTR [rsp+0x10],xmm2
+0x55555555eebd  <+  477>        f3 0f 10 78 6c              movss  xmm7,DWORD PTR [rax+0x6c]
+0x55555555eec2  <+  482>        f3 0f 11 64 24 14           movss  DWORD PTR [rsp+0x14],xmm4
+0x55555555eec8  <+  488>        f3 0f 10 50 10              movss  xmm2,DWORD PTR [rax+0x10]
+0x55555555eecd  <+  493>        f3 0f 11 6c 24 18           movss  DWORD PTR [rsp+0x18],xmm5
+0x55555555eed3  <+  499>        f3 0f 10 60 14              movss  xmm4,DWORD PTR [rax+0x14]
+0x55555555eed8  <+  504>        f3 0f 11 7c 24 1c           movss  DWORD PTR [rsp+0x1c],xmm7
+0x55555555eede  <+  510>        f3 0f 10 68 18              movss  xmm5,DWORD PTR [rax+0x18]
+0x55555555eee3  <+  515>        f3 0f 11 54 24 20           movss  DWORD PTR [rsp+0x20],xmm2
+0x55555555eee9  <+  521>        f3 0f 10 78 1c              movss  xmm7,DWORD PTR [rax+0x1c]
+0x55555555eeee  <+  526>        f3 0f 11 64 24 24           movss  DWORD PTR [rsp+0x24],xmm4
+0x55555555eef4  <+  532>        f3 0f 11 6c 24 28           movss  DWORD PTR [rsp+0x28],xmm5
+0x55555555eefa  <+  538>        f3 44 0f 10 60 30           movss  xmm12,DWORD PTR [rax+0x30]
+0x55555555ef00  <+  544>        f3 44 0f 10 68 34           movss  xmm13,DWORD PTR [rax+0x34]
+0x55555555ef06  <+  550>        f3 44 0f 10 70 38           movss  xmm14,DWORD PTR [rax+0x38]
+0x55555555ef0c  <+  556>        f3 44 0f 10 78 3c           movss  xmm15,DWORD PTR [rax+0x3c]
+        553 [1]		GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q> & vec<4, T, Q>::operator+=(vec<4, U, Q> const& v)
+0x55555555ef12  <+  562>        f3 0f 10 48 70              movss  xmm1,DWORD PTR [rax+0x70]
+0x55555555ef17  <+  567>        f3 0f 10 70 74              movss  xmm6,DWORD PTR [rax+0x74]
+0x55555555ef1c  <+  572>        f3 0f 10 58 78              movss  xmm3,DWORD PTR [rax+0x78]
+0x55555555ef21  <+  577>        f3 0f 10 40 7c              movss  xmm0,DWORD PTR [rax+0x7c]
+        828 [1]		GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q> operator+(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
+0x55555555ef26  <+  582>        f3 0f 11 7c 24 2c           movss  DWORD PTR [rsp+0x2c],xmm7
+        553 [1]		GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q> & vec<4, T, Q>::operator+=(vec<4, U, Q> const& v)
+0x55555555ef2c  <+  588>        f3 0f 10 50 50              movss  xmm2,DWORD PTR [rax+0x50]
+0x55555555ef31  <+  593>        f3 0f 10 60 54              movss  xmm4,DWORD PTR [rax+0x54]
+0x55555555ef36  <+  598>        f3 0f 10 28                 movss  xmm5,DWORD PTR [rax]
+0x55555555ef3a  <+  602>        f3 0f 11 54 24 30           movss  DWORD PTR [rsp+0x30],xmm2
+0x55555555ef40  <+  608>        f3 0f 10 50 04              movss  xmm2,DWORD PTR [rax+0x4]
+0x55555555ef45  <+  613>        f3 0f 11 64 24 34           movss  DWORD PTR [rsp+0x34],xmm4
+0x55555555ef4b  <+  619>        f3 0f 11 6c 24 38           movss  DWORD PTR [rsp+0x38],xmm5
+0x55555555ef51  <+  625>        f3 0f 10 60 58              movss  xmm4,DWORD PTR [rax+0x58]
+0x55555555ef56  <+  630>        f3 0f 11 54 24 3c           movss  DWORD PTR [rsp+0x3c],xmm2
+0x55555555ef5c  <+  636>        f3 0f 10 78 5c              movss  xmm7,DWORD PTR [rax+0x5c]
+        828 [1]		GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q> operator+(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
+0x55555555ef61  <+  641>        f3 44 0f 10 50 08           movss  xmm10,DWORD PTR [rax+0x8]
+0x55555555ef67  <+  647>        f3 44 0f 10 58 0c           movss  xmm11,DWORD PTR [rax+0xc]
+        553 [1]		GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q> & vec<4, T, Q>::operator+=(vec<4, U, Q> const& v)
+0x55555555ef6d  <+  653>        f3 0f 10 50 40              movss  xmm2,DWORD PTR [rax+0x40]
+0x55555555ef72  <+  658>        f3 44 0f 10 40 44           movss  xmm8,DWORD PTR [rax+0x44]
+0x55555555ef78  <+  664>        f3 0f 10 68 48              movss  xmm5,DWORD PTR [rax+0x48]
+0x55555555ef7d  <+  669>        f3 44 0f 10 48 4c           movss  xmm9,DWORD PTR [rax+0x4c]
+0x55555555ef83  <+  675>        48 83 eb 01                 sub    rbx,0x1
+0x55555555ef87  <+  679>        0f 85 eb fe ff ff           jne    0x55555555ee78 <mat4_add(benchmark::State&)+408>
+0x55555555ef8d  <+  685>        f3 44 0f 58 ee              addss  xmm13,xmm6
+0x55555555ef92  <+  690>        f3 0f 10 74 24 0c           movss  xmm6,DWORD PTR [rsp+0xc]
+0x55555555ef98  <+  696>        f3 0f 58 74 24 1c           addss  xmm6,DWORD PTR [rsp+0x1c]
+0x55555555ef9e  <+  702>        f3 0f 58 7c 24 2c           addss  xmm7,DWORD PTR [rsp+0x2c]
+0x55555555efa4  <+  708>        f3 44 0f 58 f8              addss  xmm15,xmm0
+0x55555555efa9  <+  713>        f3 44 0f 11 6c 24 48        movss  DWORD PTR [rsp+0x48],xmm13
+0x55555555efb0  <+  720>        f3 0f 11 74 24 0c           movss  DWORD PTR [rsp+0xc],xmm6
+0x55555555efb6  <+  726>        f3 0f 10 74 24 08           movss  xmm6,DWORD PTR [rsp+0x8]
+0x55555555efbc  <+  732>        f3 44 0f 58 f3              addss  xmm14,xmm3
+0x55555555efc1  <+  737>        f3 0f 58 74 24 18           addss  xmm6,DWORD PTR [rsp+0x18]
+0x55555555efc7  <+  743>        f3 0f 11 7c 24 1c           movss  DWORD PTR [rsp+0x1c],xmm7
+0x55555555efcd  <+  749>        f3 44 0f 58 e1              addss  xmm12,xmm1
+0x55555555efd2  <+  754>        f3 44 0f 11 7c 24 40        movss  DWORD PTR [rsp+0x40],xmm15
+0x55555555efd9  <+  761>        f3 0f 58 64 24 28           addss  xmm4,DWORD PTR [rsp+0x28]
+0x55555555efdf  <+  767>        f3 44 0f 11 74 24 44        movss  DWORD PTR [rsp+0x44],xmm14
+0x55555555efe6  <+  774>        f3 0f 11 74 24 18           movss  DWORD PTR [rsp+0x18],xmm6
+0x55555555efec  <+  780>        f3 0f 10 74 24 04           movss  xmm6,DWORD PTR [rsp+0x4]
+0x55555555eff2  <+  786>        f3 45 0f 58 d9              addss  xmm11,xmm9
+0x55555555eff7  <+  791>        f3 0f 58 74 24 14           addss  xmm6,DWORD PTR [rsp+0x14]
+0x55555555effd  <+  797>        f3 44 0f 11 64 24 4c        movss  DWORD PTR [rsp+0x4c],xmm12
+0x55555555f004  <+  804>        f3 44 0f 58 d5              addss  xmm10,xmm5
+0x55555555f009  <+  809>        f3 0f 11 64 24 28           movss  DWORD PTR [rsp+0x28],xmm4
+0x55555555f00f  <+  815>        f3 44 0f 58 44 24 3c        addss  xmm8,DWORD PTR [rsp+0x3c]
+0x55555555f016  <+  822>        f3 44 0f 11 5c 24 04        movss  DWORD PTR [rsp+0x4],xmm11
+0x55555555f01d  <+  829>        f3 0f 11 74 24 14           movss  DWORD PTR [rsp+0x14],xmm6
+0x55555555f023  <+  835>        f3 0f 10 34 24              movss  xmm6,DWORD PTR [rsp]
+0x55555555f028  <+  840>        f3 0f 58 74 24 10           addss  xmm6,DWORD PTR [rsp+0x10]
+0x55555555f02e  <+  846>        f3 44 0f 11 54 24 2c        movss  DWORD PTR [rsp+0x2c],xmm10
+0x55555555f035  <+  853>        f3 0f 58 54 24 38           addss  xmm2,DWORD PTR [rsp+0x38]
+0x55555555f03b  <+  859>        f3 44 0f 11 04 24           movss  DWORD PTR [rsp],xmm8
+0x55555555f041  <+  865>        f3 0f 11 74 24 10           movss  DWORD PTR [rsp+0x10],xmm6
+0x55555555f047  <+  871>        f3 0f 10 74 24 24           movss  xmm6,DWORD PTR [rsp+0x24]
+0x55555555f04d  <+  877>        f3 0f 58 74 24 34           addss  xmm6,DWORD PTR [rsp+0x34]
+0x55555555f053  <+  883>        f3 0f 11 54 24 08           movss  DWORD PTR [rsp+0x8],xmm2
+0x55555555f059  <+  889>        f3 0f 11 74 24 24           movss  DWORD PTR [rsp+0x24],xmm6
+0x55555555f05f  <+  895>        f3 0f 10 74 24 20           movss  xmm6,DWORD PTR [rsp+0x20]
+0x55555555f065  <+  901>        f3 0f 58 74 24 30           addss  xmm6,DWORD PTR [rsp+0x30]
+0x55555555f06b  <+  907>        f3 0f 11 74 24 20           movss  DWORD PTR [rsp+0x20],xmm6
+0x55555555f071  <+  913>        e9 13 fd ff ff              jmp    0x55555555ed89 <mat4_add(benchmark::State&)+169>
+0x55555555f076  <+  918>        e8 c5 bc ff ff              call   0x55555555ad40 <__stack_chk_fail@plt>
+
+
+
+29 [1]	        res = testData[0] * testData[1];
+0x55555555e778  <+  408>        48 8b 44 24 60              mov    rax,QWORD PTR [rsp+0x60]
+        630 [1]		GLM_FUNC_QUALIFIER mat<4, 4, T, Q> operator*(mat<4, 4, T, Q> const& m1, mat<4, 4, T, Q> const& m2)
+0x55555555e77d  <+  413>        f3 0f 10 18                 movss  xmm3,DWORD PTR [rax]
+0x55555555e781  <+  417>        f3 0f 10 78 04              movss  xmm7,DWORD PTR [rax+0x4]
+0x55555555e786  <+  422>        f3 0f 10 60 0c              movss  xmm4,DWORD PTR [rax+0xc]
+0x55555555e78b  <+  427>        f3 0f 11 1c 24              movss  DWORD PTR [rsp],xmm3
+0x55555555e790  <+  432>        f3 0f 10 68 10              movss  xmm5,DWORD PTR [rax+0x10]
+0x55555555e795  <+  437>        f3 0f 11 7c 24 04           movss  DWORD PTR [rsp+0x4],xmm7
+0x55555555e79b  <+  443>        f3 0f 10 58 14              movss  xmm3,DWORD PTR [rax+0x14]
+0x55555555e7a0  <+  448>        f3 0f 11 64 24 14           movss  DWORD PTR [rsp+0x14],xmm4
+0x55555555e7a6  <+  454>        f3 0f 10 78 18              movss  xmm7,DWORD PTR [rax+0x18]
+0x55555555e7ab  <+  459>        f3 0f 11 6c 24 0c           movss  DWORD PTR [rsp+0xc],xmm5
+0x55555555e7b1  <+  465>        f3 0f 10 70 08              movss  xmm6,DWORD PTR [rax+0x8]
+0x55555555e7b6  <+  470>        f3 0f 11 5c 24 10           movss  DWORD PTR [rsp+0x10],xmm3
+0x55555555e7bc  <+  476>        f3 0f 10 60 20              movss  xmm4,DWORD PTR [rax+0x20]
+0x55555555e7c1  <+  481>        f3 0f 11 7c 24 18           movss  DWORD PTR [rsp+0x18],xmm7
+0x55555555e7c7  <+  487>        f3 0f 10 50 2c              movss  xmm2,DWORD PTR [rax+0x2c]
+0x55555555e7cc  <+  492>        f3 0f 11 74 24 08           movss  DWORD PTR [rsp+0x8],xmm6
+0x55555555e7d2  <+  498>        f3 0f 10 58 30              movss  xmm3,DWORD PTR [rax+0x30]
+0x55555555e7d7  <+  503>        f3 0f 11 64 24 1c           movss  DWORD PTR [rsp+0x1c],xmm4
+0x55555555e7dd  <+  509>        f3 0f 10 78 38              movss  xmm7,DWORD PTR [rax+0x38]
+0x55555555e7e2  <+  514>        f3 0f 11 54 24 28           movss  DWORD PTR [rsp+0x28],xmm2
+0x55555555e7e8  <+  520>        f3 0f 10 48 3c              movss  xmm1,DWORD PTR [rax+0x3c]
+0x55555555e7ed  <+  525>        f3 0f 11 5c 24 24           movss  DWORD PTR [rsp+0x24],xmm3
+0x55555555e7f3  <+  531>        f3 0f 10 68 28              movss  xmm5,DWORD PTR [rax+0x28]
+0x55555555e7f8  <+  536>        f3 0f 11 7c 24 30           movss  DWORD PTR [rsp+0x30],xmm7
+0x55555555e7fe  <+  542>        f3 0f 11 4c 24 2c           movss  DWORD PTR [rsp+0x2c],xmm1
+0x55555555e804  <+  548>        f3 0f 10 70 1c              movss  xmm6,DWORD PTR [rax+0x1c]
+0x55555555e809  <+  553>        f3 44 0f 10 68 24           movss  xmm13,DWORD PTR [rax+0x24]
+0x55555555e80f  <+  559>        f3 0f 11 6c 24 20           movss  DWORD PTR [rsp+0x20],xmm5
+0x55555555e815  <+  565>        f3 44 0f 10 70 34           movss  xmm14,DWORD PTR [rax+0x34]
+0x55555555e81b  <+  571>        f3 44 0f 10 58 40           movss  xmm11,DWORD PTR [rax+0x40]
+0x55555555e821  <+  577>        f3 0f 10 50 44              movss  xmm2,DWORD PTR [rax+0x44]
+0x55555555e826  <+  582>        f3 0f 10 68 48              movss  xmm5,DWORD PTR [rax+0x48]
+0x55555555e82b  <+  587>        f3 44 0f 10 78 70           movss  xmm15,DWORD PTR [rax+0x70]
+0x55555555e831  <+  593>        f3 44 0f 10 60 4c           movss  xmm12,DWORD PTR [rax+0x4c]
+0x55555555e837  <+  599>        f3 44 0f 11 7c 24 34        movss  DWORD PTR [rsp+0x34],xmm15
+0x55555555e83e  <+  606>        f3 44 0f 10 78 74           movss  xmm15,DWORD PTR [rax+0x74]
+0x55555555e844  <+  612>        f3 44 0f 10 48 50           movss  xmm9,DWORD PTR [rax+0x50]
+0x55555555e84a  <+  618>        f3 44 0f 11 7c 24 38        movss  DWORD PTR [rsp+0x38],xmm15
+0x55555555e851  <+  625>        f3 44 0f 10 78 78           movss  xmm15,DWORD PTR [rax+0x78]
+0x55555555e857  <+  631>        f3 0f 10 48 54              movss  xmm1,DWORD PTR [rax+0x54]
+0x55555555e85c  <+  636>        f3 44 0f 11 7c 24 3c        movss  DWORD PTR [rsp+0x3c],xmm15
+0x55555555e863  <+  643>        f3 0f 10 60 58              movss  xmm4,DWORD PTR [rax+0x58]
+0x55555555e868  <+  648>        f3 44 0f 10 50 5c           movss  xmm10,DWORD PTR [rax+0x5c]
+0x55555555e86e  <+  654>        f3 0f 10 58 60              movss  xmm3,DWORD PTR [rax+0x60]
+0x55555555e873  <+  659>        f3 44 0f 10 40 64           movss  xmm8,DWORD PTR [rax+0x64]
+0x55555555e879  <+  665>        f3 0f 10 78 68              movss  xmm7,DWORD PTR [rax+0x68]
+0x55555555e87e  <+  670>        f3 0f 10 40 6c              movss  xmm0,DWORD PTR [rax+0x6c]
+0x55555555e883  <+  675>        f3 44 0f 10 78 7c           movss  xmm15,DWORD PTR [rax+0x7c]
+        758 [1]	    if (BENCHMARK_BUILTIN_EXPECT(cached_ != 0, true)) return true;
+0x55555555e889  <+  681>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e88d  <+  685>        0f 85 e5 fe ff ff           jne    0x55555555e778 <mat4_mult(benchmark::State&)+408>
+0x55555555e893  <+  691>        f3 44 0f 11 7c 24 5c        movss  DWORD PTR [rsp+0x5c],xmm15
+0x55555555e89a  <+  698>        45 0f 28 fe                 movaps xmm15,xmm14
+0x55555555e89e  <+  702>        45 0f 28 f5                 movaps xmm14,xmm13
+0x55555555e8a2  <+  706>        f3 44 0f 10 6c 24 2c        movss  xmm13,DWORD PTR [rsp+0x2c]
+0x55555555e8a9  <+  713>        f3 0f 11 44 24 58           movss  DWORD PTR [rsp+0x58],xmm0
+0x55555555e8af  <+  719>        f3 45 0f 59 ec              mulss  xmm13,xmm12
+0x55555555e8b4  <+  724>        f3 0f 11 5c 24 40           movss  DWORD PTR [rsp+0x40],xmm3
+0x55555555e8ba  <+  730>        41 0f 28 c5                 movaps xmm0,xmm13
+0x55555555e8be  <+  734>        f3 44 0f 10 6c 24 28        movss  xmm13,DWORD PTR [rsp+0x28]
+0x55555555e8c5  <+  741>        f3 44 0f 59 ed              mulss  xmm13,xmm5
+0x55555555e8ca  <+  746>        41 0f 28 dd                 movaps xmm3,xmm13
+0x55555555e8ce  <+  750>        f3 0f 58 d8                 addss  xmm3,xmm0
+0x55555555e8d2  <+  754>        0f 28 c6                    movaps xmm0,xmm6
+0x55555555e8d5  <+  757>        f3 0f 59 c2                 mulss  xmm0,xmm2
+0x55555555e8d9  <+  761>        44 0f 28 e8                 movaps xmm13,xmm0
+0x55555555e8dd  <+  765>        f3 0f 10 44 24 14           movss  xmm0,DWORD PTR [rsp+0x14]
+0x55555555e8e3  <+  771>        f3 41 0f 59 c3              mulss  xmm0,xmm11
+0x55555555e8e8  <+  776>        f3 44 0f 58 e8              addss  xmm13,xmm0
+0x55555555e8ed  <+  781>        41 0f 28 c5                 movaps xmm0,xmm13
+0x55555555e8f1  <+  785>        f3 0f 58 c3                 addss  xmm0,xmm3
+0x55555555e8f5  <+  789>        f3 0f 11 44 24 44           movss  DWORD PTR [rsp+0x44],xmm0
+0x55555555e8fb  <+  795>        f3 0f 10 44 24 30           movss  xmm0,DWORD PTR [rsp+0x30]
+0x55555555e901  <+  801>        44 0f 28 e8                 movaps xmm13,xmm0
+0x55555555e905  <+  805>        f3 45 0f 59 ec              mulss  xmm13,xmm12
+0x55555555e90a  <+  810>        f3 44 0f 11 6c 24 30        movss  DWORD PTR [rsp+0x30],xmm13
+0x55555555e911  <+  817>        f3 44 0f 10 6c 24 20        movss  xmm13,DWORD PTR [rsp+0x20]
+0x55555555e918  <+  824>        f3 0f 10 5c 24 30           movss  xmm3,DWORD PTR [rsp+0x30]
+0x55555555e91e  <+  830>        f3 44 0f 59 ed              mulss  xmm13,xmm5
+0x55555555e923  <+  835>        f3 41 0f 58 dd              addss  xmm3,xmm13
+0x55555555e928  <+  840>        f3 44 0f 10 6c 24 18        movss  xmm13,DWORD PTR [rsp+0x18]
+0x55555555e92f  <+  847>        f3 44 0f 59 ea              mulss  xmm13,xmm2
+0x55555555e934  <+  852>        f3 0f 11 5c 24 30           movss  DWORD PTR [rsp+0x30],xmm3
+0x55555555e93a  <+  858>        f3 0f 10 5c 24 08           movss  xmm3,DWORD PTR [rsp+0x8]
+0x55555555e940  <+  864>        f3 41 0f 59 db              mulss  xmm3,xmm11
+0x55555555e945  <+  869>        f3 44 0f 58 eb              addss  xmm13,xmm3
+0x55555555e94a  <+  874>        41 0f 28 df                 movaps xmm3,xmm15
+0x55555555e94e  <+  878>        f3 44 0f 58 6c 24 30        addss  xmm13,DWORD PTR [rsp+0x30]
+0x55555555e955  <+  885>        f3 41 0f 59 dc              mulss  xmm3,xmm12
+0x55555555e95a  <+  890>        f3 44 0f 59 64 24 24        mulss  xmm12,DWORD PTR [rsp+0x24]
+0x55555555e961  <+  897>        f3 44 0f 11 6c 24 4c        movss  DWORD PTR [rsp+0x4c],xmm13
+0x55555555e968  <+  904>        45 0f 28 ee                 movaps xmm13,xmm14
+0x55555555e96c  <+  908>        f3 44 0f 59 ed              mulss  xmm13,xmm5
+0x55555555e971  <+  913>        f3 0f 59 6c 24 1c           mulss  xmm5,DWORD PTR [rsp+0x1c]
+0x55555555e977  <+  919>        f3 44 0f 58 eb              addss  xmm13,xmm3
+0x55555555e97c  <+  924>        f3 0f 10 5c 24 10           movss  xmm3,DWORD PTR [rsp+0x10]
+0x55555555e982  <+  930>        f3 44 0f 58 e5              addss  xmm12,xmm5
+0x55555555e987  <+  935>        f3 0f 59 da                 mulss  xmm3,xmm2
+0x55555555e98b  <+  939>        f3 44 0f 11 6c 24 30        movss  DWORD PTR [rsp+0x30],xmm13
+0x55555555e992  <+  946>        f3 0f 59 54 24 0c           mulss  xmm2,DWORD PTR [rsp+0xc]
+0x55555555e998  <+  952>        44 0f 28 eb                 movaps xmm13,xmm3
+0x55555555e99c  <+  956>        f3 0f 10 5c 24 04           movss  xmm3,DWORD PTR [rsp+0x4]
+0x55555555e9a2  <+  962>        f3 41 0f 59 db              mulss  xmm3,xmm11
+0x55555555e9a7  <+  967>        f3 44 0f 59 1c 24           mulss  xmm11,DWORD PTR [rsp]
+0x55555555e9ad  <+  973>        f3 44 0f 58 eb              addss  xmm13,xmm3
+0x55555555e9b2  <+  978>        f3 41 0f 58 d3              addss  xmm2,xmm11
+0x55555555e9b7  <+  983>        f3 44 0f 10 5c 24 14        movss  xmm11,DWORD PTR [rsp+0x14]
+0x55555555e9be  <+  990>        f3 44 0f 58 6c 24 30        addss  xmm13,DWORD PTR [rsp+0x30]
+0x55555555e9c5  <+  997>        f3 45 0f 59 d9              mulss  xmm11,xmm9
+0x55555555e9ca  <+ 1002>        f3 44 0f 58 e2              addss  xmm12,xmm2
+0x55555555e9cf  <+ 1007>        f3 44 0f 11 6c 24 30        movss  DWORD PTR [rsp+0x30],xmm13
+0x55555555e9d6  <+ 1014>        f3 44 0f 10 6c 24 28        movss  xmm13,DWORD PTR [rsp+0x28]
+0x55555555e9dd  <+ 1021>        f3 44 0f 11 64 24 48        movss  DWORD PTR [rsp+0x48],xmm12
+0x55555555e9e4  <+ 1028>        f3 44 0f 10 64 24 2c        movss  xmm12,DWORD PTR [rsp+0x2c]
+0x55555555e9eb  <+ 1035>        41 0f 28 d5                 movaps xmm2,xmm13
+0x55555555e9ef  <+ 1039>        f3 0f 59 d4                 mulss  xmm2,xmm4
+0x55555555e9f3  <+ 1043>        41 0f 28 ec                 movaps xmm5,xmm12
+0x55555555e9f7  <+ 1047>        f3 41 0f 59 ea              mulss  xmm5,xmm10
+0x55555555e9fc  <+ 1052>        f3 0f 58 ea                 addss  xmm5,xmm2
+0x55555555ea00  <+ 1056>        0f 28 d6                    movaps xmm2,xmm6
+0x55555555ea03  <+ 1059>        f3 0f 59 d1                 mulss  xmm2,xmm1
+0x55555555ea07  <+ 1063>        f3 41 0f 58 d3              addss  xmm2,xmm11
+0x55555555ea0c  <+ 1068>        f3 0f 58 ea                 addss  xmm5,xmm2
+0x55555555ea10  <+ 1072>        f3 0f 10 54 24 20           movss  xmm2,DWORD PTR [rsp+0x20]
+0x55555555ea16  <+ 1078>        f3 0f 59 d4                 mulss  xmm2,xmm4
+0x55555555ea1a  <+ 1082>        f3 0f 11 6c 24 28           movss  DWORD PTR [rsp+0x28],xmm5
+0x55555555ea20  <+ 1088>        0f 28 e8                    movaps xmm5,xmm0
+0x55555555ea23  <+ 1091>        f3 41 0f 59 ea              mulss  xmm5,xmm10
+0x55555555ea28  <+ 1096>        f3 0f 58 ea                 addss  xmm5,xmm2
+0x55555555ea2c  <+ 1100>        f3 0f 10 54 24 18           movss  xmm2,DWORD PTR [rsp+0x18]
+0x55555555ea32  <+ 1106>        f3 0f 10 5c 24 08           movss  xmm3,DWORD PTR [rsp+0x8]
+0x55555555ea38  <+ 1112>        f3 0f 59 d1                 mulss  xmm2,xmm1
+0x55555555ea3c  <+ 1116>        f3 44 0f 10 5c 24 04        movss  xmm11,DWORD PTR [rsp+0x4]
+0x55555555ea43  <+ 1123>        f3 41 0f 59 d9              mulss  xmm3,xmm9
+0x55555555ea48  <+ 1128>        f3 45 0f 59 d9              mulss  xmm11,xmm9
+0x55555555ea4d  <+ 1133>        f3 44 0f 59 0c 24           mulss  xmm9,DWORD PTR [rsp]
+0x55555555ea53  <+ 1139>        f3 0f 58 d3                 addss  xmm2,xmm3
+0x55555555ea57  <+ 1143>        f3 0f 10 5c 24 10           movss  xmm3,DWORD PTR [rsp+0x10]
+0x55555555ea5d  <+ 1149>        f3 0f 58 ea                 addss  xmm5,xmm2
+0x55555555ea61  <+ 1153>        41 0f 28 d7                 movaps xmm2,xmm15
+0x55555555ea65  <+ 1157>        f3 41 0f 59 d2              mulss  xmm2,xmm10
+0x55555555ea6a  <+ 1162>        f3 44 0f 59 54 24 24        mulss  xmm10,DWORD PTR [rsp+0x24]
+0x55555555ea71  <+ 1169>        f3 0f 11 6c 24 2c           movss  DWORD PTR [rsp+0x2c],xmm5
+0x55555555ea77  <+ 1175>        0f 28 ea                    movaps xmm5,xmm2
+0x55555555ea7a  <+ 1178>        41 0f 28 d6                 movaps xmm2,xmm14
+0x55555555ea7e  <+ 1182>        f3 0f 59 d4                 mulss  xmm2,xmm4
+0x55555555ea82  <+ 1186>        f3 0f 59 64 24 1c           mulss  xmm4,DWORD PTR [rsp+0x1c]
+0x55555555ea88  <+ 1192>        f3 0f 58 ea                 addss  xmm5,xmm2
+0x55555555ea8c  <+ 1196>        0f 28 d3                    movaps xmm2,xmm3
+0x55555555ea8f  <+ 1199>        f3 0f 59 d1                 mulss  xmm2,xmm1
+0x55555555ea93  <+ 1203>        f3 44 0f 58 d4              addss  xmm10,xmm4
+0x55555555ea98  <+ 1208>        41 0f 28 e5                 movaps xmm4,xmm13
+0x55555555ea9c  <+ 1212>        f3 0f 59 4c 24 0c           mulss  xmm1,DWORD PTR [rsp+0xc]
+0x55555555eaa2  <+ 1218>        f3 0f 59 e7                 mulss  xmm4,xmm7
+0x55555555eaa6  <+ 1222>        f3 41 0f 58 d3              addss  xmm2,xmm11
+0x55555555eaab  <+ 1227>        f3 44 0f 10 5c 24 18        movss  xmm11,DWORD PTR [rsp+0x18]
+0x55555555eab2  <+ 1234>        f3 41 0f 58 c9              addss  xmm1,xmm9
+0x55555555eab7  <+ 1239>        44 0f 28 ce                 movaps xmm9,xmm6
+0x55555555eabb  <+ 1243>        f3 45 0f 59 c8              mulss  xmm9,xmm8
+0x55555555eac0  <+ 1248>        f3 0f 58 ea                 addss  xmm5,xmm2
+0x55555555eac4  <+ 1252>        f3 44 0f 58 d1              addss  xmm10,xmm1
+0x55555555eac9  <+ 1257>        f3 0f 10 4c 24 40           movss  xmm1,DWORD PTR [rsp+0x40]
+0x55555555eacf  <+ 1263>        f3 0f 11 6c 24 50           movss  DWORD PTR [rsp+0x50],xmm5
+0x55555555ead5  <+ 1269>        f3 0f 10 6c 24 14           movss  xmm5,DWORD PTR [rsp+0x14]
+0x55555555eadb  <+ 1275>        41 0f 28 d1                 movaps xmm2,xmm9
+0x55555555eadf  <+ 1279>        f3 44 0f 11 54 24 54        movss  DWORD PTR [rsp+0x54],xmm10
+0x55555555eae6  <+ 1286>        f3 44 0f 10 54 24 58        movss  xmm10,DWORD PTR [rsp+0x58]
+0x55555555eaed  <+ 1293>        f3 0f 59 cd                 mulss  xmm1,xmm5
+0x55555555eaf1  <+ 1297>        f3 0f 58 d1                 addss  xmm2,xmm1
+0x55555555eaf5  <+ 1301>        41 0f 28 cc                 movaps xmm1,xmm12
+0x55555555eaf9  <+ 1305>        f3 41 0f 59 ca              mulss  xmm1,xmm10
+0x55555555eafe  <+ 1310>        44 0f 28 ca                 movaps xmm9,xmm2
+0x55555555eb02  <+ 1314>        f3 0f 58 cc                 addss  xmm1,xmm4
+0x55555555eb06  <+ 1318>        41 0f 28 e3                 movaps xmm4,xmm11
+0x55555555eb0a  <+ 1322>        f3 41 0f 59 e0              mulss  xmm4,xmm8
+0x55555555eb0f  <+ 1327>        f3 44 0f 58 c9              addss  xmm9,xmm1
+0x55555555eb14  <+ 1332>        f3 0f 10 4c 24 08           movss  xmm1,DWORD PTR [rsp+0x8]
+0x55555555eb1a  <+ 1338>        f3 0f 59 4c 24 40           mulss  xmm1,DWORD PTR [rsp+0x40]
+0x55555555eb20  <+ 1344>        0f 28 d4                    movaps xmm2,xmm4
+0x55555555eb23  <+ 1347>        f3 44 0f 11 4c 24 14        movss  DWORD PTR [rsp+0x14],xmm9
+0x55555555eb2a  <+ 1354>        44 0f 28 c8                 movaps xmm9,xmm0
+0x55555555eb2e  <+ 1358>        f3 0f 58 d1                 addss  xmm2,xmm1
+0x55555555eb32  <+ 1362>        0f 28 c8                    movaps xmm1,xmm0
+0x55555555eb35  <+ 1365>        41 0f 28 c2                 movaps xmm0,xmm10
+0x55555555eb39  <+ 1369>        f3 41 0f 59 ca              mulss  xmm1,xmm10
+0x55555555eb3e  <+ 1374>        f3 44 0f 10 54 24 20        movss  xmm10,DWORD PTR [rsp+0x20]
+0x55555555eb45  <+ 1381>        41 0f 28 e2                 movaps xmm4,xmm10
+0x55555555eb49  <+ 1385>        f3 0f 59 e7                 mulss  xmm4,xmm7
+0x55555555eb4d  <+ 1389>        f3 0f 58 cc                 addss  xmm1,xmm4
+0x55555555eb51  <+ 1393>        f3 0f 10 64 24 04           movss  xmm4,DWORD PTR [rsp+0x4]
+0x55555555eb57  <+ 1399>        f3 0f 59 64 24 40           mulss  xmm4,DWORD PTR [rsp+0x40]
+0x55555555eb5d  <+ 1405>        f3 0f 58 d1                 addss  xmm2,xmm1
+0x55555555eb61  <+ 1409>        41 0f 28 cf                 movaps xmm1,xmm15
+0x55555555eb65  <+ 1413>        f3 0f 59 c8                 mulss  xmm1,xmm0
+0x55555555eb69  <+ 1417>        f3 0f 11 54 24 18           movss  DWORD PTR [rsp+0x18],xmm2
+0x55555555eb6f  <+ 1423>        0f 28 d3                    movaps xmm2,xmm3
+0x55555555eb72  <+ 1426>        41 0f 28 de                 movaps xmm3,xmm14
+0x55555555eb76  <+ 1430>        f3 0f 59 df                 mulss  xmm3,xmm7
+0x55555555eb7a  <+ 1434>        f3 41 0f 59 d0              mulss  xmm2,xmm8
+0x55555555eb7f  <+ 1439>        f3 44 0f 59 44 24 0c        mulss  xmm8,DWORD PTR [rsp+0xc]
+0x55555555eb86  <+ 1446>        f3 0f 58 cb                 addss  xmm1,xmm3
+0x55555555eb8a  <+ 1450>        f3 0f 10 5c 24 40           movss  xmm3,DWORD PTR [rsp+0x40]
+0x55555555eb90  <+ 1456>        f3 0f 59 1c 24              mulss  xmm3,DWORD PTR [rsp]
+0x55555555eb95  <+ 1461>        f3 0f 58 d4                 addss  xmm2,xmm4
+0x55555555eb99  <+ 1465>        f3 0f 10 64 24 24           movss  xmm4,DWORD PTR [rsp+0x24]
+0x55555555eb9f  <+ 1471>        f3 0f 59 c4                 mulss  xmm0,xmm4
+0x55555555eba3  <+ 1475>        f3 0f 58 d1                 addss  xmm2,xmm1
+0x55555555eba7  <+ 1479>        41 0f 28 cb                 movaps xmm1,xmm11
+0x55555555ebab  <+ 1483>        f3 44 0f 58 c3              addss  xmm8,xmm3
+0x55555555ebb0  <+ 1488>        f3 0f 10 5c 24 1c           movss  xmm3,DWORD PTR [rsp+0x1c]
+0x55555555ebb6  <+ 1494>        f3 0f 59 fb                 mulss  xmm7,xmm3
+0x55555555ebba  <+ 1498>        f3 0f 11 54 24 20           movss  DWORD PTR [rsp+0x20],xmm2
+0x55555555ebc0  <+ 1504>        41 0f 28 d2                 movaps xmm2,xmm10
+0x55555555ebc4  <+ 1508>        f3 0f 58 c7                 addss  xmm0,xmm7
+0x55555555ebc8  <+ 1512>        41 0f 28 f8                 movaps xmm7,xmm8
+0x55555555ebcc  <+ 1516>        f3 44 0f 10 44 24 5c        movss  xmm8,DWORD PTR [rsp+0x5c]
+0x55555555ebd3  <+ 1523>        f3 45 0f 59 e0              mulss  xmm12,xmm8
+0x55555555ebd8  <+ 1528>        f3 0f 58 f8                 addss  xmm7,xmm0
+0x55555555ebdc  <+ 1532>        0f 28 c5                    movaps xmm0,xmm5
+0x55555555ebdf  <+ 1535>        f3 0f 10 6c 24 34           movss  xmm5,DWORD PTR [rsp+0x34]
+0x55555555ebe5  <+ 1541>        f3 0f 59 c5                 mulss  xmm0,xmm5
+0x55555555ebe9  <+ 1545>        f3 0f 11 7c 24 1c           movss  DWORD PTR [rsp+0x1c],xmm7
+0x55555555ebef  <+ 1551>        f3 0f 10 7c 24 38           movss  xmm7,DWORD PTR [rsp+0x38]
+0x55555555ebf5  <+ 1557>        f3 0f 59 f7                 mulss  xmm6,xmm7
+0x55555555ebf9  <+ 1561>        f3 0f 59 cf                 mulss  xmm1,xmm7
+0x55555555ebfd  <+ 1565>        f3 0f 58 f0                 addss  xmm6,xmm0
+0x55555555ec01  <+ 1569>        41 0f 28 c4                 movaps xmm0,xmm12
+0x55555555ec05  <+ 1573>        f3 44 0f 10 64 24 3c        movss  xmm12,DWORD PTR [rsp+0x3c]
+0x55555555ec0c  <+ 1580>        f3 45 0f 59 ec              mulss  xmm13,xmm12
+0x55555555ec11  <+ 1585>        f3 41 0f 59 d4              mulss  xmm2,xmm12
+0x55555555ec16  <+ 1590>        f3 45 0f 59 f4              mulss  xmm14,xmm12
+0x55555555ec1b  <+ 1595>        f3 41 0f 58 c5              addss  xmm0,xmm13
+0x55555555ec20  <+ 1600>        f3 0f 58 f0                 addss  xmm6,xmm0
+0x55555555ec24  <+ 1604>        f3 0f 11 74 24 24           movss  DWORD PTR [rsp+0x24],xmm6
+0x55555555ec2a  <+ 1610>        f3 0f 10 44 24 08           movss  xmm0,DWORD PTR [rsp+0x8]
+0x55555555ec30  <+ 1616>        0f 28 f5                    movaps xmm6,xmm5
+0x55555555ec33  <+ 1619>        f3 0f 59 c5                 mulss  xmm0,xmm5
+0x55555555ec37  <+ 1623>        41 0f 28 e8                 movaps xmm5,xmm8
+0x55555555ec3b  <+ 1627>        f3 44 0f 59 fd              mulss  xmm15,xmm5
+0x55555555ec40  <+ 1632>        f3 0f 59 e5                 mulss  xmm4,xmm5
+0x55555555ec44  <+ 1636>        f3 0f 58 c8                 addss  xmm1,xmm0
+0x55555555ec48  <+ 1640>        41 0f 28 c1                 movaps xmm0,xmm9
+0x55555555ec4c  <+ 1644>        f3 41 0f 59 c0              mulss  xmm0,xmm8
+0x55555555ec51  <+ 1649>        44 0f 28 c1                 movaps xmm8,xmm1
+0x55555555ec55  <+ 1653>        f3 0f 10 4c 24 10           movss  xmm1,DWORD PTR [rsp+0x10]
+0x55555555ec5b  <+ 1659>        f3 0f 58 c2                 addss  xmm0,xmm2
+0x55555555ec5f  <+ 1663>        f3 0f 59 cf                 mulss  xmm1,xmm7
+0x55555555ec63  <+ 1667>        0f 28 d3                    movaps xmm2,xmm3
+0x55555555ec66  <+ 1670>        f3 41 0f 59 d4              mulss  xmm2,xmm12
+0x55555555ec6b  <+ 1675>        f3 44 0f 58 c0              addss  xmm8,xmm0
+0x55555555ec70  <+ 1680>        f3 0f 10 44 24 04           movss  xmm0,DWORD PTR [rsp+0x4]
+0x55555555ec76  <+ 1686>        f3 0f 59 c6                 mulss  xmm0,xmm6
+0x55555555ec7a  <+ 1690>        f3 44 0f 11 44 24 08        movss  DWORD PTR [rsp+0x8],xmm8
+0x55555555ec81  <+ 1697>        f3 0f 58 c8                 addss  xmm1,xmm0
+0x55555555ec85  <+ 1701>        41 0f 28 c7                 movaps xmm0,xmm15
+0x55555555ec89  <+ 1705>        f3 41 0f 58 c6              addss  xmm0,xmm14
+0x55555555ec8e  <+ 1710>        f3 0f 58 c8                 addss  xmm1,xmm0
+0x55555555ec92  <+ 1714>        f3 0f 10 04 24              movss  xmm0,DWORD PTR [rsp]
+0x55555555ec97  <+ 1719>        f3 0f 59 c6                 mulss  xmm0,xmm6
+0x55555555ec9b  <+ 1723>        f3 0f 11 4c 24 04           movss  DWORD PTR [rsp+0x4],xmm1
+0x55555555eca1  <+ 1729>        f3 0f 10 4c 24 0c           movss  xmm1,DWORD PTR [rsp+0xc]
+0x55555555eca7  <+ 1735>        f3 0f 59 cf                 mulss  xmm1,xmm7
+0x55555555ecab  <+ 1739>        f3 0f 58 c8                 addss  xmm1,xmm0
+0x55555555ecaf  <+ 1743>        0f 28 c4                    movaps xmm0,xmm4
+0x55555555ecb2  <+ 1746>        f3 0f 58 c2                 addss  xmm0,xmm2
+0x55555555ecb6  <+ 1750>        f3 0f 58 c8                 addss  xmm1,xmm0
+0x55555555ecba  <+ 1754>        f3 0f 11 0c 24              movss  DWORD PTR [rsp],xmm1
+0x55555555ecbf  <+ 1759>        e9 c5 f9 ff ff              jmp    0x55555555e689 <mat4_mult(benchmark::State&)+169>
+0x55555555ecc4  <+ 1764>        e8 77 c0 ff ff              call   0x55555555ad40 <__stack_chk_fail@plt>
+
+GLM SIMD:
+
+18 [1]	        res = testData[0] + testData[1];
+0x55555555e9c8  <+  408>        48 8b 44 24 40              mov    rax,QWORD PTR [rsp+0x40]
+0x55555555e9cd  <+  413>        0f 28 40 30                 movaps xmm0,XMMWORD PTR [rax+0x30]
+0x55555555e9d1  <+  417>        0f 28 78 70                 movaps xmm7,XMMWORD PTR [rax+0x70]
+0x55555555e9d5  <+  421>        0f 28 48 20                 movaps xmm1,XMMWORD PTR [rax+0x20]
+0x55555555e9d9  <+  425>        0f 28 70 60                 movaps xmm6,XMMWORD PTR [rax+0x60]
+0x55555555e9dd  <+  429>        0f 28 50 10                 movaps xmm2,XMMWORD PTR [rax+0x10]
+0x55555555e9e1  <+  433>        0f 28 68 50                 movaps xmm5,XMMWORD PTR [rax+0x50]
+0x55555555e9e5  <+  437>        0f 28 18                    movaps xmm3,XMMWORD PTR [rax]
+0x55555555e9e8  <+  440>        0f 28 60 40                 movaps xmm4,XMMWORD PTR [rax+0x40]
+0x55555555e9ec  <+  444>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e9f0  <+  448>        75 d6                       jne    0x55555555e9c8 <mat4_add(benchmark::State&)+408>
+0x55555555e9f2  <+  450>        0f 58 c7                    addps  xmm0,xmm7
+0x55555555e9f5  <+  453>        0f 58 ce                    addps  xmm1,xmm6
+0x55555555e9f8  <+  456>        0f 58 d5                    addps  xmm2,xmm5
+0x55555555e9fb  <+  459>        0f 58 dc                    addps  xmm3,xmm4
+0x55555555e9fe  <+  462>        f3 0f 11 44 24 0c           movss  DWORD PTR [rsp+0xc],xmm0
+0x55555555ea04  <+  468>        66 0f 3a 17 44 24 08 01     extractps DWORD PTR [rsp+0x8],xmm0,0x1
+0x55555555ea0c  <+  476>        66 0f 3a 17 04 24 02        extractps DWORD PTR [rsp],xmm0,0x2
+0x55555555ea13  <+  483>        f3 0f 11 4c 24 1c           movss  DWORD PTR [rsp+0x1c],xmm1
+0x55555555ea19  <+  489>        66 0f 3a 17 4c 24 18 01     extractps DWORD PTR [rsp+0x18],xmm1,0x1
+0x55555555ea21  <+  497>        66 0f 3a 17 4c 24 14 02     extractps DWORD PTR [rsp+0x14],xmm1,0x2
+0x55555555ea29  <+  505>        66 0f 3a 17 4c 24 10 03     extractps DWORD PTR [rsp+0x10],xmm1,0x3
+0x55555555ea31  <+  513>        f3 0f 11 54 24 2c           movss  DWORD PTR [rsp+0x2c],xmm2
+0x55555555ea37  <+  519>        66 0f 3a 17 54 24 28 01     extractps DWORD PTR [rsp+0x28],xmm2,0x1
+0x55555555ea3f  <+  527>        66 0f 3a 17 54 24 24 02     extractps DWORD PTR [rsp+0x24],xmm2,0x2
+0x55555555ea47  <+  535>        66 0f 3a 17 54 24 20 03     extractps DWORD PTR [rsp+0x20],xmm2,0x3
+0x55555555ea4f  <+  543>        f3 0f 11 5c 24 3c           movss  DWORD PTR [rsp+0x3c],xmm3
+0x55555555ea55  <+  549>        66 0f 3a 17 5c 24 38 01     extractps DWORD PTR [rsp+0x38],xmm3,0x1
+0x55555555ea5d  <+  557>        66 0f 3a 17 5c 24 34 02     extractps DWORD PTR [rsp+0x34],xmm3,0x2
+0x55555555ea65  <+  565>        66 0f 3a 17 5c 24 30 03     extractps DWORD PTR [rsp+0x30],xmm3,0x3
+0x55555555ea6d  <+  573>        66 0f 3a 17 44 24 04 03     extractps DWORD PTR [rsp+0x4],xmm0,0x3
+0x55555555ea75  <+  581>        e9 5f fe ff ff              jmp    0x55555555e8d9 <mat4_add(benchmark::State&)+169>
+0x55555555ea7a  <+  586>        e8 c1 c2 ff ff              call   0x55555555ad40 <__stack_chk_fail@plt>
+
+
+
+31 [1]	        res = testData[0] * testData[1];
+0x55555555e638  <+  408>        48 8b 44 24 40              mov    rax,QWORD PTR [rsp+0x40]
+        630 [1]		GLM_FUNC_QUALIFIER mat<4, 4, T, Q> operator*(mat<4, 4, T, Q> const& m1, mat<4, 4, T, Q> const& m2)
+0x55555555e63d  <+  413>        f3 0f 10 60 60              movss  xmm4,DWORD PTR [rax+0x60]
+0x55555555e642  <+  418>        f3 0f 10 70 68              movss  xmm6,DWORD PTR [rax+0x68]
+0x55555555e647  <+  423>        f3 0f 10 58 6c              movss  xmm3,DWORD PTR [rax+0x6c]
+0x55555555e64c  <+  428>        f3 0f 11 24 24              movss  DWORD PTR [rsp],xmm4
+0x55555555e651  <+  433>        f3 0f 10 60 70              movss  xmm4,DWORD PTR [rax+0x70]
+0x55555555e656  <+  438>        f3 0f 11 74 24 04           movss  DWORD PTR [rsp+0x4],xmm6
+0x55555555e65c  <+  444>        f3 0f 11 5c 24 08           movss  DWORD PTR [rsp+0x8],xmm3
+0x55555555e662  <+  450>        44 0f 28 30                 movaps xmm14,XMMWORD PTR [rax]
+0x55555555e666  <+  454>        f3 0f 11 64 24 0c           movss  DWORD PTR [rsp+0xc],xmm4
+0x55555555e66c  <+  460>        44 0f 28 78 10              movaps xmm15,XMMWORD PTR [rax+0x10]
+0x55555555e671  <+  465>        44 0f 28 60 20              movaps xmm12,XMMWORD PTR [rax+0x20]
+0x55555555e676  <+  470>        44 0f 28 68 30              movaps xmm13,XMMWORD PTR [rax+0x30]
+0x55555555e67b  <+  475>        f3 44 0f 10 50 40           movss  xmm10,DWORD PTR [rax+0x40]
+0x55555555e681  <+  481>        f3 44 0f 10 58 44           movss  xmm11,DWORD PTR [rax+0x44]
+0x55555555e687  <+  487>        f3 44 0f 10 48 48           movss  xmm9,DWORD PTR [rax+0x48]
+0x55555555e68d  <+  493>        f3 0f 10 50 4c              movss  xmm2,DWORD PTR [rax+0x4c]
+0x55555555e692  <+  498>        f3 0f 10 48 50              movss  xmm1,DWORD PTR [rax+0x50]
+0x55555555e697  <+  503>        f3 44 0f 10 40 54           movss  xmm8,DWORD PTR [rax+0x54]
+0x55555555e69d  <+  509>        f3 0f 10 78 58              movss  xmm7,DWORD PTR [rax+0x58]
+0x55555555e6a2  <+  514>        f3 0f 10 68 5c              movss  xmm5,DWORD PTR [rax+0x5c]
+0x55555555e6a7  <+  519>        f3 0f 10 40 64              movss  xmm0,DWORD PTR [rax+0x64]
+0x55555555e6ac  <+  524>        f3 0f 10 58 74              movss  xmm3,DWORD PTR [rax+0x74]
+0x55555555e6b1  <+  529>        f3 0f 10 70 78              movss  xmm6,DWORD PTR [rax+0x78]
+0x55555555e6b6  <+  534>        f3 0f 10 60 7c              movss  xmm4,DWORD PTR [rax+0x7c]
+        758 [1]	    if (BENCHMARK_BUILTIN_EXPECT(cached_ != 0, true)) return true;
+0x55555555e6bb  <+  539>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e6bf  <+  543>        0f 85 73 ff ff ff           jne    0x55555555e638 <mat4_mult(benchmark::State&)+408>
+0x55555555e6c5  <+  549>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e6c9  <+  553>        41 0f 59 ce                 mulps  xmm1,xmm14
+0x55555555e6cd  <+  557>        0f c6 ed 00                 shufps xmm5,xmm5,0x0
+0x55555555e6d1  <+  561>        0f c6 ff 00                 shufps xmm7,xmm7,0x0
+0x55555555e6d5  <+  565>        41 0f 59 ed                 mulps  xmm5,xmm13
+0x55555555e6d9  <+  569>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e6dd  <+  573>        45 0f c6 c0 00              shufps xmm8,xmm8,0x0
+0x55555555e6e2  <+  578>        0f c6 db 00                 shufps xmm3,xmm3,0x0
+0x55555555e6e6  <+  582>        45 0f 59 c7                 mulps  xmm8,xmm15
+0x55555555e6ea  <+  586>        45 0f c6 db 00              shufps xmm11,xmm11,0x0
+0x55555555e6ef  <+  591>        45 0f c6 d2 00              shufps xmm10,xmm10,0x0
+0x55555555e6f4  <+  596>        0f c6 d2 00                 shufps xmm2,xmm2,0x0
+0x55555555e6f8  <+  600>        41 0f 59 fc                 mulps  xmm7,xmm12
+0x55555555e6fc  <+  604>        45 0f c6 c9 00              shufps xmm9,xmm9,0x0
+0x55555555e701  <+  609>        0f c6 e4 00                 shufps xmm4,xmm4,0x0
+0x55555555e705  <+  613>        0f c6 f6 00                 shufps xmm6,xmm6,0x0
+0x55555555e709  <+  617>        41 0f 59 c7                 mulps  xmm0,xmm15
+0x55555555e70d  <+  621>        45 0f 59 df                 mulps  xmm11,xmm15
+0x55555555e711  <+  625>        44 0f 58 c1                 addps  xmm8,xmm1
+0x55555555e715  <+  629>        f3 0f 10 0c 24              movss  xmm1,DWORD PTR [rsp]
+0x55555555e71a  <+  634>        44 0f 59 fb                 mulps  xmm15,xmm3
+0x55555555e71e  <+  638>        0f 58 ef                    addps  xmm5,xmm7
+0x55555555e721  <+  641>        f3 0f 10 5c 24 0c           movss  xmm3,DWORD PTR [rsp+0xc]
+0x55555555e727  <+  647>        45 0f 59 d6                 mulps  xmm10,xmm14
+0x55555555e72b  <+  651>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e72f  <+  655>        41 0f 59 ce                 mulps  xmm1,xmm14
+0x55555555e733  <+  659>        41 0f 59 d5                 mulps  xmm2,xmm13
+0x55555555e737  <+  663>        0f c6 db 00                 shufps xmm3,xmm3,0x0
+0x55555555e73b  <+  667>        44 0f 58 c5                 addps  xmm8,xmm5
+0x55555555e73f  <+  671>        f3 0f 10 6c 24 04           movss  xmm5,DWORD PTR [rsp+0x4]
+0x55555555e745  <+  677>        45 0f 59 cc                 mulps  xmm9,xmm12
+0x55555555e749  <+  681>        44 0f 59 f3                 mulps  xmm14,xmm3
+0x55555555e74d  <+  685>        45 0f 58 d3                 addps  xmm10,xmm11
+0x55555555e751  <+  689>        0f 58 c1                    addps  xmm0,xmm1
+0x55555555e754  <+  692>        f3 0f 10 4c 24 08           movss  xmm1,DWORD PTR [rsp+0x8]
+0x55555555e75a  <+  698>        0f c6 ed 00                 shufps xmm5,xmm5,0x0
+0x55555555e75e  <+  702>        41 0f 59 ec                 mulps  xmm5,xmm12
+0x55555555e762  <+  706>        44 0f 59 e6                 mulps  xmm12,xmm6
+0x55555555e766  <+  710>        f3 44 0f 11 44 24 28        movss  DWORD PTR [rsp+0x28],xmm8
+0x55555555e76d  <+  717>        66 44 0f 3a 17 44 24 34 01  extractps DWORD PTR [rsp+0x34],xmm8,0x1
+0x55555555e776  <+  726>        66 44 0f 3a 17 44 24 30 02  extractps DWORD PTR [rsp+0x30],xmm8,0x2
+0x55555555e77f  <+  735>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e783  <+  739>        41 0f 59 cd                 mulps  xmm1,xmm13
+0x55555555e787  <+  743>        41 0f 58 d1                 addps  xmm2,xmm9
+0x55555555e78b  <+  747>        66 44 0f 3a 17 44 24 0c 03  extractps DWORD PTR [rsp+0xc],xmm8,0x3
+0x55555555e794  <+  756>        44 0f 59 ec                 mulps  xmm13,xmm4
+0x55555555e798  <+  760>        45 0f 58 f7                 addps  xmm14,xmm15
+0x55555555e79c  <+  764>        41 0f 58 d2                 addps  xmm2,xmm10
+0x55555555e7a0  <+  768>        0f 58 cd                    addps  xmm1,xmm5
+0x55555555e7a3  <+  771>        45 0f 58 ec                 addps  xmm13,xmm12
+0x55555555e7a7  <+  775>        f3 0f 11 54 24 20           movss  DWORD PTR [rsp+0x20],xmm2
+0x55555555e7ad  <+  781>        66 0f 3a 17 54 24 10 01     extractps DWORD PTR [rsp+0x10],xmm2,0x1
+0x55555555e7b5  <+  789>        66 0f 3a 17 54 24 24 02     extractps DWORD PTR [rsp+0x24],xmm2,0x2
+0x55555555e7bd  <+  797>        66 0f 3a 17 54 24 04 03     extractps DWORD PTR [rsp+0x4],xmm2,0x3
+0x55555555e7c5  <+  805>        0f 58 c1                    addps  xmm0,xmm1
+0x55555555e7c8  <+  808>        45 0f 58 ee                 addps  xmm13,xmm14
+0x55555555e7cc  <+  812>        f3 0f 11 44 24 14           movss  DWORD PTR [rsp+0x14],xmm0
+0x55555555e7d2  <+  818>        66 0f 3a 17 04 24 01        extractps DWORD PTR [rsp],xmm0,0x1
+0x55555555e7d9  <+  825>        66 0f 3a 17 44 24 18 02     extractps DWORD PTR [rsp+0x18],xmm0,0x2
+0x55555555e7e1  <+  833>        66 0f 3a 17 44 24 38 03     extractps DWORD PTR [rsp+0x38],xmm0,0x3
+0x55555555e7e9  <+  841>        66 44 0f 3a 17 6c 24 3c 01  extractps DWORD PTR [rsp+0x3c],xmm13,0x1
+0x55555555e7f2  <+  850>        f3 44 0f 11 6c 24 2c        movss  DWORD PTR [rsp+0x2c],xmm13
+0x55555555e7f9  <+  857>        66 44 0f 3a 17 6c 24 08 02  extractps DWORD PTR [rsp+0x8],xmm13,0x2
+0x55555555e802  <+  866>        66 44 0f 3a 17 6c 24 1c 03  extractps DWORD PTR [rsp+0x1c],xmm13,0x3
+0x55555555e80b  <+  875>        e9 39 fd ff ff              jmp    0x55555555e549 <mat4_mult(benchmark::State&)+169>
+0x55555555e810  <+  880>        e8 2b c5 ff ff              call   0x55555555ad40 <__stack_chk_fail@plt>
+
+Eigen:
+
+13 [1]	        res = testData[0] + testData[1];
+0x55555555df28  <+  152>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+        976 [1]	  *(__m128 *)__P = __A;
+0x55555555df2c  <+  156>        0f 28 40 40                 movaps xmm0,XMMWORD PTR [rax+0x40]
+0x55555555df30  <+  160>        0f 58 00                    addps  xmm0,XMMWORD PTR [rax]
+0x55555555df33  <+  163>        0f 29 44 24 20              movaps XMMWORD PTR [rsp+0x20],xmm0
+0x55555555df38  <+  168>        0f 28 40 50                 movaps xmm0,XMMWORD PTR [rax+0x50]
+0x55555555df3c  <+  172>        0f 58 40 10                 addps  xmm0,XMMWORD PTR [rax+0x10]
+0x55555555df40  <+  176>        0f 29 44 24 30              movaps XMMWORD PTR [rsp+0x30],xmm0
+0x55555555df45  <+  181>        0f 28 40 60                 movaps xmm0,XMMWORD PTR [rax+0x60]
+0x55555555df49  <+  185>        0f 58 40 20                 addps  xmm0,XMMWORD PTR [rax+0x20]
+0x55555555df4d  <+  189>        0f 29 44 24 40              movaps XMMWORD PTR [rsp+0x40],xmm0
+0x55555555df52  <+  194>        0f 28 40 70                 movaps xmm0,XMMWORD PTR [rax+0x70]
+0x55555555df56  <+  198>        0f 58 40 30                 addps  xmm0,XMMWORD PTR [rax+0x30]
+0x55555555df5a  <+  202>        0f 29 44 24 50              movaps XMMWORD PTR [rsp+0x50],xmm0
+
+0x55555555df5f  <+  207>        48 83 eb 01                 sub    rbx,0x1
+0x55555555df63  <+  211>        75 c3                       jne    0x55555555df28 <mat4_add(benchmark::State&)+152>
+
+
+
+26 [1]	        res = testData[0] * testData[1];
+0x55555555e4d0  <+  160>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+        927 [1]	  return *(__m128 *)__P;
+0x55555555e4d4  <+  164>        0f 28 28                    movaps xmm5,XMMWORD PTR [rax]
+0x55555555e4d7  <+  167>        0f 28 60 10                 movaps xmm4,XMMWORD PTR [rax+0x10]
+0x55555555e4db  <+  171>        f3 0f 10 48 40              movss  xmm1,DWORD PTR [rax+0x40]
+0x55555555e4e0  <+  176>        f3 0f 10 40 44              movss  xmm0,DWORD PTR [rax+0x44]
+0x55555555e4e5  <+  181>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e4e9  <+  185>        0f 59 cd                    mulps  xmm1,xmm5
+0x55555555e4ec  <+  188>        0f 28 50 20                 movaps xmm2,XMMWORD PTR [rax+0x20]
+0x55555555e4f0  <+  192>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e4f4  <+  196>        0f 59 c4                    mulps  xmm0,xmm4
+0x55555555e4f7  <+  199>        0f 28 58 30                 movaps xmm3,XMMWORD PTR [rax+0x30]
+        976 [1]	  *(__m128 *)__P = __A;
+0x55555555e4fb  <+  203>        f3 0f 10 70 48              movss  xmm6,DWORD PTR [rax+0x48]
+0x55555555e500  <+  208>        0f c6 f6 00                 shufps xmm6,xmm6,0x0
+0x55555555e504  <+  212>        0f 59 f2                    mulps  xmm6,xmm2
+0x55555555e507  <+  215>        0f 58 c8                    addps  xmm1,xmm0
+0x55555555e50a  <+  218>        f3 0f 10 40 4c              movss  xmm0,DWORD PTR [rax+0x4c]
+0x55555555e50f  <+  223>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e513  <+  227>        0f 59 c3                    mulps  xmm0,xmm3
+0x55555555e516  <+  230>        0f 58 c6                    addps  xmm0,xmm6
+0x55555555e519  <+  233>        f3 0f 10 70 58              movss  xmm6,DWORD PTR [rax+0x58]
+0x55555555e51e  <+  238>        0f c6 f6 00                 shufps xmm6,xmm6,0x0
+0x55555555e522  <+  242>        0f 59 f2                    mulps  xmm6,xmm2
+0x55555555e525  <+  245>        0f 58 c8                    addps  xmm1,xmm0
+0x55555555e528  <+  248>        f3 0f 10 40 54              movss  xmm0,DWORD PTR [rax+0x54]
+0x55555555e52d  <+  253>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e531  <+  257>        0f 59 c4                    mulps  xmm0,xmm4
+0x55555555e534  <+  260>        0f 29 4c 24 20              movaps XMMWORD PTR [rsp+0x20],xmm1
+0x55555555e539  <+  265>        f3 0f 10 48 50              movss  xmm1,DWORD PTR [rax+0x50]
+0x55555555e53e  <+  270>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e542  <+  274>        0f 59 cd                    mulps  xmm1,xmm5
+0x55555555e545  <+  277>        0f 58 c8                    addps  xmm1,xmm0
+0x55555555e548  <+  280>        f3 0f 10 40 5c              movss  xmm0,DWORD PTR [rax+0x5c]
+0x55555555e54d  <+  285>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e551  <+  289>        0f 59 c3                    mulps  xmm0,xmm3
+0x55555555e554  <+  292>        0f 58 c6                    addps  xmm0,xmm6
+0x55555555e557  <+  295>        f3 0f 10 70 68              movss  xmm6,DWORD PTR [rax+0x68]
+0x55555555e55c  <+  300>        0f c6 f6 00                 shufps xmm6,xmm6,0x0
+0x55555555e560  <+  304>        0f 59 f2                    mulps  xmm6,xmm2
+0x55555555e563  <+  307>        0f 58 c8                    addps  xmm1,xmm0
+0x55555555e566  <+  310>        f3 0f 10 40 64              movss  xmm0,DWORD PTR [rax+0x64]
+0x55555555e56b  <+  315>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e56f  <+  319>        0f 59 c4                    mulps  xmm0,xmm4
+0x55555555e572  <+  322>        0f 29 4c 24 30              movaps XMMWORD PTR [rsp+0x30],xmm1
+0x55555555e577  <+  327>        f3 0f 10 48 60              movss  xmm1,DWORD PTR [rax+0x60]
+0x55555555e57c  <+  332>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e580  <+  336>        0f 59 cd                    mulps  xmm1,xmm5
+0x55555555e583  <+  339>        0f 58 c8                    addps  xmm1,xmm0
+0x55555555e586  <+  342>        f3 0f 10 40 6c              movss  xmm0,DWORD PTR [rax+0x6c]
+0x55555555e58b  <+  347>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e58f  <+  351>        0f 59 c3                    mulps  xmm0,xmm3
+0x55555555e592  <+  354>        0f 58 c6                    addps  xmm0,xmm6
+0x55555555e595  <+  357>        0f 58 c8                    addps  xmm1,xmm0
+0x55555555e598  <+  360>        f3 0f 10 40 70              movss  xmm0,DWORD PTR [rax+0x70]
+0x55555555e59d  <+  365>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e5a1  <+  369>        0f 59 c5                    mulps  xmm0,xmm5
+0x55555555e5a4  <+  372>        0f 29 4c 24 40              movaps XMMWORD PTR [rsp+0x40],xmm1
+0x55555555e5a9  <+  377>        f3 0f 10 48 74              movss  xmm1,DWORD PTR [rax+0x74]
+0x55555555e5ae  <+  382>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e5b2  <+  386>        0f 59 e1                    mulps  xmm4,xmm1
+0x55555555e5b5  <+  389>        f3 0f 10 48 7c              movss  xmm1,DWORD PTR [rax+0x7c]
+0x55555555e5ba  <+  394>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e5be  <+  398>        0f 59 d9                    mulps  xmm3,xmm1
+0x55555555e5c1  <+  401>        f3 0f 10 48 78              movss  xmm1,DWORD PTR [rax+0x78]
+0x55555555e5c6  <+  406>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e5ca  <+  410>        0f 59 d1                    mulps  xmm2,xmm1
+0x55555555e5cd  <+  413>        0f 58 c4                    addps  xmm0,xmm4
+0x55555555e5d0  <+  416>        0f 58 d3                    addps  xmm2,xmm3
+0x55555555e5d3  <+  419>        0f 58 c2                    addps  xmm0,xmm2
+0x55555555e5d6  <+  422>        0f 29 44 24 50              movaps XMMWORD PTR [rsp+0x50],xmm0
+
+0x55555555e5db  <+  427>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e5df  <+  431>        0f 85 eb fe ff ff           jne    0x55555555e4d0 <mat4_mult(benchmark::State&)+160>
+
+Blaze:
+
+18 [1]	        res = testData[0] + testData[1];
+0x55555555e718  <+  152>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+        976 [1]	  *(__m128 *)__P = __A;
+0x55555555e71c  <+  156>        0f 28 40 40                 movaps xmm0,XMMWORD PTR [rax+0x40]
+0x55555555e720  <+  160>        0f 58 00                    addps  xmm0,XMMWORD PTR [rax]
+0x55555555e723  <+  163>        0f 29 44 24 20              movaps XMMWORD PTR [rsp+0x20],xmm0
+0x55555555e728  <+  168>        0f 28 40 50                 movaps xmm0,XMMWORD PTR [rax+0x50]
+0x55555555e72c  <+  172>        0f 58 40 10                 addps  xmm0,XMMWORD PTR [rax+0x10]
+0x55555555e730  <+  176>        0f 29 44 24 30              movaps XMMWORD PTR [rsp+0x30],xmm0
+0x55555555e735  <+  181>        0f 28 40 60                 movaps xmm0,XMMWORD PTR [rax+0x60]
+0x55555555e739  <+  185>        0f 58 40 20                 addps  xmm0,XMMWORD PTR [rax+0x20]
+0x55555555e73d  <+  189>        0f 29 44 24 40              movaps XMMWORD PTR [rsp+0x40],xmm0
+0x55555555e742  <+  194>        0f 28 40 70                 movaps xmm0,XMMWORD PTR [rax+0x70]
+0x55555555e746  <+  198>        0f 58 40 30                 addps  xmm0,XMMWORD PTR [rax+0x30]
+0x55555555e74a  <+  202>        0f 29 44 24 50              movaps XMMWORD PTR [rsp+0x50],xmm0
+        758 [1]	    if (BENCHMARK_BUILTIN_EXPECT(cached_ != 0, true)) return true;
+0x55555555e74f  <+  207>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e753  <+  211>        75 c3                       jne    0x55555555e718 <mat4_add(benchmark::State&)+152>
+
+
+
+        31 [1]	        res = testData[0] * testData[1];
+0x55555555e550  <+  160>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+        927 [1]	  return *(__m128 *)__P;
+0x55555555e554  <+  164>        0f 28 68 60                 movaps xmm5,XMMWORD PTR [rax+0x60]
+0x55555555e558  <+  168>        0f 28 60 70                 movaps xmm4,XMMWORD PTR [rax+0x70]
+0x55555555e55c  <+  172>        f3 0f 10 48 08              movss  xmm1,DWORD PTR [rax+0x8]
+0x55555555e561  <+  177>        f3 0f 10 40 0c              movss  xmm0,DWORD PTR [rax+0xc]
+0x55555555e566  <+  182>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e56a  <+  186>        0f 59 cd                    mulps  xmm1,xmm5
+0x55555555e56d  <+  189>        0f 28 58 40                 movaps xmm3,XMMWORD PTR [rax+0x40]
+0x55555555e571  <+  193>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e575  <+  197>        0f 59 c4                    mulps  xmm0,xmm4
+0x55555555e578  <+  200>        0f 28 50 50                 movaps xmm2,XMMWORD PTR [rax+0x50]
+        976 [1]	  *(__m128 *)__P = __A;
+0x55555555e57c  <+  204>        f3 0f 10 70 04              movss  xmm6,DWORD PTR [rax+0x4]
+0x55555555e581  <+  209>        0f c6 f6 00                 shufps xmm6,xmm6,0x0
+0x55555555e585  <+  213>        0f 59 f2                    mulps  xmm6,xmm2
+0x55555555e588  <+  216>        0f 58 c8                    addps  xmm1,xmm0
+0x55555555e58b  <+  219>        f3 0f 10 00                 movss  xmm0,DWORD PTR [rax]
+0x55555555e58f  <+  223>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e593  <+  227>        0f 59 c3                    mulps  xmm0,xmm3
+0x55555555e596  <+  230>        0f 58 c6                    addps  xmm0,xmm6
+0x55555555e599  <+  233>        f3 0f 10 70 14              movss  xmm6,DWORD PTR [rax+0x14]
+0x55555555e59e  <+  238>        0f c6 f6 00                 shufps xmm6,xmm6,0x0
+0x55555555e5a2  <+  242>        0f 59 f2                    mulps  xmm6,xmm2
+0x55555555e5a5  <+  245>        0f 58 c8                    addps  xmm1,xmm0
+0x55555555e5a8  <+  248>        f3 0f 10 40 1c              movss  xmm0,DWORD PTR [rax+0x1c]
+0x55555555e5ad  <+  253>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e5b1  <+  257>        0f 59 c4                    mulps  xmm0,xmm4
+0x55555555e5b4  <+  260>        0f 29 4c 24 20              movaps XMMWORD PTR [rsp+0x20],xmm1
+0x55555555e5b9  <+  265>        f3 0f 10 48 18              movss  xmm1,DWORD PTR [rax+0x18]
+0x55555555e5be  <+  270>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e5c2  <+  274>        0f 59 cd                    mulps  xmm1,xmm5
+0x55555555e5c5  <+  277>        0f 58 c8                    addps  xmm1,xmm0
+0x55555555e5c8  <+  280>        f3 0f 10 40 10              movss  xmm0,DWORD PTR [rax+0x10]
+0x55555555e5cd  <+  285>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e5d1  <+  289>        0f 59 c3                    mulps  xmm0,xmm3
+0x55555555e5d4  <+  292>        0f 58 c6                    addps  xmm0,xmm6
+0x55555555e5d7  <+  295>        f3 0f 10 70 24              movss  xmm6,DWORD PTR [rax+0x24]
+0x55555555e5dc  <+  300>        0f c6 f6 00                 shufps xmm6,xmm6,0x0
+0x55555555e5e0  <+  304>        0f 59 f2                    mulps  xmm6,xmm2
+0x55555555e5e3  <+  307>        0f 58 c8                    addps  xmm1,xmm0
+0x55555555e5e6  <+  310>        f3 0f 10 40 2c              movss  xmm0,DWORD PTR [rax+0x2c]
+0x55555555e5eb  <+  315>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e5ef  <+  319>        0f 59 c4                    mulps  xmm0,xmm4
+0x55555555e5f2  <+  322>        0f 29 4c 24 30              movaps XMMWORD PTR [rsp+0x30],xmm1
+0x55555555e5f7  <+  327>        f3 0f 10 48 28              movss  xmm1,DWORD PTR [rax+0x28]
+0x55555555e5fc  <+  332>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e600  <+  336>        0f 59 cd                    mulps  xmm1,xmm5
+0x55555555e603  <+  339>        0f 58 c8                    addps  xmm1,xmm0
+0x55555555e606  <+  342>        f3 0f 10 40 20              movss  xmm0,DWORD PTR [rax+0x20]
+0x55555555e60b  <+  347>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e60f  <+  351>        0f 59 c3                    mulps  xmm0,xmm3
+0x55555555e612  <+  354>        0f 58 c6                    addps  xmm0,xmm6
+0x55555555e615  <+  357>        0f 58 c8                    addps  xmm1,xmm0
+0x55555555e618  <+  360>        f3 0f 10 40 38              movss  xmm0,DWORD PTR [rax+0x38]
+0x55555555e61d  <+  365>        0f c6 c0 00                 shufps xmm0,xmm0,0x0
+0x55555555e621  <+  369>        0f 59 c5                    mulps  xmm0,xmm5
+0x55555555e624  <+  372>        0f 29 4c 24 40              movaps XMMWORD PTR [rsp+0x40],xmm1
+0x55555555e629  <+  377>        f3 0f 10 48 3c              movss  xmm1,DWORD PTR [rax+0x3c]
+0x55555555e62e  <+  382>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e632  <+  386>        0f 59 e1                    mulps  xmm4,xmm1
+0x55555555e635  <+  389>        f3 0f 10 48 30              movss  xmm1,DWORD PTR [rax+0x30]
+0x55555555e63a  <+  394>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e63e  <+  398>        0f 59 d9                    mulps  xmm3,xmm1
+0x55555555e641  <+  401>        f3 0f 10 48 34              movss  xmm1,DWORD PTR [rax+0x34]
+0x55555555e646  <+  406>        0f c6 c9 00                 shufps xmm1,xmm1,0x0
+0x55555555e64a  <+  410>        0f 59 d1                    mulps  xmm2,xmm1
+0x55555555e64d  <+  413>        0f 58 c4                    addps  xmm0,xmm4
+0x55555555e650  <+  416>        0f 58 d3                    addps  xmm2,xmm3
+0x55555555e653  <+  419>        0f 58 c2                    addps  xmm0,xmm2
+0x55555555e656  <+  422>        0f 29 44 24 50              movaps XMMWORD PTR [rsp+0x50],xmm0
+
+0x55555555e65b  <+  427>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e65f  <+  431>        0f 85 eb fe ff ff           jne    0x55555555e550 <mat4_mult(benchmark::State&)+160>
+
+Mathfu:
+
+        16 [1]	        res = testData[0] + testData[1];
+0x55555555ef28  <+  152>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+        186 [1]	  return (__m128) ((__v4sf)__A + (__v4sf)__B);
+0x55555555ef2c  <+  156>        0f 28 50 10                 movaps xmm2,XMMWORD PTR [rax+0x10]
+0x55555555ef30  <+  160>        0f 28 48 20                 movaps xmm1,XMMWORD PTR [rax+0x20]
+0x55555555ef34  <+  164>        0f 58 50 50                 addps  xmm2,XMMWORD PTR [rax+0x50]
+0x55555555ef38  <+  168>        0f 58 48 60                 addps  xmm1,XMMWORD PTR [rax+0x60]
+0x55555555ef3c  <+  172>        0f 28 40 30                 movaps xmm0,XMMWORD PTR [rax+0x30]
+0x55555555ef40  <+  176>        0f 28 18                    movaps xmm3,XMMWORD PTR [rax]
+0x55555555ef43  <+  179>        0f 29 54 24 30              movaps XMMWORD PTR [rsp+0x30],xmm2
+0x55555555ef48  <+  184>        0f 58 40 70                 addps  xmm0,XMMWORD PTR [rax+0x70]
+        193 [1]	  inline Matrix(const Matrix<T, Rows, Cols>& m) {
+0x55555555ef4c  <+  188>        0f 29 4c 24 40              movaps XMMWORD PTR [rsp+0x40],xmm1
+0x55555555ef51  <+  193>        0f 58 58 40                 addps  xmm3,XMMWORD PTR [rax+0x40]
+0x55555555ef55  <+  197>        0f 29 44 24 50              movaps XMMWORD PTR [rsp+0x50],xmm0
+        330 [1]	  asm volatile("" : : : "memory");
+0x55555555ef5a  <+  202>        0f 29 5c 24 20              movaps XMMWORD PTR [rsp+0x20],xmm3
+0x55555555ef5f  <+  207>        48 83 eb 01                 sub    rbx,0x1
+0x55555555ef63  <+  211>        75 c3                       jne    0x55555555ef28 <mat4_add(benchmark::State&)+152>
+
+
+
+29 [1]	        res = testData[0] * testData[1];
+0x55555555ea70  <+  176>        48 8b 44 24 30                 mov    rax,QWORD PTR [rsp+0x30]
+        41 [1]	    simd4f s = { x, y, z, w };
+0x55555555ea75  <+  181>        0f 28 58 40                    movaps xmm3,XMMWORD PTR [rax+0x40]
+0x55555555ea79  <+  185>        f3 0f 10 48 20                 movss  xmm1,DWORD PTR [rax+0x20]
+0x55555555ea7e  <+  190>        66 0f 3a 21 48 30 10           insertps xmm1,DWORD PTR [rax+0x30],0x10
+0x55555555ea85  <+  197>        f3 0f 10 00                    movss  xmm0,DWORD PTR [rax]
+0x55555555ea89  <+  201>        66 0f 3a 21 40 10 10           insertps xmm0,DWORD PTR [rax+0x10],0x10
+0x55555555ea90  <+  208>        0f 16 c1                       movlhps xmm0,xmm1
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555ea93  <+  211>        0f 28 c8                       movaps xmm1,xmm0
+0x55555555ea96  <+  214>        0f 28 f8                       movaps xmm7,xmm0
+0x55555555ea99  <+  217>        44 0f 28 68 70                 movaps xmm13,XMMWORD PTR [rax+0x70]
+0x55555555ea9e  <+  222>        0f 59 cb                       mulps  xmm1,xmm3
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555eaa1  <+  225>        0f 28 f1                       movaps xmm6,xmm1
+0x55555555eaa4  <+  228>        0f 28 d1                       movaps xmm2,xmm1
+0x55555555eaa7  <+  231>        0f c6 d1 00                    shufps xmm2,xmm1,0x0
+0x55555555eaab  <+  235>        0f c6 f1 55                    shufps xmm6,xmm1,0x55
+0x55555555eaaf  <+  239>        0f 58 f2                       addps  xmm6,xmm2
+0x55555555eab2  <+  242>        0f 28 d1                       movaps xmm2,xmm1
+0x55555555eab5  <+  245>        0f c6 d1 aa                    shufps xmm2,xmm1,0xaa
+0x55555555eab9  <+  249>        0f c6 c9 ff                    shufps xmm1,xmm1,0xff
+        153 [1]	vectorial_inline float simd4f_get_x(simd4f s) { _simd4f_union u={s}; return u.f[0]; }
+0x55555555eabd  <+  253>        0f 58 ca                       addps  xmm1,xmm2
+0x55555555eac0  <+  256>        0f 28 50 50                    movaps xmm2,XMMWORD PTR [rax+0x50]
+0x55555555eac4  <+  260>        0f 58 ce                       addps  xmm1,xmm6
+0x55555555eac7  <+  263>        0f 28 f1                       movaps xmm6,xmm1
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555eaca  <+  266>        0f 28 c8                       movaps xmm1,xmm0
+0x55555555eacd  <+  269>        0f 59 ca                       mulps  xmm1,xmm2
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555ead0  <+  272>        41 0f 59 c5                    mulps  xmm0,xmm13
+0x55555555ead4  <+  276>        0f 28 e9                       movaps xmm5,xmm1
+0x55555555ead7  <+  279>        0f 28 e1                       movaps xmm4,xmm1
+0x55555555eada  <+  282>        0f c6 e1 00                    shufps xmm4,xmm1,0x0
+0x55555555eade  <+  286>        0f c6 e9 55                    shufps xmm5,xmm1,0x55
+0x55555555eae2  <+  290>        0f 58 ec                       addps  xmm5,xmm4
+0x55555555eae5  <+  293>        0f 28 e1                       movaps xmm4,xmm1
+0x55555555eae8  <+  296>        0f c6 e1 aa                    shufps xmm4,xmm1,0xaa
+0x55555555eaec  <+  300>        0f c6 c9 ff                    shufps xmm1,xmm1,0xff
+        153 [1]	vectorial_inline float simd4f_get_x(simd4f s) { _simd4f_union u={s}; return u.f[0]; }
+0x55555555eaf0  <+  304>        0f 58 cc                       addps  xmm1,xmm4
+0x55555555eaf3  <+  307>        0f 58 cd                       addps  xmm1,xmm5
+0x55555555eaf6  <+  310>        0f 28 e9                       movaps xmm5,xmm1
+0x55555555eaf9  <+  313>        0f 28 48 60                    movaps xmm1,XMMWORD PTR [rax+0x60]
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555eafd  <+  317>        0f 59 f9                       mulps  xmm7,xmm1
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555eb00  <+  320>        0f 28 e7                       movaps xmm4,xmm7
+0x55555555eb03  <+  323>        44 0f 28 c7                    movaps xmm8,xmm7
+0x55555555eb07  <+  327>        44 0f c6 c7 00                 shufps xmm8,xmm7,0x0
+0x55555555eb0c  <+  332>        0f c6 e7 55                    shufps xmm4,xmm7,0x55
+0x55555555eb10  <+  336>        41 0f 58 e0                    addps  xmm4,xmm8
+0x55555555eb14  <+  340>        44 0f 28 c7                    movaps xmm8,xmm7
+0x55555555eb18  <+  344>        44 0f c6 c7 aa                 shufps xmm8,xmm7,0xaa
+0x55555555eb1d  <+  349>        0f c6 ff ff                    shufps xmm7,xmm7,0xff
+        153 [1]	vectorial_inline float simd4f_get_x(simd4f s) { _simd4f_union u={s}; return u.f[0]; }
+0x55555555eb21  <+  353>        41 0f 58 f8                    addps  xmm7,xmm8
+0x55555555eb25  <+  357>        44 0f 28 c0                    movaps xmm8,xmm0
+0x55555555eb29  <+  361>        44 0f c6 c0 00                 shufps xmm8,xmm0,0x0
+0x55555555eb2e  <+  366>        0f 58 fc                       addps  xmm7,xmm4
+0x55555555eb31  <+  369>        0f 28 e7                       movaps xmm4,xmm7
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555eb34  <+  372>        0f 28 f8                       movaps xmm7,xmm0
+0x55555555eb37  <+  375>        0f c6 f8 55                    shufps xmm7,xmm0,0x55
+0x55555555eb3b  <+  379>        41 0f 58 f8                    addps  xmm7,xmm8
+0x55555555eb3f  <+  383>        44 0f 28 c0                    movaps xmm8,xmm0
+0x55555555eb43  <+  387>        44 0f c6 c0 aa                 shufps xmm8,xmm0,0xaa
+0x55555555eb48  <+  392>        0f c6 c0 ff                    shufps xmm0,xmm0,0xff
+        41 [1]	    simd4f s = { x, y, z, w };
+0x55555555eb4c  <+  396>        41 0f 58 c0                    addps  xmm0,xmm8
+0x55555555eb50  <+  400>        0f 58 c7                       addps  xmm0,xmm7
+0x55555555eb53  <+  403>        f3 0f 10 78 24                 movss  xmm7,DWORD PTR [rax+0x24]
+0x55555555eb58  <+  408>        66 0f 3a 21 78 34 10           insertps xmm7,DWORD PTR [rax+0x34],0x10
+0x55555555eb5f  <+  415>        0f 29 44 24 10                 movaps XMMWORD PTR [rsp+0x10],xmm0
+0x55555555eb64  <+  420>        f3 0f 10 40 04                 movss  xmm0,DWORD PTR [rax+0x4]
+0x55555555eb69  <+  425>        66 0f 3a 21 40 14 10           insertps xmm0,DWORD PTR [rax+0x14],0x10
+0x55555555eb70  <+  432>        0f 16 c7                       movlhps xmm0,xmm7
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555eb73  <+  435>        0f 28 fb                       movaps xmm7,xmm3
+0x55555555eb76  <+  438>        0f 59 f8                       mulps  xmm7,xmm0
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555eb79  <+  441>        44 0f 28 df                    movaps xmm11,xmm7
+0x55555555eb7d  <+  445>        44 0f 28 c7                    movaps xmm8,xmm7
+0x55555555eb81  <+  449>        44 0f c6 c7 00                 shufps xmm8,xmm7,0x0
+0x55555555eb86  <+  454>        44 0f c6 df 55                 shufps xmm11,xmm7,0x55
+0x55555555eb8b  <+  459>        45 0f 58 d8                    addps  xmm11,xmm8
+0x55555555eb8f  <+  463>        44 0f 28 c7                    movaps xmm8,xmm7
+0x55555555eb93  <+  467>        44 0f c6 c7 aa                 shufps xmm8,xmm7,0xaa
+0x55555555eb98  <+  472>        0f c6 ff ff                    shufps xmm7,xmm7,0xff
+        153 [1]	vectorial_inline float simd4f_get_x(simd4f s) { _simd4f_union u={s}; return u.f[0]; }
+0x55555555eb9c  <+  476>        41 0f 58 f8                    addps  xmm7,xmm8
+0x55555555eba0  <+  480>        41 0f 58 fb                    addps  xmm7,xmm11
+0x55555555eba4  <+  484>        44 0f 28 df                    movaps xmm11,xmm7
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555eba8  <+  488>        0f 28 fa                       movaps xmm7,xmm2
+0x55555555ebab  <+  491>        0f 59 f8                       mulps  xmm7,xmm0
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555ebae  <+  494>        41 0f 14 f3                    unpcklps xmm6,xmm11
+0x55555555ebb2  <+  498>        44 0f 28 d7                    movaps xmm10,xmm7
+0x55555555ebb6  <+  502>        44 0f 28 c7                    movaps xmm8,xmm7
+0x55555555ebba  <+  506>        44 0f c6 c7 00                 shufps xmm8,xmm7,0x0
+0x55555555ebbf  <+  511>        44 0f c6 d7 55                 shufps xmm10,xmm7,0x55
+0x55555555ebc4  <+  516>        45 0f 58 d0                    addps  xmm10,xmm8
+0x55555555ebc8  <+  520>        44 0f 28 c7                    movaps xmm8,xmm7
+0x55555555ebcc  <+  524>        44 0f c6 c7 aa                 shufps xmm8,xmm7,0xaa
+0x55555555ebd1  <+  529>        0f c6 ff ff                    shufps xmm7,xmm7,0xff
+        153 [1]	vectorial_inline float simd4f_get_x(simd4f s) { _simd4f_union u={s}; return u.f[0]; }
+0x55555555ebd5  <+  533>        41 0f 58 f8                    addps  xmm7,xmm8
+0x55555555ebd9  <+  537>        41 0f 58 fa                    addps  xmm7,xmm10
+0x55555555ebdd  <+  541>        44 0f 28 d7                    movaps xmm10,xmm7
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555ebe1  <+  545>        0f 28 f9                       movaps xmm7,xmm1
+0x55555555ebe4  <+  548>        0f 59 f8                       mulps  xmm7,xmm0
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555ebe7  <+  551>        41 0f 14 ea                    unpcklps xmm5,xmm10
+0x55555555ebeb  <+  555>        41 0f 59 c5                    mulps  xmm0,xmm13
+0x55555555ebef  <+  559>        44 0f 28 cf                    movaps xmm9,xmm7
+0x55555555ebf3  <+  563>        44 0f 28 c7                    movaps xmm8,xmm7
+0x55555555ebf7  <+  567>        44 0f c6 c7 00                 shufps xmm8,xmm7,0x0
+0x55555555ebfc  <+  572>        44 0f c6 cf 55                 shufps xmm9,xmm7,0x55
+0x55555555ec01  <+  577>        45 0f 58 c8                    addps  xmm9,xmm8
+0x55555555ec05  <+  581>        44 0f 28 c7                    movaps xmm8,xmm7
+0x55555555ec09  <+  585>        44 0f c6 c7 aa                 shufps xmm8,xmm7,0xaa
+0x55555555ec0e  <+  590>        0f c6 ff ff                    shufps xmm7,xmm7,0xff
+0x55555555ec12  <+  594>        41 0f 58 f8                    addps  xmm7,xmm8
+0x55555555ec16  <+  598>        44 0f 28 c0                    movaps xmm8,xmm0
+0x55555555ec1a  <+  602>        44 0f c6 c0 00                 shufps xmm8,xmm0,0x0
+0x55555555ec1f  <+  607>        41 0f 58 f9                    addps  xmm7,xmm9
+0x55555555ec23  <+  611>        f3 0f 11 7c 24 0c              movss  DWORD PTR [rsp+0xc],xmm7
+0x55555555ec29  <+  617>        0f 28 f8                       movaps xmm7,xmm0
+0x55555555ec2c  <+  620>        66 0f 3a 21 64 24 0c 10        insertps xmm4,DWORD PTR [rsp+0xc],0x10
+0x55555555ec34  <+  628>        0f c6 f8 55                    shufps xmm7,xmm0,0x55
+0x55555555ec38  <+  632>        41 0f 58 f8                    addps  xmm7,xmm8
+0x55555555ec3c  <+  636>        44 0f 28 c0                    movaps xmm8,xmm0
+0x55555555ec40  <+  640>        44 0f c6 c0 aa                 shufps xmm8,xmm0,0xaa
+0x55555555ec45  <+  645>        0f c6 c0 ff                    shufps xmm0,xmm0,0xff
+        41 [1]	    simd4f s = { x, y, z, w };
+0x55555555ec49  <+  649>        41 0f 58 c0                    addps  xmm0,xmm8
+0x55555555ec4d  <+  653>        0f 58 c7                       addps  xmm0,xmm7
+0x55555555ec50  <+  656>        f3 0f 10 78 28                 movss  xmm7,DWORD PTR [rax+0x28]
+0x55555555ec55  <+  661>        66 0f 3a 21 78 38 10           insertps xmm7,DWORD PTR [rax+0x38],0x10
+0x55555555ec5c  <+  668>        0f 29 44 24 20                 movaps XMMWORD PTR [rsp+0x20],xmm0
+0x55555555ec61  <+  673>        f3 0f 10 40 08                 movss  xmm0,DWORD PTR [rax+0x8]
+0x55555555ec66  <+  678>        66 0f 3a 21 40 18 10           insertps xmm0,DWORD PTR [rax+0x18],0x10
+0x55555555ec6d  <+  685>        0f 16 c7                       movlhps xmm0,xmm7
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555ec70  <+  688>        0f 28 fb                       movaps xmm7,xmm3
+0x55555555ec73  <+  691>        0f 59 f8                       mulps  xmm7,xmm0
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555ec76  <+  694>        44 0f 28 e7                    movaps xmm12,xmm7
+0x55555555ec7a  <+  698>        44 0f 28 c7                    movaps xmm8,xmm7
+0x55555555ec7e  <+  702>        44 0f c6 c7 00                 shufps xmm8,xmm7,0x0
+0x55555555ec83  <+  707>        44 0f c6 e7 55                 shufps xmm12,xmm7,0x55
+0x55555555ec88  <+  712>        45 0f 58 e0                    addps  xmm12,xmm8
+0x55555555ec8c  <+  716>        44 0f 28 c7                    movaps xmm8,xmm7
+0x55555555ec90  <+  720>        44 0f c6 c7 aa                 shufps xmm8,xmm7,0xaa
+0x55555555ec95  <+  725>        0f c6 ff ff                    shufps xmm7,xmm7,0xff
+        153 [1]	vectorial_inline float simd4f_get_x(simd4f s) { _simd4f_union u={s}; return u.f[0]; }
+0x55555555ec99  <+  729>        41 0f 58 f8                    addps  xmm7,xmm8
+0x55555555ec9d  <+  733>        44 0f 58 e7                    addps  xmm12,xmm7
+0x55555555eca1  <+  737>        0f 28 fa                       movaps xmm7,xmm2
+0x55555555eca4  <+  740>        0f 59 f8                       mulps  xmm7,xmm0
+0x55555555eca7  <+  743>        45 0f 28 cc                    movaps xmm9,xmm12
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555ecab  <+  747>        44 0f 28 f7                    movaps xmm14,xmm7
+0x55555555ecaf  <+  751>        44 0f 28 c7                    movaps xmm8,xmm7
+0x55555555ecb3  <+  755>        44 0f 28 e7                    movaps xmm12,xmm7
+0x55555555ecb7  <+  759>        44 0f c6 c7 00                 shufps xmm8,xmm7,0x0
+0x55555555ecbc  <+  764>        44 0f c6 e7 aa                 shufps xmm12,xmm7,0xaa
+0x55555555ecc1  <+  769>        44 0f c6 f7 55                 shufps xmm14,xmm7,0x55
+0x55555555ecc6  <+  774>        0f c6 ff ff                    shufps xmm7,xmm7,0xff
+0x55555555ecca  <+  778>        45 0f 58 f0                    addps  xmm14,xmm8
+        153 [1]	vectorial_inline float simd4f_get_x(simd4f s) { _simd4f_union u={s}; return u.f[0]; }
+0x55555555ecce  <+  782>        41 0f 58 fc                    addps  xmm7,xmm12
+0x55555555ecd2  <+  786>        44 0f 28 e1                    movaps xmm12,xmm1
+0x55555555ecd6  <+  790>        44 0f 59 e0                    mulps  xmm12,xmm0
+0x55555555ecda  <+  794>        41 0f 59 c5                    mulps  xmm0,xmm13
+0x55555555ecde  <+  798>        44 0f 58 f7                    addps  xmm14,xmm7
+0x55555555ece2  <+  802>        45 0f 28 fc                    movaps xmm15,xmm12
+0x55555555ece6  <+  806>        41 0f 28 fc                    movaps xmm7,xmm12
+0x55555555ecea  <+  810>        45 0f 28 c6                    movaps xmm8,xmm14
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555ecee  <+  814>        45 0f 28 f4                    movaps xmm14,xmm12
+0x55555555ecf2  <+  818>        41 0f c6 fc 00                 shufps xmm7,xmm12,0x0
+0x55555555ecf7  <+  823>        45 0f c6 fc 55                 shufps xmm15,xmm12,0x55
+0x55555555ecfc  <+  828>        45 0f c6 f4 aa                 shufps xmm14,xmm12,0xaa
+0x55555555ed01  <+  833>        44 0f 58 ff                    addps  xmm15,xmm7
+0x55555555ed05  <+  837>        45 0f c6 e4 ff                 shufps xmm12,xmm12,0xff
+        153 [1]	vectorial_inline float simd4f_get_x(simd4f s) { _simd4f_union u={s}; return u.f[0]; }
+0x55555555ed0a  <+  842>        45 0f 58 e6                    addps  xmm12,xmm14
+0x55555555ed0e  <+  846>        44 0f 28 f0                    movaps xmm14,xmm0
+0x55555555ed12  <+  850>        44 0f c6 f0 55                 shufps xmm14,xmm0,0x55
+0x55555555ed17  <+  855>        45 0f 58 e7                    addps  xmm12,xmm15
+0x55555555ed1b  <+  859>        41 0f 28 fc                    movaps xmm7,xmm12
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555ed1f  <+  863>        44 0f 28 e0                    movaps xmm12,xmm0
+0x55555555ed23  <+  867>        44 0f c6 e0 00                 shufps xmm12,xmm0,0x0
+0x55555555ed28  <+  872>        45 0f 58 f4                    addps  xmm14,xmm12
+0x55555555ed2c  <+  876>        44 0f 28 e0                    movaps xmm12,xmm0
+0x55555555ed30  <+  880>        44 0f c6 e0 aa                 shufps xmm12,xmm0,0xaa
+0x55555555ed35  <+  885>        0f c6 c0 ff                    shufps xmm0,xmm0,0xff
+        41 [1]	    simd4f s = { x, y, z, w };
+0x55555555ed39  <+  889>        44 0f 58 e0                    addps  xmm12,xmm0
+0x55555555ed3d  <+  893>        f3 0f 10 40 0c                 movss  xmm0,DWORD PTR [rax+0xc]
+0x55555555ed42  <+  898>        66 0f 3a 21 40 1c 10           insertps xmm0,DWORD PTR [rax+0x1c],0x10
+0x55555555ed49  <+  905>        45 0f 58 e6                    addps  xmm12,xmm14
+0x55555555ed4d  <+  909>        f3 44 0f 10 70 2c              movss  xmm14,DWORD PTR [rax+0x2c]
+0x55555555ed53  <+  915>        66 44 0f 3a 21 70 3c 10        insertps xmm14,DWORD PTR [rax+0x3c],0x10
+0x55555555ed5b  <+  923>        41 0f 16 c6                    movlhps xmm0,xmm14
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555ed5f  <+  927>        0f 59 d8                       mulps  xmm3,xmm0
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555ed62  <+  930>        0f 59 d0                       mulps  xmm2,xmm0
+0x55555555ed65  <+  933>        0f 59 c8                       mulps  xmm1,xmm0
+0x55555555ed68  <+  936>        41 0f 59 c5                    mulps  xmm0,xmm13
+0x55555555ed6c  <+  940>        44 0f 28 fb                    movaps xmm15,xmm3
+0x55555555ed70  <+  944>        44 0f 28 f3                    movaps xmm14,xmm3
+0x55555555ed74  <+  948>        44 0f c6 f3 00                 shufps xmm14,xmm3,0x0
+0x55555555ed79  <+  953>        44 0f c6 fb 55                 shufps xmm15,xmm3,0x55
+0x55555555ed7e  <+  958>        45 0f 58 fe                    addps  xmm15,xmm14
+0x55555555ed82  <+  962>        44 0f 28 f3                    movaps xmm14,xmm3
+0x55555555ed86  <+  966>        44 0f c6 f3 aa                 shufps xmm14,xmm3,0xaa
+0x55555555ed8b  <+  971>        0f c6 db ff                    shufps xmm3,xmm3,0xff
+        153 [1]	vectorial_inline float simd4f_get_x(simd4f s) { _simd4f_union u={s}; return u.f[0]; }
+0x55555555ed8f  <+  975>        41 0f 58 de                    addps  xmm3,xmm14
+0x55555555ed93  <+  979>        41 0f 58 df                    addps  xmm3,xmm15
+0x55555555ed97  <+  983>        44 0f 28 fa                    movaps xmm15,xmm2
+0x55555555ed9b  <+  987>        44 0f c6 fa 55                 shufps xmm15,xmm2,0x55
+0x55555555eda0  <+  992>        44 0f 28 f3                    movaps xmm14,xmm3
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555eda4  <+  996>        0f 28 da                       movaps xmm3,xmm2
+0x55555555eda7  <+  999>        0f c6 da 00                    shufps xmm3,xmm2,0x0
+0x55555555edab  <+ 1003>        44 0f 58 fb                    addps  xmm15,xmm3
+0x55555555edaf  <+ 1007>        0f 28 da                       movaps xmm3,xmm2
+0x55555555edb2  <+ 1010>        45 0f 14 ce                    unpcklps xmm9,xmm14
+0x55555555edb6  <+ 1014>        0f c6 da aa                    shufps xmm3,xmm2,0xaa
+0x55555555edba  <+ 1018>        0f c6 d2 ff                    shufps xmm2,xmm2,0xff
+        153 [1]	vectorial_inline float simd4f_get_x(simd4f s) { _simd4f_union u={s}; return u.f[0]; }
+0x55555555edbe  <+ 1022>        0f 58 d3                       addps  xmm2,xmm3
+0x55555555edc1  <+ 1025>        0f 28 d9                       movaps xmm3,xmm1
+0x55555555edc4  <+ 1028>        0f c6 d9 00                    shufps xmm3,xmm1,0x0
+0x55555555edc8  <+ 1032>        41 0f 16 f1                    movlhps xmm6,xmm9
+0x55555555edcc  <+ 1036>        0f 29 74 24 50                 movaps XMMWORD PTR [rsp+0x50],xmm6
+0x55555555edd1  <+ 1041>        0f 28 74 24 20                 movaps xmm6,XMMWORD PTR [rsp+0x20]
+0x55555555edd6  <+ 1046>        41 0f 58 d7                    addps  xmm2,xmm15
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555edda  <+ 1050>        44 0f 28 f9                    movaps xmm15,xmm1
+0x55555555edde  <+ 1054>        f3 0f 11 b4 24 84 00 00 00     movss  DWORD PTR [rsp+0x84],xmm6
+0x55555555ede7  <+ 1063>        44 0f c6 f9 55                 shufps xmm15,xmm1,0x55
+0x55555555edec  <+ 1068>        44 0f 58 fb                    addps  xmm15,xmm3
+0x55555555edf0  <+ 1072>        0f 28 d9                       movaps xmm3,xmm1
+0x55555555edf3  <+ 1075>        0f c6 d9 aa                    shufps xmm3,xmm1,0xaa
+0x55555555edf7  <+ 1079>        0f c6 c9 ff                    shufps xmm1,xmm1,0xff
+        153 [1]	vectorial_inline float simd4f_get_x(simd4f s) { _simd4f_union u={s}; return u.f[0]; }
+0x55555555edfb  <+ 1083>        0f 58 cb                       addps  xmm1,xmm3
+0x55555555edfe  <+ 1086>        44 0f 14 c2                    unpcklps xmm8,xmm2
+0x55555555ee02  <+ 1090>        41 0f 16 e8                    movlhps xmm5,xmm8
+0x55555555ee06  <+ 1094>        0f 29 6c 24 60                 movaps XMMWORD PTR [rsp+0x60],xmm5
+0x55555555ee0b  <+ 1099>        0f 28 6c 24 10                 movaps xmm5,XMMWORD PTR [rsp+0x10]
+0x55555555ee10  <+ 1104>        41 0f 58 cf                    addps  xmm1,xmm15
+0x55555555ee14  <+ 1108>        44 0f 28 f8                    movaps xmm15,xmm0
+0x55555555ee18  <+ 1112>        f3 0f 11 ac 24 80 00 00 00     movss  DWORD PTR [rsp+0x80],xmm5
+0x55555555ee21  <+ 1121>        44 0f c6 f8 55                 shufps xmm15,xmm0,0x55
+0x55555555ee26  <+ 1126>        0f 28 d9                       movaps xmm3,xmm1
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555ee29  <+ 1129>        0f 28 c8                       movaps xmm1,xmm0
+0x55555555ee2c  <+ 1132>        0f c6 c8 00                    shufps xmm1,xmm0,0x0
+0x55555555ee30  <+ 1136>        44 0f 58 f9                    addps  xmm15,xmm1
+0x55555555ee34  <+ 1140>        0f 28 c8                       movaps xmm1,xmm0
+0x55555555ee37  <+ 1143>        0f 14 fb                       unpcklps xmm7,xmm3
+0x55555555ee3a  <+ 1146>        0f c6 c8 aa                    shufps xmm1,xmm0,0xaa
+0x55555555ee3e  <+ 1150>        0f c6 c0 ff                    shufps xmm0,xmm0,0xff
+        153 [1]	vectorial_inline float simd4f_get_x(simd4f s) { _simd4f_union u={s}; return u.f[0]; }
+0x55555555ee42  <+ 1154>        0f 58 c1                       addps  xmm0,xmm1
+0x55555555ee45  <+ 1157>        0f 16 e7                       movlhps xmm4,xmm7
+0x55555555ee48  <+ 1160>        0f 29 64 24 70                 movaps XMMWORD PTR [rsp+0x70],xmm4
+0x55555555ee4d  <+ 1165>        f3 44 0f 11 a4 24 88 00 00 00  movss  DWORD PTR [rsp+0x88],xmm12
+0x55555555ee57  <+ 1175>        44 0f 58 f8                    addps  xmm15,xmm0
+0x55555555ee5b  <+ 1179>        f3 44 0f 11 bc 24 8c 00 00 00  movss  DWORD PTR [rsp+0x8c],xmm15
+        758 [1]	    if (BENCHMARK_BUILTIN_EXPECT(cached_ != 0, true)) return true;
+0x55555555ee65  <+ 1189>        48 83 eb 01                    sub    rbx,0x1
+0x55555555ee69  <+ 1193>        0f 85 01 fc ff ff              jne    0x55555555ea70 <mat4_mult(benchmark::State&)+176>
+
+Mango:
+
+13 [1]	        res = testData[0] * testData[1];
+0x55555555e3e8  <+  152>        48 8b 04 24                 mov    rax,QWORD PTR [rsp]
+        1536 [1]	        operator Vector<ScalarType, 4> () const
+0x55555555e3ec  <+  156>        0f 28 00                    movaps xmm0,XMMWORD PTR [rax]
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555e3ef  <+  159>        0f 28 68 40                 movaps xmm5,XMMWORD PTR [rax+0x40]
+0x55555555e3f3  <+  163>        0f 28 58 50                 movaps xmm3,XMMWORD PTR [rax+0x50]
+0x55555555e3f7  <+  167>        0f 28 c8                    movaps xmm1,xmm0
+0x55555555e3fa  <+  170>        0f 28 d0                    movaps xmm2,xmm0
+0x55555555e3fd  <+  173>        0f c6 c8 00                 shufps xmm1,xmm0,0x0
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555e401  <+  177>        0f c6 d0 55                 shufps xmm2,xmm0,0x55
+0x55555555e405  <+  181>        0f 59 cd                    mulps  xmm1,xmm5
+0x55555555e408  <+  184>        0f 28 60 60                 movaps xmm4,XMMWORD PTR [rax+0x60]
+0x55555555e40c  <+  188>        0f 59 d3                    mulps  xmm2,xmm3
+0x55555555e40f  <+  191>        0f 28 70 70                 movaps xmm6,XMMWORD PTR [rax+0x70]
+0x55555555e413  <+  195>        0f 58 ca                    addps  xmm1,xmm2
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555e416  <+  198>        0f 28 d0                    movaps xmm2,xmm0
+0x55555555e419  <+  201>        0f c6 d0 aa                 shufps xmm2,xmm0,0xaa
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555e41d  <+  205>        0f 59 d4                    mulps  xmm2,xmm4
+0x55555555e420  <+  208>        0f 28 fa                    movaps xmm7,xmm2
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555e423  <+  211>        0f 28 d0                    movaps xmm2,xmm0
+0x55555555e426  <+  214>        0f c6 d0 ff                 shufps xmm2,xmm0,0xff
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555e42a  <+  218>        0f 59 d6                    mulps  xmm2,xmm6
+0x55555555e42d  <+  221>        0f 28 40 10                 movaps xmm0,XMMWORD PTR [rax+0x10]
+0x55555555e431  <+  225>        0f 58 d7                    addps  xmm2,xmm7
+0x55555555e434  <+  228>        0f 28 f8                    movaps xmm7,xmm0
+0x55555555e437  <+  231>        0f c6 f8 00                 shufps xmm7,xmm0,0x0
+0x55555555e43b  <+  235>        0f 59 fd                    mulps  xmm7,xmm5
+0x55555555e43e  <+  238>        0f 58 d1                    addps  xmm2,xmm1
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555e441  <+  241>        0f 28 c8                    movaps xmm1,xmm0
+0x55555555e444  <+  244>        0f c6 c8 55                 shufps xmm1,xmm0,0x55
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555e448  <+  248>        0f 59 cb                    mulps  xmm1,xmm3
+0x55555555e44b  <+  251>        0f 29 54 24 20              movaps XMMWORD PTR [rsp+0x20],xmm2
+0x55555555e450  <+  256>        0f 58 f9                    addps  xmm7,xmm1
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555e453  <+  259>        0f 28 c8                    movaps xmm1,xmm0
+0x55555555e456  <+  262>        0f c6 c8 aa                 shufps xmm1,xmm0,0xaa
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555e45a  <+  266>        0f 59 cc                    mulps  xmm1,xmm4
+0x55555555e45d  <+  269>        44 0f 28 c1                 movaps xmm8,xmm1
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555e461  <+  273>        0f 28 c8                    movaps xmm1,xmm0
+0x55555555e464  <+  276>        0f c6 c8 ff                 shufps xmm1,xmm0,0xff
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555e468  <+  280>        0f 59 ce                    mulps  xmm1,xmm6
+0x55555555e46b  <+  283>        0f 28 40 20                 movaps xmm0,XMMWORD PTR [rax+0x20]
+0x55555555e46f  <+  287>        41 0f 58 c8                 addps  xmm1,xmm8
+0x55555555e473  <+  291>        0f 58 cf                    addps  xmm1,xmm7
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555e476  <+  294>        0f 28 f8                    movaps xmm7,xmm0
+0x55555555e479  <+  297>        0f c6 f8 00                 shufps xmm7,xmm0,0x0
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555e47d  <+  301>        0f 59 fd                    mulps  xmm7,xmm5
+0x55555555e480  <+  304>        0f 29 4c 24 30              movaps XMMWORD PTR [rsp+0x30],xmm1
+0x55555555e485  <+  309>        44 0f 28 c7                 movaps xmm8,xmm7
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555e489  <+  313>        0f 28 f8                    movaps xmm7,xmm0
+0x55555555e48c  <+  316>        0f c6 f8 55                 shufps xmm7,xmm0,0x55
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555e490  <+  320>        0f 59 fb                    mulps  xmm7,xmm3
+0x55555555e493  <+  323>        41 0f 58 f8                 addps  xmm7,xmm8
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555e497  <+  327>        44 0f 28 c0                 movaps xmm8,xmm0
+0x55555555e49b  <+  331>        44 0f c6 c0 aa              shufps xmm8,xmm0,0xaa
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555e4a0  <+  336>        0f c6 c0 ff                 shufps xmm0,xmm0,0xff
+0x55555555e4a4  <+  340>        44 0f 59 c4                 mulps  xmm8,xmm4
+0x55555555e4a8  <+  344>        0f 59 c6                    mulps  xmm0,xmm6
+0x55555555e4ab  <+  347>        41 0f 58 c0                 addps  xmm0,xmm8
+0x55555555e4af  <+  351>        0f 58 c7                    addps  xmm0,xmm7
+        1536 [1]	        operator Vector<ScalarType, 4> () const
+0x55555555e4b2  <+  354>        0f 28 78 30                 movaps xmm7,XMMWORD PTR [rax+0x30]
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555e4b6  <+  358>        44 0f 28 c7                 movaps xmm8,xmm7
+0x55555555e4ba  <+  362>        44 0f c6 c7 00              shufps xmm8,xmm7,0x0
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555e4bf  <+  367>        41 0f 59 e8                 mulps  xmm5,xmm8
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555e4c3  <+  371>        44 0f 28 c7                 movaps xmm8,xmm7
+0x55555555e4c7  <+  375>        0f 29 44 24 40              movaps XMMWORD PTR [rsp+0x40],xmm0
+0x55555555e4cc  <+  380>        44 0f c6 c7 55              shufps xmm8,xmm7,0x55
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555e4d1  <+  385>        41 0f 59 d8                 mulps  xmm3,xmm8
+0x55555555e4d5  <+  389>        0f 58 eb                    addps  xmm5,xmm3
+        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+0x55555555e4d8  <+  392>        0f 28 df                    movaps xmm3,xmm7
+0x55555555e4db  <+  395>        0f c6 df aa                 shufps xmm3,xmm7,0xaa
+        198 [1]	  return (__m128) ((__v4sf)__A * (__v4sf)__B);
+0x55555555e4df  <+  399>        0f c6 ff ff                 shufps xmm7,xmm7,0xff
+0x55555555e4e3  <+  403>        0f 59 dc                    mulps  xmm3,xmm4
+        136 [1]	            m = v.m;
+0x55555555e4e6  <+  406>        0f 59 f7                    mulps  xmm6,xmm7
+0x55555555e4e9  <+  409>        0f 58 de                    addps  xmm3,xmm6
+0x55555555e4ec  <+  412>        0f 58 dd                    addps  xmm3,xmm5
+0x55555555e4ef  <+  415>        0f 29 5c 24 50              movaps XMMWORD PTR [rsp+0x50],xmm3
+
+0x55555555e4f4  <+  420>        48 83 eb 01                 sub    rbx,0x1
+0x55555555e4f8  <+  424>        0f 85 ea fe ff ff           jne    0x55555555e3e8 <mat4_mult(benchmark::State&)+152>
