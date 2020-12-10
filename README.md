@@ -1,5 +1,5 @@
 # glm-benchmark
-Benchmarking math libaries
+Benchmarking math libraries
 
 Currently benchmarking
 1. GLM https://github.com/g-truc/glm
