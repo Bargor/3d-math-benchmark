@@ -35,9 +35,11 @@ static void vec4_add_loop(benchmark::State& state) {
     mango::float32x4 res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         for (const auto& vec : testData) {
             res += vec;
         }
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -48,9 +50,11 @@ static void vec4_add_loop_scalar(benchmark::State& state) {
     mango::float32x4 res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         for (const auto& vec : testData) {
             res += vec.x;
         }
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -61,7 +65,9 @@ static void vec4_add_accumulate(benchmark::State& state) {
     mango::float32x4 res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = std::accumulate(testData.begin(), testData.end(), mango::float32x4(0.0f));
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -98,9 +104,11 @@ static void vec4_mult_loop(benchmark::State& state) {
     mango::float32x4 res(1.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         for (const auto& vec : testData) {
             res *= vec;
         }
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -111,9 +119,11 @@ static void vec4_mult_loop_scalar(benchmark::State& state) {
     mango::float32x4 res(1.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         for (const auto& vec : testData) {
             res *= vec.x;
         }
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -124,12 +134,14 @@ static void vec4_mult_accumulate(benchmark::State& state) {
     mango::float32x4 res(1.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = std::accumulate(testData.begin(),
                               testData.end(),
                               mango::float32x4(1.0f),
                               [](mango::float32x4 lhs, mango::float32x4 rhs) {
             return lhs * rhs;
         });
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }

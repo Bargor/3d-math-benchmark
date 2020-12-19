@@ -22,9 +22,11 @@ static void vec4_add_loop(benchmark::State& state) {
     Eigen::Vector4f res(0.0f, 0.0f, 0.0f, 0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         for (const auto& vec : testData) {
             res += vec;
         }
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -35,7 +37,9 @@ static void vec4_add_accumulate(benchmark::State& state) {
     Eigen::Vector4f res(0.0f, 0.0f, 0.0f, 0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = std::accumulate(testData.begin(), testData.end(), Eigen::Vector4f(0.0f, 0.0f, 0.0f, 0.0f));
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -73,9 +77,11 @@ static void vec4_mult_loop(benchmark::State& state) {
     Eigen::Vector4f res(1.0f, 1.0f, 1.0f, 1.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         for (const auto& vec : testData) {
             res = res.cwiseProduct(vec);
         }
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -99,11 +105,13 @@ static void vec4_mult_accumulate(benchmark::State& state) {
     Eigen::Vector4f res(1.0f, 1.0f, 1.0f, 1.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = std::accumulate(testData.begin(),
                               testData.end(),
                               Eigen::Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
                               [](Eigen::Vector4f lhs, Eigen::Vector4f rhs) { return lhs.cwiseProduct(rhs);
         });
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }

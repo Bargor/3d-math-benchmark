@@ -40,9 +40,11 @@ static void vec4_add_loop(benchmark::State& state) {
     VectorType res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         for (const auto& vec : testData) {
             res += vec;
         }
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -53,9 +55,11 @@ static void vec4_add_loop_scalar(benchmark::State& state) {
     VectorType res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         for (const auto& vec : testData) {
             res += vec[1];
         }
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -66,7 +70,9 @@ static void vec4_add_accumulate(benchmark::State& state) {
     VectorType res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = std::accumulate(testData.begin(), testData.end(), VectorType(0.0f));
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -133,9 +139,11 @@ static void vec4_mult_accumulate(benchmark::State& state) {
     VectorType res(1.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = std::accumulate(testData.begin(), testData.end(), VectorType(1.0f), [](VectorType lhs, VectorType rhs) {
             return lhs * rhs;
         });
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }

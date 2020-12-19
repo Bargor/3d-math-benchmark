@@ -38,9 +38,11 @@ static void vec4_add_loop(benchmark::State& state) {
     glm::vec4 res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         for (const auto& vec : testData) {
             res += vec;
         }
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -51,9 +53,11 @@ static void vec4_add_loop_scalar(benchmark::State& state) {
     glm::vec4 res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         for (const auto& vec : testData) {
             res += vec.x;
         }
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -64,7 +68,9 @@ static void vec4_add_accumulate(benchmark::State& state) {
     glm::vec4 res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = std::accumulate(testData.begin(), testData.end(), glm::vec4(0.0f));
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -131,8 +137,10 @@ static void vec4_mult_accumulate(benchmark::State& state) {
     glm::vec4 res(1.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = std::accumulate(
             testData.begin(), testData.end(), glm::vec4(1.0f), [](glm::vec4 lhs, glm::vec4 rhs) { return lhs * rhs; });
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -207,9 +215,11 @@ static void vec4_add_aligned(benchmark::State& state) {
     glm::aligned_f32vec4 res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         for (const auto& vec : testData) {
             res += vec;
         }
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
@@ -220,7 +230,9 @@ static void vec4_add_accumulate_aligned(benchmark::State& state) {
     glm::aligned_f32vec4 res(0.0f);
 
     for (auto _ : state) {
+        benchmark::ClobberMemory();
         res = std::accumulate(testData.begin(), testData.end(), glm::aligned_f32vec4(0.0f));
+        benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
 }
