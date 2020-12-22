@@ -23,7 +23,7 @@ static void vec4_add_scalar(benchmark::State& state) {
 
     for (auto _ : state) {
         benchmark::ClobberMemory();
-        res = testData[0] + testData[1].x;
+        res = testData[0] + testData[1].y;
         benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
