@@ -1,93 +1,93 @@
 GLM SIMD:
 
 res = compute_1(testData[0].x, testData[1].y);
-00007FF6392D2250  mov         rax,qword ptr [testData]  
-00007FF6392D2254  vmovss      xmm0,dword ptr [rax]  
-00007FF6392D2258  vmovss      xmm1,dword ptr [rax+14h]  
-00007FF6392D225D  vinsertps   xmm2,xmm0,xmm1,10h  
-00007FF6392D2263  vinsertps   xmm3,xmm2,xmm1,20h  
-00007FF6392D2269  vinsertps   xmm3,xmm3,xmm0,30h  
-00007FF6392D226F  vinsertps   xmm0,xmm2,xmm0,20h  
-00007FF6392D2275  vinsertps   xmm0,xmm0,xmm1,30h  
-00007FF6392D227B  vfmadd132ps xmm0,xmm3,xmm3  
-00007FF6392D2280  vmovaps     xmmword ptr [res],xmm0  
+mov         rax,qword ptr [testData]  
+vmovss      xmm0,dword ptr [rax]  
+vmovss      xmm1,dword ptr [rax+14h]  
+vinsertps   xmm2,xmm0,xmm1,10h  
+vinsertps   xmm3,xmm2,xmm1,20h  
+vinsertps   xmm3,xmm3,xmm0,30h  
+vinsertps   xmm0,xmm2,xmm0,20h  
+vinsertps   xmm0,xmm0,xmm1,30h  
+vfmadd132ps xmm0,xmm3,xmm3  
+vmovaps     xmmword ptr [res],xmm0  
 
-00007FF6392D2285  dec         rdi  
-00007FF6392D2288  jne         vec4_compute_1+50h (07FF6392D2250h)  
+dec         rdi  
+jne         vec4_compute_1+50h (07FF6392D2250h)  
 
 res = compute_2(testData[0].x, testData[1].y);
-00007FF6392D23B0  mov         rax,qword ptr [testData]  
-00007FF6392D23B4  vmovss      xmm0,dword ptr [rax]  
-00007FF6392D23B8  vfmadd231ss xmm0,xmm0,dword ptr [rax+14h]  
-00007FF6392D23BE  vbroadcastss xmm0,xmm0  
-00007FF6392D23C3  vmovaps     xmmword ptr [res],xmm0  
+mov         rax,qword ptr [testData]  
+vmovss      xmm0,dword ptr [rax]  
+vfmadd231ss xmm0,xmm0,dword ptr [rax+14h]  
+vbroadcastss xmm0,xmm0  
+vmovaps     xmmword ptr [res],xmm0  
 
-00007FF6392D23C8  dec         rdi  
-00007FF6392D23CB  jne         vec4_compute_2+50h (07FF6392D23B0h)  
+dec         rdi  
+jne         vec4_compute_2+50h (07FF6392D23B0h)  
 
 res = compute_3(testData[0], testData[1]);
-00007FF6392D24F0  mov         rax,qword ptr [testData]  
-00007FF6392D24F4  vmovaps     xmm0,xmmword ptr [rax]  
-00007FF6392D24F8  vaddps      xmm0,xmm0,xmm0  
-00007FF6392D24FC  vmulps      xmm0,xmm0,xmmword ptr [rax+10h]  
-00007FF6392D2501  vmovaps     xmmword ptr [res],xmm0  
+mov         rax,qword ptr [testData]  
+vmovaps     xmm0,xmmword ptr [rax]  
+vaddps      xmm0,xmm0,xmm0  
+vmulps      xmm0,xmm0,xmmword ptr [rax+10h]  
+vmovaps     xmmword ptr [res],xmm0  
 
-00007FF6392D2506  dec         rdi  
-00007FF6392D2509  jne         vec4_compute_3+50h (07FF6392D24F0h) 
+dec         rdi  
+jne         vec4_compute_3+50h (07FF6392D24F0h) 
 
 Eigen:
 
 res = compute_1(testData[0].x(), testData[1].y());
-00007FF6FEB61E80  mov         rax,qword ptr [testData]  
-00007FF6FEB61E84  vmovss      xmm0,dword ptr [rax]  
-00007FF6FEB61E88  vmovss      xmm1,dword ptr [rax+14h]  
-00007FF6FEB61E8D  vinsertps   xmm2,xmm0,xmm1,10h  
-00007FF6FEB61E93  vinsertps   xmm3,xmm2,xmm1,20h  
-00007FF6FEB61E99  vinsertps   xmm3,xmm3,xmm0,30h  
-00007FF6FEB61E9F  vinsertps   xmm0,xmm2,xmm0,20h  
-00007FF6FEB61EA5  vinsertps   xmm0,xmm0,xmm1,30h  
-00007FF6FEB61EAB  vfmadd213ps xmm0,xmm3,xmm3  
-00007FF6FEB61EB0  vmovaps     xmmword ptr [res],xmm0  
+mov         rax,qword ptr [testData]  
+vmovss      xmm0,dword ptr [rax]  
+vmovss      xmm1,dword ptr [rax+14h]  
+vinsertps   xmm2,xmm0,xmm1,10h  
+vinsertps   xmm3,xmm2,xmm1,20h  
+vinsertps   xmm3,xmm3,xmm0,30h  
+vinsertps   xmm0,xmm2,xmm0,20h  
+vinsertps   xmm0,xmm0,xmm1,30h  
+vfmadd213ps xmm0,xmm3,xmm3  
+vmovaps     xmmword ptr [res],xmm0  
 
-00007FF6FEB61EB5  dec         rdi  
-00007FF6FEB61EB8  jne         vec4_compute_1+50h (07FF6FEB61E80h)  
+dec         rdi  
+jne         vec4_compute_1+50h (07FF6FEB61E80h)  
 
 res = compute_2(testData[0].x(), testData[1].y());
-00007FF6FEB61FE0  mov         rax,qword ptr [testData]  
-00007FF6FEB61FE4  vmovss      xmm0,dword ptr [rax]  
-00007FF6FEB61FE8  vfmadd231ss xmm0,xmm0,dword ptr [rax+14h]  
-00007FF6FEB61FEE  vbroadcastss xmm0,xmm0  
-00007FF6FEB61FF3  vmovaps     xmmword ptr [res],xmm0  
+mov         rax,qword ptr [testData]  
+vmovss      xmm0,dword ptr [rax]  
+vfmadd231ss xmm0,xmm0,dword ptr [rax+14h]  
+vbroadcastss xmm0,xmm0  
+vmovaps     xmmword ptr [res],xmm0  
 
-00007FF6FEB61FF8  dec         rdi  
-00007FF6FEB61FFB  jne         vec4_compute_2+50h (07FF6FEB61FE0h)  
+dec         rdi  
+jne         vec4_compute_2+50h (07FF6FEB61FE0h)  
 
 res = compute_3(testData[0], testData[1]);
-00007FF6FEB62120  mov         rax,qword ptr [testData]  
-00007FF6FEB62124  vmovaps     xmm0,xmmword ptr [rax]  
-00007FF6FEB62128  vaddps      xmm0,xmm0,xmm0  
-00007FF6FEB6212C  vmulps      xmm0,xmm0,xmmword ptr [rax+10h]  
-00007FF6FEB62131  vmovaps     xmmword ptr [res],xmm0  
+mov         rax,qword ptr [testData]  
+vmovaps     xmm0,xmmword ptr [rax]  
+vaddps      xmm0,xmm0,xmm0  
+vmulps      xmm0,xmm0,xmmword ptr [rax+10h]  
+vmovaps     xmmword ptr [res],xmm0  
 
-00007FF6FEB62136  dec         rdi  
-00007FF6FEB62139  jne         vec4_compute_3+50h (07FF6FEB62120h)   
+dec         rdi  
+jne         vec4_compute_3+50h (07FF6FEB62120h)   
 
 Blaze:
 
 res = compute_1(testData[0][0], testData[1][1]);
-00007FF784D01F90  mov         rax,qword ptr [testData]  
-00007FF784D01F94  vmovss      xmm0,dword ptr [rax]  
-00007FF784D01F98  vmovss      xmm1,dword ptr [rax+24h]  
-00007FF784D01F9D  vinsertps   xmm2,xmm0,xmm1,1Ch  
-00007FF784D01FA3  vinsertps   xmm3,xmm2,xmm1,20h  
-00007FF784D01FA9  vinsertps   xmm3,xmm3,xmm0,30h  
-00007FF784D01FAF  vinsertps   xmm0,xmm2,xmm0,20h  
-00007FF784D01FB5  vinsertps   xmm0,xmm0,xmm1,30h  
-00007FF784D01FBB  vfmadd213ps ymm0,ymm3,ymm3  
-00007FF784D01FC0  vmovaps     ymmword ptr [res],ymm0  
+mov         rax,qword ptr [testData]  
+vmovss      xmm0,dword ptr [rax]  
+vmovss      xmm1,dword ptr [rax+24h]  
+vinsertps   xmm2,xmm0,xmm1,1Ch  
+vinsertps   xmm3,xmm2,xmm1,20h  
+vinsertps   xmm3,xmm3,xmm0,30h  
+vinsertps   xmm0,xmm2,xmm0,20h  
+vinsertps   xmm0,xmm0,xmm1,30h  
+vfmadd213ps ymm0,ymm3,ymm3  
+vmovaps     ymmword ptr [res],ymm0  
 
-00007FF784D01FC5  dec         rdi  
-00007FF784D01FC8  jne         vec4_compute_1+70h (07FF784D01F90h)  
+dec         rdi  
+jne         vec4_compute_1+70h (07FF784D01F90h)  
 
 res = compute_2(testData[0][0], testData[1][1]);
 00007FF784D020E0  mov         rcx,qword ptr [testData]  
@@ -101,49 +101,49 @@ res = compute_2(testData[0][0], testData[1][1]);
 00007FF784D020FF  jne         vec4_compute_2+70h (07FF784D020E0h)  
 
 res = compute_3(testData[0], testData[1]);
-00007FF784D02210  mov         rax,qword ptr [testData]  
-00007FF784D02214  vmovaps     ymm0,ymmword ptr [rax]  
-00007FF784D02218  vmovaps     ymm1,ymmword ptr [rax+20h]  
-00007FF784D0221D  vmulps      ymm2,ymm0,ymm1  
-00007FF784D02221  vfmadd231ps ymm2,ymm0,ymm1  
-00007FF784D02226  vmovaps     ymmword ptr [res],ymm2  
+mov         rax,qword ptr [testData]  
+vmovaps     ymm0,ymmword ptr [rax]  
+vmovaps     ymm1,ymmword ptr [rax+20h]  
+vmulps      ymm2,ymm0,ymm1  
+vfmadd231ps ymm2,ymm0,ymm1  
+vmovaps     ymmword ptr [res],ymm2  
 
-00007FF784D0222B  dec         rdi  
-00007FF784D0222E  jne         vec4_compute_3+70h (07FF784D02210h)  
+dec         rdi  
+jne         vec4_compute_3+70h (07FF784D02210h)  
 
 Mango:
 
 res = compute_1(testData[0].x, testData[1].y);
-00007FF6D95E2250  mov         rax,qword ptr [testData]  
-00007FF6D95E2254  vmovaps     xmm0,xmmword ptr [rax]  
-00007FF6D95E2258  vmovaps     xmm1,xmmword ptr [rax+10h]  
-00007FF6D95E225D  vblendps    xmm2,xmm0,xmm1,2  
-00007FF6D95E2263  vinsertps   xmm3,xmm2,xmm1,68h  
-00007FF6D95E2269  vinsertps   xmm3,xmm3,xmm0,30h  
-00007FF6D95E226F  vmovlhps    xmm0,xmm2,xmm0  
-00007FF6D95E2273  vinsertps   xmm0,xmm0,xmm1,70h  
-00007FF6D95E2279  vfmadd213ps xmm0,xmm3,xmm3  
-00007FF6D95E227E  vmovaps     xmmword ptr [res],xmm0  
+mov         rax,qword ptr [testData]  
+vmovaps     xmm0,xmmword ptr [rax]  
+vmovaps     xmm1,xmmword ptr [rax+10h]  
+vblendps    xmm2,xmm0,xmm1,2  
+vinsertps   xmm3,xmm2,xmm1,68h  
+vinsertps   xmm3,xmm3,xmm0,30h  
+vmovlhps    xmm0,xmm2,xmm0  
+vinsertps   xmm0,xmm0,xmm1,70h  
+vfmadd213ps xmm0,xmm3,xmm3  
+vmovaps     xmmword ptr [res],xmm0  
 
-00007FF6D95E2283  dec         rdi  
-00007FF6D95E2286  jne         vec4_compute_1+50h (07FF6D95E2250h)  
+dec         rdi  
+jne         vec4_compute_1+50h (07FF6D95E2250h)  
 
 res = compute_2(testData[0].x, testData[1].y);
-00007FF6D95E23B0  mov         rax,qword ptr [testData]  
-00007FF6D95E23B4  vmovss      xmm0,dword ptr [rax]  
-00007FF6D95E23B8  vfmadd231ss xmm0,xmm0,dword ptr [rax+14h]  
-00007FF6D95E23BE  vbroadcastss xmm0,xmm0  
-00007FF6D95E23C3  vmovaps     xmmword ptr [res],xmm0  
+mov         rax,qword ptr [testData]  
+vmovss      xmm0,dword ptr [rax]  
+vfmadd231ss xmm0,xmm0,dword ptr [rax+14h]  
+vbroadcastss xmm0,xmm0  
+vmovaps     xmmword ptr [res],xmm0  
 
-00007FF6D95E23C8  dec         rdi  
-00007FF6D95E23CB  jne         vec4_compute_2+50h (07FF6D95E23B0h)  
+dec         rdi  
+jne         vec4_compute_2+50h (07FF6D95E23B0h)  
 
 res = compute_3(testData[0], testData[1]);
-00007FF6D95E24F0  mov         rax,qword ptr [testData]  
-00007FF6D95E24F4  vmovaps     xmm0,xmmword ptr [rax]  
-00007FF6D95E24F8  vaddps      xmm0,xmm0,xmm0  
-00007FF6D95E24FC  vmulps      xmm0,xmm0,xmmword ptr [rax+10h]  
-00007FF6D95E2501  vmovaps     xmmword ptr [res],xmm0  
+mov         rax,qword ptr [testData]  
+vmovaps     xmm0,xmmword ptr [rax]  
+vaddps      xmm0,xmm0,xmm0  
+vmulps      xmm0,xmm0,xmmword ptr [rax+10h]  
+vmovaps     xmmword ptr [res],xmm0  
 
-00007FF6D95E2506  dec         rdi  
-00007FF6D95E2509  jne         vec4_compute_3+50h (07FF6D95E24F0h)  
+dec         rdi  
+jne         vec4_compute_3+50h (07FF6D95E24F0h)  

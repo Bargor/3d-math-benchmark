@@ -1,0 +1,66 @@
+              callq  40afc0 <benchmark::State::StartKeepRunning()>
+       test   %rbx,%rbx
+       je     40a068 <vec4_mult_scalar(benchmark::State&)+0x98>
+       nopl   0x0(%rax,%rax,1)
+8.31%  mov    0x10(%rsp),%rax
+8.50%  movaps 0x10(%rax),%xmm0
+26.97% movaps (%rax),%xmm1
+21.30% shufps $0x1,%xmm0,%xmm0
+34.92% sub    $0x1,%rbx
+       jne    40a010 <vec4_mult_scalar(benchmark::State&)+0x40>
+       shufps $0x0,%xmm0,%xmm0
+       mulps  %xmm1,%xmm0
+       movaps %xmm0,(%rsp)
+       mov    %rbp,%rdi
+       callq  40b280 <benchmark::State::FinishKeepRunning()>
+       
+       callq  40afc0 <benchmark::State::StartKeepRunning()>
+       test   %rbx,%rbx
+       je     40a128 <vec4_mult(benchmark::State&)+0x88>
+       nopl   0x0(%rax,%rax,1)
+       mov    0x10(%rsp),%rax
+8.09%  movaps 0x10(%rax),%xmm1
+91.87% movaps (%rax),%xmm0
+0.03%  sub    $0x1,%rbx
+       jne    40a0e0 <vec4_mult(benchmark::State&)+0x40>
+       mulps  %xmm0,%xmm1
+       movaps %xmm1,(%rsp)
+       mov    %rbp,%rdi
+       callq  40b280 <benchmark::State::FinishKeepRunning()>
+       
+       
+       
+       
+       
+       
+        call    benchmark::State::StartKeepRunning()
+        test    rbx, rbx
+        je      .L74
+.L75:
+        mov     rax, QWORD PTR [rsp+16]
+        vmovaps xmm0, XMMWORD PTR [rax+16]
+        vmovaps xmm1, XMMWORD PTR [rax]
+        dec     rbx
+        jne     .L75
+        vpermilps       xmm0, xmm0, 85
+        vmulps  xmm2, xmm0, xmm1
+        vmovaps XMMWORD PTR [rsp], xmm2
+.L73:
+        mov     rdi, rbp
+        call    benchmark::State::FinishKeepRunning()
+        
+        
+        call    benchmark::State::StartKeepRunning()
+        test    rbx, rbx
+        je      .L99
+.L100:
+        mov     rax, QWORD PTR [rsp+16]
+        vmovaps xmm1, XMMWORD PTR [rax]
+        vmovaps xmm0, XMMWORD PTR [rax+16]
+        dec     rbx
+        jne     .L100
+        vmulps  xmm2, xmm1, xmm0
+        vmovaps XMMWORD PTR [rsp], xmm2
+.L98:
+        mov     rdi, rbp
+        call    benchmark::State::FinishKeepRunning()

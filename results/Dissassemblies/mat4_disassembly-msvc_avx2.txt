@@ -1,130 +1,128 @@
 Eigen:
 
 res = testData[0] + testData[1];
-00007FF634976109  mov         rax,qword ptr [rbp]  
-00007FF63497610D  vmovups     ymm0,ymmword ptr [rax+40h]  
-00007FF634976112  vaddps      ymm1,ymm0,ymmword ptr [rax]  
-00007FF634976116  vmovups     ymmword ptr [res],ymm1  
-00007FF63497611B  vmovups     ymm2,ymmword ptr [rax+20h]  
-00007FF634976120  vaddps      ymm0,ymm2,ymmword ptr [rax+60h]  
-00007FF634976125  vmovups     ymmword ptr [rbp+40h],ymm0  
+mov         rax,qword ptr [rbp]  
+vmovups     ymm0,ymmword ptr [rax+40h]  
+vaddps      ymm1,ymm0,ymmword ptr [rax]  
+vmovups     ymmword ptr [res],ymm1  
+vmovups     ymm2,ymmword ptr [rax+20h]  
+vaddps      ymm0,ymm2,ymmword ptr [rax+60h]  
+vmovups     ymmword ptr [rbp+40h],ymm0  
 
-    for (auto _ : state) {
-00007FF63497612A  dec         rbx  
-00007FF63497612D  jmp         mat4_add+64h (07FF634976104h)  
+dec         rbx  
+jmp         mat4_add+64h (07FF634976104h)  
 
 res = testData[0] * testData[1];
-00007FF634976239  mov         rax,qword ptr [rbp]  
-00007FF63497623D  vmovups     xmm3,xmmword ptr [rax+10h]  
-00007FF634976242  vmovups     xmm4,xmmword ptr [rax+20h]  
-00007FF634976247  vmovups     xmm5,xmmword ptr [rax+30h]  
-00007FF63497624C  vbroadcastss xmm0,dword ptr [rax+40h]  
-00007FF634976252  vmulps      xmm2,xmm0,xmmword ptr [rax]  
-00007FF634976256  vbroadcastss xmm1,dword ptr [rax+44h]  
-00007FF63497625C  vfmadd231ps xmm2,xmm3,xmm1  
-00007FF634976261  vbroadcastss xmm0,dword ptr [rax+48h]  
-00007FF634976267  vfmadd231ps xmm2,xmm4,xmm0  
-00007FF63497626C  vbroadcastss xmm1,dword ptr [rax+4Ch]  
-00007FF634976272  vfmadd231ps xmm2,xmm5,xmm1  
-00007FF634976277  vmovups     xmmword ptr [rbp+20h],xmm2  
-00007FF63497627C  vbroadcastss xmm0,dword ptr [rax+50h]  
-00007FF634976282  vmulps      xmm2,xmm0,xmmword ptr [rax]  
-00007FF634976286  vbroadcastss xmm1,dword ptr [rax+54h]  
-00007FF63497628C  vfmadd231ps xmm2,xmm3,xmm1  
-00007FF634976291  vbroadcastss xmm0,dword ptr [rax+58h]  
-00007FF634976297  vfmadd231ps xmm2,xmm4,xmm0  
-00007FF63497629C  vbroadcastss xmm1,dword ptr [rax+5Ch]  
-00007FF6349762A2  vfmadd231ps xmm2,xmm5,xmm1  
-00007FF6349762A7  vmovups     xmmword ptr [rbp+30h],xmm2  
-00007FF6349762AC  vbroadcastss xmm0,dword ptr [rax+60h]  
-00007FF6349762B2  vmulps      xmm2,xmm0,xmmword ptr [rax]  
-00007FF6349762B6  vbroadcastss xmm1,dword ptr [rax+64h]  
-00007FF6349762BC  vfmadd231ps xmm2,xmm3,xmm1  
-00007FF6349762C1  vbroadcastss xmm0,dword ptr [rax+68h]  
-00007FF6349762C7  vfmadd231ps xmm2,xmm4,xmm0  
-00007FF6349762CC  vbroadcastss xmm1,dword ptr [rax+6Ch]  
-00007FF6349762D2  vfmadd231ps xmm2,xmm5,xmm1  
-00007FF6349762D7  vmovups     xmmword ptr [rbp+40h],xmm2  
-00007FF6349762DC  vbroadcastss xmm0,dword ptr [rax+70h]  
-00007FF6349762E2  vmulps      xmm2,xmm0,xmmword ptr [rax]  
-00007FF6349762E6  vbroadcastss xmm1,dword ptr [rax+74h]  
-00007FF6349762EC  vfmadd231ps xmm2,xmm3,xmm1  
-00007FF6349762F1  vbroadcastss xmm0,dword ptr [rax+78h]  
-00007FF6349762F7  vfmadd231ps xmm2,xmm4,xmm0  
-00007FF6349762FC  vbroadcastss xmm1,dword ptr [rax+7Ch]  
-00007FF634976302  vfmadd231ps xmm2,xmm5,xmm1  
-00007FF634976307  vmovups     xmmword ptr [rbp+50h],xmm2  
-00007FF63497630C  vmovups     ymm0,ymmword ptr [rbp+20h]  
-00007FF634976311  vmovups     ymmword ptr [res],ymm0  
-00007FF634976316  vmovups     ymm1,ymmword ptr [rbp+40h]  
-00007FF63497631B  vmovups     ymmword ptr [rbp+80h],ymm1  
+mov         rax,qword ptr [rbp]  
+vmovups     xmm3,xmmword ptr [rax+10h]  
+vmovups     xmm4,xmmword ptr [rax+20h]  
+vmovups     xmm5,xmmword ptr [rax+30h]  
+vbroadcastss xmm0,dword ptr [rax+40h]  
+vmulps      xmm2,xmm0,xmmword ptr [rax]  
+vbroadcastss xmm1,dword ptr [rax+44h]  
+vfmadd231ps xmm2,xmm3,xmm1  
+vbroadcastss xmm0,dword ptr [rax+48h]  
+vfmadd231ps xmm2,xmm4,xmm0  
+vbroadcastss xmm1,dword ptr [rax+4Ch]  
+vfmadd231ps xmm2,xmm5,xmm1  
+vmovups     xmmword ptr [rbp+20h],xmm2  
+vbroadcastss xmm0,dword ptr [rax+50h]  
+vmulps      xmm2,xmm0,xmmword ptr [rax]  
+vbroadcastss xmm1,dword ptr [rax+54h]  
+vfmadd231ps xmm2,xmm3,xmm1  
+vbroadcastss xmm0,dword ptr [rax+58h]  
+vfmadd231ps xmm2,xmm4,xmm0  
+vbroadcastss xmm1,dword ptr [rax+5Ch]  
+vfmadd231ps xmm2,xmm5,xmm1  
+vmovups     xmmword ptr [rbp+30h],xmm2  
+vbroadcastss xmm0,dword ptr [rax+60h]  
+vmulps      xmm2,xmm0,xmmword ptr [rax]  
+vbroadcastss xmm1,dword ptr [rax+64h]  
+vfmadd231ps xmm2,xmm3,xmm1  
+vbroadcastss xmm0,dword ptr [rax+68h]  
+vfmadd231ps xmm2,xmm4,xmm0  
+vbroadcastss xmm1,dword ptr [rax+6Ch]  
+vfmadd231ps xmm2,xmm5,xmm1  
+vmovups     xmmword ptr [rbp+40h],xmm2  
+vbroadcastss xmm0,dword ptr [rax+70h]  
+vmulps      xmm2,xmm0,xmmword ptr [rax]  
+vbroadcastss xmm1,dword ptr [rax+74h]  
+vfmadd231ps xmm2,xmm3,xmm1  
+vbroadcastss xmm0,dword ptr [rax+78h]  
+vfmadd231ps xmm2,xmm4,xmm0  
+vbroadcastss xmm1,dword ptr [rax+7Ch]  
+vfmadd231ps xmm2,xmm5,xmm1  
+vmovups     xmmword ptr [rbp+50h],xmm2  
+vmovups     ymm0,ymmword ptr [rbp+20h]  
+vmovups     ymmword ptr [res],ymm0  
+vmovups     ymm1,ymmword ptr [rbp+40h]  
+vmovups     ymmword ptr [rbp+80h],ymm1  
 
-    for (auto _ : state) {
-00007FF634976323  dec         rbx  
-00007FF634976326  jmp         mat4_mult+70h (07FF634976230h) 
+dec         rbx  
+jmp         mat4_mult+70h (07FF634976230h) 
 
 Blaze:
 
 res = testData[0] + testData[1];
-00007FF7645FE795  mov         rax,qword ptr [rbp]  
-00007FF7645FE799  lea         rdx,[rax+80h]  
-00007FF7645FE7A0  sub         rdx,rax  
-00007FF7645FE7A3  lea         r8,[res]  
-00007FF7645FE7A7  sub         r8,rax  
-00007FF7645FE7AA  mov         ecx,4  
-00007FF7645FE7AF  nop  
-        res = testData[0] + testData[1];
-00007FF7645FE7B0  vmovups     ymm0,ymmword ptr [rdx+rax]  
-00007FF7645FE7B5  vaddps      ymm1,ymm0,ymmword ptr [rax]  
-00007FF7645FE7B9  vmovups     ymmword ptr [r8+rax],ymm1  
-00007FF7645FE7BF  lea         rax,[rax+20h]  
-00007FF7645FE7C3  sub         rcx,1  
-00007FF7645FE7C7  jne         mat4_add+0A0h (07FF7645FE7B0h)   
+mov         rax,qword ptr [rbp]  
+lea         rdx,[rax+80h]  
+sub         rdx,rax  
+lea         r8,[res]  
+sub         r8,rax  
+mov         ecx,4  
+nop  
+res = testData[0] + testData[1];
+vmovups     ymm0,ymmword ptr [rdx+rax]  
+vaddps      ymm1,ymm0,ymmword ptr [rax]  
+vmovups     ymmword ptr [r8+rax],ymm1  
+lea         rax,[rax+20h]  
+sub         rcx,1  
+jne         mat4_add+0A0h (07FF7645FE7B0h)   
 
 MANGO:
 
 res = testData[0] * testData[1];
-00007FF7FEE265DC  mov         rax,qword ptr [testData]  
-00007FF7FEE265E1  vmovups     xmm7,xmmword ptr [rax+40h]  
-00007FF7FEE265E6  vmovups     xmm6,xmmword ptr [rax+50h]  
-00007FF7FEE265EB  vmovups     xmm4,xmmword ptr [rax+60h]  
-00007FF7FEE265F0  vmovups     xmm2,xmmword ptr [rax+70h]  
-00007FF7FEE265F5  vbroadcastss xmm0,dword ptr [rax]  
-00007FF7FEE265FA  vmulps      xmm10,xmm0,xmm7  
-00007FF7FEE265FE  vbroadcastss xmm1,dword ptr [rax+4]  
-00007FF7FEE26604  vfmadd231ps xmm10,xmm1,xmm6  
-00007FF7FEE26609  vbroadcastss xmm0,dword ptr [rax+8]  
-00007FF7FEE2660F  vfmadd231ps xmm10,xmm0,xmm4  
-00007FF7FEE26614  vbroadcastss xmm1,dword ptr [rax+0Ch]  
-00007FF7FEE2661A  vfmadd231ps xmm10,xmm1,xmm2  
-00007FF7FEE2661F  vbroadcastss xmm0,dword ptr [rax+10h]  
-00007FF7FEE26625  vmulps      xmm9,xmm0,xmm7  
-00007FF7FEE26629  vbroadcastss xmm1,dword ptr [rax+14h]  
-00007FF7FEE2662F  vfmadd231ps xmm9,xmm1,xmm6  
-00007FF7FEE26634  vbroadcastss xmm0,dword ptr [rax+18h]  
-00007FF7FEE2663A  vfmadd231ps xmm9,xmm0,xmm4  
-00007FF7FEE2663F  vbroadcastss xmm1,dword ptr [rax+1Ch]  
-00007FF7FEE26645  vfmadd231ps xmm9,xmm1,xmm2  
-00007FF7FEE2664A  vbroadcastss xmm0,dword ptr [rax+20h]  
-00007FF7FEE26650  vmulps      xmm8,xmm0,xmm7  
-00007FF7FEE26654  vbroadcastss xmm1,dword ptr [rax+24h]  
-00007FF7FEE2665A  vfmadd231ps xmm8,xmm1,xmm6  
-00007FF7FEE2665F  vbroadcastss xmm0,dword ptr [rax+28h]  
-00007FF7FEE26665  vfmadd231ps xmm8,xmm0,xmm4  
-00007FF7FEE2666A  vbroadcastss xmm1,dword ptr [rax+2Ch]  
-00007FF7FEE26670  vfmadd231ps xmm8,xmm1,xmm2  
-00007FF7FEE26675  vbroadcastss xmm0,dword ptr [rax+30h]  
-00007FF7FEE2667B  vmulps      xmm7,xmm0,xmm7  
-00007FF7FEE2667F  vbroadcastss xmm1,dword ptr [rax+34h]  
-00007FF7FEE26685  vfmadd231ps xmm7,xmm1,xmm6  
-00007FF7FEE2668A  vbroadcastss xmm0,dword ptr [rax+38h]  
-00007FF7FEE26690  vfmadd231ps xmm7,xmm0,xmm4  
-00007FF7FEE26695  vbroadcastss xmm1,dword ptr [rax+3Ch]  
-00007FF7FEE2669B  vfmadd231ps xmm7,xmm1,xmm2  
-00007FF7FEE266A0  vmovups     xmmword ptr [res],xmm10  
-00007FF7FEE266A6  vmovups     xmmword ptr [rsp+50h],xmm9  
-00007FF7FEE266AC  vmovups     xmmword ptr [rsp+60h],xmm8  
-00007FF7FEE266B2  vmovups     xmmword ptr [rsp+70h],xmm7  
+mov         rax,qword ptr [testData]  
+vmovups     xmm7,xmmword ptr [rax+40h]  
+vmovups     xmm6,xmmword ptr [rax+50h]  
+vmovups     xmm4,xmmword ptr [rax+60h]  
+vmovups     xmm2,xmmword ptr [rax+70h]  
+vbroadcastss xmm0,dword ptr [rax]  
+vmulps      xmm10,xmm0,xmm7  
+vbroadcastss xmm1,dword ptr [rax+4]  
+vfmadd231ps xmm10,xmm1,xmm6  
+vbroadcastss xmm0,dword ptr [rax+8]  
+vfmadd231ps xmm10,xmm0,xmm4  
+vbroadcastss xmm1,dword ptr [rax+0Ch]  
+vfmadd231ps xmm10,xmm1,xmm2  
+vbroadcastss xmm0,dword ptr [rax+10h]  
+vmulps      xmm9,xmm0,xmm7  
+vbroadcastss xmm1,dword ptr [rax+14h]  
+vfmadd231ps xmm9,xmm1,xmm6  
+vbroadcastss xmm0,dword ptr [rax+18h]  
+vfmadd231ps xmm9,xmm0,xmm4  
+vbroadcastss xmm1,dword ptr [rax+1Ch]  
+vfmadd231ps xmm9,xmm1,xmm2  
+vbroadcastss xmm0,dword ptr [rax+20h]  
+vmulps      xmm8,xmm0,xmm7  
+vbroadcastss xmm1,dword ptr [rax+24h]  
+vfmadd231ps xmm8,xmm1,xmm6  
+vbroadcastss xmm0,dword ptr [rax+28h]  
+vfmadd231ps xmm8,xmm0,xmm4  
+vbroadcastss xmm1,dword ptr [rax+2Ch]  
+vfmadd231ps xmm8,xmm1,xmm2  
+vbroadcastss xmm0,dword ptr [rax+30h]  
+vmulps      xmm7,xmm0,xmm7  
+vbroadcastss xmm1,dword ptr [rax+34h]  
+vfmadd231ps xmm7,xmm1,xmm6  
+vbroadcastss xmm0,dword ptr [rax+38h]  
+vfmadd231ps xmm7,xmm0,xmm4  
+vbroadcastss xmm1,dword ptr [rax+3Ch]  
+vfmadd231ps xmm7,xmm1,xmm2  
+vmovups     xmmword ptr [res],xmm10  
+vmovups     xmmword ptr [rsp+50h],xmm9  
+vmovups     xmmword ptr [rsp+60h],xmm8  
+vmovups     xmmword ptr [rsp+70h],xmm7  
 
-00007FF7FEE266B8  dec         rbx  
-00007FF7FEE266BB  jmp         mat4_mult+73h (07FF7FEE265D3h)  
+dec         rbx  
+jmp         mat4_mult+73h (07FF7FEE265D3h)  
