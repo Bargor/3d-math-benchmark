@@ -97,7 +97,7 @@ static void vec4_mult_scalar_simd(benchmark::State& state) {
 
     for (auto _ : state) {
         benchmark::ClobberMemory();
-        res = testData[0] * testData[1].x;
+        res = testData[0] * testData[1].y;
         benchmark::ClobberMemory();
     }
     benchmark::DoNotOptimize(res);
@@ -126,7 +126,7 @@ static void vec4_mult_loop_scalar_simd(benchmark::State& state) {
     for (auto _ : state) {
         benchmark::ClobberMemory();
         for (const auto& vec : testData) {
-            res *= vec.x;
+            res *= vec.y;
         }
         benchmark::ClobberMemory();
     }
