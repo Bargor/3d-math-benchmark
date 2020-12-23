@@ -1,3 +1,33 @@
+GLM
+
+res = compute_1(testData[0].x, testData[1].y);
+mov         rax,qword ptr [testData]  
+vmovss      xmm0,dword ptr [rax]  
+vmovss      xmm1,dword ptr [rax+14h]  
+vmulss      xmm2,xmm0,xmm1  
+vmulss      xmm3,xmm1,xmm1  
+vmulss      xmm4,xmm0,xmm0  
+vinsertps   xmm3,xmm4,xmm3,10h  
+vshufps     xmm2,xmm3,xmm2,4  
+vinsertps   xmm0,xmm0,xmm1,10h  
+vpermilps   xmm0,xmm0,14h  
+vaddps      xmm0,xmm2,xmm0  
+vmovaps     xmmword ptr [res],xmm0  
+
+res = compute_2(testData[0].x, testData[1].y);
+mov         rax,qword ptr [testData]  
+vmovss      xmm0,dword ptr [rax]  
+vfmadd231ss xmm0,xmm0,dword ptr [rax+14h]  
+vbroadcastss xmm0,xmm0  
+vmovaps     xmmword ptr [res],xmm0  
+
+res = compute_3(testData[0], testData[1]);
+mov         rax,qword ptr [testData]  
+vmovups     xmm0,xmmword ptr [rax]  
+vaddps      xmm0,xmm0,xmm0  
+vmulps      xmm0,xmm0,xmmword ptr [rax+10h]  
+vmovaps     xmmword ptr [res],xmm0  
+
 GLM SIMD:
 
 res = compute_1(testData[0].x, testData[1].y);
@@ -90,15 +120,15 @@ dec         rdi
 jne         vec4_compute_1+70h (07FF784D01F90h)  
 
 res = compute_2(testData[0][0], testData[1][1]);
-00007FF784D020E0  mov         rcx,qword ptr [testData]  
-00007FF784D020E4  vmovss      xmm1,dword ptr [rcx]  
-00007FF784D020E8  vfmadd231ss xmm1,xmm1,dword ptr [rcx+24h]  
-00007FF784D020EE  vbroadcastss xmm1,xmm1  
-00007FF784D020F3  vmovaps     xmmword ptr [res],xmm1  
-00007FF784D020F8  vmovaps     xmmword ptr [rax],xmm0  
+mov         rcx,qword ptr [testData]  
+vmovss      xmm1,dword ptr [rcx]  
+vfmadd231ss xmm1,xmm1,dword ptr [rcx+24h]  
+vbroadcastss xmm1,xmm1  
+vmovaps     xmmword ptr [res],xmm1  
+vmovaps     xmmword ptr [rax],xmm0  
 
-00007FF784D020FC  dec         rdi  
-00007FF784D020FF  jne         vec4_compute_2+70h (07FF784D020E0h)  
+dec         rdi  
+jne         vec4_compute_2+70h (07FF784D020E0h)  
 
 res = compute_3(testData[0], testData[1]);
 mov         rax,qword ptr [testData]  
@@ -110,6 +140,34 @@ vmovaps     ymmword ptr [res],ymm2
 
 dec         rdi  
 jne         vec4_compute_3+70h (07FF784D02210h)  
+
+Mathfu:
+
+        res = compute_1(testData[0].x, testData[1].y);
+mov         rax,qword ptr [testData]  
+vmovss      xmm0,dword ptr [rax]  
+vmovss      xmm1,dword ptr [rax+14h]  
+vinsertps   xmm2,xmm0,xmm1,10h  
+vinsertps   xmm3,xmm2,xmm1,20h  
+vinsertps   xmm3,xmm3,xmm0,30h  
+vinsertps   xmm0,xmm2,xmm0,20h  
+vinsertps   xmm0,xmm0,xmm1,30h  
+vfmadd213ps xmm0,xmm3,xmm3  
+vmovaps     xmmword ptr [res],xmm0
+
+        res = compute_2(testData[0].x, testData[1].y);
+mov         rax,qword ptr [testData]  
+vmovss      xmm0,dword ptr [rax]  
+vfmadd231ss xmm0,xmm0,dword ptr [rax+14h]  
+vbroadcastss xmm0,xmm0  
+vmovaps     xmmword ptr [res],xmm0 
+
+        res = compute_3(testData[0], testData[1]);
+mov         rax,qword ptr [testData]  
+vmovaps     xmm0,xmmword ptr [rax]  
+vaddps      xmm0,xmm0,xmm0  
+vmulps      xmm0,xmm0,xmmword ptr [rax+10h]  
+vmovaps     xmmword ptr [res],xmm0 
 
 Mango:
 
