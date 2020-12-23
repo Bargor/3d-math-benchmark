@@ -1,3 +1,51 @@
+GLM
+
+        res = compute_1(testData[0].x, testData[1].y);
+vmovss      xmm4,dword ptr [rbx+14h]  
+vmovss      xmm3,dword ptr [rbx]  
+vmovaps     xmm2,xmm3  
+vfmadd231ss xmm2,xmm3,xmm3  
+vmovaps     xmm0,xmm4  
+vfmadd231ss xmm0,xmm4,xmm4  
+vmovaps     xmm1,xmm3  
+vfmadd231ss xmm1,xmm4,xmm3  
+vmovss      dword ptr [res],xmm2  
+vmovss      dword ptr [rsp+24h],xmm0  
+vmovaps     xmm0,xmm4  
+vfmadd231ss xmm0,xmm4,xmm3  
+vmovss      dword ptr [rsp+28h],xmm0  
+vmovss      dword ptr [rsp+2Ch],xmm1
+
+        res = compute_2(testData[0].x, testData[1].y);
+vmovss      xmm0,dword ptr [rdi]  
+vmovaps     xmm1,xmm0  
+vfmadd231ss xmm1,xmm0,dword ptr [rdi+14h]  
+vshufps     xmm1,xmm1,xmm1,0  
+vmovups     xmmword ptr [res],xmm1
+
+        res = compute_3(testData[0], testData[1]);
+vmovups     xmm7,xmmword ptr [rbx+10h]  
+vmovups     xmm6,xmmword ptr [rbx]  
+vmulss      xmm5,xmm7,xmm6  
+vshufps     xmm1,xmm7,xmm7,55h  
+vshufps     xmm0,xmm6,xmm6,55h  
+vmulss      xmm4,xmm1,xmm0  
+vshufps     xmm2,xmm7,xmm7,0AAh  
+vshufps     xmm0,xmm6,xmm6,0AAh  
+vmulss      xmm3,xmm2,xmm0  
+vshufps     xmm7,xmm7,xmm7,0FFh  
+vshufps     xmm6,xmm6,xmm6,0FFh  
+vmulss      xmm0,xmm7,xmm6  
+vaddss      xmm5,xmm5,xmm5  
+vaddss      xmm1,xmm4,xmm4  
+vaddss      xmm2,xmm3,xmm3  
+vaddss      xmm4,xmm0,xmm0  
+vinsertps   xmm5,xmm5,xmm1,10h  
+vinsertps   xmm5,xmm5,xmm2,20h  
+vinsertps   xmm5,xmm5,xmm4,30h  
+vmovups     xmmword ptr [res],xmm5  
+vmovdqa     xmmword ptr [rsp+20h],xmm5
+
 GLM SIMD:
 
 res = compute_1(testData[0].x, testData[1].y);
