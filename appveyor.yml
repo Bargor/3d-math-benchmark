@@ -34,6 +34,7 @@ test_script:
   - 'C:\projects\build\%CONFIGURATION%\mathfu_vec4.exe'
   - 'C:\projects\build\%CONFIGURATION%\mango_vec4.exe'
   - 'C:\projects\build\%CONFIGURATION%\glm_swizzle.exe'
+  - 'C:\projects\build\%CONFIGURATION%\glm_simd_swizzle.exe'
   - 'C:\projects\build\%CONFIGURATION%\mango_swizzle.exe'
   - 'C:\projects\build\%CONFIGURATION%\glm_mat4.exe'
   - 'C:\projects\build\%CONFIGURATION%\glm_mat4_simd.exe'

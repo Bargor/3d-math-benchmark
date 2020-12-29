@@ -63,6 +63,7 @@ script:
 - ./mathfu_vec4
 - ./mango_vec4
 - ./glm_swizzle
+- ./glm_simd_swizzle
 - ./mango_swizzle
 - ./glm_mat4
 - ./glm_mat4_simd

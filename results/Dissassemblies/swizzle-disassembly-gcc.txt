@@ -9,7 +9,6 @@ GLM:
 0x55555555e104  <+  196>        f3 0f 10 50 14              movss  xmm2,DWORD PTR [rax+0x14]
 0x55555555e109  <+  201>        f3 0f 10 60 1c              movss  xmm4,DWORD PTR [rax+0x1c]
 0x55555555e10e  <+  206>        f3 0f 10 40 28              movss  xmm0,DWORD PTR [rax+0x28]
-        758 [1]	    if (BENCHMARK_BUILTIN_EXPECT(cached_ != 0, true)) return true;
 0x55555555e113  <+  211>        48 83 eb 01                 sub    rbx,0x1
 0x55555555e117  <+  215>        75 d7                       jne    0x55555555e0f0 <vec4_test_swizzle(benchmark::State&)+176>
 0x55555555e119  <+  217>        f3 0f 5c c5                 subss  xmm0,xmm5
@@ -29,7 +28,6 @@ GLM:
 0x55555555dfcb  <+  219>        f3 0f 10 68 0c              movss  xmm5,DWORD PTR [rax+0xc]
 0x55555555dfd0  <+  224>        f3 0f 10 50 10              movss  xmm2,DWORD PTR [rax+0x10]
 0x55555555dfd5  <+  229>        f3 0f 10 48 1c              movss  xmm1,DWORD PTR [rax+0x1c]
-        758 [1]	    if (BENCHMARK_BUILTIN_EXPECT(cached_ != 0, true)) return true;
 0x55555555dfda  <+  234>        48 83 eb 01                 sub    rbx,0x1
 0x55555555dfde  <+  238>        75 d8                       jne    0x55555555dfb8 <vec4_test_swizzle_2(benchmark::State&)+200>
 0x55555555dfe0  <+  240>        f3 0f 59 d3                 mulss  xmm2,xmm3
@@ -53,15 +51,12 @@ GLM SIMD:
 0x55555555dfe8  <+  136>        48 8b 44 24 10              mov    rax,QWORD PTR [rsp+0x10]
 0x55555555dfed  <+  141>        f3 0f 12 40 20              movsldup xmm0,XMMWORD PTR [rax+0x20]
 0x55555555dff2  <+  146>        0f 28 10                    movaps xmm2,XMMWORD PTR [rax]
-        192 [1]	  return (__m128) ((__v4sf)__A - (__v4sf)__B);
 0x55555555dff5  <+  149>        66 0f 6f 48 10              movdqa xmm1,XMMWORD PTR [rax+0x10]
 0x55555555dffa  <+  154>        66 0f 3a 16 c8 03           pextrd eax,xmm1,0x3
 0x55555555e000  <+  160>        0f c6 c9 50                 shufps xmm1,xmm1,0x50
 0x55555555e004  <+  164>        0f 5c c2                    subps  xmm0,xmm2
-        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
 0x55555555e007  <+  167>        0f c6 d2 ff                 shufps xmm2,xmm2,0xff
 0x55555555e00b  <+  171>        0f c6 c0 aa                 shufps xmm0,xmm0,0xaa
-        758 [1]	    if (BENCHMARK_BUILTIN_EXPECT(cached_ != 0, true)) return true;
 0x55555555e00f  <+  175>        48 83 eb 01                 sub    rbx,0x1
 0x55555555e013  <+  179>        75 d3                       jne    0x55555555dfe8 <vec4_test_swizzle(benchmark::State&)+136>
 0x55555555e015  <+  181>        0f 59 ca                    mulps  xmm1,xmm2
@@ -77,13 +72,12 @@ GLM SIMD:
 0x55555555df08  <+  136>        48 8b 44 24 10              mov    rax,QWORD PTR [rsp+0x10]
 0x55555555df0d  <+  141>        0f 28 08                    movaps xmm1,XMMWORD PTR [rax]
 0x55555555df10  <+  144>        66 0f 6f 40 10              movdqa xmm0,XMMWORD PTR [rax+0x10]
-        15 [1]	    return a.xyyz() * b.wxxw() + a * b.w;
 0x55555555df15  <+  149>        0f 28 d9                    movaps xmm3,xmm1
 0x55555555df18  <+  152>        66 0f 3a 16 c0 03           pextrd eax,xmm0,0x3
-        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+
 0x55555555df1e  <+  158>        0f c6 c0 c3                 shufps xmm0,xmm0,0xc3
 0x55555555df22  <+  162>        0f c6 d9 94                 shufps xmm3,xmm1,0x94
-        758 [1]	    if (BENCHMARK_BUILTIN_EXPECT(cached_ != 0, true)) return true;
+
 0x55555555df26  <+  166>        48 83 eb 01                 sub    rbx,0x1
 0x55555555df2a  <+  170>        75 dc                       jne    0x55555555df08 <vec4_test_swizzle_2(benchmark::State&)+136>
 0x55555555df2c  <+  172>        0f 59 c3                    mulps  xmm0,xmm3
@@ -102,16 +96,15 @@ Mango:
 0x55555555df1d  <+  141>        f3 0f 12 48 20              movsldup xmm1,XMMWORD PTR [rax+0x20]
 0x55555555df22  <+  146>        0f 28 10                    movaps xmm2,XMMWORD PTR [rax]
 0x55555555df25  <+  149>        0f 28 40 10                 movaps xmm0,XMMWORD PTR [rax+0x10]
-        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
 0x55555555df29  <+  153>        0f 28 d8                    movaps xmm3,xmm0
 0x55555555df2c  <+  156>        0f c6 d8 ff                 shufps xmm3,xmm0,0xff
-        192 [1]	  return (__m128) ((__v4sf)__A - (__v4sf)__B);
+
 0x55555555df30  <+  160>        0f c6 c0 50                 shufps xmm0,xmm0,0x50
 0x55555555df34  <+  164>        0f 5c ca                    subps  xmm1,xmm2
-        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+
 0x55555555df37  <+  167>        0f c6 d2 ff                 shufps xmm2,xmm2,0xff
 0x55555555df3b  <+  171>        0f c6 c9 aa                 shufps xmm1,xmm1,0xaa
-        758 [1]	    if (BENCHMARK_BUILTIN_EXPECT(cached_ != 0, true)) return true;
+
 0x55555555df3f  <+  175>        48 83 eb 01                 sub    rbx,0x1
 0x55555555df43  <+  179>        75 d3                       jne    0x55555555df18 <vec4_test_swizzle(benchmark::State&)+136>
 0x55555555df45  <+  181>        0f 59 c2                    mulps  xmm0,xmm2
@@ -125,13 +118,13 @@ Mango:
 0x55555555de48  <+  136>        48 8b 44 24 10              mov    rax,QWORD PTR [rsp+0x10]
 0x55555555de4d  <+  141>        0f 28 40 10                 movaps xmm0,XMMWORD PTR [rax+0x10]
 0x55555555de51  <+  145>        0f 28 08                    movaps xmm1,XMMWORD PTR [rax]
-        746 [1]	  return (__m128) __builtin_ia32_shufps ((__v4sf)__A, (__v4sf)__B, __mask);
+        
 0x55555555de54  <+  148>        0f 28 d0                    movaps xmm2,xmm0
 0x55555555de57  <+  151>        0f 28 d9                    movaps xmm3,xmm1
 0x55555555de5a  <+  154>        0f c6 d0 ff                 shufps xmm2,xmm0,0xff
 0x55555555de5e  <+  158>        0f c6 d9 94                 shufps xmm3,xmm1,0x94
 0x55555555de62  <+  162>        0f c6 c0 c3                 shufps xmm0,xmm0,0xc3
-        758 [1]	    if (BENCHMARK_BUILTIN_EXPECT(cached_ != 0, true)) return true;
+        
 0x55555555de66  <+  166>        48 83 eb 01                 sub    rbx,0x1
 0x55555555de6a  <+  170>        75 dc                       jne    0x55555555de48 <vec4_test_swizzle_2(benchmark::State&)+136>
 0x55555555de6c  <+  172>        0f 59 c3                    mulps  xmm0,xmm3
